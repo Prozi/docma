@@ -51,7 +51,7 @@
     "start:debug": "npm run docs:debug && npm run serve",
     "test": "jest --verbose --no-cache",
     "precommit": "yarn docs && yarn lint && yarn prettify",
-    "postinstall": "mkdir -p lib/web/assets && touch lib/web/assets/docma.less"
+    "postinstall": "mkdirp lib/web/assets && touch lib/web/assets/docma.less"
   },
   "jest": {
     "testEnvironment": "node",
@@ -111,10 +111,12 @@
     "less-plugin-clean-css": "^1.5.1",
     "lodash": "^4.17.21",
     "marked": "^2.0.1",
+    "mkdirp": "^1.0.4",
     "npm-name": "^6.0.1",
     "semver": "^7.3.5",
     "static-serve": "^0.0.1",
     "strip-json-comments": "^3.1.1",
+    "touch-for-windows": "^1.0.0",
     "uglify-js": "^3.13.3",
     "yargs": "^16.2.0"
   },
