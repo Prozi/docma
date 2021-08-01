@@ -1,590 +1,1454 @@
+<html>
+    <head></head>
+    <body>
+        <h1 id="docma-changelog">Docma Changelog</h1>
+        <hr />
+        <p>
+            All notable changes to this project will be documented in this file.
+            The format is based on
+            <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+            and this project adheres to
+            <a href="https://semver.org">Semantic Versioning</a>.
+        </p>
+        <h2 id="324--2020-06-18-">
+            <a href="https://github.com/onury/docma/compare/v3.2.2...v3.2.4"
+                >3.2.4</a
+            >
+            (2020-06-18)
+        </h2>
+        <hr />
+        <h3 id="fixed">Fixed</h3>
+        <ul>
+            <li>Updated all dependencies to latest</li>
+            <li>Patched serve script</li>
+        </ul>
+        <h2 id="322--2019-01-08-">
+            <a href="https://github.com/onury/docma/compare/v3.1.0...v3.2.2"
+                >3.2.2</a
+            >
+            (2019-01-08)
+        </h2>
+        <hr />
+        <h3 id="fixed">Fixed</h3>
+        <ul>
+            <li>
+                An issue where enumeration value would be incorrectly displayed
+                as <code>undefined</code> in docs parsed from ES5 code.
+            </li>
+            <li>
+                An issue where <code>jsdoc.predicate</code> (or
+                <code>jsdoc.filter</code>) option would not be taken into
+                account.
+            </li>
+            <li>
+                An issue where favicon would not be copied over to the output
+                dir.
+            </li>
+            <li>
+                (Zebra Template) An issue where some special characters within
+                the location hash would cause an error.
+            </li>
+            <li><code>Invalid assignment</code> error due to ES2015 syntax.</li>
+        </ul>
+        <h3 id="added">Added</h3>
+        <ul>
+            <li>
+                Support for handling notation with multiple sub-types. e.g.
+                <code>Map&lt;String, Object&gt;</code>. (PR
+                <a href="https://github.com/onury/docma/pull/65">#65</a> by
+                <a href="https://github.com/MaienM">@MaienM</a>)
+            </li>
+        </ul>
+        <h3 id="changed">Changed</h3>
+        <ul>
+            <li>
+                Improved / cleaner symbol names and long names. This also fixes
+                a JSDoc bug that unnecessarily and incorrectly wraps the last
+                level of the notation in quotes and brackets.
+            </li>
+            <li>Updated dependencies to their latest versions.</li>
+        </ul>
+        <h2 id="310--2018-12-04-">
+            <a href="https://github.com/onury/docma/compare/v3.0.0...v3.1.0"
+                >3.1.0</a
+            >
+            (2018-12-04)
+        </h2>
+        <hr />
+        <h3 id="fixed">Fixed</h3>
+        <ul>
+            <li>
+                An issue with <code>"path"</code> routing which led to 404 page,
+                occurred when a (deep) route was refreshed or loaded directly.
+                (Due to a bug in core dependency.) Fixes
+                <a href="https://github.com/onury/docma/issues/62">#62</a>.
+            </li>
+            <li>
+                An issue where a (harmless) <code>TypeError</code> was thrown
+                when <code>debug</code> is enabled.
+            </li>
+            <li>
+                An issue with <code>$docmaLink</code> due to missing trailing
+                slash, when routing method is <code>"path"</code>.
+            </li>
+        </ul>
+        <h3 id="added">Added</h3>
+        <ul>
+            <li>
+                (Zebra Template) Added JSDoc <code>@default</code> tag support
+                for symbols. Fixes
+                <a href="https://github.com/onury/docma/issues/60">#60</a>.
+            </li>
+            <li>
+                (Zebra Template) Added option
+                <code>contentView.faLibs</code> that defines FontAwesome
+                libraries to be included, such as <code>solid</code>,
+                <code>regular</code>, <code>brands</code>. Set to
+                <code>null</code> to completely exclude FontAwesome from the
+                output. See Zebra documentation. Fixes
+                <a href="https://github.com/onury/docma/issues/63">#63</a>.
+            </li>
+            <li>
+                (Zebra Template) Added option
+                <code>contentView.faVersion</code> that defines FontAwesome icon
+                library version to be included.
+            </li>
+        </ul>
+        <h3 id="changed">Changed</h3>
+        <ul>
+            <li>Improved SPA route handling.</li>
+            <li>Updated dependencies to latest versions.</li>
+        </ul>
+        <h2 id="300--2018-11-18-">
+            <a href="https://github.com/onury/docma/compare/v2.1.0...v3.0.0"
+                >3.0.0</a
+            >
+            (2018-11-18)
+        </h2>
+        <hr />
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                <strong>BREAKING</strong>: Dropped support for Node.js versions
+                6 &amp; 7. Requires Node.js v8 and later. This change is due to
+                updates to the core dependencies such as <code>fs-extra</code>,
+                <code>jsdoc-x</code> and <code>jsdom</code>.
+            </li>
+            <li>Improved path/query routing.</li>
+            <li>
+                <strong>BREAKING</strong>: Linking logic has
+                <a href="https://onury.io/docma/faq/#linking">some changes</a>.
+            </li>
+            <li>(Zebra template) Improved support for constant symbols.</li>
+        </ul>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Ability to force parser type on defined files/paths; by
+                appending a suffix. For Markdown, append <code>:md</code> or
+                <code>:markdown</code>. For HTML, append <code>:htm</code> or
+                <code>html</code>. For example, <code>LICENSE:md</code> will
+                force-parse <code>LICENSE</code> file as markdown.
+                <code>file.partial:html</code> will force-parse
+                <code>file.partial</code> as HTML.
+            </li>
+            <li>
+                Ability to create deeper paths for named groups/routes. e.g.
+                <code>mylib/latest</code>
+            </li>
+            <li>
+                Support for favicon. Set <code>app.favicon</code> to your ICO
+                file's local path.
+            </li>
+            <li>
+                Support for collapsable markdown (i.e. with
+                <code>&lt;details&gt;</code> and
+                <code>&lt;summary&gt;</code> tags). This is great for generating
+                styled collapsable lists (such as F.A.Q.) from your markdown
+                files. If a bookmark (id) is passed in the location hash, that
+                item will auto-expand. See
+                <a href="https://onury.io/docma/faq">Docma F.A.Q.</a> for an
+                example.
+                <em
+                    >Note that Edge
+                    <a
+                        href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/detailssummary/"
+                        >does not support</a
+                    >
+                    details/summary tags yet. All other modern browsers have
+                    support.</em
+                >
+            </li>
+            <li>
+                Ability to hide or remove specific, partial content from Docma
+                output. For example if you want some <strong>part</strong> of
+                your README to be visible in GitHub repo but not in your Docma
+                generated documentation... See
+                <a href="https://onury.io/docma/faq#hide-remove">this</a> for
+                details.
+            </li>
+            <li>
+                New CLI option (<code>-b</code> or <code>--base</code>) for
+                <code>docma serve</code> command to override/set the base path.
+            </li>
+            <li>
+                (Zebra Template) Added support for collapsable markdown (i.e.
+                with <code>&lt;details&gt;</code> and
+                <code>&lt;summary&gt;</code> tags).
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where documentation build would fail due to a symbol
+                name being a non-string value. Fixes
+                <a href="https://github.com/onury/docma/issues/54">#54</a>.
+            </li>
+            <li>
+                An issue where the web app would throw
+                <code>Uncaught TypeError</code> when invalid JSDoc type
+                specified for <code>@returns</code>. Fixes
+                <a href="https://github.com/onury/docma/issues/55">#55</a>.
+            </li>
+            <li>
+                Fixed
+                <a href="https://www.owasp.org/index.php/Reverse_Tabnabbing"
+                    >"Reverse Tabnabbing" vulnerability</a
+                >
+                with generated documentation links. (This is also fixed for
+                Zebra template.)
+            </li>
+            <li>
+                An issue where <code>base</code> tag would not be added to the
+                head of main document.
+            </li>
+            <li>
+                An issue where Docma would not set default
+                <code>app.base</code> path to <code>/</code> as expected. Fixes
+                <a href="https://github.com/onury/docma/issues/59">#59</a>.
+            </li>
+            <li>
+                An issue where symbol link would be parsed as absolute path
+                rather than relative. Fixes
+                <a href="https://github.com/onury/docma/issues/50">#50</a>.
+            </li>
+            <li>
+                (Zebra template) Fixed an issue where tags such as
+                <code>@constant</code> and <code>@module</code> would cause an
+                <code>Uncaught TypeError</code>. Fixes
+                <a href="https://github.com/onury/docma/issues/50">#41</a> and
+                <a href="https://github.com/onury/docma/issues/45">#45</a>.
+            </li>
+        </ul>
+        <h2 id="210--2018-04-29-">
+            <a href="https://github.com/onury/docma/compare/v2.0.0...v2.1.0"
+                >2.1.0</a
+            >
+            (2018-04-29)
+        </h2>
+        <hr />
+        <h3 id="docma-cli">Docma CLI</h3>
+        <blockquote>
+            <p>
+                Thanks to <a href="https://github.com/feugy">@feugy</a> for this
+                PR.
+            </p>
+        </blockquote>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                <code>serve</code> command now takes
+                <code>conf.app.base</code> parameter into consideration, and
+                will redirect <code>https://localhost:9000/</code> to it.
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                <code>serve</code> command can handle
+                <code>conf.app.dest</code> relative path, and resolves them
+                against current working directory.
+            </li>
+            <li>
+                A file name issue that produces
+                <code>cannot find module</code> error in case-sensitive systems.
+                Fixes
+                <a href="https://github.com/onury/docma/issues/38">#38</a>.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                Renamed the <code>--quite</code> option to <code>--quiet</code>.
+                Alias <code>-q</code> remains the same.
+            </li>
+        </ul>
+        <h3 id="default-template---zebra-v210">
+            Default Template - Zebra <code>v2.1.0</code>
+        </h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Partial support for TypeScript-style type notation. e.g.
+                <code>Promise&lt;Number&gt;</code> or <code>Number[]</code>,
+                etc...
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where deeper levels of tree nodes were not properly
+                aligned, when <code>sidebar.outline</code> is set to
+                <code>"tree"</code>.
+            </li>
+            <li>
+                An issue where some symbol names were unnecessarily
+                scroll-animated on hover. Firefox was affected.
+            </li>
+            <li>
+                An issue where multiple return types were listed out of style.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                When <code>sidebar.itemsOverflow</code> is set to
+                <code>"crop"</code> (default); symbol names are faded-out on
+                their edges, instead of using ellipsis (which behaves
+                differently on browsers).
+            </li>
+        </ul>
+        <h2 id="200--2018-04-12-">
+            <a href="https://github.com/onury/docma/compare/v1.5.3...v2.0.0"
+                >2.0.0</a
+            >
+            (2018-04-12)
+        </h2>
+        <hr />
+        <blockquote>
+            <p>
+                <em>This is a big release with some breaking changes.</em
+                ><br /><em
+                    >Please read this changelog thoroughly before updating your
+                    Docma configuration.</em
+                >
+            </p>
+        </blockquote>
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Support for documenting code with
+                <strong>ES2015</strong> syntax. (JSDoc and jsdoc-x dep. update.)
+                Fixes
+                <a href="https://github.com/onury/docma/issues/18">#18</a> and
+                <a href="https://github.com/onury/docma/issues/21">#21</a>.
+            </li>
+            <li>
+                <code>assets</code> build configuration which provides ability
+                to copy defined asset files/directories to build directory; so
+                you can use/link to non-source, static asset files (such as
+                images, PDFs, etc). See
+                <a href="https://onury.io/docma/api/#Docma~BuildConfiguration"
+                    >build configuration</a
+                >. Fixes
+                <a href="https://github.com/onury/docma/issues/29">#29</a>.
+            </li>
+            <li>
+                Pre-build and post-build process support for Docma templates.
+                See
+                <a href="https://onury.io/docma/templates/guide"
+                    >Docma Templates documentation</a
+                >.
+            </li>
+            <li><code>markdown.xhtml</code> option for build configuration.</li>
+            <li>Docma version compatibility check for Docma templates.</li>
+            <li>
+                <code>clean</code> option that specifies whether to empty
+                destination directory before the build. Default is
+                <code>false</code>.
+            </li>
+            <li>
+                Build statistics logs to console output. Now, displaying gzipped
+                size of generated (docma-web) script, in addition to minified
+                size; and more detailed summary of routes configured.
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where the builder would not check for duplicate route
+                names with the same route type (and silently overwrite the
+                generated content file).
+            </li>
+            <li>
+                An issue where compiled template scripts were altered when
+                full-debug is enabled.
+            </li>
+            <li>
+                An issue with redirecting a page when the routing method is set
+                to <code>"path"</code>.
+            </li>
+            <li>
+                An issue with images in HTML (generated from markdown) that
+                would overflow out of page. Now, limiting the image width to
+                <code>100%</code> of parent container while keeping the aspect
+                ratio.
+            </li>
+            <li>
+                An issue with generated heading ids when building docs from
+                markdown. Other HTML tags contained within the heading were not
+                ignored, resulting in too complex ids (bookmarks).
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                <strong>BREAKING</strong>: Due to several upgrades (such as
+                <code>jsdom</code>), Docma v2+ requires Node.js v6 or newer.
+            </li>
+            <li>
+                Greatly improved the symbol sorting logic (<a
+                    href="https://github.com/onury/jsdoc-x"
+                    >jsdoc-x</a
+                >). You can now sort by <code>scope</code>, by
+                <code>access</code> type, by <code>kind</code>,
+                <code>grouped</code> or <code>alphabetic</code> (default). See
+                <code>jsdoc.sort</code> option in
+                <a href="https://onury.io/docma/api/#Docma~BuildConfiguration"
+                    >build configuration</a
+                >.
+            </li>
+            <li>
+                The destination directory is not auto-cleaned anymore before the
+                build. Use <code>clean</code> option for the old behavior. Fixes
+                <a href="https://github.com/onury/docma/issues/34">#34</a>.
+            </li>
+            <li>
+                Improved markdown parser. Both <code>&lt;h1 /&gt;</code> and
+                <code>&lt;h2 /&gt;</code> tags are now followed with a
+                <code>&lt;hr/&gt;</code>, like on GitHub.
+            </li>
+            <li>Updated core dependencies to their latest versions.</li>
+            <li>Migrated all code to ES2015.</li>
+            <li>
+                <strong>BREAKING</strong>: Docma templates are now node modules.
+                Docma still comes with an updated, built-in default template
+                (Zebra). But templates designed for Docma v1.x will not work
+                with Docma v2.x.
+            </li>
+        </ul>
+        <h4 id="removed">Removed</h4>
+        <ul>
+            <li>
+                <strong>For template authors only</strong>:
+                <ul>
+                    <li>
+                        <strong>BREAKING</strong>:
+                        <code>docma.template.json</code> file that defines the
+                        template build and configuration options is dropped in
+                        favor of template module main (JS) file or
+                        <code>package.json</code>. There are several other
+                        improvements. See updated documentation on
+                        <a href="https://onury.io/docma/templates/guide"
+                            >Creating Docma Templates</a
+                        >.
+                    </li>
+                    <li>
+                        <strong>BREAKING</strong>: <code>compile</code> property
+                        of template configuration is removed. Now, scripts or
+                        less/sass files of the template should be pre-compiled.
+                        This is logical and speeds up the documentation build
+                        process of Docma.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="docma-cli">Docma CLI</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Option <code>--clean</code> to empty destination directory
+                before the build.
+            </li>
+            <li>
+                Command <code>docma serve</code> for starting a static server
+                for serving / testing the generated SPA.
+            </li>
+            <li>
+                Command <code>docma template init</code> for initializing a new
+                Docma template project.
+            </li>
+            <li>
+                Command <code>docma template doctor</code> for diagnosing a
+                Docma template. Useful for template authors.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                Dropped default configuration file <strong>name</strong>
+                <code>docma.config.json</code> in favor of
+                <code>docma.json</code> (shorter) and
+                <code>.docma.json</code> if you need to hide it. This does not
+                break anything, you can still use the former if you want.
+            </li>
+            <li>
+                CLI will now auto-check for a <code>docma.json</code> (or
+                <code>.docma.json</code>) file in the current working directory
+                if <code>-c</code> option is omitted.
+            </li>
+            <li>
+                Options <code>-v</code> (lowercase) and
+                <code>-V</code> (uppercase) are swapped. <code>-v</code> gets
+                the Docma version now (alias <code>--version</code>). And
+                <code>-V</code> is <code>--verbose</code>.
+            </li>
+        </ul>
+        <p>
+            See <a href="https://onury.io/docma/cli">CLI documentation</a> for
+            detailed information on updated CLI.
+        </p>
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Event <code>navigate</code> that's triggered either when route
+                is changed or on hash-change.
+            </li>
+            <li>
+                Each symbol in
+                <code>docma.apis[name].documentation</code> instances, now has a
+                <code>.$docmaLink</code> property.
+            </li>
+            <li>
+                New utility methods to <code>DocmaWeb.Utils</code>:
+                <code>.type()</code>, <code>.getSymbolLink()</code>,
+                <code>.getLevels()</code>, <code>.getParentName()</code>,
+                <code>.getParent()</code>, <code>.isPackagePrivate()</code>,
+                <code>.isEvent()</code>, <code>.isGenerator()</code>,
+                <code>.isCallback()</code>, <code>.isConstant()</code>,
+                <code>.isInterface()</code>, <code>.isExternal()</code> and
+                <code>.isMixin()</code>.
+            </li>
+            <li>
+                Utility methods <code>.getCodeTags()</code>,
+                <code>.getFormattedTypeList()</code>. Fixes
+                <a href="https://github.com/onury/docma/issues/33">#33</a>.
+            </li>
+            <li>
+                Utility method <code>.trimNewLines()</code>. This also has a
+                dust filter <code>$tnl</code>.
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                Broken bookmark links due to URI encoded characters after hash
+                (<code>#</code>). e.g. when navigated to
+                <code>#MyClass%7EInnerObject</code> instead of
+                <code>#MyClass~InnerObject</code>.
+            </li>
+            <li>
+                An issue with <code>DocmaWeb.Utils.getLongName()</code>, occured
+                after JSDoc core upgrade.
+            </li>
+            <li>
+                <code>currentRoute</code> parameter of the
+                <code>route</code> event. Passing <code>null</code> instead of
+                empty route object when route does not exist.
+            </li>
+            <li>
+                An issue with <code>DocmaWeb.Utils.isClass()</code> utility
+                method where <code>meta.code.type</code> is not set to
+                <code>ClassDeclaration</code>.
+            </li>
+            <li>
+                <code>DocmaWeb.Utils.isProperty()</code> utility method. It'll
+                now return <code>false</code> if symbol is a method/function.
+                This also affects the following methods:
+                <code>.isStaticProperty()</code>,
+                <code>.isInstanceProperty()</code>.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                <strong>BREAKING</strong>: Docma utility methods are moved to
+                <code>DocmaWeb.Utils</code> static namespace (formerly under
+                <code>docma.utils</code>).
+            </li>
+            <li>
+                <code>DocmaWeb.Utils.getSymbolByName()</code> signature is
+                changed.
+            </li>
+            <li>Updated web-core dependencies.</li>
+        </ul>
+        <h3 id="docma-template-api">Docma Template API</h3>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                Docma templates are now node modules. This is the initial
+                Template API. See updated documentation on
+                <a href="https://onury.io/docma/templates/guide"
+                    >Creating Docma Templates</a
+                >.
+            </li>
+        </ul>
+        <h3 id="default-template---zebra-v200">
+            Default Template - Zebra <code>v2.0.0</code>
+        </h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Support for
+                <code>@example &lt;caption&gt;Title&lt;/caption&gt;</code>.
+                Fixes
+                <a href="https://github.com/onury/docma/issues/14">issue #14</a
+                >.
+            </li>
+            <li>
+                Support for <code>@hideconstructor</code> tag. Fixes
+                <a href="https://github.com/onury/docma/issues/21">issue #21</a
+                >.
+            </li>
+            <li>
+                Support for <code>@event</code>, <code>@emits</code> (and alias
+                <code>@fires</code>) tags. Fixes
+                <a href="https://github.com/onury/docma/issues/35">issue #35</a
+                >.
+            </li>
+            <li>
+                Support for <code>@generator</code> and
+                <code>@yields</code> tags.
+            </li>
+            <li>Support for rest parameters (i.e. <code>...args</code>).</li>
+            <li>Support for <code>@since</code> tag.</li>
+            <li>
+                Support for folding child members of parent symbols. Added
+                template option
+                <code>sidebar.itemsFolded</code> (<code>boolean</code>) for
+                setting the initial state. Fixes
+                <a href="https://github.com/onury/docma/issues/26">issue #26</a
+                >.
+            </li>
+            <li>
+                Template option
+                <code>sidebar.toolbar</code> (<code>boolean</code>) that toggles
+                a tiny toolbar below the search box, for switching symbol list
+                outline or quick-filtering symbols by symbol-kind. Enabled by
+                default.
+            </li>
+            <li>
+                Template option <code>logo</code> (<code>String|Object</code>)
+                specifies the URL of your logo. If you need separate logos for
+                dark and light backgrounds set this to an object. i.e.
+                <code>{ dark: String, light: String }</code>. Recommended size
+                of a logo image is 120 x 120 pixels.
+            </li>
+            <li>
+                Template option
+                <code>symbols.autoLink</code> (<code>Boolean|String</code>)
+                specifies whether documented types should be auto-linked to
+                <code>internal</code> paths (i.e. Docma route if type/object
+                definition is within the generated documentation) or
+                <code>external</code> URLs (MDN docs if it's a JS or Web-API
+                built-in type/object such as <code>String</code>); or both.
+                Thanks to
+                <a href="https://github.com/warpdesign">@warpdesign</a> for the
+                <a
+                    href="https://github.com/onury/docma/issues/30#issuecomment-353888926"
+                    >idea</a
+                >.
+            </li>
+            <li>
+                Template options <code>symbols.params</code>,
+                <code>symbols.props</code> and <code>symbols.enums</code> all
+                taking a string value, either <code>"list"</code> (default) or
+                <code>"table"</code>; defining the layout style for parameters,
+                properties and enumerations. If you like the design in previous
+                versions, set these to <code>"table"</code>.
+            </li>
+            <li>
+                Template option <code>sidebar.animations</code> and
+                <code>navbar.animations</code> (<code>Boolean</code>) specifies
+                whether CSS transitions and animations should be enabled for
+                navbar, sidebar and listed symbols.
+            </li>
+            <li>
+                Template option <code>contentView.bookmarks</code> option
+                (<code>Boolean|String</code>) which automatically adds bookmark
+                links to headings to content generated from markdown files.
+                Default: <code>false</code>.
+            </li>
+            <li><code>generator</code> badge for generator functions.</li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                Some spacing issues with class descriptions. Empty tables are
+                auto-removed now.
+            </li>
+            <li>
+                A JSDoc issue where the constructor would be incorrectly marked
+                as alias.
+            </li>
+            <li>
+                An anchor/bookmark issue with multiple symbols having the same
+                id.
+            </li>
+            <li>
+                Sub-symbols that are listed in a table, will not wrap to new
+                line anymore.
+            </li>
+            <li>
+                An issue where the (heading) title would be hidden under the
+                nav-bar when navigated via a local bookmark on a page, generated
+                from a markdown file. Also improved spacing for headings.
+            </li>
+            <li>
+                An issue where the page would not scroll/jump to the bookmark on
+                initial load; when the URL has a location hash.
+            </li>
+            <li>
+                Pre/code elements not to wrap content. Now, horizontally
+                scrollable (like on GitHub).
+            </li>
+            <li>
+                An issue with sidebar symbol names auto-resizing incorrectly in
+                some cases. Also improved performance by caching font-size for
+                each item.
+            </li>
+            <li>
+                hidden meta issue. If symbol had no class description, tags such
+                as <code>@author</code>, <code>@version</code> and
+                <code>@copyright</code> would not be shown.
+            </li>
+            <li>Sidebar scrollbars that were not fully visible.</li>
+            <li>Some issues with navbar margins when sidebar is disabled.</li>
+            <li>
+                Sidebar and navbar title so that they allow longer strings
+                without breaking.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Default template finally has a name :) - Zebra.</li>
+            <li>
+                <strong>BREAKING</strong>: You need Docma v2+ for latest Zebra
+                template to work.
+            </li>
+            <li>
+                Improved symbol listing styles and performance. Using CSS
+                transitions instead of JS manipulation. Also; when search is
+                active, outline is temporarily set to <code>"flat"</code> so
+                that you see the parent of the symbol. When search box is
+                cleaned, it's set back to the initial template setting. (e.g.
+                <code>"tree"</code> if set).
+            </li>
+            <li>
+                Improved <code>@example</code> outputs. If there are multiple
+                examples for a symbol, they will be numbered now.
+            </li>
+            <li>
+                Improved nested bullet list spacing, for better readability.
+            </li>
+            <li>
+                Improved UI and responsive layout. On small screens, sidebar
+                auto-collapses; top navbar turns into hamburger menu. Also,
+                truly printable.
+            </li>
+            <li>
+                Improved template option <code>.badges</code> (default:
+                <code>true</code>) to also accept a string value for custom
+                bullets instead of badges.
+            </li>
+            <li>
+                Improved template option <code>.title</code> to also accept an
+                object <code>{ label:String, href:String }</code> so you can
+                link it.
+            </li>
+            <li>Various other improvements and clean up.</li>
+        </ul>
+        <h4 id="deprecated">Deprecated</h4>
+        <ul>
+            <li>
+                The template options object structure is changed and a couple of
+                options are renamed. Old structure is still supported and it
+                won't break anything but this support will be removed in future
+                versions. See documentation for the new &amp; improved
+                structure.
+            </li>
+        </ul>
+        <h4 id="removed">Removed</h4>
+        <ul>
+            <li>
+                <strong>BREAKING</strong>: icomoon selection of icons (and
+                <code>ico-</code> CSS prefix) in favor of FontAwsome (v5) and
+                SVG icons support.
+            </li>
+            <li>
+                Bootstrap and its dependencies (css and js). Also, cleaned up
+                all unused styles.
+            </li>
+        </ul>
+        <br />
 
-<html><head></head><body><h1 id="docma-changelog">Docma Changelog</h1>
-<hr />
-<p>All notable changes to this project will be documented in this file. The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="https://semver.org">Semantic Versioning</a>.</p>
-<h2 id="324--2020-06-18-"><a href="https://github.com/onury/docma/compare/v3.2.2...v3.2.4">3.2.4</a> (2020-06-18)</h2>
-<hr />
-<h3 id="fixed">Fixed</h3>
-<ul>
-<li>  Updated all dependencies to latest</li>
-<li>  Patched serve script</li>
-</ul>
-<h2 id="322--2019-01-08-"><a href="https://github.com/onury/docma/compare/v3.1.0...v3.2.2">3.2.2</a> (2019-01-08)</h2>
-<hr />
-<h3 id="fixed">Fixed</h3>
-<ul>
-<li>  An issue where enumeration value would be incorrectly displayed as <code>undefined</code> in docs parsed from ES5 code.</li>
-<li>  An issue where <code>jsdoc.predicate</code> (or <code>jsdoc.filter</code>) option would not be taken into account.</li>
-<li>  An issue where favicon would not be copied over to the output dir.</li>
-<li>  (Zebra Template) An issue where some special characters within the location hash would cause an error.</li>
-<li>  <code>Invalid assignment</code> error due to ES2015 syntax.</li>
-</ul>
-<h3 id="added">Added</h3>
-<ul>
-<li>  Support for handling notation with multiple sub-types. e.g. <code>Map&lt;String, Object&gt;</code>. (PR <a href="https://github.com/onury/docma/pull/65">#65</a> by <a href="https://github.com/MaienM">@MaienM</a>)</li>
-</ul>
-<h3 id="changed">Changed</h3>
-<ul>
-<li>  Improved / cleaner symbol names and long names. This also fixes a JSDoc bug that unnecessarily and incorrectly wraps the last level of the notation in quotes and brackets.</li>
-<li>  Updated dependencies to their latest versions.</li>
-</ul>
-<h2 id="310--2018-12-04-"><a href="https://github.com/onury/docma/compare/v3.0.0...v3.1.0">3.1.0</a> (2018-12-04)</h2>
-<hr />
-<h3 id="fixed">Fixed</h3>
-<ul>
-<li>  An issue with <code>"path"</code> routing which led to 404 page, occurred when a (deep) route was refreshed or loaded directly. (Due to a bug in core dependency.) Fixes <a href="https://github.com/onury/docma/issues/62">#62</a>.</li>
-<li>  An issue where a (harmless) <code>TypeError</code> was thrown when <code>debug</code> is enabled.</li>
-<li>  An issue with <code>$docmaLink</code> due to missing trailing slash, when routing method is <code>"path"</code>.</li>
-</ul>
-<h3 id="added">Added</h3>
-<ul>
-<li>  (Zebra Template) Added JSDoc <code>@default</code> tag support for symbols. Fixes <a href="https://github.com/onury/docma/issues/60">#60</a>.</li>
-<li>  (Zebra Template) Added option <code>contentView.faLibs</code> that defines FontAwesome libraries to be included, such as <code>solid</code>, <code>regular</code>, <code>brands</code>. Set to <code>null</code> to completely exclude FontAwesome from the output. See Zebra documentation. Fixes <a href="https://github.com/onury/docma/issues/63">#63</a>.</li>
-<li>  (Zebra Template) Added option <code>contentView.faVersion</code> that defines FontAwesome icon library version to be included.</li>
-</ul>
-<h3 id="changed">Changed</h3>
-<ul>
-<li>  Improved SPA route handling.</li>
-<li>  Updated dependencies to latest versions.</li>
-</ul>
-<h2 id="300--2018-11-18-"><a href="https://github.com/onury/docma/compare/v2.1.0...v3.0.0">3.0.0</a> (2018-11-18)</h2>
-<hr />
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  <strong>BREAKING</strong>: Dropped support for Node.js versions 6 &amp; 7. Requires Node.js v8 and later. This change is due to updates to the core dependencies such as <code>fs-extra</code>, <code>jsdoc-x</code> and <code>jsdom</code>.</li>
-<li>  Improved path/query routing.</li>
-<li>  <strong>BREAKING</strong>: Linking logic has <a href="https://onury.io/docma/faq/#linking">some changes</a>.</li>
-<li>  (Zebra template) Improved support for constant symbols.</li>
-</ul>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Ability to force parser type on defined files/paths; by appending a suffix. For Markdown, append <code>:md</code> or <code>:markdown</code>. For HTML, append <code>:htm</code> or <code>html</code>. For example, <code>LICENSE:md</code> will force-parse <code>LICENSE</code> file as markdown. <code>file.partial:html</code> will force-parse <code>file.partial</code> as HTML.</li>
-<li>  Ability to create deeper paths for named groups/routes. e.g. <code>mylib/latest</code></li>
-<li>  Support for favicon. Set <code>app.favicon</code> to your ICO file's local path.</li>
-<li>  Support for collapsable markdown (i.e. with <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags). This is great for generating styled collapsable lists (such as F.A.Q.) from your markdown files. If a bookmark (id) is passed in the location hash, that item will auto-expand. See <a href="https://onury.io/docma/faq">Docma F.A.Q.</a> for an example. <em>Note that Edge <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/detailssummary/">does not support</a> details/summary tags yet. All other modern browsers have support.</em></li>
-<li>  Ability to hide or remove specific, partial content from Docma output. For example if you want some <strong>part</strong> of your README to be visible in GitHub repo but not in your Docma generated documentation... See <a href="https://onury.io/docma/faq#hide-remove">this</a> for details.</li>
-<li>  New CLI option (<code>-b</code> or <code>--base</code>) for <code>docma serve</code> command to override/set the base path.</li>
-<li>  (Zebra Template) Added support for collapsable markdown (i.e. with <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags).</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where documentation build would fail due to a symbol name being a non-string value. Fixes <a href="https://github.com/onury/docma/issues/54">#54</a>.</li>
-<li>  An issue where the web app would throw <code>Uncaught TypeError</code> when invalid JSDoc type specified for <code>@returns</code>. Fixes <a href="https://github.com/onury/docma/issues/55">#55</a>.</li>
-<li>  Fixed <a href="https://www.owasp.org/index.php/Reverse_Tabnabbing">"Reverse Tabnabbing" vulnerability</a> with generated documentation links. (This is also fixed for Zebra template.)</li>
-<li>  An issue where <code>base</code> tag would not be added to the head of main document.</li>
-<li>  An issue where Docma would not set default <code>app.base</code> path to <code>/</code> as expected. Fixes <a href="https://github.com/onury/docma/issues/59">#59</a>.</li>
-<li>  An issue where symbol link would be parsed as absolute path rather than relative. Fixes <a href="https://github.com/onury/docma/issues/50">#50</a>.</li>
-<li>  (Zebra template) Fixed an issue where tags such as <code>@constant</code> and <code>@module</code> would cause an <code>Uncaught TypeError</code>. Fixes <a href="https://github.com/onury/docma/issues/50">#41</a> and <a href="https://github.com/onury/docma/issues/45">#45</a>.</li>
-</ul>
-<h2 id="210--2018-04-29-"><a href="https://github.com/onury/docma/compare/v2.0.0...v2.1.0">2.1.0</a> (2018-04-29)</h2>
-<hr />
-<h3 id="docma-cli">Docma CLI</h3>
-<blockquote>
-<p>Thanks to <a href="https://github.com/feugy">@feugy</a> for this PR.</p>
-</blockquote>
-<h4 id="added">Added</h4>
-<ul>
-<li>  <code>serve</code> command now takes <code>conf.app.base</code> parameter into consideration, and will redirect <code>https://localhost:9000/</code> to it.</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  <code>serve</code> command can handle <code>conf.app.dest</code> relative path, and resolves them against current working directory.</li>
-<li>  A file name issue that produces <code>cannot find module</code> error in case-sensitive systems. Fixes <a href="https://github.com/onury/docma/issues/38">#38</a>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Renamed the <code>--quite</code> option to <code>--quiet</code>. Alias <code>-q</code> remains the same.</li>
-</ul>
-<h3 id="default-template---zebra-v210">Default Template - Zebra <code>v2.1.0</code></h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Partial support for TypeScript-style type notation. e.g. <code>Promise&lt;Number&gt;</code> or <code>Number[]</code>, etc...</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where deeper levels of tree nodes were not properly aligned, when <code>sidebar.outline</code> is set to <code>"tree"</code>.</li>
-<li>  An issue where some symbol names were unnecessarily scroll-animated on hover. Firefox was affected.</li>
-<li>  An issue where multiple return types were listed out of style.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  When <code>sidebar.itemsOverflow</code> is set to <code>"crop"</code> (default); symbol names are faded-out on their edges, instead of using ellipsis (which behaves differently on browsers).</li>
-</ul>
-<h2 id="200--2018-04-12-"><a href="https://github.com/onury/docma/compare/v1.5.3...v2.0.0">2.0.0</a> (2018-04-12)</h2>
-<hr />
-<blockquote>
-<p><em>This is a big release with some breaking changes.</em><br><em>Please read this changelog thoroughly before updating your Docma configuration.</em></p>
-</blockquote>
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Support for documenting code with <strong>ES2015</strong> syntax. (JSDoc and jsdoc-x dep. update.) Fixes <a href="https://github.com/onury/docma/issues/18">#18</a> and <a href="https://github.com/onury/docma/issues/21">#21</a>.</li>
-<li>  <code>assets</code> build configuration which provides ability to copy defined asset files/directories to build directory; so you can use/link to non-source, static asset files (such as images, PDFs, etc). See <a href="https://onury.io/docma/api/#Docma~BuildConfiguration">build configuration</a>. Fixes <a href="https://github.com/onury/docma/issues/29">#29</a>.</li>
-<li>  Pre-build and post-build process support for Docma templates. See <a href="https://onury.io/docma/templates/guide">Docma Templates documentation</a>.</li>
-<li>  <code>markdown.xhtml</code> option for build configuration.</li>
-<li>  Docma version compatibility check for Docma templates.</li>
-<li>  <code>clean</code> option that specifies whether to empty destination directory before the build. Default is <code>false</code>.</li>
-<li>  Build statistics logs to console output. Now, displaying gzipped size of generated (docma-web) script, in addition to minified size; and more detailed summary of routes configured.</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where the builder would not check for duplicate route names with the same route type (and silently overwrite the generated content file).</li>
-<li>  An issue where compiled template scripts were altered when full-debug is enabled.</li>
-<li>  An issue with redirecting a page when the routing method is set to <code>"path"</code>.</li>
-<li>  An issue with images in HTML (generated from markdown) that would overflow out of page. Now, limiting the image width to <code>100%</code> of parent container while keeping the aspect ratio.</li>
-<li>  An issue with generated heading ids when building docs from markdown. Other HTML tags contained within the heading were not ignored, resulting in too complex ids (bookmarks).</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  <strong>BREAKING</strong>: Due to several upgrades (such as <code>jsdom</code>), Docma v2+ requires Node.js v6 or newer.</li>
-<li>  Greatly improved the symbol sorting logic (<a href="https://github.com/onury/jsdoc-x">jsdoc-x</a>). You can now sort by <code>scope</code>, by <code>access</code> type, by <code>kind</code>, <code>grouped</code> or <code>alphabetic</code> (default). See <code>jsdoc.sort</code> option in <a href="https://onury.io/docma/api/#Docma~BuildConfiguration">build configuration</a>.</li>
-<li>  The destination directory is not auto-cleaned anymore before the build. Use <code>clean</code> option for the old behavior. Fixes <a href="https://github.com/onury/docma/issues/34">#34</a>.</li>
-<li>  Improved markdown parser. Both <code>&lt;h1 /&gt;</code> and <code>&lt;h2 /&gt;</code> tags are now followed with a <code>&lt;hr/&gt;</code>, like on GitHub.</li>
-<li>  Updated core dependencies to their latest versions.</li>
-<li>  Migrated all code to ES2015.</li>
-<li>  <strong>BREAKING</strong>: Docma templates are now node modules. Docma still comes with an updated, built-in default template (Zebra). But templates designed for Docma v1.x will not work with Docma v2.x.</li>
-</ul>
-<h4 id="removed">Removed</h4>
-<ul>
-<li><strong>For template authors only</strong>:<ul>
-<li>  <strong>BREAKING</strong>: <code>docma.template.json</code> file that defines the template build and configuration options is dropped in favor of template module main (JS) file or <code>package.json</code>. There are several other improvements. See updated documentation on <a href="https://onury.io/docma/templates/guide">Creating Docma Templates</a>.</li>
-<li>  <strong>BREAKING</strong>: <code>compile</code> property of template configuration is removed. Now, scripts or less/sass files of the template should be pre-compiled. This is logical and speeds up the documentation build process of Docma.</li>
-</ul>
-</li>
-</ul>
-<h3 id="docma-cli">Docma CLI</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Option <code>--clean</code> to empty destination directory before the build.</li>
-<li>  Command <code>docma serve</code> for starting a static server for serving / testing the generated SPA.</li>
-<li>  Command <code>docma template init</code> for initializing a new Docma template project.</li>
-<li>  Command <code>docma template doctor</code> for diagnosing a Docma template. Useful for template authors.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Dropped default configuration file <strong>name</strong> <code>docma.config.json</code> in favor of <code>docma.json</code> (shorter) and <code>.docma.json</code> if you need to hide it. This does not break anything, you can still use the former if you want.</li>
-<li>  CLI will now auto-check for a <code>docma.json</code> (or <code>.docma.json</code>) file in the current working directory if <code>-c</code> option is omitted.</li>
-<li>  Options <code>-v</code> (lowercase) and <code>-V</code> (uppercase) are swapped. <code>-v</code> gets the Docma version now (alias <code>--version</code>). And <code>-V</code> is <code>--verbose</code>.</li>
-</ul>
-<p>See <a href="https://onury.io/docma/cli">CLI documentation</a> for detailed information on updated CLI.</p>
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Event <code>navigate</code> that's triggered either when route is changed or on hash-change.</li>
-<li>  Each symbol in <code>docma.apis[name].documentation</code> instances, now has a <code>.$docmaLink</code> property.</li>
-<li>  New utility methods to <code>DocmaWeb.Utils</code>: <code>.type()</code>, <code>.getSymbolLink()</code>, <code>.getLevels()</code>, <code>.getParentName()</code>, <code>.getParent()</code>, <code>.isPackagePrivate()</code>, <code>.isEvent()</code>, <code>.isGenerator()</code>, <code>.isCallback()</code>, <code>.isConstant()</code>, <code>.isInterface()</code>, <code>.isExternal()</code> and <code>.isMixin()</code>.</li>
-<li>  Utility methods <code>.getCodeTags()</code>, <code>.getFormattedTypeList()</code>. Fixes <a href="https://github.com/onury/docma/issues/33">#33</a>.</li>
-<li>  Utility method <code>.trimNewLines()</code>. This also has a dust filter <code>$tnl</code>.</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Broken bookmark links due to URI encoded characters after hash (<code>#</code>). e.g. when navigated to <code>#MyClass%7EInnerObject</code> instead of <code>#MyClass~InnerObject</code>.</li>
-<li>  An issue with <code>DocmaWeb.Utils.getLongName()</code>, occured after JSDoc core upgrade.</li>
-<li>  <code>currentRoute</code> parameter of the <code>route</code> event. Passing <code>null</code> instead of empty route object when route does not exist.</li>
-<li>  An issue with <code>DocmaWeb.Utils.isClass()</code> utility method where <code>meta.code.type</code> is not set to <code>ClassDeclaration</code>.</li>
-<li>  <code>DocmaWeb.Utils.isProperty()</code> utility method. It'll now return <code>false</code> if symbol is a method/function. This also affects the following methods: <code>.isStaticProperty()</code>, <code>.isInstanceProperty()</code>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  <strong>BREAKING</strong>: Docma utility methods are moved to <code>DocmaWeb.Utils</code> static namespace (formerly under <code>docma.utils</code>).</li>
-<li>  <code>DocmaWeb.Utils.getSymbolByName()</code> signature is changed.</li>
-<li>  Updated web-core dependencies.</li>
-</ul>
-<h3 id="docma-template-api">Docma Template API</h3>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Docma templates are now node modules. This is the initial Template API. See updated documentation on <a href="https://onury.io/docma/templates/guide">Creating Docma Templates</a>.</li>
-</ul>
-<h3 id="default-template---zebra-v200">Default Template - Zebra <code>v2.0.0</code></h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Support for <code>@example &lt;caption&gt;Title&lt;/caption&gt;</code>. Fixes <a href="https://github.com/onury/docma/issues/14">issue #14</a>.</li>
-<li>  Support for <code>@hideconstructor</code> tag. Fixes <a href="https://github.com/onury/docma/issues/21">issue #21</a>.</li>
-<li>  Support for <code>@event</code>, <code>@emits</code> (and alias <code>@fires</code>) tags. Fixes <a href="https://github.com/onury/docma/issues/35">issue #35</a>.</li>
-<li>  Support for <code>@generator</code> and <code>@yields</code> tags.</li>
-<li>  Support for rest parameters (i.e. <code>...args</code>).</li>
-<li>  Support for <code>@since</code> tag.</li>
-<li>  Support for folding child members of parent symbols. Added template option <code>sidebar.itemsFolded</code> (<code>boolean</code>) for setting the initial state. Fixes <a href="https://github.com/onury/docma/issues/26">issue #26</a>.</li>
-<li>  Template option <code>sidebar.toolbar</code> (<code>boolean</code>) that toggles a tiny toolbar below the search box, for switching symbol list outline or quick-filtering symbols by symbol-kind. Enabled by default.</li>
-<li>  Template option <code>logo</code> (<code>String|Object</code>) specifies the URL of your logo. If you need separate logos for dark and light backgrounds set this to an object. i.e. <code>{ dark: String, light: String }</code>. Recommended size of a logo image is 120 x 120 pixels.</li>
-<li>  Template option <code>symbols.autoLink</code> (<code>Boolean|String</code>) specifies whether documented types should be auto-linked to <code>internal</code> paths (i.e. Docma route if type/object definition is within the generated documentation) or <code>external</code> URLs (MDN docs if it's a JS or Web-API built-in type/object such as <code>String</code>); or both. Thanks to <a href="https://github.com/warpdesign">@warpdesign</a> for the <a href="https://github.com/onury/docma/issues/30#issuecomment-353888926">idea</a>.</li>
-<li>  Template options <code>symbols.params</code>, <code>symbols.props</code> and <code>symbols.enums</code> all taking a string value, either <code>"list"</code> (default) or <code>"table"</code>; defining the layout style for parameters, properties and enumerations. If you like the design in previous versions, set these to <code>"table"</code>.</li>
-<li>  Template option <code>sidebar.animations</code> and <code>navbar.animations</code> (<code>Boolean</code>) specifies whether CSS transitions and animations should be enabled for navbar, sidebar and listed symbols.</li>
-<li>  Template option <code>contentView.bookmarks</code> option (<code>Boolean|String</code>) which automatically adds bookmark links to headings to content generated from markdown files. Default: <code>false</code>.</li>
-<li>  <code>generator</code> badge for generator functions.</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Some spacing issues with class descriptions. Empty tables are auto-removed now.</li>
-<li>  A JSDoc issue where the constructor would be incorrectly marked as alias.</li>
-<li>  An anchor/bookmark issue with multiple symbols having the same id.</li>
-<li>  Sub-symbols that are listed in a table, will not wrap to new line anymore.</li>
-<li>  An issue where the (heading) title would be hidden under the nav-bar when navigated via a local bookmark on a page, generated from a markdown file. Also improved spacing for headings.</li>
-<li>  An issue where the page would not scroll/jump to the bookmark on initial load; when the URL has a location hash.</li>
-<li>  Pre/code elements not to wrap content. Now, horizontally scrollable (like on GitHub).</li>
-<li>  An issue with sidebar symbol names auto-resizing incorrectly in some cases. Also improved performance by caching font-size for each item.</li>
-<li>  hidden meta issue. If symbol had no class description, tags such as <code>@author</code>, <code>@version</code> and <code>@copyright</code> would not be shown.</li>
-<li>  Sidebar scrollbars that were not fully visible.</li>
-<li>  Some issues with navbar margins when sidebar is disabled.</li>
-<li>  Sidebar and navbar title so that they allow longer strings without breaking.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Default template finally has a name :) - Zebra.</li>
-<li>  <strong>BREAKING</strong>: You need Docma v2+ for latest Zebra template to work.</li>
-<li>  Improved symbol listing styles and performance. Using CSS transitions instead of JS manipulation. Also; when search is active, outline is temporarily set to <code>"flat"</code> so that you see the parent of the symbol. When search box is cleaned, it's set back to the initial template setting. (e.g. <code>"tree"</code> if set).</li>
-<li>  Improved <code>@example</code> outputs. If there are multiple examples for a symbol, they will be numbered now.</li>
-<li>  Improved nested bullet list spacing, for better readability.</li>
-<li>  Improved UI and responsive layout. On small screens, sidebar auto-collapses; top navbar turns into hamburger menu. Also, truly printable.</li>
-<li>  Improved template option <code>.badges</code> (default: <code>true</code>) to also accept a string value for custom bullets instead of badges.</li>
-<li>  Improved template option <code>.title</code> to also accept an object <code>{ label:String, href:String }</code> so you can link it.</li>
-<li>  Various other improvements and clean up.</li>
-</ul>
-<h4 id="deprecated">Deprecated</h4>
-<ul>
-<li>  The template options object structure is changed and a couple of options are renamed. Old structure is still supported and it won't break anything but this support will be removed in future versions. See documentation for the new &amp; improved structure.</li>
-</ul>
-<h4 id="removed">Removed</h4>
-<ul>
-<li>  <strong>BREAKING</strong>: icomoon selection of icons (and <code>ico-</code> CSS prefix) in favor of FontAwsome (v5) and SVG icons support.</li>
-<li>  Bootstrap and its dependencies (css and js). Also, cleaned up all unused styles.</li>
-</ul>
-<br>
+        <h2 id="153--2017-12-21-">
+            <a href="https://github.com/onury/docma/compare/v1.5.2...v1.5.3"
+                >1.5.3</a
+            >
+            (2017-12-21)
+        </h2>
+        <hr />
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                A parser issue where carriage return (CR) of Windows newlines
+                (CRLF) were removed. Fixes
+                <a href="https://github.com/onury/docma/issues/28">#28</a>.
+            </li>
+        </ul>
+        <br />
 
-<h2 id="153--2017-12-21-"><a href="https://github.com/onury/docma/compare/v1.5.2...v1.5.3">1.5.3</a> (2017-12-21)</h2>
-<hr />
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  A parser issue where carriage return (CR) of Windows newlines (CRLF) were removed. Fixes <a href="https://github.com/onury/docma/issues/28">#28</a>.</li>
-</ul>
-<br>
+        <h2 id="152--2017-12-09-">
+            <a href="https://github.com/onury/docma/compare/v1.5.1...v1.5.2"
+                >1.5.2</a
+            >
+            (2017-12-09)
+        </h2>
+        <hr />
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                <code>$ is not a function</code> error on Windows. PR
+                <a href="https://github.com/onury/docma/pull/23">#23</a> by
+                <a href="https://github.com/warpdesign">@warpdesign</a>.
+            </li>
+            <li>
+                Some typos in documentation. PRs
+                <a href="https://github.com/onury/docma/pull/13">#13</a>,
+                <a href="https://github.com/onury/docma/pull/17">#17</a>.
+            </li>
+        </ul>
+        <blockquote>
+            <p>
+                <em
+                    ><strong>Note</strong>: For this release, some dependencies
+                    (such as <code>jsdoc-x</code>, <code>jsdom</code>) are NOT
+                    updated on purpose 'cause they introduce breaking changes.
+                    In <strong>v2</strong> (WIP, to be released) these will be
+                    updated and many things will be improved.</em
+                >
+            </p>
+        </blockquote>
+        <br />
 
-<h2 id="152--2017-12-09-"><a href="https://github.com/onury/docma/compare/v1.5.1...v1.5.2">1.5.2</a> (2017-12-09)</h2>
-<hr />
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  <code>$ is not a function</code> error on Windows. PR <a href="https://github.com/onury/docma/pull/23">#23</a> by <a href="https://github.com/warpdesign">@warpdesign</a>.</li>
-<li>  Some typos in documentation. PRs <a href="https://github.com/onury/docma/pull/13">#13</a>, <a href="https://github.com/onury/docma/pull/17">#17</a>.</li>
-</ul>
-<blockquote>
-<p><em><strong>Note</strong>: For this release, some dependencies (such as <code>jsdoc-x</code>, <code>jsdom</code>) are NOT updated on purpose 'cause they introduce breaking changes. In <strong>v2</strong> (WIP, to be released) these will be updated and many things will be improved.</em></p>
-</blockquote>
-<br>
+        <h2 id="151--2017-03-11-">
+            <a href="https://github.com/onury/docma/compare/v1.5.0...v1.5.1"
+                >1.5.1</a
+            >
+            (2017-03-11)
+        </h2>
+        <hr />
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li><code>slice</code> error for non-string default value.</li>
+        </ul>
+        <br />
 
-<h2 id="151--2017-03-11-"><a href="https://github.com/onury/docma/compare/v1.5.0...v1.5.1">1.5.1</a> (2017-03-11)</h2>
-<hr />
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  <code>slice</code> error for non-string default value.</li>
-</ul>
-<br>
+        <h2 id="150--2017-03-10-">
+            <a href="https://github.com/onury/docma/compare/v1.4.7...v1.5.0"
+                >1.5.0</a
+            >
+            (2017-03-10)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                <code>config.jsdoc.ignored:Boolean</code> option which specifies
+                whether to include documentation symbols marked with
+                <code>@ignore</code> tag.
+            </li>
+        </ul>
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where empty lines would be stripped out from
+                <code>@example</code> content.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Improved auto-indention for code in comments.</li>
+            <li>Improved <code>$val</code> filter.</li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Template option <code>outline</code>, which determines the
+                outline style of the sidebar symbols list. (<code>"flat"</code>
+                or <code>"tree"</code>). See
+                <a href="https://onury.github.io/docma/templates/zebra"
+                    >documentation</a
+                >
+                and
+                <a href="https://onury.github.io/accesscontrol/?api=ac"
+                    >this example</a
+                >
+                for <code>outline</code> set to <code>"tree"</code>.
+            </li>
+            <li>
+                Template option <code>symbolMeta</code> which specifies whether
+                to add meta information at the end of each symbol documentation
+                such as code file name and line number. Default is
+                <code>false</code>.
+            </li>
+            <li>
+                <code>static</code> badge for static members,
+                <code>deprecated</code> badge for deprecated symbols.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Improved sidebar design.</li>
+            <li>
+                <code>Type.&lt;T&gt;</code> is now represented as
+                <code>Type&lt;T&gt;</code>.
+            </li>
+            <li>Default string values are now represented in quotes.</li>
+        </ul>
+        <br />
 
-<h2 id="150--2017-03-10-"><a href="https://github.com/onury/docma/compare/v1.4.7...v1.5.0">1.5.0</a> (2017-03-10)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  <code>config.jsdoc.ignored:Boolean</code> option which specifies whether to include documentation symbols marked with <code>@ignore</code> tag.</li>
-</ul>
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where empty lines would be stripped out from <code>@example</code> content.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Improved auto-indention for code in comments.</li>
-<li>  Improved <code>$val</code> filter.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Template option <code>outline</code>, which determines the outline style of the sidebar symbols list. (<code>"flat"</code> or <code>"tree"</code>). See <a href="https://onury.github.io/docma/templates/zebra">documentation</a> and <a href="https://onury.github.io/accesscontrol/?api=ac">this example</a> for <code>outline</code> set to <code>"tree"</code>.</li>
-<li>  Template option <code>symbolMeta</code> which specifies whether to add meta information at the end of each symbol documentation such as code file name and line number. Default is <code>false</code>.</li>
-<li>  <code>static</code> badge for static members, <code>deprecated</code> badge for deprecated symbols.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Improved sidebar design.</li>
-<li>  <code>Type.&lt;T&gt;</code> is now represented as <code>Type&lt;T&gt;</code>.</li>
-<li>  Default string values are now represented in quotes.</li>
-</ul>
-<br>
+        <h2 id="147--2017-03-09-">
+            <a href="https://github.com/onury/docma/compare/v1.4.5...v1.4.7"
+                >1.4.7</a
+            >
+            (2017-03-09)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where build config
+                <code>config.jsdoc.includePattern</code> would not be respected
+                when filtering files.
+            </li>
+            <li>
+                An issue where sorting would change when
+                <code>config.jsdoc.hierarchy</code> option is enabled.
+            </li>
+        </ul>
+        <br />
 
-<h2 id="147--2017-03-09-"><a href="https://github.com/onury/docma/compare/v1.4.5...v1.4.7">1.4.7</a> (2017-03-09)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where build config <code>config.jsdoc.includePattern</code> would not be respected when filtering files.</li>
-<li>  An issue where sorting would change when <code>config.jsdoc.hierarchy</code> option is enabled.</li>
-</ul>
-<br>
+        <h2 id="145--2017-03-05-">
+            <a href="https://github.com/onury/docma/compare/v1.4.0...v1.4.5"
+                >1.4.5</a
+            >
+            (2017-03-05)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Build config options:
+                <code>config.jsdoc.allowUnknownTags</code>,
+                <code>config.jsdoc.dictionaries</code>,
+                <code>config.jsdoc.includePattern</code>,
+                <code>config.jsdoc.excludePattern</code> (<code>jsdoc-x</code>
+                feature).
+            </li>
+            <li>
+                <a href="https://usejsdoc.org/about-plugins.html"
+                    >JSDoc plugin</a
+                >
+                support via the new <code>config.jsdoc.plugins</code> option
+                (<code>jsdoc-x</code> feature).
+            </li>
+        </ul>
+        <br />
 
-<h2 id="145--2017-03-05-"><a href="https://github.com/onury/docma/compare/v1.4.0...v1.4.5">1.4.5</a> (2017-03-05)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Build config options: <code>config.jsdoc.allowUnknownTags</code>, <code>config.jsdoc.dictionaries</code>, <code>config.jsdoc.includePattern</code>, <code>config.jsdoc.excludePattern</code> (<code>jsdoc-x</code> feature).</li>
-<li>  <a href="https://usejsdoc.org/about-plugins.html">JSDoc plugin</a> support via the new <code>config.jsdoc.plugins</code> option (<code>jsdoc-x</code> feature).</li>
-</ul>
-<br>
+        <h2 id="140--2017-02-13-">
+            <a href="https://github.com/onury/docma/compare/v1.3.0...v1.4.0"
+                >1.4.0</a
+            >
+            (2017-02-13)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                Incorrect routing when routing method is set to
+                <code>"path"</code>.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                If <code>config.app.entrance</code> is not set in build
+                configuration, it now defaults to <code>"api"</code>.
+            </li>
+            <li>
+                If <code>config.app.server</code> is not set in build
+                configuration, it now defaults to <code>"static"</code>. (<code
+                    >"static"</code
+                >
+                is similar to <code>"github"</code> which generates static HTML
+                files.)
+            </li>
+        </ul>
+        <h3 id="docma-cli">Docma CLI</h3>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                Respecting debug option in config file. If no debug options are
+                set in the command-line arguments (such as <code>--debug</code>,
+                <code>--quiet</code>, <code>--nomin</code>,
+                <code>--jd-out</code>, <code>--verbose</code>,
+                <code>--web-logs</code>); the bitwise debug value from the
+                config file is used, if set.
+            </li>
+        </ul>
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                <code>.split()</code> error for <code>null</code> (404) routes.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Updated web dependencies to latest versions.</li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                A style issue where sidebar would not scroll all the way to the
+                bottom in Firefox. Fixes
+                <a href="https://github.com/onury/docma/issues/8">issue #8</a>.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                If <code>config.template.title</code> is omitted,
+                <code>config.app.title</code> is used. (Defaults to
+                <code>"Documentation"</code> if not set).
+            </li>
+        </ul>
+        <br />
 
-<h2 id="140--2017-02-13-"><a href="https://github.com/onury/docma/compare/v1.3.0...v1.4.0">1.4.0</a> (2017-02-13)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Incorrect routing when routing method is set to <code>"path"</code>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  If <code>config.app.entrance</code> is not set in build configuration, it now defaults to <code>"api"</code>.</li>
-<li>  If <code>config.app.server</code> is not set in build configuration, it now defaults to <code>"static"</code>. (<code>"static"</code> is similar to <code>"github"</code> which generates static HTML files.)</li>
-</ul>
-<h3 id="docma-cli">Docma CLI</h3>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Respecting debug option in config file. If no debug options are set in the command-line arguments (such as <code>--debug</code>, <code>--quiet</code>, <code>--nomin</code>, <code>--jd-out</code>, <code>--verbose</code>, <code>--web-logs</code>); the bitwise debug value from the config file is used, if set.</li>
-</ul>
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  <code>.split()</code> error for <code>null</code> (404) routes.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Updated web dependencies to latest versions.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  A style issue where sidebar would not scroll all the way to the bottom in Firefox. Fixes <a href="https://github.com/onury/docma/issues/8">issue #8</a>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  If <code>config.template.title</code> is omitted, <code>config.app.title</code> is used. (Defaults to <code>"Documentation"</code> if not set).</li>
-</ul>
-<br>
+        <h2 id="130--2016-11-23-">
+            <a href="https://github.com/onury/docma/compare/v1.2.0...v1.3.0"
+                >1.3.0</a
+            >
+            (2016-11-23)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Case-sensitive routing option.
+                <code>config.app.routing</code> accepts either a
+                <code>String</code> (<code>"query"</code> or
+                <code>"path"</code> as before) or now, an <code>Object</code>.
+                e.g. <code>{ type: "query", caseSensitive: true }</code>. This
+                also fixes
+                <a href="https://github.com/onury/docma/issues/3">issue #3</a>.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Updated dependencies to their latest versions.</li>
+            <li>Minor code revisions.</li>
+        </ul>
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Extended support for parsing back-ticks in documentation. Added
+                triple back-tick support for multiline code blocks
+                (<code>```</code>).
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                Improved <code>docma.utils.normalizeTabs()</code> method. Deep
+                indents in JSDoc comments/descriptions are also normalized.
+            </li>
+            <li>
+                Improved support for <code>&lt;pre&gt;&lt;/pre&gt;</code> tags
+                within JSDoc descriptions.
+            </li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where symbols with return type parameters (such as
+                <code>Promise&lt;Array&gt;</code>) would not be escaped and
+                parsed properly. Fixes
+                <a href="https://github.com/onury/docma/issues/4">issue #4</a>.
+            </li>
+            <li>
+                An issue where boolean symbol parameters' default values would
+                not be parsed properly. Fixes
+                <a href="https://github.com/onury/docma/issues/5">issue #5</a>.
+            </li>
+        </ul>
+        <br />
 
-<h2 id="130--2016-11-23-"><a href="https://github.com/onury/docma/compare/v1.2.0...v1.3.0">1.3.0</a> (2016-11-23)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Case-sensitive routing option. <code>config.app.routing</code> accepts either a <code>String</code> (<code>"query"</code> or <code>"path"</code> as before) or now, an <code>Object</code>. e.g. <code>{ type: "query", caseSensitive: true }</code>. This also fixes <a href="https://github.com/onury/docma/issues/3">issue #3</a>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Updated dependencies to their latest versions.</li>
-<li>  Minor code revisions.</li>
-</ul>
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Extended support for parsing back-ticks in documentation. Added triple back-tick support for multiline code blocks (<code>```</code>).</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Improved <code>docma.utils.normalizeTabs()</code> method. Deep indents in JSDoc comments/descriptions are also normalized.</li>
-<li>  Improved support for <code>&lt;pre&gt;&lt;/pre&gt;</code> tags within JSDoc descriptions.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where symbols with return type parameters (such as <code>Promise&lt;Array&gt;</code>) would not be escaped and parsed properly. Fixes <a href="https://github.com/onury/docma/issues/4">issue #4</a>.</li>
-<li>  An issue where boolean symbol parameters' default values would not be parsed properly. Fixes <a href="https://github.com/onury/docma/issues/5">issue #5</a>.</li>
-</ul>
-<br>
+        <h2 id="120--2016-10-31-">
+            <a href="https://github.com/onury/docma/compare/v1.1.1...v1.2.0"
+                >1.2.0</a
+            >
+            (2016-10-31)
+        </h2>
+        <hr />
+        <h3 id="docma-cli">Docma CLI</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                CLI (command-line interface). Supports <code>config</code>,
+                <code>src</code>, <code>dest</code> and all
+                <code>debug</code> options.
+            </li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Updated (one-dark) highlighting styles.</li>
+        </ul>
+        <br />
 
-<h2 id="120--2016-10-31-"><a href="https://github.com/onury/docma/compare/v1.1.1...v1.2.0">1.2.0</a> (2016-10-31)</h2>
-<hr />
-<h3 id="docma-cli">Docma CLI</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  CLI (command-line interface). Supports <code>config</code>, <code>src</code>, <code>dest</code> and all <code>debug</code> options.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Updated (one-dark) highlighting styles.</li>
-</ul>
-<br>
+        <h2 id="111--2016-08-13-">
+            <a href="https://github.com/onury/docma/compare/v1.1.1...v1.2.0"
+                >1.1.1</a
+            >
+            (2016-08-13)
+        </h2>
+        <hr />
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An anchor/linking issue which prevented some browsers (such as
+                Safari) to navigate properly.
+            </li>
+        </ul>
+        <br />
 
-<h2 id="111--2016-08-13-"><a href="https://github.com/onury/docma/compare/v1.1.1...v1.2.0">1.1.1</a> (2016-08-13)</h2>
-<hr />
-<h3 id="default-template">Default Template</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An anchor/linking issue which prevented some browsers (such as Safari) to navigate properly.</li>
-</ul>
-<br>
+        <h2 id="110--2016-08-12-">
+            <a href="https://github.com/onury/docma/compare/v1.1.0...v1.1.1"
+                >1.1.0</a
+            >
+            (2016-08-12)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                An issue where constructors would still show up in the
+                documentation even though <code>@private</code> is set. Fixed by
+                <code>jsdoc-x</code>.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Updated dependencies to their latest versions.</li>
+            <li>Minor revisions.</li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>
+                Fixed sidebar header/search position when sidebar is collapsed.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                An access badge is shown next to symbol name, if symbol has
+                <code>private</code> or <code>protected</code> access.
+                <ul>
+                    <li>Clean up.</li>
+                </ul>
+            </li>
+        </ul>
+        <br />
 
-<h2 id="110--2016-08-12-"><a href="https://github.com/onury/docma/compare/v1.1.0...v1.1.1">1.1.0</a> (2016-08-12)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  An issue where constructors would still show up in the documentation even though <code>@private</code> is set. Fixed by <code>jsdoc-x</code>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Updated dependencies to their latest versions.</li>
-<li>  Minor revisions.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Fixed sidebar header/search position when sidebar is collapsed.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>An access badge is shown next to symbol name, if symbol has <code>private</code> or <code>protected</code> access.<ul>
-<li>  Clean up.</li>
-</ul>
-</li>
-</ul>
-<br>
+        <h2 id="103--2016-06-27-">
+            <a href="https://github.com/onury/docma/compare/v1.0.1...v1.0.3"
+                >1.0.3</a
+            >
+            (2016-06-27)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                HTML source file support. You can include HTML files together
+                with JS and markdown files while building your documentation.
+            </li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                Removed YAML syntax highlighting support because of incorrect
+                auto-detection. Opened an issue
+                <a href="https://github.com/isagalaev/highlight.js/issues/1213"
+                    >here</a
+                >.
+            </li>
+        </ul>
+        <br />
 
-<h2 id="103--2016-06-27-"><a href="https://github.com/onury/docma/compare/v1.0.1...v1.0.3">1.0.3</a> (2016-06-27)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  HTML source file support. You can include HTML files together with JS and markdown files while building your documentation.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Removed YAML syntax highlighting support because of incorrect auto-detection. Opened an issue <a href="https://github.com/isagalaev/highlight.js/issues/1213">here</a>.</li>
-</ul>
-<br>
+        <h2 id="101--2016-06-11-">
+            <a href="https://github.com/onury/docma/compare/v1.0.0...v1.0.1"
+                >1.0.1</a
+            >
+            (2016-06-11)
+        </h2>
+        <hr />
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <blockquote>
+            <p>
+                <a href="https://david-dm.org">David</a> considers
+                <a href="https://github.com/chjj/marked">marked</a> as
+                <a href="https://david-dm.org/onury/docma"
+                    >insecure dependency</a
+                >. This is
+                <a
+                    href="https://nodesecurity.io/advisories/marked_content-injection"
+                    >already</a
+                >
+                <a href="https://github.com/chjj/marked/pull/592">reported</a>.
+            </p>
+        </blockquote>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>Missing web components.</li>
+        </ul>
+        <br />
 
-<h2 id="101--2016-06-11-"><a href="https://github.com/onury/docma/compare/v1.0.0...v1.0.1">1.0.1</a> (2016-06-11)</h2>
-<hr />
-<h3 id="docma-web-core">Docma Web Core</h3>
-<blockquote>
-<p><a href="https://david-dm.org">David</a> considers <a href="https://github.com/chjj/marked">marked</a> as <a href="https://david-dm.org/onury/docma">insecure dependency</a>. This is <a href="https://nodesecurity.io/advisories/marked_content-injection">already</a> <a href="https://github.com/chjj/marked/pull/592">reported</a>.</p>
-</blockquote>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Missing web components.</li>
-</ul>
-<br>
+        <h2 id="100--2016-06-11-">
+            <a href="https://github.com/onury/docma/compare/v0.5.4...v1.0.0"
+                >1.0.0</a
+            >
+            (2016-06-11)
+        </h2>
+        <hr />
+        <h3 id="docma--builder-">Docma (Builder)</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Ability to convert markdown files to HTML. See documentation.
+            </li>
+            <li>
+                <code>.markdown:Object</code> build configuration options. (Same
+                as <code>marked</code> module options).
+            </li>
+            <li>
+                <code>.markdown.tasks:Boolean</code> option for parsing
+                GitHub-like markdown tasks.
+            </li>
+            <li>
+                Emoji (twemoji) support for converted markdown files. Added
+                <code>.markdown.emoji:Boolean</code> option.
+            </li>
+            <li>
+                <code>.app.server</code> build option that defines the
+                server/host type for generating server config file(s) for the
+                SPA. e.g., setting to <code>"apache"</code> generates an
+                <code>.htaccess</code> file within the root of the generated
+                output. Supports <code>"apache"</code> and
+                <code>"github"</code>.
+            </li>
+            <li>
+                <code>.app.base:String</code> build option that sets the base
+                path for the SPA.
+            </li>
+            <li>
+                <code>.app.entrance:String</code> build option that sets the
+                initial content to be displayed.
+            </li>
+            <li><code>.debug:Boolean</code> build option.</li>
+            <li>
+                Ability to group <code>.js</code> files into multiple, separate
+                documentation. See <code>.src</code> build option.
+            </li>
+            <li>
+                Ability to rename routes for generated markdown files. See
+                <code>.src</code> build option.
+            </li>
+            <li>
+                Negated glob support (that excludes the paths) for the
+                <code>src</code> build option.
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Improved GFM parsing.</li>
+            <li>
+                Dropped <code>.dump</code> config option in favor of
+                <code>.debug</code> option.
+            </li>
+            <li>
+                Moved <code>.template.document</code> configuration to
+                <code>.app</code>.
+            </li>
+        </ul>
+        <h3 id="docma-web-core">Docma Web Core</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                Client-side routing support for the SPA with paths (e.g.
+                <code>/api/mylib</code>) or query-strings (e.g.
+                <code>?api=mylib</code>). Configured via
+                <code>.app.routing:String</code> option. Set to
+                <code>"path"</code> or <code>"query"</code>. Uses page.js
+                internally.
+            </li>
+            <li>Implemented <code>EventEmitter</code>.</li>
+            <li>
+                New methods to <code>docma.utils</code> such as
+                <code>getCodeName(symbol)</code>,
+                <code>getFullName(symbol)</code>, etc...
+            </li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                <strong>BREAKING</strong>: Dropped
+                <code>docma.ready()</code> method. Use
+                <code>docma.on('ready', listener)</code> that's only triggered
+                once on every page load or
+                <code>docma.on('render', listener)</code> triggered when each
+                content is rendered. Also see
+                <code>docma.on('route', listener)</code> triggered when SPA
+                route is changed.
+            </li>
+            <li>
+                Docma web initializing errors are no longer passed to event
+                listeners. They are now immediately thrown.
+            </li>
+            <li>
+                <code>docma.app:Object</code> and
+                <code>docma.template.main:String</code> are now exposed to the
+                SPA.
+            </li>
+            <li>
+                <code>docma</code> object accessible by the SPA is now
+                <code>Object.freeze</code>d.
+            </li>
+            <li>
+                If <code>debug &gt;= 3</code>, web app will now also output
+                logs.
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>Bookmark scrolling.</li>
+        </ul>
+        <h3 id="default-template">Default Template</h3>
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>
+                More supported languages for syntax highlighting (Javascript,
+                JSON, CSS, HTML, XML, CoffeeScript, TypeScript, Bash, HTTP,
+                Markdown, Dust and YAML).
+            </li>
+            <li>Ability to auto-detect language for syntax highlighting.</li>
+            <li>Ability to style tables in HTML generated from markdown.</li>
+            <li>
+                Ability to style code blocks in HTML generated from markdown.
+            </li>
+        </ul>
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>Documentation of <code>@property</code> JSDoc tags.</li>
+            <li>Incorrect symbols sort issue when symbol(s) have aliases.</li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Updated default template structure.</li>
+            <li>Improved layout for HTML files converted from markdown.</li>
+            <li>Improved font display for code and summary/descriptions.</li>
+            <li>
+                Improved UX by auto-adjusting font size of sidebar items to fit
+                the sidebar, if they exceed the width.
+            </li>
+            <li>Improved various API documentation styles.</li>
+        </ul>
+        <h4 id="other">Other</h4>
+        <ul>
+            <li>
+                <strong>(Dev)</strong>: Manage web-component dependency packages
+                via Bower.
+            </li>
+            <li>Updated project structure.</li>
+            <li>Various minor revisions and clean-up.</li>
+            <li>Improved Docma source code documentation.</li>
+        </ul>
+        <br />
 
-<h2 id="100--2016-06-11-"><a href="https://github.com/onury/docma/compare/v0.5.4...v1.0.0">1.0.0</a> (2016-06-11)</h2>
-<hr />
-<h3 id="docma--builder-">Docma (Builder)</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Ability to convert markdown files to HTML. See documentation.</li>
-<li>  <code>.markdown:Object</code> build configuration options. (Same as <code>marked</code> module options).</li>
-<li>  <code>.markdown.tasks:Boolean</code> option for parsing GitHub-like markdown tasks.</li>
-<li>  Emoji (twemoji) support for converted markdown files. Added <code>.markdown.emoji:Boolean</code> option.</li>
-<li>  <code>.app.server</code> build option that defines the server/host type for generating server config file(s) for the SPA. e.g., setting to <code>"apache"</code> generates an <code>.htaccess</code> file within the root of the generated output. Supports <code>"apache"</code> and <code>"github"</code>.</li>
-<li>  <code>.app.base:String</code> build option that sets the base path for the SPA.</li>
-<li>  <code>.app.entrance:String</code> build option that sets the initial content to be displayed.</li>
-<li>  <code>.debug:Boolean</code> build option.</li>
-<li>  Ability to group <code>.js</code> files into multiple, separate documentation. See <code>.src</code> build option.</li>
-<li>  Ability to rename routes for generated markdown files. See <code>.src</code> build option.</li>
-<li>  Negated glob support (that excludes the paths) for the <code>src</code> build option.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Improved GFM parsing.</li>
-<li>  Dropped <code>.dump</code> config option in favor of <code>.debug</code> option.</li>
-<li>  Moved <code>.template.document</code> configuration to <code>.app</code>.</li>
-</ul>
-<h3 id="docma-web-core">Docma Web Core</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  Client-side routing support for the SPA with paths (e.g. <code>/api/mylib</code>) or query-strings (e.g. <code>?api=mylib</code>). Configured via <code>.app.routing:String</code> option. Set to <code>"path"</code> or <code>"query"</code>. Uses page.js internally.</li>
-<li>  Implemented <code>EventEmitter</code>.</li>
-<li>  New methods to <code>docma.utils</code> such as <code>getCodeName(symbol)</code>, <code>getFullName(symbol)</code>, etc...</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  <strong>BREAKING</strong>: Dropped <code>docma.ready()</code> method. Use <code>docma.on('ready', listener)</code> that's only triggered once on every page load or <code>docma.on('render', listener)</code> triggered when each content is rendered. Also see <code>docma.on('route', listener)</code> triggered when SPA route is changed.</li>
-<li>  Docma web initializing errors are no longer passed to event listeners. They are now immediately thrown.</li>
-<li>  <code>docma.app:Object</code> and <code>docma.template.main:String</code> are now exposed to the SPA.</li>
-<li>  <code>docma</code> object accessible by the SPA is now <code>Object.freeze</code>d.</li>
-<li>  If <code>debug &gt;= 3</code>, web app will now also output logs.</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Bookmark scrolling.</li>
-</ul>
-<h3 id="default-template">Default Template</h3>
-<h4 id="added">Added</h4>
-<ul>
-<li>  More supported languages for syntax highlighting (Javascript, JSON, CSS, HTML, XML, CoffeeScript, TypeScript, Bash, HTTP, Markdown, Dust and YAML).</li>
-<li>  Ability to auto-detect language for syntax highlighting.</li>
-<li>  Ability to style tables in HTML generated from markdown.</li>
-<li>  Ability to style code blocks in HTML generated from markdown.</li>
-</ul>
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Documentation of <code>@property</code> JSDoc tags.</li>
-<li>  Incorrect symbols sort issue when symbol(s) have aliases.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Updated default template structure.</li>
-<li>  Improved layout for HTML files converted from markdown.</li>
-<li>  Improved font display for code and summary/descriptions.</li>
-<li>  Improved UX by auto-adjusting font size of sidebar items to fit the sidebar, if they exceed the width.</li>
-<li>  Improved various API documentation styles.</li>
-</ul>
-<h4 id="other">Other</h4>
-<ul>
-<li>  <strong>(Dev)</strong>: Manage web-component dependency packages via Bower.</li>
-<li>  Updated project structure.</li>
-<li>  Various minor revisions and clean-up.</li>
-<li>  Improved Docma source code documentation.</li>
-</ul>
-<br>
+        <h2 id="pre-releases">Pre-Releases</h2>
+        <hr />
+        <br />
 
-<h2 id="pre-releases">Pre-Releases</h2>
-<hr />
-<br>
+        <h2 id="054--2016-05-22-">0.5.4 (2016-05-22)</h2>
+        <hr />
+        <h4 id="added">Added</h4>
+        <ul>
+            <li>Default template option <code>badges:Boolean</code>.</li>
+        </ul>
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>
+                <code>docma.template.json</code> is no more copied over to the
+                output.
+            </li>
+        </ul>
+        <br />
 
-<h2 id="054--2016-05-22-">0.5.4 (2016-05-22)</h2>
-<hr />
-<h4 id="added">Added</h4>
-<ul>
-<li>  Default template option <code>badges:Boolean</code>.</li>
-</ul>
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  <code>docma.template.json</code> is no more copied over to the output.</li>
-</ul>
-<br>
+        <h2 id="053--2016-05-22-">0.5.3 (2016-05-22)</h2>
+        <hr />
+        <h4 id="fixed">Fixed</h4>
+        <ul>
+            <li>Docma Web file paths.</li>
+        </ul>
+        <br />
 
-<h2 id="053--2016-05-22-">0.5.3 (2016-05-22)</h2>
-<hr />
-<h4 id="fixed">Fixed</h4>
-<ul>
-<li>  Docma Web file paths.</li>
-</ul>
-<br>
+        <h2 id="052--2016-05-20-">0.5.2 (2016-05-20)</h2>
+        <hr />
+        <h4 id="changed">Changed</h4>
+        <ul>
+            <li>Updated default template.</li>
+            <li>Updated dependencies.</li>
+            <li>Clean-up.</li>
+        </ul>
+        <br />
 
-<h2 id="052--2016-05-20-">0.5.2 (2016-05-20)</h2>
-<hr />
-<h4 id="changed">Changed</h4>
-<ul>
-<li>  Updated default template.</li>
-<li>  Updated dependencies.</li>
-<li>  Clean-up.</li>
-</ul>
-<br>
-
-<h2 id="050--2016-05-11-">0.5.0 (2016-05-11)</h2>
-<hr />
-<ul>
-<li>  Initial (pre) release.</li>
-</ul>
-</body></html>
+        <h2 id="050--2016-05-11-">0.5.0 (2016-05-11)</h2>
+        <hr />
+        <ul>
+            <li>Initial (pre) release.</li>
+        </ul>
+    </body>
+</html>

@@ -18,7 +18,8 @@ const TemplateDoctor = require("../../lib/TemplateDoctor");
 const utils = require("../../lib/utils");
 
 // constants
-const RE_EMAIL = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/i;
+const RE_EMAIL =
+    /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/i;
 const INIT_DIR_PATH = path.join(__dirname, "..", "..", "lib", "_init");
 
 module.exports = (rootDirPath) => {

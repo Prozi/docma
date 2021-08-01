@@ -5891,7 +5891,8 @@ var DocmaWeb = (function () {
     // regexp for inspecting type parts such as `Map<String, Object>`,
     // `Promise<Boolean|String>[]` or simply `Boolean`. this also
     // removes/ignores dots from types such as Array.<String>
-    var reTypeParts = /^([^<]+?)(?:\.)?(?:<\(([^>)]+)\)>)?(?:<([^>]+)>)?(\[\])?$/;
+    var reTypeParts =
+        /^([^<]+?)(?:\.)?(?:<\(([^>)]+)\)>)?(?:<([^>]+)>)?(\[\])?$/;
 
     function _link(docsOrApis, type, options) {
         var endBrackets = reEndBrackets.test(type) ? "[]" : "";
@@ -8133,9 +8134,8 @@ var DocmaWeb = (function () {
      */
     DocmaWeb.Route.prototype.apply = function (cb) {
         if (this.type === DocmaWeb.Route.Type.API) {
-            this._docma._.documentation = this._docma.apis[
-                this.name
-            ].documentation;
+            this._docma._.documentation =
+                this._docma.apis[this.name].documentation;
             this._docma._.symbols = this._docma.apis[this.name].symbols;
         } else {
             // reset documentation & symbols since this is not an API route
@@ -8224,7 +8224,8 @@ var DocmaWeb = (function () {
         );
     };
 
-    var reJSValues = /true|false|null|undefined|Infinity|NaN|\d+|Number\.\w+|Math\.(PI|E|LN(2|10)|LOG(2|10)E|SQRT(1_)?2)|\[.*?]|\{.*?}|new [a-zA-Z]+.*|\/.+\/[gmiu]*|Date\.(now\(\)|UTC\(.*)|window|document/;
+    var reJSValues =
+        /true|false|null|undefined|Infinity|NaN|\d+|Number\.\w+|Math\.(PI|E|LN(2|10)|LOG(2|10)E|SQRT(1_)?2)|\[.*?]|\{.*?}|new [a-zA-Z]+.*|\/.+\/[gmiu]*|Date\.(now\(\)|UTC\(.*)|window|document/;
 
     function getFormatValue(symbol, val) {
         if (arguments.length < 2) {
@@ -8868,8 +8869,7 @@ var docma = Object.freeze(
                                 id: "astnode100003447",
                                 name: "Docma.Debug",
                                 type: "ObjectExpression",
-                                value:
-                                    '{"DISABLED":0,"BUILD_LOGS":1,"WEB_LOGS":2,"VERBOSE":4,"NO_MINIFY":8,"JSDOC_OUTPUT":16,"ALL":31}',
+                                value: '{"DISABLED":0,"BUILD_LOGS":1,"WEB_LOGS":2,"VERBOSE":4,"NO_MINIFY":8,"JSDOC_OUTPUT":16,"ALL":31}',
                                 paramnames: [],
                             },
                         },
@@ -9576,8 +9576,7 @@ var docma = Object.freeze(
                                 id: "astnode100003433",
                                 name: "Docma.ServerType",
                                 type: "ObjectExpression",
-                                value:
-                                    '{"APACHE":"apache","GITHUB":"github","STATIC":"static","WINDOWS":"windows"}',
+                                value: '{"APACHE":"apache","GITHUB":"github","STATIC":"static","WINDOWS":"windows"}',
                                 paramnames: [],
                             },
                         },
@@ -10775,8 +10774,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 710,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000990",
                                         name: "DocmaWeb.prototype.addFilter",
@@ -10843,8 +10841,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 79,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -10870,8 +10867,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 49,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -10932,8 +10928,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 753,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001064",
                                         name: "DocmaWeb.prototype.createRoute",
@@ -10978,8 +10973,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 257,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11022,8 +11016,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 288,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11050,8 +11043,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 579,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000691",
                                         name: "DocmaWeb.prototype.error",
@@ -11088,14 +11080,12 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 419,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000477",
                                         name: "DocmaWeb.Event",
                                         type: "ObjectExpression",
-                                        value:
-                                            '{"Ready":"ready","Render":"render","Route":"route","Navigate":"navigate"}',
+                                        value: '{"Ready":"ready","Render":"render","Route":"route","Navigate":"navigate"}',
                                         paramnames: [],
                                     },
                                 },
@@ -11116,8 +11106,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 440,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000488",
                                                 name: "Navigate",
@@ -11143,8 +11132,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 424,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000482",
                                                 name: "Ready",
@@ -11170,8 +11158,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 429,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000484",
                                                 name: "Render",
@@ -11197,8 +11184,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 434,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000486",
                                                 name: "Route",
@@ -11229,8 +11215,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 440,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000488",
                                                 name: "Navigate",
@@ -11260,8 +11245,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 424,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000482",
                                                 name: "Ready",
@@ -11291,8 +11275,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 429,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000484",
                                                 name: "Render",
@@ -11322,8 +11305,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.js",
                                             lineno: 434,
                                             columnno: 4,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100000486",
                                                 name: "Route",
@@ -11354,8 +11336,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 399,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11380,8 +11361,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 355,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11405,8 +11385,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 367,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11431,8 +11410,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 383,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11458,8 +11436,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 864,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001374",
                                         name: "DocmaWeb.prototype.fetch",
@@ -11506,8 +11483,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 734,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001045",
                                         name: "DocmaWeb.prototype.filterExists",
@@ -11548,12 +11524,10 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 610,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000764",
-                                        name:
-                                            "DocmaWeb.prototype.getContentElem",
+                                        name: "DocmaWeb.prototype.getContentElem",
                                         type: "FunctionExpression",
                                         paramnames: [],
                                     },
@@ -11588,8 +11562,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 594,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000717",
                                         name: "DocmaWeb.prototype.getDocmaElem",
@@ -11627,8 +11600,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 559,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000639",
                                         name: "DocmaWeb.prototype.info",
@@ -11665,8 +11637,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 634,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000813",
                                         name: "DocmaWeb.prototype.loadContent",
@@ -11705,8 +11676,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 178,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11810,8 +11780,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 548,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000613",
                                         name: "DocmaWeb.prototype.log",
@@ -11847,8 +11816,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 503,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11898,8 +11866,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 443,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -11952,8 +11919,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 477,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -12007,8 +11973,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 724,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001026",
                                         name: "DocmaWeb.prototype.removeFilter",
@@ -12056,8 +12021,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 896,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001451",
                                         name: "DocmaWeb.prototype.render",
@@ -12108,8 +12072,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.Route.js",
                                     lineno: 28,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001638",
                                         name: "DocmaWeb.Route",
@@ -12160,12 +12123,10 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 205,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100001843",
-                                                name:
-                                                    "DocmaWeb.Route.prototype.apply",
+                                                name: "DocmaWeb.Route.prototype.apply",
                                                 type: "FunctionExpression",
                                                 paramnames: ["cb"],
                                             },
@@ -12214,8 +12175,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 128,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12239,12 +12199,10 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 175,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100001768",
-                                                name:
-                                                    "DocmaWeb.Route.prototype.exists",
+                                                name: "DocmaWeb.Route.prototype.exists",
                                                 type: "FunctionExpression",
                                                 paramnames: [],
                                             },
@@ -12274,8 +12232,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 120,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12299,12 +12256,10 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 194,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100001822",
-                                                name:
-                                                    "DocmaWeb.Route.prototype.isCurrent",
+                                                name: "DocmaWeb.Route.prototype.isCurrent",
                                                 type: "FunctionExpression",
                                                 paramnames: [],
                                             },
@@ -12345,12 +12300,10 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 184,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100001785",
-                                                name:
-                                                    "DocmaWeb.Route.prototype.isEqualTo",
+                                                name: "DocmaWeb.Route.prototype.isEqualTo",
                                                 type: "FunctionExpression",
                                                 paramnames: ["routeInfo"],
                                             },
@@ -12390,8 +12343,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 163,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12414,8 +12366,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 136,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12438,8 +12389,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 154,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12462,8 +12412,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 92,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12490,8 +12439,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Route.js",
                                                     lineno: 117,
                                                     columnno: 4,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001765",
                                                         name: "HTML",
@@ -12524,8 +12472,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Route.js",
                                                     lineno: 105,
                                                     columnno: 4,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001761",
                                                         name: "JS",
@@ -12558,8 +12505,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Route.js",
                                                     lineno: 111,
                                                     columnno: 4,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001763",
                                                         name: "MD",
@@ -12593,12 +12539,10 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 224,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {
                                                 id: "astnode100001960",
-                                                name:
-                                                    "DocmaWeb.Route.prototype.toString",
+                                                name: "DocmaWeb.Route.prototype.toString",
                                                 type: "FunctionExpression",
                                                 paramnames: [],
                                             },
@@ -12632,8 +12576,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 145,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12656,8 +12599,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 52,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -12688,8 +12630,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Route.js",
                                                     lineno: 82,
                                                     columnno: 4,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001737",
                                                         name: "API",
@@ -12721,8 +12662,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Route.js",
                                                     lineno: 88,
                                                     columnno: 4,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001739",
                                                         name: "CONTENT",
@@ -12756,8 +12696,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 123,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -12782,8 +12721,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 318,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -12808,8 +12746,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 140,
                                     columnno: 4,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -12873,8 +12810,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 944,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100001627",
                                         name: "DocmaWeb.Utils",
@@ -12902,8 +12838,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 11,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -12926,8 +12861,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.js",
                                     lineno: 569,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {
                                         id: "astnode100000665",
                                         name: "DocmaWeb.prototype.warn",
@@ -13037,8 +12971,7 @@ var docma = Object.freeze(
                                     filename: "DocmaWeb.Utils.js",
                                     lineno: 18,
                                     columnno: 0,
-                                    path:
-                                        "/home/jpietal/projects/docma/lib/web",
+                                    path: "/home/jpietal/projects/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -13060,8 +12993,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1563,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description: "DOM utilities.",
@@ -13084,8 +13016,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Utils.js",
                                                     lineno: 1575,
                                                     columnno: 0,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {},
                                                 },
                                                 description:
@@ -13133,8 +13064,7 @@ var docma = Object.freeze(
                                                         "DocmaWeb.Utils.js",
                                                     lineno: 1599,
                                                     columnno: 0,
-                                                    path:
-                                                        "/home/jpietal/projects/docma/lib/web",
+                                                    path: "/home/jpietal/projects/docma/lib/web",
                                                     code: {},
                                                 },
                                                 description:
@@ -13171,8 +13101,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 946,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13210,8 +13139,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 176,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13248,8 +13176,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1146,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13320,8 +13247,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1243,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13394,8 +13320,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1181,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13483,8 +13408,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 906,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13520,8 +13444,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 232,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13559,8 +13482,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 138,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13597,8 +13519,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 119,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13634,8 +13555,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 281,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13682,8 +13602,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 250,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13723,8 +13642,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1107,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13789,8 +13707,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 188,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13837,8 +13754,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 962,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13887,8 +13803,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1059,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13954,8 +13869,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 711,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -13993,8 +13907,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 565,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14030,8 +13943,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 365,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14067,8 +13979,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 382,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14104,8 +14015,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 394,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14143,8 +14053,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 304,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14181,8 +14090,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 584,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14218,8 +14126,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 596,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14255,8 +14162,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 608,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14292,8 +14198,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 620,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14329,8 +14234,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 316,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14366,8 +14270,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 429,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14403,8 +14306,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 441,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14442,8 +14344,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 486,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14481,8 +14382,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 522,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14520,8 +14420,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 453,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14557,8 +14456,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 466,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14594,8 +14492,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 352,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14631,8 +14528,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 340,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14668,8 +14564,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 328,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14705,8 +14600,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 668,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14744,8 +14638,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 656,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14781,8 +14674,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 510,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14818,8 +14710,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 682,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14855,8 +14746,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 644,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14892,8 +14782,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 632,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14929,8 +14818,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 410,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -14969,8 +14857,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 498,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15008,8 +14895,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 534,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15047,8 +14933,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 546,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15085,8 +14970,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 694,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15124,8 +15008,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 864,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15163,8 +15046,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 88,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15209,8 +15091,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 840,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15267,8 +15148,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 800,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15317,8 +15197,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 774,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15370,8 +15249,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 749,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15407,8 +15285,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 723,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15444,8 +15321,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 737,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15482,8 +15358,7 @@ var docma = Object.freeze(
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 72,
                                             columnno: 0,
-                                            path:
-                                                "/home/jpietal/projects/docma/lib/web",
+                                            path: "/home/jpietal/projects/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -15603,10 +15478,8 @@ var docma = Object.freeze(
             options: {
                 title: { label: "Docma", href: "." },
                 logo: {
-                    dark:
-                        "https://raw.githubusercontent.com/Prozi/docma/master/img/docma-logo.png",
-                    light:
-                        "https://raw.githubusercontent.com/Prozi/docma/master/img/docma-logo.pn",
+                    dark: "https://raw.githubusercontent.com/Prozi/docma/master/img/docma-logo.png",
+                    light: "https://raw.githubusercontent.com/Prozi/docma/master/img/docma-logo.pn",
                 },
                 sidebar: {
                     enabled: true,
@@ -15660,16 +15533,13 @@ var docma = Object.freeze(
                             label: "Download",
                             items: [
                                 {
-                                    label:
-                                        "<code>npm i @jacekpietal/docma -D</code>",
-                                    href:
-                                        "https://www.npmjs.com/package/@jacekpietal/docma",
+                                    label: "<code>npm i @jacekpietal/docma -D</code>",
+                                    href: "https://www.npmjs.com/package/@jacekpietal/docma",
                                     target: "_blank",
                                 },
                                 {
                                     label: "Docma Releases",
-                                    href:
-                                        "https://github.com/Prozi/docma/releases",
+                                    href: "https://github.com/Prozi/docma/releases",
                                     target: "_blank",
                                 },
                                 { separator: true },
