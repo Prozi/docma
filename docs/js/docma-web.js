@@ -4788,13 +4788,13 @@ var docma = Object.freeze(
                 documentation: [
                     {
                         comment:
-                            "/**\r\n *  Docma (builder) class for generating HTML documentation from the given\r\n *  Javascript and/or markdown source files. This is the default object exported\r\n *  from the `docma` Node module.\r\n *\r\n *  <blockquote>This documentation you're reading is built with Docma.</blockquote>\r\n *  @class\r\n *\r\n *  @example\r\n *  const Docma = require('docma');\r\n */",
+                            "/**\n *  Docma (builder) class for generating HTML documentation from the given\n *  Javascript and/or markdown source files. This is the default object exported\n *  from the `docma` Node module.\n *\n *  <blockquote>This documentation you're reading is built with Docma.</blockquote>\n *  @class\n *\n *  @example\n *  const Docma = require('docma');\n */",
                         meta: {
-                            range: [1380, 43413],
+                            range: [1333, 42347],
                             filename: "Docma.js",
                             lineno: 48,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100000108",
                                 name: "Docma",
@@ -4806,7 +4806,7 @@ var docma = Object.freeze(
                         longname: "Docma",
                         kind: "class",
                         classdesc:
-                            "Docma (builder) class for generating HTML documentation from the given\r Javascript and/or markdown source files. This is the default object exported\r from the `docma` Node module.\r\r <blockquote>This documentation you're reading is built with Docma.</blockquote>",
+                            "Docma (builder) class for generating HTML documentation from the given\n Javascript and/or markdown source files. This is the default object exported\n from the `docma` Node module.\n\n <blockquote>This documentation you're reading is built with Docma.</blockquote>",
                         examples: ["const Docma = require('docma');"],
                         scope: "global",
                         description: "Initializes a new instance of `Docma`.",
@@ -4815,13 +4815,13 @@ var docma = Object.freeze(
                         $docmaLink: "api/#Docma",
                         $constructor: {
                             comment:
-                                "/**\r\n     *  Initializes a new instance of `Docma`.\r\n     *  @example\r\n     *  const docma = new Docma();\r\n     */",
+                                "/**\n     *  Initializes a new instance of `Docma`.\n     *  @example\n     *  const docma = new Docma();\n     */",
                             meta: {
-                                range: [1519, 1535],
+                                range: [1466, 1482],
                                 filename: "Docma.js",
                                 lineno: 54,
                                 columnno: 4,
-                                path: "C:\\projects\\docma\\lib",
+                                path: "/Users/JPI/projects/prozi/docma/lib",
                                 code: {
                                     id: "astnode100000111",
                                     name: "Docma",
@@ -4846,16 +4846,16 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    '/**\r\n *  Docma build configuration object that defines parse options for the given\r\n *  source files; and templating options for the Single Page Application to be\r\n *  generated.\r\n *\r\n *  This is very configurable but, you\'re only required to define very few\r\n *  options such as the source files (`src`) and the destination directory\r\n *  (`dest`) for a simple build.\r\n *\r\n *  <blockquote>See the example at the bottom or for a real example; check out Docma\'s own\r\n *  build configuration file, that generates this documentation you\'re reading\r\n *  {@link https://github.com/Prozi/docma/blob/master/docma.json|here}.</blockquote>\r\n *\r\n *  @typedef Docma~BuildConfiguration\r\n *  @type Object\r\n *\r\n *  @param {String|Array|Object} src One or more source file/directory paths to\r\n *         be processed. This also accepts\r\n *         {@link https://github.com/isaacs/node-glob|Glob} strings or array of\r\n *         globs. e.g. `./src/&#x2A;&#x2A;/&#x2A;.js` will produce an array of\r\n *         all `.js` files under `./src` directory and sub-directories.\r\n *\r\n *         JavaScript files will be parsed with JSDoc and files with `.md`, `.htm`\r\n *         and `.html` extensions will be automatically parsed to proper formats.\r\n *         But if you need; you can force a specific parser on defined files.\r\n *         e.g. `./LICENSE:md` will be force-parsed to markdown.\r\n *\r\n *         See examples at the bottom for a better understanding.\r\n *  @param {Object} [assets] Non-source, static asset files/directories to be\r\n *         copied over to build directory; so you can use/link to files such as\r\n *         images, ZIPs, PDFs, etc... Keys of this object define the target\r\n *         directory, relative to the build destination directory. Value of each\r\n *         key can either be a single file path string or an array. This also\r\n *         accepts {@link https://github.com/isaacs/node-glob|Glob} strings or\r\n *         array of globs. e.g. `{ "/": ["./&#x2A;.png"] }` will copy all PNG\r\n *         files of the current relative directory to the root of destination\r\n *         directory. <b>CAUTION:</b> Each copy operation will overwrite the\r\n *         file if it already exists.\r\n *  @param {String} dest Destination output directory path. <b>CAUTION:</b>\r\n *         Files in this directory will be overwritten. If `clean` option is\r\n *         enabled, all contents will be removed. Make sure you set this to\r\n *         a correct path.\r\n *  @param {Boolean} [clean=false] Whether the destination directory should be\r\n *         emptied before the build.\r\n *  @param {Boolean|Number} [debug=false] Specifies debug settings for build\r\n *         operation and generated SPA. This takes a bitwise numeric value so\r\n *         you can combine flags to your liking. If a `Boolean` value set,\r\n *         `false` means `Docma.Debug.DISABLED` and `true` means\r\n *         `Docma.Debug.ALL` which enables all debugging options. See\r\n *         {@link #Docma.Debug|`Debug` flags enumeration} for all possible\r\n *         values.\r\n *  @param {Object} [jsdoc] - JSDoc parse options.\r\n *  @param {String} [jsdoc.encoding="utf8"] Encoding to be used when reading JS\r\n *         source files.\r\n *  @param {Boolean} [jsdoc.recurse=false] Specifies whether to recurse into\r\n *         sub-directories when scanning for source files.\r\n *  @param {Boolean} [jsdoc.pedantic=false] Specifies whether to treat errors as\r\n *         fatal errors, and treat warnings as errors.\r\n *  @param {String|Array} [jsdoc.access] Specifies which symbols to be processed\r\n *         with the given access property. Possible values: `"private"`,\r\n *         `"protected"`, `"public"` or `"all"` (for all access levels). By\r\n *         default, all except private symbols are processed. Note that, if\r\n *         access is not set for a documented symbol, it will still be included,\r\n *         regardless of this option.\r\n *  @param {Boolean} [jsdoc.private=false] -\r\n *  @param {String} [jsdoc.package] The path to the `package.json` file that\r\n *         contains the project name, version, and other details. If set to\r\n *         `true` instead of a path string, the first `package.json` file found\r\n *         in the source paths.\r\n *  @param {Boolean} [jsdoc.module=true] Specifies whether to include\r\n *         `module.exports` symbols.\r\n *  @param {Boolean} [jsdoc.undocumented=false] Specifies whether to include\r\n *         undocumented symbols.\r\n *  @param {Boolean} [jsdoc.undescribed=false] Specifies whether to include\r\n *         symbols without a description.\r\n *  @param {Boolean} [jsdoc.ignored=false] Specifies whether to include symbols\r\n *         marked with `ignore` tag.\r\n *  @param {String} [jsdoc.relativePath] When set, all `symbol.meta.path` values\r\n *         will be relative to this path.\r\n *  @param {Function} [jsdoc.predicate] This is used to filter the parsed\r\n *         documentation output array. If a `Function` is passed; it\'s invoked\r\n *         for each included `symbol`. e.g. `function (symbol) { return symbol;\r\n *         }` Returning a falsy value will remove the symbol from the output.\r\n *         Returning `true` will keep the original symbol. To keep the symbol\r\n *         and alter its contents, simply return an altered symbol object.\r\n *  @param {Boolean} [jsdoc.hierarchy=false] Specifies whether to arrange\r\n *         symbols by their hierarchy. This will find and move symbols that have\r\n *         a `memberof` property to a `$members` property of their corresponding\r\n *         owners. Also the constructor symbol will be moved to a `$constructor`\r\n *         property of the `ClassDeclaration` symbol; if any.\r\n *  @param {Boolean|String} [jsdoc.sort="alphabetic"] Specifies whether to sort\r\n *         the documentation symbols. For alphabetic sort, set to `true` or\r\n *         `"alphabetic"`. To group-sort set to `"grouped"`. <i>(Group sorting\r\n *         is done in the following order: by memberof, by scope, by access\r\n *         type, by kind, alphabetic.)</i> To sort by only `"scope"` or\r\n *         `"access"` or `"kind"`, set to corresponding string. <i>(Sorting by\r\n *         kind is done in the following order: constant, package/module,\r\n *         namespace, class, constructor, method, property, enum, typedef,\r\n *         event, interface, mixin, external, other members.)</i> Set to `false`\r\n *         to disable. <i>Note that this sorts the documentation symbols data,\r\n *         how it\'s displayed might be altered by the Docma template you\'re\r\n *         using.</i>\r\n *  @param {Boolean} [jsdoc.allowUnknownTags=true] Specifies whether to allow\r\n *         unrecognized tags. If set to `false` parsing will fail on unknown\r\n *         tags.\r\n *  @param {Array} [jsdoc.dictionaries=["jsdoc", "closure"]] Indicates the\r\n *         dictionaries to be used. By default, both standard JSDoc tags and\r\n *         Closure Compiler tags are enabled.\r\n *  @param {String} [jsdoc.includePattern=".+\\\\.js(doc|x)?$"] String pattern for\r\n *         defining sources to be included. By default, only files ending in\r\n *         `".js"`, "`.jsdoc"`, and `".jsx"` will be processed.\r\n *  @param {String} [jsdoc.excludePattern="(^|\\\\/|\\\\\\\\)_"] String pattern for\r\n *         defining sources to be ignored. By default, any file starting with an\r\n *         underscore or in a directory starting with an underscore will be\r\n *         ignored.\r\n *  @param {Array} [jsdoc.plugins=[]] Defines the JSDoc plugins to be used. See\r\n *         {@link https://usejsdoc.org/about-plugins.html|this guide} on JSDoc\r\n *         plugins.\r\n *  @param {Object} [markdown] - Markdown parse options.\r\n *  @param {Boolean} [markdown.gfm=true] Whether to enable\r\n *         {@link https://help.github.com/categories/writing-on-github|GitHub flavored markdown}.\r\n *  @param {Boolean} [markdown.tables=true] Whether to enable enable GFM\r\n *         {@link https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables|tables}.\r\n *         This option requires the `gfm` option to be `true`.\r\n *  @param {Boolean} [markdown.breaks=false] Whether to enable enable GFM\r\n *         {@link https://help.github.com/articles/basic-writing-and-formatting-syntax/#paragraphs-and-line-breaks|line breaks}.\r\n *         This option requires the `gfm` option to be `true`.\r\n *  @param {Boolean} [markdown.pedantic=false] Whether to conform with obscure\r\n *         parts of `markdown.pl` as much as possible. Don\'t fix any of the\r\n *         original markdown bugs or poor behavior.\r\n *  @param {Boolean} [markdown.sanitize=false] Whether to use smarter list\r\n *         behavior than the original markdown. May eventually be default with\r\n *         the old behavior moved into `pedantic`.\r\n *  @param {Boolean} [markdown.smartypants=false] Whether to use "smart"\r\n *         typographic punctuation for things like quotes and dashes.\r\n *  @param {Boolean} [markdown.xhtml=false] Self-close the tags for void\r\n *         elements (`<br/>`, `<img/>`, etc.) with a `"/"` as required by XHTML.\r\n *  @param {Boolean} [markdown.tasks=true] Whether to parse GitHub style task\r\n *         markdown (e.g. `- [x] task`) into checkbox elements.\r\n *  @param {Boolean} [markdown.emoji=true] If set to `true`, emoji shortcuts\r\n *         (e.g. `&#x3A;smiley&#x3A;`) are parsed into `&lt;img /&gt;` elements\r\n *         with {@link https://twitter.github.io/twemoji|twemoji} SVG URLs.\r\n *  @param {Object} [app] Configuration for the generated SPA (Single Page\r\n *         Application).\r\n *  @param {String} [app.title=""] Title of the main HTML document of the\r\n *         generated web app. (Sets the value of the `&lt;title&gt;` element.)\r\n *  @param {Array|Object} [app.meta] One or more meta elements to be set for the\r\n *         main HTML document of the generated web app. Set arbitrary object(s)\r\n *         for each meta element to be added. e.g. `[{ charset: "utf-8"}, {\r\n *         name: "robots", "content": "index, follow" }]`.\r\n *  @param {String} [app.base="/"] Sets the base path of the generated web app.\r\n *         For example if the app will operate within `/doc/*` set the base path\r\n *         to `"/doc"`.\r\n *  @param {String} [app.favicon] Local path to a `favicon.ico` file to be used\r\n *          with the web app.\r\n *  @param {String} [app.entrance="api"] Defines the home content to be\r\n *         displayed for the application root (when you enter the base path i.e.\r\n *         `"/"`). Pass the type and name of the route in `{type}:{name}`\r\n *         format. There are 2 types of routes: `api` for JS source\r\n *         documentation and `content` for other HTML content such as parsed\r\n *         markdown files. For example, if you have a grouped JS files\r\n *         documented with a name `mylib`; to define this as the entrance of the\r\n *         app, set this to `"api:mylib"`. If you have `"README.md"` in your\r\n *         source files; to define this as the entrance, set this to\r\n *         `"content:readme"`.\r\n *  @param {String|Object} [app.routing] Either a `String` defining the route\r\n *         method or an `Object` defining both the method and whether the routes\r\n *         should be case-sensitive.\r\n *         @param {String} [app.routing.method="query"]\r\n *                Indicates the routing method for the generated SPA (Single\r\n *                Page Application).\r\n *                See {@link #Docma.RoutingMethod|`RoutingMethod` enumeration}.\r\n *         @param {Boolean} [app.routing.caseSensitive=true]\r\n *                Indicates whether the routes should be case-sensitive.\r\n *                Note that if this is set to `false`, same route names will\r\n *                overwrite the previous, even if they have different case.\r\n *  @param {String} [app.server="static"] Server or host type for the SPA. This\r\n *         information helps Docma determine how to configure the generated SPA,\r\n *         especially if `routing.method` is set to `"path"`. See\r\n *         {@link #Docma.ServerType|`ServerType` enumeration} for details.\r\n *  @param {Object} [template] - SPA template configuration.\r\n *  @param {String} [template.path="default"] Either the path of a custom Docma\r\n *         template or the name of a built-in template. Omit to use the default\r\n *         built-in template.\r\n *  @param {Object} [template.options] SPA template options. This is defined by\r\n *         the template itself. Refer to the template\'s documentation for\r\n *         options to be set at build-time. See\r\n *         {@link templates/zebra/#template-options|Default Template options}.\r\n *\r\n *  @example\r\n *  const buildConfig = {\r\n *      src: [\r\n *          // using an object to define (group) names for JS files.\r\n *          {\r\n *              // grouping JS files under the name "my-lib".\r\n *              // This name also defines the api route name: e.g. ?api=my-lib or api/my-lib/\r\n *              \'my-lib\': [\r\n *                  \'./src/** /*.js\',           // recurse all JS files under /src\r\n *                  \'./lib/some-other.js\',\r\n *                  \'!./lib/ignored.js\'         // notice the bang! prefix to exclude this file\r\n *              ],\r\n *              // naming another api route\r\n *              \'other-lib\': \'./other/*.js\',    // ?api=other-lib\r\n *          },\r\n *\r\n *          // ungrouped js files will be merged under default route\r\n *          \'./src/main.js\',                    // ?api or ?api=_def_\r\n *          \'./src/main.utils.js\',              // merged into same ?api or ?api=_def_\r\n *\r\n *          // including markdown ("content") files\r\n *          \'./CHANGELOG.md\',                   // this will have \'changelog\' as route name.\r\n *                                              // i.e. ?content=changelog\r\n *          // forcing specific parser on files:\r\n *          \'./LICENSE:md\',                     // LICENSE file with no-extension is forced\r\n *                                              // to markdown via :md suffix.\r\n *                                              // route will be ?content=license or license/\r\n *          // using an object to rename the route for the given markdown files\r\n *          {\r\n *              guide: \'./README.md\'            // this will have \'guide\' as content route name\r\n *          }                                   // i.e. ?content=guide or guide/\r\n *      ],\r\n *      dest: \'./output/docs\',                  // output directory for the generated docs\r\n *      app: {\r\n *          title: \'My Documentation\',          // title of the app\r\n *          routing: \'query\',                   // routing method "query" or "path"\r\n *          entrance: \'content:guide\',          // initial route to load on entrance\r\n *          base: \'/\'                           // base path of the SPA\r\n *      },\r\n *\r\n *      // template-specific configuration.\r\n *      // for Zebra template, see https://onury.io/docma/templates/zebra\r\n *      template: {\r\n *          path: \'zebra\',\r\n *          options: {\r\n *              title: {\r\n *                  label: \'My Docs\',\r\n *                  href: \'/docs/?\'\r\n *              },\r\n *              navbar: true,\r\n *              sidebar: {\r\n *                  enabled: true,\r\n *                  outline: \'tree\'\r\n *              }\r\n *          }\r\n *      }\r\n *  };\r\n *  // See Docma\'s own configuration @\r\n *  // https://github.com/Prozi/docma/blob/master/docma.json\r\n */',
+                                    '/**\n *  Docma build configuration object that defines parse options for the given\n *  source files; and templating options for the Single Page Application to be\n *  generated.\n *\n *  This is very configurable but, you\'re only required to define very few\n *  options such as the source files (`src`) and the destination directory\n *  (`dest`) for a simple build.\n *\n *  <blockquote>See the example at the bottom or for a real example; check out Docma\'s own\n *  build configuration file, that generates this documentation you\'re reading\n *  {@link https://github.com/Prozi/docma/blob/master/docma.json|here}.</blockquote>\n *\n *  @typedef Docma~BuildConfiguration\n *  @type Object\n *\n *  @param {String|Array|Object} src One or more source file/directory paths to\n *         be processed. This also accepts\n *         {@link https://github.com/isaacs/node-glob|Glob} strings or array of\n *         globs. e.g. `./src/&#x2A;&#x2A;/&#x2A;.js` will produce an array of\n *         all `.js` files under `./src` directory and sub-directories.\n *\n *         JavaScript files will be parsed with JSDoc and files with `.md`, `.htm`\n *         and `.html` extensions will be automatically parsed to proper formats.\n *         But if you need; you can force a specific parser on defined files.\n *         e.g. `./LICENSE:md` will be force-parsed to markdown.\n *\n *         See examples at the bottom for a better understanding.\n *  @param {Object} [assets] Non-source, static asset files/directories to be\n *         copied over to build directory; so you can use/link to files such as\n *         images, ZIPs, PDFs, etc... Keys of this object define the target\n *         directory, relative to the build destination directory. Value of each\n *         key can either be a single file path string or an array. This also\n *         accepts {@link https://github.com/isaacs/node-glob|Glob} strings or\n *         array of globs. e.g. `{ "/": ["./&#x2A;.png"] }` will copy all PNG\n *         files of the current relative directory to the root of destination\n *         directory. <b>CAUTION:</b> Each copy operation will overwrite the\n *         file if it already exists.\n *  @param {String} dest Destination output directory path. <b>CAUTION:</b>\n *         Files in this directory will be overwritten. If `clean` option is\n *         enabled, all contents will be removed. Make sure you set this to\n *         a correct path.\n *  @param {Boolean} [clean=false] Whether the destination directory should be\n *         emptied before the build.\n *  @param {Boolean|Number} [debug=false] Specifies debug settings for build\n *         operation and generated SPA. This takes a bitwise numeric value so\n *         you can combine flags to your liking. If a `Boolean` value set,\n *         `false` means `Docma.Debug.DISABLED` and `true` means\n *         `Docma.Debug.ALL` which enables all debugging options. See\n *         {@link #Docma.Debug|`Debug` flags enumeration} for all possible\n *         values.\n *  @param {Object} [jsdoc] - JSDoc parse options.\n *  @param {String} [jsdoc.encoding="utf8"] Encoding to be used when reading JS\n *         source files.\n *  @param {Boolean} [jsdoc.recurse=false] Specifies whether to recurse into\n *         sub-directories when scanning for source files.\n *  @param {Boolean} [jsdoc.pedantic=false] Specifies whether to treat errors as\n *         fatal errors, and treat warnings as errors.\n *  @param {String|Array} [jsdoc.access] Specifies which symbols to be processed\n *         with the given access property. Possible values: `"private"`,\n *         `"protected"`, `"public"` or `"all"` (for all access levels). By\n *         default, all except private symbols are processed. Note that, if\n *         access is not set for a documented symbol, it will still be included,\n *         regardless of this option.\n *  @param {Boolean} [jsdoc.private=false] -\n *  @param {String} [jsdoc.package] The path to the `package.json` file that\n *         contains the project name, version, and other details. If set to\n *         `true` instead of a path string, the first `package.json` file found\n *         in the source paths.\n *  @param {Boolean} [jsdoc.module=true] Specifies whether to include\n *         `module.exports` symbols.\n *  @param {Boolean} [jsdoc.undocumented=false] Specifies whether to include\n *         undocumented symbols.\n *  @param {Boolean} [jsdoc.undescribed=false] Specifies whether to include\n *         symbols without a description.\n *  @param {Boolean} [jsdoc.ignored=false] Specifies whether to include symbols\n *         marked with `ignore` tag.\n *  @param {String} [jsdoc.relativePath] When set, all `symbol.meta.path` values\n *         will be relative to this path.\n *  @param {Function} [jsdoc.predicate] This is used to filter the parsed\n *         documentation output array. If a `Function` is passed; it\'s invoked\n *         for each included `symbol`. e.g. `function (symbol) { return symbol;\n *         }` Returning a falsy value will remove the symbol from the output.\n *         Returning `true` will keep the original symbol. To keep the symbol\n *         and alter its contents, simply return an altered symbol object.\n *  @param {Boolean} [jsdoc.hierarchy=false] Specifies whether to arrange\n *         symbols by their hierarchy. This will find and move symbols that have\n *         a `memberof` property to a `$members` property of their corresponding\n *         owners. Also the constructor symbol will be moved to a `$constructor`\n *         property of the `ClassDeclaration` symbol; if any.\n *  @param {Boolean|String} [jsdoc.sort="alphabetic"] Specifies whether to sort\n *         the documentation symbols. For alphabetic sort, set to `true` or\n *         `"alphabetic"`. To group-sort set to `"grouped"`. <i>(Group sorting\n *         is done in the following order: by memberof, by scope, by access\n *         type, by kind, alphabetic.)</i> To sort by only `"scope"` or\n *         `"access"` or `"kind"`, set to corresponding string. <i>(Sorting by\n *         kind is done in the following order: constant, package/module,\n *         namespace, class, constructor, method, property, enum, typedef,\n *         event, interface, mixin, external, other members.)</i> Set to `false`\n *         to disable. <i>Note that this sorts the documentation symbols data,\n *         how it\'s displayed might be altered by the Docma template you\'re\n *         using.</i>\n *  @param {Boolean} [jsdoc.allowUnknownTags=true] Specifies whether to allow\n *         unrecognized tags. If set to `false` parsing will fail on unknown\n *         tags.\n *  @param {Array} [jsdoc.dictionaries=["jsdoc", "closure"]] Indicates the\n *         dictionaries to be used. By default, both standard JSDoc tags and\n *         Closure Compiler tags are enabled.\n *  @param {String} [jsdoc.includePattern=".+\\\\.js(doc|x)?$"] String pattern for\n *         defining sources to be included. By default, only files ending in\n *         `".js"`, "`.jsdoc"`, and `".jsx"` will be processed.\n *  @param {String} [jsdoc.excludePattern="(^|\\\\/|\\\\\\\\)_"] String pattern for\n *         defining sources to be ignored. By default, any file starting with an\n *         underscore or in a directory starting with an underscore will be\n *         ignored.\n *  @param {Array} [jsdoc.plugins=[]] Defines the JSDoc plugins to be used. See\n *         {@link https://usejsdoc.org/about-plugins.html|this guide} on JSDoc\n *         plugins.\n *  @param {Object} [markdown] - Markdown parse options.\n *  @param {Boolean} [markdown.gfm=true] Whether to enable\n *         {@link https://help.github.com/categories/writing-on-github|GitHub flavored markdown}.\n *  @param {Boolean} [markdown.tables=true] Whether to enable enable GFM\n *         {@link https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables|tables}.\n *         This option requires the `gfm` option to be `true`.\n *  @param {Boolean} [markdown.breaks=false] Whether to enable enable GFM\n *         {@link https://help.github.com/articles/basic-writing-and-formatting-syntax/#paragraphs-and-line-breaks|line breaks}.\n *         This option requires the `gfm` option to be `true`.\n *  @param {Boolean} [markdown.pedantic=false] Whether to conform with obscure\n *         parts of `markdown.pl` as much as possible. Don\'t fix any of the\n *         original markdown bugs or poor behavior.\n *  @param {Boolean} [markdown.sanitize=false] Whether to use smarter list\n *         behavior than the original markdown. May eventually be default with\n *         the old behavior moved into `pedantic`.\n *  @param {Boolean} [markdown.smartypants=false] Whether to use "smart"\n *         typographic punctuation for things like quotes and dashes.\n *  @param {Boolean} [markdown.xhtml=false] Self-close the tags for void\n *         elements (`<br/>`, `<img/>`, etc.) with a `"/"` as required by XHTML.\n *  @param {Boolean} [markdown.tasks=true] Whether to parse GitHub style task\n *         markdown (e.g. `- [x] task`) into checkbox elements.\n *  @param {Boolean} [markdown.emoji=true] If set to `true`, emoji shortcuts\n *         (e.g. `&#x3A;smiley&#x3A;`) are parsed into `&lt;img /&gt;` elements\n *         with {@link https://twitter.github.io/twemoji|twemoji} SVG URLs.\n *  @param {Object} [app] Configuration for the generated SPA (Single Page\n *         Application).\n *  @param {String} [app.title=""] Title of the main HTML document of the\n *         generated web app. (Sets the value of the `&lt;title&gt;` element.)\n *  @param {Array|Object} [app.meta] One or more meta elements to be set for the\n *         main HTML document of the generated web app. Set arbitrary object(s)\n *         for each meta element to be added. e.g. `[{ charset: "utf-8"}, {\n *         name: "robots", "content": "index, follow" }]`.\n *  @param {String} [app.base="/"] Sets the base path of the generated web app.\n *         For example if the app will operate within `/doc/*` set the base path\n *         to `"/doc"`.\n *  @param {String} [app.favicon] Local path to a `favicon.ico` file to be used\n *          with the web app.\n *  @param {String} [app.entrance="api"] Defines the home content to be\n *         displayed for the application root (when you enter the base path i.e.\n *         `"/"`). Pass the type and name of the route in `{type}:{name}`\n *         format. There are 2 types of routes: `api` for JS source\n *         documentation and `content` for other HTML content such as parsed\n *         markdown files. For example, if you have a grouped JS files\n *         documented with a name `mylib`; to define this as the entrance of the\n *         app, set this to `"api:mylib"`. If you have `"README.md"` in your\n *         source files; to define this as the entrance, set this to\n *         `"content:readme"`.\n *  @param {String|Object} [app.routing] Either a `String` defining the route\n *         method or an `Object` defining both the method and whether the routes\n *         should be case-sensitive.\n *         @param {String} [app.routing.method="query"]\n *                Indicates the routing method for the generated SPA (Single\n *                Page Application).\n *                See {@link #Docma.RoutingMethod|`RoutingMethod` enumeration}.\n *         @param {Boolean} [app.routing.caseSensitive=true]\n *                Indicates whether the routes should be case-sensitive.\n *                Note that if this is set to `false`, same route names will\n *                overwrite the previous, even if they have different case.\n *  @param {String} [app.server="static"] Server or host type for the SPA. This\n *         information helps Docma determine how to configure the generated SPA,\n *         especially if `routing.method` is set to `"path"`. See\n *         {@link #Docma.ServerType|`ServerType` enumeration} for details.\n *  @param {Object} [template] - SPA template configuration.\n *  @param {String} [template.path="default"] Either the path of a custom Docma\n *         template or the name of a built-in template. Omit to use the default\n *         built-in template.\n *  @param {Object} [template.options] SPA template options. This is defined by\n *         the template itself. Refer to the template\'s documentation for\n *         options to be set at build-time. See\n *         {@link templates/zebra/#template-options|Default Template options}.\n *\n *  @example\n *  const buildConfig = {\n *      src: [\n *          // using an object to define (group) names for JS files.\n *          {\n *              // grouping JS files under the name "my-lib".\n *              // This name also defines the api route name: e.g. ?api=my-lib or api/my-lib/\n *              \'my-lib\': [\n *                  \'./src/** /*.js\',           // recurse all JS files under /src\n *                  \'./lib/some-other.js\',\n *                  \'!./lib/ignored.js\'         // notice the bang! prefix to exclude this file\n *              ],\n *              // naming another api route\n *              \'other-lib\': \'./other/*.js\',    // ?api=other-lib\n *          },\n *\n *          // ungrouped js files will be merged under default route\n *          \'./src/main.js\',                    // ?api or ?api=_def_\n *          \'./src/main.utils.js\',              // merged into same ?api or ?api=_def_\n *\n *          // including markdown ("content") files\n *          \'./CHANGELOG.md\',                   // this will have \'changelog\' as route name.\n *                                              // i.e. ?content=changelog\n *          // forcing specific parser on files:\n *          \'./LICENSE:md\',                     // LICENSE file with no-extension is forced\n *                                              // to markdown via :md suffix.\n *                                              // route will be ?content=license or license/\n *          // using an object to rename the route for the given markdown files\n *          {\n *              guide: \'./README.md\'            // this will have \'guide\' as content route name\n *          }                                   // i.e. ?content=guide or guide/\n *      ],\n *      dest: \'./output/docs\',                  // output directory for the generated docs\n *      app: {\n *          title: \'My Documentation\',          // title of the app\n *          routing: \'query\',                   // routing method "query" or "path"\n *          entrance: \'content:guide\',          // initial route to load on entrance\n *          base: \'/\'                           // base path of the SPA\n *      },\n *\n *      // template-specific configuration.\n *      // for Zebra template, see https://onury.io/docma/templates/zebra\n *      template: {\n *          path: \'zebra\',\n *          options: {\n *              title: {\n *                  label: \'My Docs\',\n *                  href: \'/docs/?\'\n *              },\n *              navbar: true,\n *              sidebar: {\n *                  enabled: true,\n *                  outline: \'tree\'\n *              }\n *          }\n *      }\n *  };\n *  // See Docma\'s own configuration @\n *  // https://github.com/Prozi/docma/blob/master/docma.json\n */',
                                 meta: {
                                     filename: "Docma.js",
                                     lineno: 1235,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Docma build configuration object that defines parse options for the given\r source files; and templating options for the Single Page Application to be\r generated.\r\r This is very configurable but, you're only required to define very few\r options such as the source files (`src`) and the destination directory\r (`dest`) for a simple build.\r\r <blockquote>See the example at the bottom or for a real example; check out Docma's own\r build configuration file, that generates this documentation you're reading\r {@link https://github.com/Prozi/docma/blob/master/docma.json|here}.</blockquote>",
+                                    "Docma build configuration object that defines parse options for the given\n source files; and templating options for the Single Page Application to be\n generated.\n\n This is very configurable but, you're only required to define very few\n options such as the source files (`src`) and the destination directory\n (`dest`) for a simple build.\n\n <blockquote>See the example at the bottom or for a real example; check out Docma's own\n build configuration file, that generates this documentation you're reading\n {@link https://github.com/Prozi/docma/blob/master/docma.json|here}.</blockquote>",
                                 kind: "typedef",
                                 name: "BuildConfiguration",
                                 type: { names: ["Object"] },
@@ -4869,20 +4869,20 @@ var docma = Object.freeze(
                                             ],
                                         },
                                         description:
-                                            "One or more source file/directory paths to\r        be processed. This also accepts\r        {@link https://github.com/isaacs/node-glob|Glob} strings or array of\r        globs. e.g. `./src/&#x2A;&#x2A;/&#x2A;.js` will produce an array of\r        all `.js` files under `./src` directory and sub-directories.\r\r        JavaScript files will be parsed with JSDoc and files with `.md`, `.htm`\r        and `.html` extensions will be automatically parsed to proper formats.\r        But if you need; you can force a specific parser on defined files.\r        e.g. `./LICENSE:md` will be force-parsed to markdown.\r\r        See examples at the bottom for a better understanding.",
+                                            "One or more source file/directory paths to\n        be processed. This also accepts\n        {@link https://github.com/isaacs/node-glob|Glob} strings or array of\n        globs. e.g. `./src/&#x2A;&#x2A;/&#x2A;.js` will produce an array of\n        all `.js` files under `./src` directory and sub-directories.\n\n        JavaScript files will be parsed with JSDoc and files with `.md`, `.htm`\n        and `.html` extensions will be automatically parsed to proper formats.\n        But if you need; you can force a specific parser on defined files.\n        e.g. `./LICENSE:md` will be force-parsed to markdown.\n\n        See examples at the bottom for a better understanding.",
                                         name: "src",
                                     },
                                     {
                                         type: { names: ["Object"] },
                                         optional: true,
                                         description:
-                                            'Non-source, static asset files/directories to be\r        copied over to build directory; so you can use/link to files such as\r        images, ZIPs, PDFs, etc... Keys of this object define the target\r        directory, relative to the build destination directory. Value of each\r        key can either be a single file path string or an array. This also\r        accepts {@link https://github.com/isaacs/node-glob|Glob} strings or\r        array of globs. e.g. `{ "/": ["./&#x2A;.png"] }` will copy all PNG\r        files of the current relative directory to the root of destination\r        directory. <b>CAUTION:</b> Each copy operation will overwrite the\r        file if it already exists.',
+                                            'Non-source, static asset files/directories to be\n        copied over to build directory; so you can use/link to files such as\n        images, ZIPs, PDFs, etc... Keys of this object define the target\n        directory, relative to the build destination directory. Value of each\n        key can either be a single file path string or an array. This also\n        accepts {@link https://github.com/isaacs/node-glob|Glob} strings or\n        array of globs. e.g. `{ "/": ["./&#x2A;.png"] }` will copy all PNG\n        files of the current relative directory to the root of destination\n        directory. <b>CAUTION:</b> Each copy operation will overwrite the\n        file if it already exists.',
                                         name: "assets",
                                     },
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Destination output directory path. <b>CAUTION:</b>\r        Files in this directory will be overwritten. If `clean` option is\r        enabled, all contents will be removed. Make sure you set this to\r        a correct path.",
+                                            "Destination output directory path. <b>CAUTION:</b>\n        Files in this directory will be overwritten. If `clean` option is\n        enabled, all contents will be removed. Make sure you set this to\n        a correct path.",
                                         name: "dest",
                                     },
                                     {
@@ -4890,7 +4890,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Whether the destination directory should be\r        emptied before the build.",
+                                            "Whether the destination directory should be\n        emptied before the build.",
                                         name: "clean",
                                     },
                                     {
@@ -4898,7 +4898,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies debug settings for build\r        operation and generated SPA. This takes a bitwise numeric value so\r        you can combine flags to your liking. If a `Boolean` value set,\r        `false` means `Docma.Debug.DISABLED` and `true` means\r        `Docma.Debug.ALL` which enables all debugging options. See\r        {@link #Docma.Debug|`Debug` flags enumeration} for all possible\r        values.",
+                                            "Specifies debug settings for build\n        operation and generated SPA. This takes a bitwise numeric value so\n        you can combine flags to your liking. If a `Boolean` value set,\n        `false` means `Docma.Debug.DISABLED` and `true` means\n        `Docma.Debug.ALL` which enables all debugging options. See\n        {@link #Docma.Debug|`Debug` flags enumeration} for all possible\n        values.",
                                         name: "debug",
                                     },
                                     {
@@ -4912,7 +4912,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"utf8"',
                                         description:
-                                            "Encoding to be used when reading JS\r        source files.",
+                                            "Encoding to be used when reading JS\n        source files.",
                                         name: "jsdoc.encoding",
                                     },
                                     {
@@ -4920,7 +4920,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies whether to recurse into\r        sub-directories when scanning for source files.",
+                                            "Specifies whether to recurse into\n        sub-directories when scanning for source files.",
                                         name: "jsdoc.recurse",
                                     },
                                     {
@@ -4928,14 +4928,14 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies whether to treat errors as\r        fatal errors, and treat warnings as errors.",
+                                            "Specifies whether to treat errors as\n        fatal errors, and treat warnings as errors.",
                                         name: "jsdoc.pedantic",
                                     },
                                     {
                                         type: { names: ["String", "Array"] },
                                         optional: true,
                                         description:
-                                            'Specifies which symbols to be processed\r        with the given access property. Possible values: `"private"`,\r        `"protected"`, `"public"` or `"all"` (for all access levels). By\r        default, all except private symbols are processed. Note that, if\r        access is not set for a documented symbol, it will still be included,\r        regardless of this option.',
+                                            'Specifies which symbols to be processed\n        with the given access property. Possible values: `"private"`,\n        `"protected"`, `"public"` or `"all"` (for all access levels). By\n        default, all except private symbols are processed. Note that, if\n        access is not set for a documented symbol, it will still be included,\n        regardless of this option.',
                                         name: "jsdoc.access",
                                     },
                                     {
@@ -4949,7 +4949,7 @@ var docma = Object.freeze(
                                         type: { names: ["String"] },
                                         optional: true,
                                         description:
-                                            "The path to the `package.json` file that\r        contains the project name, version, and other details. If set to\r        `true` instead of a path string, the first `package.json` file found\r        in the source paths.",
+                                            "The path to the `package.json` file that\n        contains the project name, version, and other details. If set to\n        `true` instead of a path string, the first `package.json` file found\n        in the source paths.",
                                         name: "jsdoc.package",
                                     },
                                     {
@@ -4957,7 +4957,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "Specifies whether to include\r        `module.exports` symbols.",
+                                            "Specifies whether to include\n        `module.exports` symbols.",
                                         name: "jsdoc.module",
                                     },
                                     {
@@ -4965,7 +4965,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies whether to include\r        undocumented symbols.",
+                                            "Specifies whether to include\n        undocumented symbols.",
                                         name: "jsdoc.undocumented",
                                     },
                                     {
@@ -4973,7 +4973,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies whether to include\r        symbols without a description.",
+                                            "Specifies whether to include\n        symbols without a description.",
                                         name: "jsdoc.undescribed",
                                     },
                                     {
@@ -4981,21 +4981,21 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies whether to include symbols\r        marked with `ignore` tag.",
+                                            "Specifies whether to include symbols\n        marked with `ignore` tag.",
                                         name: "jsdoc.ignored",
                                     },
                                     {
                                         type: { names: ["String"] },
                                         optional: true,
                                         description:
-                                            "When set, all `symbol.meta.path` values\r        will be relative to this path.",
+                                            "When set, all `symbol.meta.path` values\n        will be relative to this path.",
                                         name: "jsdoc.relativePath",
                                     },
                                     {
                                         type: { names: ["function"] },
                                         optional: true,
                                         description:
-                                            "This is used to filter the parsed\r        documentation output array. If a `Function` is passed; it's invoked\r        for each included `symbol`. e.g. `function (symbol) { return symbol;\r        }` Returning a falsy value will remove the symbol from the output.\r        Returning `true` will keep the original symbol. To keep the symbol\r        and alter its contents, simply return an altered symbol object.",
+                                            "This is used to filter the parsed\n        documentation output array. If a `Function` is passed; it's invoked\n        for each included `symbol`. e.g. `function (symbol) { return symbol;\n        }` Returning a falsy value will remove the symbol from the output.\n        Returning `true` will keep the original symbol. To keep the symbol\n        and alter its contents, simply return an altered symbol object.",
                                         name: "jsdoc.predicate",
                                     },
                                     {
@@ -5003,7 +5003,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Specifies whether to arrange\r        symbols by their hierarchy. This will find and move symbols that have\r        a `memberof` property to a `$members` property of their corresponding\r        owners. Also the constructor symbol will be moved to a `$constructor`\r        property of the `ClassDeclaration` symbol; if any.",
+                                            "Specifies whether to arrange\n        symbols by their hierarchy. This will find and move symbols that have\n        a `memberof` property to a `$members` property of their corresponding\n        owners. Also the constructor symbol will be moved to a `$constructor`\n        property of the `ClassDeclaration` symbol; if any.",
                                         name: "jsdoc.hierarchy",
                                     },
                                     {
@@ -5011,7 +5011,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"alphabetic"',
                                         description:
-                                            'Specifies whether to sort\r        the documentation symbols. For alphabetic sort, set to `true` or\r        `"alphabetic"`. To group-sort set to `"grouped"`. <i>(Group sorting\r        is done in the following order: by memberof, by scope, by access\r        type, by kind, alphabetic.)</i> To sort by only `"scope"` or\r        `"access"` or `"kind"`, set to corresponding string. <i>(Sorting by\r        kind is done in the following order: constant, package/module,\r        namespace, class, constructor, method, property, enum, typedef,\r        event, interface, mixin, external, other members.)</i> Set to `false`\r        to disable. <i>Note that this sorts the documentation symbols data,\r        how it\'s displayed might be altered by the Docma template you\'re\r        using.</i>',
+                                            'Specifies whether to sort\n        the documentation symbols. For alphabetic sort, set to `true` or\n        `"alphabetic"`. To group-sort set to `"grouped"`. <i>(Group sorting\n        is done in the following order: by memberof, by scope, by access\n        type, by kind, alphabetic.)</i> To sort by only `"scope"` or\n        `"access"` or `"kind"`, set to corresponding string. <i>(Sorting by\n        kind is done in the following order: constant, package/module,\n        namespace, class, constructor, method, property, enum, typedef,\n        event, interface, mixin, external, other members.)</i> Set to `false`\n        to disable. <i>Note that this sorts the documentation symbols data,\n        how it\'s displayed might be altered by the Docma template you\'re\n        using.</i>',
                                         name: "jsdoc.sort",
                                     },
                                     {
@@ -5019,7 +5019,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "Specifies whether to allow\r        unrecognized tags. If set to `false` parsing will fail on unknown\r        tags.",
+                                            "Specifies whether to allow\n        unrecognized tags. If set to `false` parsing will fail on unknown\n        tags.",
                                         name: "jsdoc.allowUnknownTags",
                                     },
                                     {
@@ -5027,7 +5027,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '["jsdoc", "closure"]',
                                         description:
-                                            "Indicates the\r        dictionaries to be used. By default, both standard JSDoc tags and\r        Closure Compiler tags are enabled.",
+                                            "Indicates the\n        dictionaries to be used. By default, both standard JSDoc tags and\n        Closure Compiler tags are enabled.",
                                         name: "jsdoc.dictionaries",
                                     },
                                     {
@@ -5035,7 +5035,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '".+\\\\.js(doc|x)?$"',
                                         description:
-                                            'String pattern for\r        defining sources to be included. By default, only files ending in\r        `".js"`, "`.jsdoc"`, and `".jsx"` will be processed.',
+                                            'String pattern for\n        defining sources to be included. By default, only files ending in\n        `".js"`, "`.jsdoc"`, and `".jsx"` will be processed.',
                                         name: "jsdoc.includePattern",
                                     },
                                     {
@@ -5043,7 +5043,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"(^|\\\\/|\\\\\\\\)_"',
                                         description:
-                                            "String pattern for\r        defining sources to be ignored. By default, any file starting with an\r        underscore or in a directory starting with an underscore will be\r        ignored.",
+                                            "String pattern for\n        defining sources to be ignored. By default, any file starting with an\n        underscore or in a directory starting with an underscore will be\n        ignored.",
                                         name: "jsdoc.excludePattern",
                                     },
                                     {
@@ -5051,7 +5051,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: "[]",
                                         description:
-                                            "Defines the JSDoc plugins to be used. See\r        {@link https://usejsdoc.org/about-plugins.html|this guide} on JSDoc\r        plugins.",
+                                            "Defines the JSDoc plugins to be used. See\n        {@link https://usejsdoc.org/about-plugins.html|this guide} on JSDoc\n        plugins.",
                                         name: "jsdoc.plugins",
                                     },
                                     {
@@ -5065,7 +5065,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "Whether to enable\r        {@link https://help.github.com/categories/writing-on-github|GitHub flavored markdown}.",
+                                            "Whether to enable\n        {@link https://help.github.com/categories/writing-on-github|GitHub flavored markdown}.",
                                         name: "markdown.gfm",
                                     },
                                     {
@@ -5073,7 +5073,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "Whether to enable enable GFM\r        {@link https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables|tables}.\r        This option requires the `gfm` option to be `true`.",
+                                            "Whether to enable enable GFM\n        {@link https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables|tables}.\n        This option requires the `gfm` option to be `true`.",
                                         name: "markdown.tables",
                                     },
                                     {
@@ -5081,7 +5081,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Whether to enable enable GFM\r        {@link https://help.github.com/articles/basic-writing-and-formatting-syntax/#paragraphs-and-line-breaks|line breaks}.\r        This option requires the `gfm` option to be `true`.",
+                                            "Whether to enable enable GFM\n        {@link https://help.github.com/articles/basic-writing-and-formatting-syntax/#paragraphs-and-line-breaks|line breaks}.\n        This option requires the `gfm` option to be `true`.",
                                         name: "markdown.breaks",
                                     },
                                     {
@@ -5089,7 +5089,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Whether to conform with obscure\r        parts of `markdown.pl` as much as possible. Don't fix any of the\r        original markdown bugs or poor behavior.",
+                                            "Whether to conform with obscure\n        parts of `markdown.pl` as much as possible. Don't fix any of the\n        original markdown bugs or poor behavior.",
                                         name: "markdown.pedantic",
                                     },
                                     {
@@ -5097,7 +5097,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            "Whether to use smarter list\r        behavior than the original markdown. May eventually be default with\r        the old behavior moved into `pedantic`.",
+                                            "Whether to use smarter list\n        behavior than the original markdown. May eventually be default with\n        the old behavior moved into `pedantic`.",
                                         name: "markdown.sanitize",
                                     },
                                     {
@@ -5105,7 +5105,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            'Whether to use "smart"\r        typographic punctuation for things like quotes and dashes.',
+                                            'Whether to use "smart"\n        typographic punctuation for things like quotes and dashes.',
                                         name: "markdown.smartypants",
                                     },
                                     {
@@ -5113,7 +5113,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: false,
                                         description:
-                                            'Self-close the tags for void\r        elements (`<br/>`, `<img/>`, etc.) with a `"/"` as required by XHTML.',
+                                            'Self-close the tags for void\n        elements (`<br/>`, `<img/>`, etc.) with a `"/"` as required by XHTML.',
                                         name: "markdown.xhtml",
                                     },
                                     {
@@ -5121,7 +5121,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "Whether to parse GitHub style task\r        markdown (e.g. `- [x] task`) into checkbox elements.",
+                                            "Whether to parse GitHub style task\n        markdown (e.g. `- [x] task`) into checkbox elements.",
                                         name: "markdown.tasks",
                                     },
                                     {
@@ -5129,14 +5129,14 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "If set to `true`, emoji shortcuts\r        (e.g. `&#x3A;smiley&#x3A;`) are parsed into `&lt;img /&gt;` elements\r        with {@link https://twitter.github.io/twemoji|twemoji} SVG URLs.",
+                                            "If set to `true`, emoji shortcuts\n        (e.g. `&#x3A;smiley&#x3A;`) are parsed into `&lt;img /&gt;` elements\n        with {@link https://twitter.github.io/twemoji|twemoji} SVG URLs.",
                                         name: "markdown.emoji",
                                     },
                                     {
                                         type: { names: ["Object"] },
                                         optional: true,
                                         description:
-                                            "Configuration for the generated SPA (Single Page\r        Application).",
+                                            "Configuration for the generated SPA (Single Page\n        Application).",
                                         name: "app",
                                     },
                                     {
@@ -5144,14 +5144,14 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '""',
                                         description:
-                                            "Title of the main HTML document of the\r        generated web app. (Sets the value of the `&lt;title&gt;` element.)",
+                                            "Title of the main HTML document of the\n        generated web app. (Sets the value of the `&lt;title&gt;` element.)",
                                         name: "app.title",
                                     },
                                     {
                                         type: { names: ["Array", "Object"] },
                                         optional: true,
                                         description:
-                                            'One or more meta elements to be set for the\r        main HTML document of the generated web app. Set arbitrary object(s)\r        for each meta element to be added. e.g. `[{ charset: "utf-8"}, {\r        name: "robots", "content": "index, follow" }]`.',
+                                            'One or more meta elements to be set for the\n        main HTML document of the generated web app. Set arbitrary object(s)\n        for each meta element to be added. e.g. `[{ charset: "utf-8"}, {\n        name: "robots", "content": "index, follow" }]`.',
                                         name: "app.meta",
                                     },
                                     {
@@ -5159,14 +5159,14 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"/"',
                                         description:
-                                            'Sets the base path of the generated web app.\r        For example if the app will operate within `/doc/*` set the base path\r        to `"/doc"`.',
+                                            'Sets the base path of the generated web app.\n        For example if the app will operate within `/doc/*` set the base path\n        to `"/doc"`.',
                                         name: "app.base",
                                     },
                                     {
                                         type: { names: ["String"] },
                                         optional: true,
                                         description:
-                                            "Local path to a `favicon.ico` file to be used\r         with the web app.",
+                                            "Local path to a `favicon.ico` file to be used\n         with the web app.",
                                         name: "app.favicon",
                                     },
                                     {
@@ -5174,14 +5174,14 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"api"',
                                         description:
-                                            'Defines the home content to be\r        displayed for the application root (when you enter the base path i.e.\r        `"/"`). Pass the type and name of the route in `{type}:{name}`\r        format. There are 2 types of routes: `api` for JS source\r        documentation and `content` for other HTML content such as parsed\r        markdown files. For example, if you have a grouped JS files\r        documented with a name `mylib`; to define this as the entrance of the\r        app, set this to `"api:mylib"`. If you have `"README.md"` in your\r        source files; to define this as the entrance, set this to\r        `"content:readme"`.',
+                                            'Defines the home content to be\n        displayed for the application root (when you enter the base path i.e.\n        `"/"`). Pass the type and name of the route in `{type}:{name}`\n        format. There are 2 types of routes: `api` for JS source\n        documentation and `content` for other HTML content such as parsed\n        markdown files. For example, if you have a grouped JS files\n        documented with a name `mylib`; to define this as the entrance of the\n        app, set this to `"api:mylib"`. If you have `"README.md"` in your\n        source files; to define this as the entrance, set this to\n        `"content:readme"`.',
                                         name: "app.entrance",
                                     },
                                     {
                                         type: { names: ["String", "Object"] },
                                         optional: true,
                                         description:
-                                            "Either a `String` defining the route\r        method or an `Object` defining both the method and whether the routes\r        should be case-sensitive.",
+                                            "Either a `String` defining the route\n        method or an `Object` defining both the method and whether the routes\n        should be case-sensitive.",
                                         name: "app.routing",
                                     },
                                     {
@@ -5189,7 +5189,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"query"',
                                         description:
-                                            "Indicates the routing method for the generated SPA (Single\r               Page Application).\r               See {@link #Docma.RoutingMethod|`RoutingMethod` enumeration}.",
+                                            "Indicates the routing method for the generated SPA (Single\n               Page Application).\n               See {@link #Docma.RoutingMethod|`RoutingMethod` enumeration}.",
                                         name: "app.routing.method",
                                     },
                                     {
@@ -5197,7 +5197,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: true,
                                         description:
-                                            "Indicates whether the routes should be case-sensitive.\r               Note that if this is set to `false`, same route names will\r               overwrite the previous, even if they have different case.",
+                                            "Indicates whether the routes should be case-sensitive.\n               Note that if this is set to `false`, same route names will\n               overwrite the previous, even if they have different case.",
                                         name: "app.routing.caseSensitive",
                                     },
                                     {
@@ -5205,7 +5205,7 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"static"',
                                         description:
-                                            'Server or host type for the SPA. This\r        information helps Docma determine how to configure the generated SPA,\r        especially if `routing.method` is set to `"path"`. See\r        {@link #Docma.ServerType|`ServerType` enumeration} for details.',
+                                            'Server or host type for the SPA. This\n        information helps Docma determine how to configure the generated SPA,\n        especially if `routing.method` is set to `"path"`. See\n        {@link #Docma.ServerType|`ServerType` enumeration} for details.',
                                         name: "app.server",
                                     },
                                     {
@@ -5220,19 +5220,19 @@ var docma = Object.freeze(
                                         optional: true,
                                         defaultvalue: '"default"',
                                         description:
-                                            "Either the path of a custom Docma\r        template or the name of a built-in template. Omit to use the default\r        built-in template.",
+                                            "Either the path of a custom Docma\n        template or the name of a built-in template. Omit to use the default\n        built-in template.",
                                         name: "template.path",
                                     },
                                     {
                                         type: { names: ["Object"] },
                                         optional: true,
                                         description:
-                                            "SPA template options. This is defined by\r        the template itself. Refer to the template's documentation for\r        options to be set at build-time. See\r        {@link templates/zebra/#template-options|Default Template options}.",
+                                            "SPA template options. This is defined by\n        the template itself. Refer to the template's documentation for\n        options to be set at build-time. See\n        {@link templates/zebra/#template-options|Default Template options}.",
                                         name: "template.options",
                                     },
                                 ],
                                 examples: [
-                                    "const buildConfig = {\r     src: [\r         // using an object to define (group) names for JS files.\r         {\r             // grouping JS files under the name \"my-lib\".\r             // This name also defines the api route name: e.g. ?api=my-lib or api/my-lib/\r             'my-lib': [\r                 './src/** /*.js',           // recurse all JS files under /src\r                 './lib/some-other.js',\r                 '!./lib/ignored.js'         // notice the bang! prefix to exclude this file\r             ],\r             // naming another api route\r             'other-lib': './other/*.js',    // ?api=other-lib\r         },\r\r         // ungrouped js files will be merged under default route\r         './src/main.js',                    // ?api or ?api=_def_\r         './src/main.utils.js',              // merged into same ?api or ?api=_def_\r\r         // including markdown (\"content\") files\r         './CHANGELOG.md',                   // this will have 'changelog' as route name.\r                                             // i.e. ?content=changelog\r         // forcing specific parser on files:\r         './LICENSE:md',                     // LICENSE file with no-extension is forced\r                                             // to markdown via :md suffix.\r                                             // route will be ?content=license or license/\r         // using an object to rename the route for the given markdown files\r         {\r             guide: './README.md'            // this will have 'guide' as content route name\r         }                                   // i.e. ?content=guide or guide/\r     ],\r     dest: './output/docs',                  // output directory for the generated docs\r     app: {\r         title: 'My Documentation',          // title of the app\r         routing: 'query',                   // routing method \"query\" or \"path\"\r         entrance: 'content:guide',          // initial route to load on entrance\r         base: '/'                           // base path of the SPA\r     },\r\r     // template-specific configuration.\r     // for Zebra template, see https://onury.io/docma/templates/zebra\r     template: {\r         path: 'zebra',\r         options: {\r             title: {\r                 label: 'My Docs',\r                 href: '/docs/?'\r             },\r             navbar: true,\r             sidebar: {\r                 enabled: true,\r                 outline: 'tree'\r             }\r         }\r     }\r };\r // See Docma's own configuration @\r // https://github.com/Prozi/docma/blob/master/docma.json",
+                                    "const buildConfig = {\n     src: [\n         // using an object to define (group) names for JS files.\n         {\n             // grouping JS files under the name \"my-lib\".\n             // This name also defines the api route name: e.g. ?api=my-lib or api/my-lib/\n             'my-lib': [\n                 './src/** /*.js',           // recurse all JS files under /src\n                 './lib/some-other.js',\n                 '!./lib/ignored.js'         // notice the bang! prefix to exclude this file\n             ],\n             // naming another api route\n             'other-lib': './other/*.js',    // ?api=other-lib\n         },\n\n         // ungrouped js files will be merged under default route\n         './src/main.js',                    // ?api or ?api=_def_\n         './src/main.utils.js',              // merged into same ?api or ?api=_def_\n\n         // including markdown (\"content\") files\n         './CHANGELOG.md',                   // this will have 'changelog' as route name.\n                                             // i.e. ?content=changelog\n         // forcing specific parser on files:\n         './LICENSE:md',                     // LICENSE file with no-extension is forced\n                                             // to markdown via :md suffix.\n                                             // route will be ?content=license or license/\n         // using an object to rename the route for the given markdown files\n         {\n             guide: './README.md'            // this will have 'guide' as content route name\n         }                                   // i.e. ?content=guide or guide/\n     ],\n     dest: './output/docs',                  // output directory for the generated docs\n     app: {\n         title: 'My Documentation',          // title of the app\n         routing: 'query',                   // routing method \"query\" or \"path\"\n         entrance: 'content:guide',          // initial route to load on entrance\n         base: '/'                           // base path of the SPA\n     },\n\n     // template-specific configuration.\n     // for Zebra template, see https://onury.io/docma/templates/zebra\n     template: {\n         path: 'zebra',\n         options: {\n             title: {\n                 label: 'My Docs',\n                 href: '/docs/?'\n             },\n             navbar: true,\n             sidebar: {\n                 enabled: true,\n                 outline: 'tree'\n             }\n         }\n     }\n };\n // See Docma's own configuration @\n // https://github.com/Prozi/docma/blob/master/docma.json",
                                 ],
                                 memberof: "Docma",
                                 longname: "Docma~BuildConfiguration",
@@ -5245,13 +5245,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n     *  Parses the given source files and builds a Single Page Application (SPA)\r\n     *  with the given Docma template.\r\n     *\r\n     *  For a verbose build, `debug` option should be {@link #Docma.Debug|enabled}.\r\n     *\r\n     *  @param {Object|String} config\r\n     *         Either a build configuration object or the file path of a\r\n     *         configuration JSON file.\r\n     *         See {@link #Docma~BuildConfiguration|`BuildConfiguration`} for details.\r\n     *\r\n     *  @returns {Promise<Boolean>}\r\n     *           Promise that resolves to a `Boolean` value for whether the build\r\n     *           operation is successful. This will always return `true` if\r\n     *           no errors occur. You should `.catch()` the errors of the\r\n     *           promise chain.\r\n     *\r\n     *  @example\r\n     *  const docma = new Docma();\r\n     *  docma.build(config)\r\n     *  \t.then(success => {\r\n     *  \t\tconsole.log('Documentation is built successfully.');\r\n     *  \t})\r\n     *  \t.catch(error => {\r\n     *  \t\tconsole.log(error.stack);\r\n     *  \t});\r\n     */",
+                            "/**\n     *  Parses the given source files and builds a Single Page Application (SPA)\n     *  with the given Docma template.\n     *\n     *  For a verbose build, `debug` option should be {@link #Docma.Debug|enabled}.\n     *\n     *  @param {Object|String} config\n     *         Either a build configuration object or the file path of a\n     *         configuration JSON file.\n     *         See {@link #Docma~BuildConfiguration|`BuildConfiguration`} for details.\n     *\n     *  @returns {Promise<Boolean>}\n     *           Promise that resolves to a `Boolean` value for whether the build\n     *           operation is successful. This will always return `true` if\n     *           no errors occur. You should `.catch()` the errors of the\n     *           promise chain.\n     *\n     *  @example\n     *  const docma = new Docma();\n     *  docma.build(config)\n     *  \t.then(success => {\n     *  \t\tconsole.log('Documentation is built successfully.');\n     *  \t})\n     *  \t.catch(error => {\n     *  \t\tconsole.log(error.stack);\n     *  \t});\n     */",
                         meta: {
-                            range: [35433, 43082],
+                            range: [34541, 42031],
                             filename: "Docma.js",
                             lineno: 893,
                             columnno: 4,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100002720",
                                 name: "Docma#build",
@@ -5261,12 +5261,12 @@ var docma = Object.freeze(
                             vars: { "": null },
                         },
                         description:
-                            "Parses the given source files and builds a Single Page Application (SPA)\r with the given Docma template.\r\r For a verbose build, `debug` option should be {@link #Docma.Debug|enabled}.",
+                            "Parses the given source files and builds a Single Page Application (SPA)\n with the given Docma template.\n\n For a verbose build, `debug` option should be {@link #Docma.Debug|enabled}.",
                         params: [
                             {
                                 type: { names: ["Object", "String"] },
                                 description:
-                                    "Either a build configuration object or the file path of a\r        configuration JSON file.\r        See {@link #Docma~BuildConfiguration|`BuildConfiguration`} for details.",
+                                    "Either a build configuration object or the file path of a\n        configuration JSON file.\n        See {@link #Docma~BuildConfiguration|`BuildConfiguration`} for details.",
                                 name: "config",
                             },
                         ],
@@ -5274,11 +5274,11 @@ var docma = Object.freeze(
                             {
                                 type: { names: ["Promise.<Boolean>"] },
                                 description:
-                                    "Promise that resolves to a `Boolean` value for whether the build\r          operation is successful. This will always return `true` if\r          no errors occur. You should `.catch()` the errors of the\r          promise chain.",
+                                    "Promise that resolves to a `Boolean` value for whether the build\n          operation is successful. This will always return `true` if\n          no errors occur. You should `.catch()` the errors of the\n          promise chain.",
                             },
                         ],
                         examples: [
-                            "const docma = new Docma();\r docma.build(config)\r \t.then(success => {\r \t\tconsole.log('Documentation is built successfully.');\r \t})\r \t.catch(error => {\r \t\tconsole.log(error.stack);\r \t});",
+                            "const docma = new Docma();\n docma.build(config)\n \t.then(success => {\n \t\tconsole.log('Documentation is built successfully.');\n \t})\n \t.catch(error => {\n \t\tconsole.log(error.stack);\n \t});",
                         ],
                         name: "build",
                         longname: "Docma#build",
@@ -5291,13 +5291,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n     *  Creates a new instance of `Docma`.\r\n     *  This is equivalent to `new Docma()`.\r\n     *\r\n     *  @returns {Docma} - Docma instance.\r\n     */",
+                            "/**\n     *  Creates a new instance of `Docma`.\n     *  This is equivalent to `new Docma()`.\n     *\n     *  @returns {Docma} - Docma instance.\n     */",
                         meta: {
-                            range: [43357, 43410],
+                            range: [42294, 42345],
                             filename: "Docma.js",
                             lineno: 1063,
                             columnno: 4,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100003405",
                                 name: "Docma.create",
@@ -5307,7 +5307,7 @@ var docma = Object.freeze(
                             vars: { "": null },
                         },
                         description:
-                            "Creates a new instance of `Docma`.\r This is equivalent to `new Docma()`.",
+                            "Creates a new instance of `Docma`.\n This is equivalent to `new Docma()`.",
                         returns: [
                             {
                                 type: { names: ["Docma"] },
@@ -5326,13 +5326,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n *  Enumerates bitwise debug flags.\r\n *  @enum {Number}\r\n */",
+                            "/**\n *  Enumerates bitwise debug flags.\n *  @enum {Number}\n */",
                         meta: {
-                            range: [47046, 48135],
+                            range: [45869, 46917],
                             filename: "Docma.js",
                             lineno: 1177,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100003447",
                                 name: "Docma.Debug",
@@ -5352,13 +5352,13 @@ var docma = Object.freeze(
                         properties: [
                             {
                                 comment:
-                                    "/**\r\n     *  Enables all debug flags.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Enables all debug flags.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [48124, 48131],
+                                    range: [46907, 46914],
                                     filename: "Docma.js",
                                     lineno: 1217,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003464",
                                         name: "ALL",
@@ -5377,13 +5377,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs build logs to the Node console.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs build logs to the Node console.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47247, 47260],
+                                    range: [46060, 46073],
                                     filename: "Docma.js",
                                     lineno: 1187,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003454",
                                         name: "BUILD_LOGS",
@@ -5403,13 +5403,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Disables debugging.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Disables debugging.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47138, 47149],
+                                    range: [45956, 45967],
                                     filename: "Docma.js",
                                     lineno: 1182,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003452",
                                         name: "DISABLED",
@@ -5428,13 +5428,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs one or more `[name.]jsdoc.json` files that include\r\n     *  documentation data for each (grouped) javascript source.\r\n     *  `name` is the group name you give when you define the source\r\n     *  files. This is useful for investigating the raw JSDoc output.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs one or more `[name.]jsdoc.json` files that include\n     *  documentation data for each (grouped) javascript source.\n     *  `name` is the group name you give when you define the source\n     *  files. This is useful for investigating the raw JSDoc output.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [48025, 48041],
+                                    range: [46813, 46829],
                                     filename: "Docma.js",
                                     lineno: 1212,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003462",
                                         name: "JSDOC_OUTPUT",
@@ -5443,7 +5443,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Outputs one or more `[name.]jsdoc.json` files that include\r documentation data for each (grouped) javascript source.\r `name` is the group name you give when you define the source\r files. This is useful for investigating the raw JSDoc output.",
+                                    "Outputs one or more `[name.]jsdoc.json` files that include\n documentation data for each (grouped) javascript source.\n `name` is the group name you give when you define the source\n files. This is useful for investigating the raw JSDoc output.",
                                 type: { names: ["Number"] },
                                 name: "JSDOC_OUTPUT",
                                 longname: "Docma.Debug.JSDOC_OUTPUT",
@@ -5454,13 +5454,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Disables minification for the generated web app assets such as\r\n     *  Javascript files. This is useful if you're debugging a custom\r\n     *  Docma template.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Disables minification for the generated web app assets such as\n     *  Javascript files. This is useful if you're debugging a custom\n     *  Docma template.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47689, 47701],
+                                    range: [46485, 46497],
                                     filename: "Docma.js",
                                     lineno: 1204,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003460",
                                         name: "NO_MINIFY",
@@ -5469,7 +5469,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Disables minification for the generated web app assets such as\r Javascript files. This is useful if you're debugging a custom\r Docma template.",
+                                    "Disables minification for the generated web app assets such as\n Javascript files. This is useful if you're debugging a custom\n Docma template.",
                                 type: { names: ["Number"] },
                                 name: "NO_MINIFY",
                                 longname: "Docma.Debug.NO_MINIFY",
@@ -5480,13 +5480,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs verbose logs to consoles.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs verbose logs to consoles.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47462, 47472],
+                                    range: [46265, 46275],
                                     filename: "Docma.js",
                                     lineno: 1197,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003458",
                                         name: "VERBOSE",
@@ -5506,13 +5506,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs app logs to the browser console.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs app logs to the browser console.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47359, 47370],
+                                    range: [46167, 46178],
                                     filename: "Docma.js",
                                     lineno: 1192,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003456",
                                         name: "WEB_LOGS",
@@ -5537,13 +5537,13 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n     *  Enables all debug flags.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Enables all debug flags.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [48124, 48131],
+                                    range: [46907, 46914],
                                     filename: "Docma.js",
                                     lineno: 1217,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003464",
                                         name: "ALL",
@@ -5565,13 +5565,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs build logs to the Node console.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs build logs to the Node console.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47247, 47260],
+                                    range: [46060, 46073],
                                     filename: "Docma.js",
                                     lineno: 1187,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003454",
                                         name: "BUILD_LOGS",
@@ -5594,13 +5594,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Disables debugging.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Disables debugging.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47138, 47149],
+                                    range: [45956, 45967],
                                     filename: "Docma.js",
                                     lineno: 1182,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003452",
                                         name: "DISABLED",
@@ -5622,13 +5622,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs one or more `[name.]jsdoc.json` files that include\r\n     *  documentation data for each (grouped) javascript source.\r\n     *  `name` is the group name you give when you define the source\r\n     *  files. This is useful for investigating the raw JSDoc output.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs one or more `[name.]jsdoc.json` files that include\n     *  documentation data for each (grouped) javascript source.\n     *  `name` is the group name you give when you define the source\n     *  files. This is useful for investigating the raw JSDoc output.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [48025, 48041],
+                                    range: [46813, 46829],
                                     filename: "Docma.js",
                                     lineno: 1212,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003462",
                                         name: "JSDOC_OUTPUT",
@@ -5637,7 +5637,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Outputs one or more `[name.]jsdoc.json` files that include\r documentation data for each (grouped) javascript source.\r `name` is the group name you give when you define the source\r files. This is useful for investigating the raw JSDoc output.",
+                                    "Outputs one or more `[name.]jsdoc.json` files that include\n documentation data for each (grouped) javascript source.\n `name` is the group name you give when you define the source\n files. This is useful for investigating the raw JSDoc output.",
                                 type: { names: ["Number"] },
                                 name: "JSDOC_OUTPUT",
                                 longname: "Docma.Debug.JSDOC_OUTPUT",
@@ -5651,13 +5651,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Disables minification for the generated web app assets such as\r\n     *  Javascript files. This is useful if you're debugging a custom\r\n     *  Docma template.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Disables minification for the generated web app assets such as\n     *  Javascript files. This is useful if you're debugging a custom\n     *  Docma template.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47689, 47701],
+                                    range: [46485, 46497],
                                     filename: "Docma.js",
                                     lineno: 1204,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003460",
                                         name: "NO_MINIFY",
@@ -5666,7 +5666,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Disables minification for the generated web app assets such as\r Javascript files. This is useful if you're debugging a custom\r Docma template.",
+                                    "Disables minification for the generated web app assets such as\n Javascript files. This is useful if you're debugging a custom\n Docma template.",
                                 type: { names: ["Number"] },
                                 name: "NO_MINIFY",
                                 longname: "Docma.Debug.NO_MINIFY",
@@ -5680,13 +5680,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs verbose logs to consoles.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs verbose logs to consoles.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47462, 47472],
+                                    range: [46265, 46275],
                                     filename: "Docma.js",
                                     lineno: 1197,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003458",
                                         name: "VERBOSE",
@@ -5709,13 +5709,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Outputs app logs to the browser console.\r\n     *  @type {Number}\r\n     */",
+                                    "/**\n     *  Outputs app logs to the browser console.\n     *  @type {Number}\n     */",
                                 meta: {
-                                    range: [47359, 47370],
+                                    range: [46167, 46178],
                                     filename: "Docma.js",
                                     lineno: 1192,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003456",
                                         name: "WEB_LOGS",
@@ -5740,13 +5740,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            '/**\r\n *  Enumerates Docma SPA route types.\r\n *  @enum {String}\r\n *  @readonly\r\n *\r\n *  @example <caption>Routing Method: <code>"query"</code></caption>\r\n *  type     name              path\r\n *  -------  ----------------  --------------------------\r\n *  api      _def_             ?api\r\n *  api      web               ?api=web\r\n *  content  templates         ?content=templates\r\n *  content  guide             ?content=guide\r\n *\r\n *  @example <caption>Routing Method: <code>"path"</code></caption>\r\n *  type     name              path\r\n *  -------  ----------------  --------------------------\r\n *  api      _def_             api/\r\n *  api      web               api/web/\r\n *  content  templates         templates/\r\n *  content  guide             guide/\r\n */',
+                            '/**\n *  Enumerates Docma SPA route types.\n *  @enum {String}\n *  @readonly\n *\n *  @example <caption>Routing Method: <code>"query"</code></caption>\n *  type     name              path\n *  -------  ----------------  --------------------------\n *  api      _def_             ?api\n *  api      web               ?api=web\n *  content  templates         ?content=templates\n *  content  guide             ?content=guide\n *\n *  @example <caption>Routing Method: <code>"path"</code></caption>\n *  type     name              path\n *  -------  ----------------  --------------------------\n *  api      _def_             api/\n *  api      web               api/web/\n *  content  templates         templates/\n *  content  guide             guide/\n */',
                         meta: {
-                            range: [45422, 45786],
+                            range: [44301, 44652],
                             filename: "Docma.js",
                             lineno: 1121,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100003423",
                                 name: "Docma.RouteType",
@@ -5761,8 +5761,8 @@ var docma = Object.freeze(
                         type: { names: ["String"] },
                         readonly: true,
                         examples: [
-                            '<caption>Routing Method: <code>"query"</code></caption>\r type     name              path\r -------  ----------------  --------------------------\r api      _def_             ?api\r api      web               ?api=web\r content  templates         ?content=templates\r content  guide             ?content=guide\r\r ',
-                            '<caption>Routing Method: <code>"path"</code></caption>\r type     name              path\r -------  ----------------  --------------------------\r api      _def_             api/\r api      web               api/web/\r content  templates         templates/\r content  guide             guide/',
+                            '<caption>Routing Method: <code>"query"</code></caption>\n type     name              path\n -------  ----------------  --------------------------\n api      _def_             ?api\n api      web               ?api=web\n content  templates         ?content=templates\n content  guide             ?content=guide\n\n ',
+                            '<caption>Routing Method: <code>"path"</code></caption>\n type     name              path\n -------  ----------------  --------------------------\n api      _def_             api/\n api      web               api/web/\n content  templates         templates/\n content  guide             guide/',
                         ],
                         name: "RouteType",
                         longname: "Docma.RouteType",
@@ -5771,13 +5771,13 @@ var docma = Object.freeze(
                         properties: [
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates a route for API documentation content, generated from\r\n     *  Javascript source files via JSDoc.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates a route for API documentation content, generated from\n     *  Javascript source files via JSDoc.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [45606, 45616],
+                                    range: [44479, 44489],
                                     filename: "Docma.js",
                                     lineno: 1127,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003428",
                                         name: "API",
@@ -5786,7 +5786,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates a route for API documentation content, generated from\r Javascript source files via JSDoc.",
+                                    "Indicates a route for API documentation content, generated from\n Javascript source files via JSDoc.",
                                 type: { names: ["String"] },
                                 name: "API",
                                 longname: "Docma.RouteType.API",
@@ -5797,13 +5797,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates a route for other content, such as HTML files generated\r\n     *  from markdown.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates a route for other content, such as HTML files generated\n     *  from markdown.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [45764, 45782],
+                                    range: [44631, 44649],
                                     filename: "Docma.js",
                                     lineno: 1133,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003430",
                                         name: "CONTENT",
@@ -5812,7 +5812,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates a route for other content, such as HTML files generated\r from markdown.",
+                                    "Indicates a route for other content, such as HTML files generated\n from markdown.",
                                 type: { names: ["String"] },
                                 name: "CONTENT",
                                 longname: "Docma.RouteType.CONTENT",
@@ -5828,13 +5828,13 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates a route for API documentation content, generated from\r\n     *  Javascript source files via JSDoc.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates a route for API documentation content, generated from\n     *  Javascript source files via JSDoc.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [45606, 45616],
+                                    range: [44479, 44489],
                                     filename: "Docma.js",
                                     lineno: 1127,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003428",
                                         name: "API",
@@ -5843,7 +5843,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates a route for API documentation content, generated from\r Javascript source files via JSDoc.",
+                                    "Indicates a route for API documentation content, generated from\n Javascript source files via JSDoc.",
                                 type: { names: ["String"] },
                                 name: "API",
                                 longname: "Docma.RouteType.API",
@@ -5857,13 +5857,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates a route for other content, such as HTML files generated\r\n     *  from markdown.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates a route for other content, such as HTML files generated\n     *  from markdown.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [45764, 45782],
+                                    range: [44631, 44649],
                                     filename: "Docma.js",
                                     lineno: 1133,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003430",
                                         name: "CONTENT",
@@ -5872,7 +5872,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates a route for other content, such as HTML files generated\r from markdown.",
+                                    "Indicates a route for other content, such as HTML files generated\n from markdown.",
                                 type: { names: ["String"] },
                                 name: "CONTENT",
                                 longname: "Docma.RouteType.CONTENT",
@@ -5888,13 +5888,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n *  Enumerates the routing methods for a Docma generated web application.\r\n *  @enum {String}\r\n *  @readonly\r\n */",
+                            "/**\n *  Enumerates the routing methods for a Docma generated web application.\n *  @enum {String}\n *  @readonly\n */",
                         meta: {
-                            range: [43632, 44658],
+                            range: [42555, 43560],
                             filename: "Docma.js",
                             lineno: 1077,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100003413",
                                 name: "Docma.RoutingMethod",
@@ -5916,13 +5916,13 @@ var docma = Object.freeze(
                         properties: [
                             {
                                 comment:
-                                    '/**\r\n     *  Indicates that the SPA routes are based on path params rather than\r\n     *  query-strings. For example, for a named group of JS source files\r\n     *  (e.g. `"mylib"`), the generated documentation will be accessible at\r\n     *  `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\r\n     *  And for other HTML content such as files generated from markdown\r\n     *  files (e.g. README.md) will be accessible at `readme/`.\r\n     *  @type {String}\r\n     */',
+                                    '/**\n     *  Indicates that the SPA routes are based on path params rather than\n     *  query-strings. For example, for a named group of JS source files\n     *  (e.g. `"mylib"`), the generated documentation will be accessible at\n     *  `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\n     *  And for other HTML content such as files generated from markdown\n     *  files (e.g. README.md) will be accessible at `readme/`.\n     *  @type {String}\n     */',
                                 meta: {
-                                    range: [44642, 44654],
+                                    range: [43545, 43557],
                                     filename: "Docma.js",
                                     lineno: 1097,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003420",
                                         name: "PATH",
@@ -5931,7 +5931,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    'Indicates that the SPA routes are based on path params rather than\r query-strings. For example, for a named group of JS source files\r (e.g. `"mylib"`), the generated documentation will be accessible at\r `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\r And for other HTML content such as files generated from markdown\r files (e.g. README.md) will be accessible at `readme/`.',
+                                    'Indicates that the SPA routes are based on path params rather than\n query-strings. For example, for a named group of JS source files\n (e.g. `"mylib"`), the generated documentation will be accessible at\n `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\n And for other HTML content such as files generated from markdown\n files (e.g. README.md) will be accessible at `readme/`.',
                                 type: { names: ["String"] },
                                 name: "PATH",
                                 longname: "Docma.RoutingMethod.PATH",
@@ -5942,13 +5942,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Indicates that the SPA routes are based on query-strings.\r\n     *  For example, for a named group of JS source files (e.g. `"mylib"`),\r\n     *  the generated documentation will be accessible at `?api=mylib`.\r\n     *  Ungrouped JS documentation will be accessible at `?api`.\r\n     *  And for other HTML content such as files generated from markdown\r\n     *  files (e.g. README.md) will be accessible at `?content=readme`.\r\n     *  @type {String}\r\n     */',
+                                    '/**\n     *  Indicates that the SPA routes are based on query-strings.\n     *  For example, for a named group of JS source files (e.g. `"mylib"`),\n     *  the generated documentation will be accessible at `?api=mylib`.\n     *  Ungrouped JS documentation will be accessible at `?api`.\n     *  And for other HTML content such as files generated from markdown\n     *  files (e.g. README.md) will be accessible at `?content=readme`.\n     *  @type {String}\n     */',
                                 meta: {
-                                    range: [44133, 44147],
+                                    range: [43046, 43060],
                                     filename: "Docma.js",
                                     lineno: 1087,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003418",
                                         name: "QUERY",
@@ -5957,7 +5957,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    'Indicates that the SPA routes are based on query-strings.\r For example, for a named group of JS source files (e.g. `"mylib"`),\r the generated documentation will be accessible at `?api=mylib`.\r Ungrouped JS documentation will be accessible at `?api`.\r And for other HTML content such as files generated from markdown\r files (e.g. README.md) will be accessible at `?content=readme`.',
+                                    'Indicates that the SPA routes are based on query-strings.\n For example, for a named group of JS source files (e.g. `"mylib"`),\n the generated documentation will be accessible at `?api=mylib`.\n Ungrouped JS documentation will be accessible at `?api`.\n And for other HTML content such as files generated from markdown\n files (e.g. README.md) will be accessible at `?content=readme`.',
                                 type: { names: ["String"] },
                                 name: "QUERY",
                                 longname: "Docma.RoutingMethod.QUERY",
@@ -5973,13 +5973,13 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    '/**\r\n     *  Indicates that the SPA routes are based on path params rather than\r\n     *  query-strings. For example, for a named group of JS source files\r\n     *  (e.g. `"mylib"`), the generated documentation will be accessible at\r\n     *  `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\r\n     *  And for other HTML content such as files generated from markdown\r\n     *  files (e.g. README.md) will be accessible at `readme/`.\r\n     *  @type {String}\r\n     */',
+                                    '/**\n     *  Indicates that the SPA routes are based on path params rather than\n     *  query-strings. For example, for a named group of JS source files\n     *  (e.g. `"mylib"`), the generated documentation will be accessible at\n     *  `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\n     *  And for other HTML content such as files generated from markdown\n     *  files (e.g. README.md) will be accessible at `readme/`.\n     *  @type {String}\n     */',
                                 meta: {
-                                    range: [44642, 44654],
+                                    range: [43545, 43557],
                                     filename: "Docma.js",
                                     lineno: 1097,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003420",
                                         name: "PATH",
@@ -5988,7 +5988,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    'Indicates that the SPA routes are based on path params rather than\r query-strings. For example, for a named group of JS source files\r (e.g. `"mylib"`), the generated documentation will be accessible at\r `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\r And for other HTML content such as files generated from markdown\r files (e.g. README.md) will be accessible at `readme/`.',
+                                    'Indicates that the SPA routes are based on path params rather than\n query-strings. For example, for a named group of JS source files\n (e.g. `"mylib"`), the generated documentation will be accessible at\n `api/mylib/`. Ungrouped JS documentation will be accessible at `api/`.\n And for other HTML content such as files generated from markdown\n files (e.g. README.md) will be accessible at `readme/`.',
                                 type: { names: ["String"] },
                                 name: "PATH",
                                 longname: "Docma.RoutingMethod.PATH",
@@ -6002,13 +6002,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Indicates that the SPA routes are based on query-strings.\r\n     *  For example, for a named group of JS source files (e.g. `"mylib"`),\r\n     *  the generated documentation will be accessible at `?api=mylib`.\r\n     *  Ungrouped JS documentation will be accessible at `?api`.\r\n     *  And for other HTML content such as files generated from markdown\r\n     *  files (e.g. README.md) will be accessible at `?content=readme`.\r\n     *  @type {String}\r\n     */',
+                                    '/**\n     *  Indicates that the SPA routes are based on query-strings.\n     *  For example, for a named group of JS source files (e.g. `"mylib"`),\n     *  the generated documentation will be accessible at `?api=mylib`.\n     *  Ungrouped JS documentation will be accessible at `?api`.\n     *  And for other HTML content such as files generated from markdown\n     *  files (e.g. README.md) will be accessible at `?content=readme`.\n     *  @type {String}\n     */',
                                 meta: {
-                                    range: [44133, 44147],
+                                    range: [43046, 43060],
                                     filename: "Docma.js",
                                     lineno: 1087,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003418",
                                         name: "QUERY",
@@ -6017,7 +6017,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    'Indicates that the SPA routes are based on query-strings.\r For example, for a named group of JS source files (e.g. `"mylib"`),\r the generated documentation will be accessible at `?api=mylib`.\r Ungrouped JS documentation will be accessible at `?api`.\r And for other HTML content such as files generated from markdown\r files (e.g. README.md) will be accessible at `?content=readme`.',
+                                    'Indicates that the SPA routes are based on query-strings.\n For example, for a named group of JS source files (e.g. `"mylib"`),\n the generated documentation will be accessible at `?api=mylib`.\n Ungrouped JS documentation will be accessible at `?api`.\n And for other HTML content such as files generated from markdown\n files (e.g. README.md) will be accessible at `?content=readme`.',
                                 type: { names: ["String"] },
                                 name: "QUERY",
                                 longname: "Docma.RoutingMethod.QUERY",
@@ -6033,13 +6033,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            '/**\r\n *  Enumerates the server/host types for Docma generated SPA.\r\n *  The generated SPA is not limited to these hosts but Docma will generate\r\n *  additional server config files for these hosts; especially if the\r\n *  routing method is set to `"path"`. For example, for Apache;\r\n *  an `.htaccess` file will be auto-generated with redirect rules for\r\n *  (sub) routes. For GitHub, sub-directories will be generated\r\n *  (just like Jekyll) with index files for redirecting via http-meta\r\n *  refresh.\r\n *  @enum {String}\r\n *  @readonly\r\n */',
+                            '/**\n *  Enumerates the server/host types for Docma generated SPA.\n *  The generated SPA is not limited to these hosts but Docma will generate\n *  additional server config files for these hosts; especially if the\n *  routing method is set to `"path"`. For example, for Apache;\n *  an `.htaccess` file will be auto-generated with redirect rules for\n *  (sub) routes. For GitHub, sub-directories will be generated\n *  (just like Jekyll) with index files for redirecting via http-meta\n *  refresh.\n *  @enum {String}\n *  @readonly\n */',
                         meta: {
-                            range: [46334, 46974],
+                            range: [45186, 45803],
                             filename: "Docma.js",
                             lineno: 1148,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100003433",
                                 name: "Docma.ServerType",
@@ -6049,7 +6049,7 @@ var docma = Object.freeze(
                             },
                         },
                         description:
-                            'Enumerates the server/host types for Docma generated SPA.\r The generated SPA is not limited to these hosts but Docma will generate\r additional server config files for these hosts; especially if the\r routing method is set to `"path"`. For example, for Apache;\r an `.htaccess` file will be auto-generated with redirect rules for\r (sub) routes. For GitHub, sub-directories will be generated\r (just like Jekyll) with index files for redirecting via http-meta\r refresh.',
+                            'Enumerates the server/host types for Docma generated SPA.\n The generated SPA is not limited to these hosts but Docma will generate\n additional server config files for these hosts; especially if the\n routing method is set to `"path"`. For example, for Apache;\n an `.htaccess` file will be auto-generated with redirect rules for\n (sub) routes. For GitHub, sub-directories will be generated\n (just like Jekyll) with index files for redirecting via http-meta\n refresh.',
                         kind: "member",
                         isEnum: true,
                         type: { names: ["String"] },
@@ -6061,13 +6061,13 @@ var docma = Object.freeze(
                         properties: [
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that an Apache server will be hosting the generated SPA.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that an Apache server will be hosting the generated SPA.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46478, 46494],
+                                    range: [45325, 45341],
                                     filename: "Docma.js",
                                     lineno: 1153,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003438",
                                         name: "APACHE",
@@ -6087,13 +6087,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that SPA will be hosted via\r\n     *  {@link https://pages.github.com|GitHub Pages}.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that SPA will be hosted via\n     *  {@link https://pages.github.com|GitHub Pages}.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46646, 46662],
+                                    range: [45487, 45503],
                                     filename: "Docma.js",
                                     lineno: 1159,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003440",
                                         name: "GITHUB",
@@ -6102,7 +6102,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates that SPA will be hosted via\r {@link https://pages.github.com|GitHub Pages}.",
+                                    "Indicates that SPA will be hosted via\n {@link https://pages.github.com|GitHub Pages}.",
                                 type: { names: ["String"] },
                                 name: "GITHUB",
                                 longname: "Docma.ServerType.GITHUB",
@@ -6113,13 +6113,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that SPA will be hosted as static HTML files.\r\n     *  Similar to `Docma.ServerType.GITHUB`.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that SPA will be hosted as static HTML files.\n     *  Similar to `Docma.ServerType.GITHUB`.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46823, 46839],
+                                    range: [45658, 45674],
                                     filename: "Docma.js",
                                     lineno: 1165,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003442",
                                         name: "STATIC",
@@ -6128,7 +6128,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates that SPA will be hosted as static HTML files.\r Similar to `Docma.ServerType.GITHUB`.",
+                                    "Indicates that SPA will be hosted as static HTML files.\n Similar to `Docma.ServerType.GITHUB`.",
                                 type: { names: ["String"] },
                                 name: "STATIC",
                                 longname: "Docma.ServerType.STATIC",
@@ -6139,13 +6139,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that SPA will be hosted on a Windows server.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that SPA will be hosted on a Windows server.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46952, 46970],
+                                    range: [45782, 45800],
                                     filename: "Docma.js",
                                     lineno: 1170,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003444",
                                         name: "WINDOWS",
@@ -6170,13 +6170,13 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that an Apache server will be hosting the generated SPA.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that an Apache server will be hosting the generated SPA.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46478, 46494],
+                                    range: [45325, 45341],
                                     filename: "Docma.js",
                                     lineno: 1153,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003438",
                                         name: "APACHE",
@@ -6199,13 +6199,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that SPA will be hosted via\r\n     *  {@link https://pages.github.com|GitHub Pages}.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that SPA will be hosted via\n     *  {@link https://pages.github.com|GitHub Pages}.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46646, 46662],
+                                    range: [45487, 45503],
                                     filename: "Docma.js",
                                     lineno: 1159,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003440",
                                         name: "GITHUB",
@@ -6214,7 +6214,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates that SPA will be hosted via\r {@link https://pages.github.com|GitHub Pages}.",
+                                    "Indicates that SPA will be hosted via\n {@link https://pages.github.com|GitHub Pages}.",
                                 type: { names: ["String"] },
                                 name: "GITHUB",
                                 longname: "Docma.ServerType.GITHUB",
@@ -6228,13 +6228,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that SPA will be hosted as static HTML files.\r\n     *  Similar to `Docma.ServerType.GITHUB`.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that SPA will be hosted as static HTML files.\n     *  Similar to `Docma.ServerType.GITHUB`.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46823, 46839],
+                                    range: [45658, 45674],
                                     filename: "Docma.js",
                                     lineno: 1165,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003442",
                                         name: "STATIC",
@@ -6243,7 +6243,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Indicates that SPA will be hosted as static HTML files.\r Similar to `Docma.ServerType.GITHUB`.",
+                                    "Indicates that SPA will be hosted as static HTML files.\n Similar to `Docma.ServerType.GITHUB`.",
                                 type: { names: ["String"] },
                                 name: "STATIC",
                                 longname: "Docma.ServerType.STATIC",
@@ -6257,13 +6257,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Indicates that SPA will be hosted on a Windows server.\r\n     *  @type {String}\r\n     */",
+                                    "/**\n     *  Indicates that SPA will be hosted on a Windows server.\n     *  @type {String}\n     */",
                                 meta: {
-                                    range: [46952, 46970],
+                                    range: [45782, 45800],
                                     filename: "Docma.js",
                                     lineno: 1170,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {
                                         id: "astnode100003444",
                                         name: "WINDOWS",
@@ -6288,21 +6288,21 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n *  <blockquote>This class is useful for template authors only.</blockquote>\r\n *\r\n *  Class that provides template information and methods for supporting the\r\n *  documentation build process.\r\n *\r\n *  You should not instantiate this class directly with a `new` operator. Docma\r\n *  passes an instance of this class to your template module as the first\r\n *  argument; when the end-user builds their documentation.\r\n *\r\n *  See {@link templates/guide/|Creating Docma Templates}.\r\n *  You can also use {@link cli/#docma-template-init--path-|Docma CLI}\r\n *  to initialize a new Docma template project. i.e. `docma template init`. This will\r\n *  generate most files required to author a template; including a main JS file for\r\n *  your module; as shown below in the example.\r\n *\r\n *  @class\r\n *  @name Docma.Template\r\n *  @since 2.0.0\r\n *\r\n *  @example <caption>Custom template module implementation</caption>\r\n *  module.exports = (template, modules) => {\r\n *\r\n *     // Docma also passes some useful modules (which it already uses internally);\r\n *     // so you don't have to add them to your template module as dependencies.\r\n *     // modules: _ (Lodash), Promise (Bluebird), fs (fs-extra), dust, HtmlParser, utils\r\n *     const { Promise } = modules;\r\n *\r\n *     template.mainHTML = 'index.html';\r\n *\r\n *     template.defaultOptions = {\r\n *         // whatever options your template has...\r\n *         title: 'Docs',\r\n *         searchEnabled: true\r\n *     };\r\n *\r\n *     template.preBuild(() => {\r\n *         // Do some stuff —before— Docma builds documentation for the end-user...\r\n *         return Promise.resolve();\r\n *     });\r\n *\r\n *     template.postBuild(() => {\r\n *         // Do some stuff —after— the build completes...\r\n *         return Promise.resolve();\r\n *     });\r\n *  };\r\n */",
+                            "/**\n *  <blockquote>This class is useful for template authors only.</blockquote>\n *\n *  Class that provides template information and methods for supporting the\n *  documentation build process.\n *\n *  You should not instantiate this class directly with a `new` operator. Docma\n *  passes an instance of this class to your template module as the first\n *  argument; when the end-user builds their documentation.\n *\n *  See {@link templates/guide/|Creating Docma Templates}.\n *  You can also use {@link cli/#docma-template-init--path-|Docma CLI}\n *  to initialize a new Docma template project. i.e. `docma template init`. This will\n *  generate most files required to author a template; including a main JS file for\n *  your module; as shown below in the example.\n *\n *  @class\n *  @name Docma.Template\n *  @since 2.0.0\n *\n *  @example <caption>Custom template module implementation</caption>\n *  module.exports = (template, modules) => {\n *\n *     // Docma also passes some useful modules (which it already uses internally);\n *     // so you don't have to add them to your template module as dependencies.\n *     // modules: _ (Lodash), Promise (Bluebird), fs (fs-extra), dust, HtmlParser, utils\n *     const { Promise } = modules;\n *\n *     template.mainHTML = 'index.html';\n *\n *     template.defaultOptions = {\n *         // whatever options your template has...\n *         title: 'Docs',\n *         searchEnabled: true\n *     };\n *\n *     template.preBuild(() => {\n *         // Do some stuff —before— Docma builds documentation for the end-user...\n *         return Promise.resolve();\n *     });\n *\n *     template.postBuild(() => {\n *         // Do some stuff —after— the build completes...\n *         return Promise.resolve();\n *     });\n *  };\n */",
                         meta: {
                             filename: "Template.js",
                             lineno: 18,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {},
                         },
                         description:
-                            "<blockquote>This class is useful for template authors only.</blockquote>\r\r Class that provides template information and methods for supporting the\r documentation build process.\r\r You should not instantiate this class directly with a `new` operator. Docma\r passes an instance of this class to your template module as the first\r argument; when the end-user builds their documentation.\r\r See {@link templates/guide/|Creating Docma Templates}.\r You can also use {@link cli/#docma-template-init--path-|Docma CLI}\r to initialize a new Docma template project. i.e. `docma template init`. This will\r generate most files required to author a template; including a main JS file for\r your module; as shown below in the example.",
+                            "<blockquote>This class is useful for template authors only.</blockquote>\n\n Class that provides template information and methods for supporting the\n documentation build process.\n\n You should not instantiate this class directly with a `new` operator. Docma\n passes an instance of this class to your template module as the first\n argument; when the end-user builds their documentation.\n\n See {@link templates/guide/|Creating Docma Templates}.\n You can also use {@link cli/#docma-template-init--path-|Docma CLI}\n to initialize a new Docma template project. i.e. `docma template init`. This will\n generate most files required to author a template; including a main JS file for\n your module; as shown below in the example.",
                         kind: "class",
                         name: "Template",
                         since: "2.0.0",
                         examples: [
-                            "<caption>Custom template module implementation</caption>\r module.exports = (template, modules) => {\r\r    // Docma also passes some useful modules (which it already uses internally);\r    // so you don't have to add them to your template module as dependencies.\r    // modules: _ (Lodash), Promise (Bluebird), fs (fs-extra), dust, HtmlParser, utils\r    const { Promise } = modules;\r\r    template.mainHTML = 'index.html';\r\r    template.defaultOptions = {\r        // whatever options your template has...\r        title: 'Docs',\r        searchEnabled: true\r    };\r\r    template.preBuild(() => {\r        // Do some stuff —before— Docma builds documentation for the end-user...\r        return Promise.resolve();\r    });\r\r    template.postBuild(() => {\r        // Do some stuff —after— the build completes...\r        return Promise.resolve();\r    });\r };",
+                            "<caption>Custom template module implementation</caption>\n module.exports = (template, modules) => {\n\n    // Docma also passes some useful modules (which it already uses internally);\n    // so you don't have to add them to your template module as dependencies.\n    // modules: _ (Lodash), Promise (Bluebird), fs (fs-extra), dust, HtmlParser, utils\n    const { Promise } = modules;\n\n    template.mainHTML = 'index.html';\n\n    template.defaultOptions = {\n        // whatever options your template has...\n        title: 'Docs',\n        searchEnabled: true\n    };\n\n    template.preBuild(() => {\n        // Do some stuff —before— Docma builds documentation for the end-user...\n        return Promise.resolve();\n    });\n\n    template.postBuild(() => {\n        // Do some stuff —after— the build completes...\n        return Promise.resolve();\n    });\n };",
                         ],
                         memberof: "Docma",
                         longname: "Docma.Template",
@@ -6313,12 +6313,12 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the author of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#author\r\n     */",
+                                    "/**\n     *  Gets the author of the template.\n     *  @type {String}\n     *  @name Docma.Template#author\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 176,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description: "Gets the author of the template.",
@@ -6334,16 +6334,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the build configuration used when building documentation with this\r\n     *  template.\r\n     *  @type {Docma~BuildConfiguration}\r\n     *  @name Docma.Template#buildConfig\r\n     */",
+                                    "/**\n     *  Gets the build configuration used when building documentation with this\n     *  template.\n     *  @type {Docma~BuildConfiguration}\n     *  @name Docma.Template#buildConfig\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 221,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Gets the build configuration used when building documentation with this\r template.",
+                                    "Gets the build configuration used when building documentation with this\n template.",
                                 type: { names: ["Docma~BuildConfiguration"] },
                                 name: "buildConfig",
                                 memberof: "Docma.Template",
@@ -6356,12 +6356,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the simple debugger/logger used by Dogma.\r\n     *  @type {Docma~Debug}\r\n     *  @name Docma.Template#debug\r\n     */",
+                                    "/**\n     *  Gets the simple debugger/logger used by Dogma.\n     *  @type {Docma~Debug}\n     *  @name Docma.Template#debug\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 231,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6378,16 +6378,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets or sets the default options of the template.\r\n     *  Default options can be set within the module main JS file or via\r\n     *  `docmaTemplate.defaultOptions` within template's package.json.\r\n     *  @type {Object}\r\n     *  @name Docma.Template#defaultOptions\r\n     */",
+                                    "/**\n     *  Gets or sets the default options of the template.\n     *  Default options can be set within the module main JS file or via\n     *  `docmaTemplate.defaultOptions` within template's package.json.\n     *  @type {Object}\n     *  @name Docma.Template#defaultOptions\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 240,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Gets or sets the default options of the template.\r Default options can be set within the module main JS file or via\r `docmaTemplate.defaultOptions` within template's package.json.",
+                                    "Gets or sets the default options of the template.\n Default options can be set within the module main JS file or via\n `docmaTemplate.defaultOptions` within template's package.json.",
                                 type: { names: ["Object"] },
                                 name: "defaultOptions",
                                 memberof: "Docma.Template",
@@ -6401,12 +6401,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the description of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#description\r\n     */",
+                                    "/**\n     *  Gets the description of the template.\n     *  @type {String}\n     *  @name Docma.Template#description\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 138,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6423,12 +6423,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the dirname of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#dirname\r\n     */",
+                                    "/**\n     *  Gets the dirname of the template.\n     *  @type {String}\n     *  @name Docma.Template#dirname\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 203,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6445,12 +6445,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets Docma version, template is built with.\r\n     *  @type {String}\r\n     *  @name Docma.Template#docmaVersion\r\n     */",
+                                    "/**\n     *  Gets Docma version, template is built with.\n     *  @type {String}\n     *  @name Docma.Template#docmaVersion\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 156,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6467,16 +6467,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Convenience method for joining and getting the destination path within\r\n     *  build (output) directory for the given string(s).\r\n     *  @name Docma.Template#getDestPath\r\n     *  @function\r\n     *  @param {...String} [args=""] - String arguments of path sections.\r\n     *  @returns {String} -\r\n     */',
+                                    '/**\n     *  Convenience method for joining and getting the destination path within\n     *  build (output) directory for the given string(s).\n     *  @name Docma.Template#getDestPath\n     *  @function\n     *  @param {...String} [args=""] - String arguments of path sections.\n     *  @returns {String} -\n     */',
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 328,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Convenience method for joining and getting the destination path within\r build (output) directory for the given string(s).",
+                                    "Convenience method for joining and getting the destination path within\n build (output) directory for the given string(s).",
                                 name: "getDestPath",
                                 kind: "function",
                                 params: [
@@ -6505,16 +6505,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Convenience method for joining and getting the source path within\r\n     *  `<root>/template` directory for the given string(s).\r\n     *  @name Docma.Template#getSrcPath\r\n     *  @function\r\n     *  @param {...String} [args=""] - String arguments of path sections.\r\n     *  @returns {String} -\r\n     */',
+                                    '/**\n     *  Convenience method for joining and getting the source path within\n     *  `<root>/template` directory for the given string(s).\n     *  @name Docma.Template#getSrcPath\n     *  @function\n     *  @param {...String} [args=""] - String arguments of path sections.\n     *  @returns {String} -\n     */',
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 316,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Convenience method for joining and getting the source path within\r `<root>/template` directory for the given string(s).",
+                                    "Convenience method for joining and getting the source path within\n `<root>/template` directory for the given string(s).",
                                 name: "getSrcPath",
                                 kind: "function",
                                 params: [
@@ -6543,16 +6543,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets or sets array of ignored files when building documentation with\r\n     *  this template. Ignored files can be set within the module main JS file\r\n     *  or via `docmaTemplate.ignore` within template's package.json.\r\n     *  @type {Array}\r\n     *  @name Docma.Template#ignore\r\n     */",
+                                    "/**\n     *  Gets or sets array of ignored files when building documentation with\n     *  this template. Ignored files can be set within the module main JS file\n     *  or via `docmaTemplate.ignore` within template's package.json.\n     *  @type {Array}\n     *  @name Docma.Template#ignore\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 291,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Gets or sets array of ignored files when building documentation with\r this template. Ignored files can be set within the module main JS file\r or via `docmaTemplate.ignore` within template's package.json.",
+                                    "Gets or sets array of ignored files when building documentation with\n this template. Ignored files can be set within the module main JS file\n or via `docmaTemplate.ignore` within template's package.json.",
                                 type: { names: ["Array"] },
                                 name: "ignore",
                                 memberof: "Docma.Template",
@@ -6565,12 +6565,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the license of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#license\r\n     */",
+                                    "/**\n     *  Gets the license of the template.\n     *  @type {String}\n     *  @name Docma.Template#license\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 185,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6587,16 +6587,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Outputs a data log to the console. For more logger/debugger methods, use\r\n     *  {@link api/#Docma.Template#debug|`#debug`} object.\r\n     *  @name Docma.Template#log\r\n     *  @function\r\n     *  @param {...String} [args=""] - String arguments to be logged.\r\n     */',
+                                    '/**\n     *  Outputs a data log to the console. For more logger/debugger methods, use\n     *  {@link api/#Docma.Template#debug|`#debug`} object.\n     *  @name Docma.Template#log\n     *  @function\n     *  @param {...String} [args=""] - String arguments to be logged.\n     */',
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 305,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Outputs a data log to the console. For more logger/debugger methods, use\r {@link api/#Docma.Template#debug|`#debug`} object.",
+                                    "Outputs a data log to the console. For more logger/debugger methods, use\n {@link api/#Docma.Template#debug|`#debug`} object.",
                                 name: "log",
                                 kind: "function",
                                 params: [
@@ -6619,16 +6619,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets or sets the main HTML file (name) of the template.\r\n     *  Main HTML file can be set within the module main JS file or via\r\n     *  `docmaTemplate.mainHTML` within template's package.json.\r\n     *  @type {String}\r\n     *  @name Docma.Template#mainHTML\r\n     */",
+                                    "/**\n     *  Gets or sets the main HTML file (name) of the template.\n     *  Main HTML file can be set within the module main JS file or via\n     *  `docmaTemplate.mainHTML` within template's package.json.\n     *  @type {String}\n     *  @name Docma.Template#mainHTML\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 275,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Gets or sets the main HTML file (name) of the template.\r Main HTML file can be set within the module main JS file or via\r `docmaTemplate.mainHTML` within template's package.json.",
+                                    "Gets or sets the main HTML file (name) of the template.\n Main HTML file can be set within the module main JS file or via\n `docmaTemplate.mainHTML` within template's package.json.",
                                 type: { names: ["String"] },
                                 name: "mainHTML",
                                 memberof: "Docma.Template",
@@ -6641,12 +6641,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the name of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#name\r\n     */",
+                                    "/**\n     *  Gets the name of the template.\n     *  @type {String}\n     *  @name Docma.Template#name\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 129,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description: "Gets the name of the template.",
@@ -6662,16 +6662,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets or sets the template options set by the user when building\r\n     *  documentation with this template.\r\n     *  @type {Object}\r\n     *  @name Docma.Template#options\r\n     */",
+                                    "/**\n     *  Gets or sets the template options set by the user when building\n     *  documentation with this template.\n     *  @type {Object}\n     *  @name Docma.Template#options\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 262,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Gets or sets the template options set by the user when building\r documentation with this template.",
+                                    "Gets or sets the template options set by the user when building\n documentation with this template.",
                                 type: { names: ["Object"] },
                                 name: "options",
                                 memberof: "Docma.Template",
@@ -6684,12 +6684,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the path of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#path\r\n     */",
+                                    "/**\n     *  Gets the path of the template.\n     *  @type {String}\n     *  @name Docma.Template#path\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 194,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description: "Gets the path of the template.",
@@ -6705,12 +6705,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the package.json contents of the template.\r\n     *  @type {Object}\r\n     *  @name Docma.Template#pkg\r\n     */",
+                                    "/**\n     *  Gets the package.json contents of the template.\n     *  @type {Object}\n     *  @name Docma.Template#pkg\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 120,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6727,23 +6727,23 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Sets a post-build processor function that is ran right after Docma build\r\n     *  completes.\r\n     *  @name Docma.Template#postBuild\r\n     *  @function\r\n     *  @param {Function} fn - Processor function. You can return a `Promise` if\r\n     *  this is an async operation.\r\n     */",
+                                    "/**\n     *  Sets a post-build processor function that is ran right after Docma build\n     *  completes.\n     *  @name Docma.Template#postBuild\n     *  @function\n     *  @param {Function} fn - Processor function. You can return a `Promise` if\n     *  this is an async operation.\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 352,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Sets a post-build processor function that is ran right after Docma build\r completes.",
+                                    "Sets a post-build processor function that is ran right after Docma build\n completes.",
                                 name: "postBuild",
                                 kind: "function",
                                 params: [
                                     {
                                         type: { names: ["function"] },
                                         description:
-                                            "Processor function. You can return a `Promise` if\r this is an async operation.",
+                                            "Processor function. You can return a `Promise` if\n this is an async operation.",
                                         name: "fn",
                                     },
                                 ],
@@ -6756,23 +6756,23 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Sets a pre-build processor function that is ran right before Docma build\r\n     *  starts.\r\n     *  @name Docma.Template#preBuild\r\n     *  @function\r\n     *  @param {Function} fn - Processor function. You can return a `Promise` if\r\n     *  this is an async operation.\r\n     */",
+                                    "/**\n     *  Sets a pre-build processor function that is ran right before Docma build\n     *  starts.\n     *  @name Docma.Template#preBuild\n     *  @function\n     *  @param {Function} fn - Processor function. You can return a `Promise` if\n     *  this is an async operation.\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 340,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Sets a pre-build processor function that is ran right before Docma build\r starts.",
+                                    "Sets a pre-build processor function that is ran right before Docma build\n starts.",
                                 name: "preBuild",
                                 kind: "function",
                                 params: [
                                     {
                                         type: { names: ["function"] },
                                         description:
-                                            "Processor function. You can return a `Promise` if\r this is an async operation.",
+                                            "Processor function. You can return a `Promise` if\n this is an async operation.",
                                         name: "fn",
                                     },
                                 ],
@@ -6785,16 +6785,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Gets Docma version (range) supported by this template.\r\n     *  This is set via `peerDependencies` in package.json.\r\n     *  If omitted, returns `">=2.0.0"`.\r\n     *  @type {String}\r\n     *  @name Docma.Template#supportedDocmaVersion\r\n     */',
+                                    '/**\n     *  Gets Docma version (range) supported by this template.\n     *  This is set via `peerDependencies` in package.json.\n     *  If omitted, returns `">=2.0.0"`.\n     *  @type {String}\n     *  @name Docma.Template#supportedDocmaVersion\n     */',
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 165,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    'Gets Docma version (range) supported by this template.\r This is set via `peerDependencies` in package.json.\r If omitted, returns `">=2.0.0"`.',
+                                    'Gets Docma version (range) supported by this template.\n This is set via `peerDependencies` in package.json.\n If omitted, returns `">=2.0.0"`.',
                                 type: { names: ["String"] },
                                 name: "supportedDocmaVersion",
                                 memberof: "Docma.Template",
@@ -6810,12 +6810,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the path of the template directory within the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#templateDir\r\n     */",
+                                    "/**\n     *  Gets the path of the template directory within the template.\n     *  @type {String}\n     *  @name Docma.Template#templateDir\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 212,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6832,12 +6832,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the version of the template.\r\n     *  @type {String}\r\n     *  @name Docma.Template#version\r\n     */",
+                                    "/**\n     *  Gets the version of the template.\n     *  @type {String}\n     *  @name Docma.Template#version\n     */",
                                 meta: {
                                     filename: "Template.js",
                                     lineno: 147,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6856,16 +6856,16 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n *  <blockquote>This class is useful for template authors only.</blockquote>\r\n *\r\n *  Class that runs diagnostics on a target Docma template by analyzing\r\n *  the file structure, validating package metadata and testing with the\r\n *  template builder.\r\n *\r\n *  @class\r\n *  @name TemplateDoctor\r\n *  @memberof Docma\r\n *  @since 2.0.0\r\n */",
+                            "/**\n *  <blockquote>This class is useful for template authors only.</blockquote>\n *\n *  Class that runs diagnostics on a target Docma template by analyzing\n *  the file structure, validating package metadata and testing with the\n *  template builder.\n *\n *  @class\n *  @name TemplateDoctor\n *  @memberof Docma\n *  @since 2.0.0\n */",
                         meta: {
                             filename: "TemplateDoctor.js",
                             lineno: 70,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {},
                         },
                         description:
-                            "<blockquote>This class is useful for template authors only.</blockquote>\r\r Class that runs diagnostics on a target Docma template by analyzing\r the file structure, validating package metadata and testing with the\r template builder.",
+                            "<blockquote>This class is useful for template authors only.</blockquote>\n\n Class that runs diagnostics on a target Docma template by analyzing\n the file structure, validating package metadata and testing with the\n template builder.",
                         kind: "class",
                         name: "TemplateDoctor",
                         memberof: "Docma",
@@ -6878,16 +6878,16 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n     *  Analyzes the Docma template and collects diagnostics information on the\r\n     *  template structure, package health and builder initialization.\r\n     *  @name Docma.TemplateDoctor#diagnose\r\n     *  @method\r\n     *\r\n     *  @returns {Object} - Diagnostics data.\r\n     */",
+                                    "/**\n     *  Analyzes the Docma template and collects diagnostics information on the\n     *  template structure, package health and builder initialization.\n     *  @name Docma.TemplateDoctor#diagnose\n     *  @method\n     *\n     *  @returns {Object} - Diagnostics data.\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 327,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Analyzes the Docma template and collects diagnostics information on the\r template structure, package health and builder initialization.",
+                                    "Analyzes the Docma template and collects diagnostics information on the\n template structure, package health and builder initialization.",
                                 name: "diagnose",
                                 kind: "function",
                                 returns: [
@@ -6906,12 +6906,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the diagnostics data object that contains the results.\r\n     *  @type {Object}\r\n     *  @name Docma.TemplateDoctor#diagnostics\r\n     */",
+                                    "/**\n     *  Gets the diagnostics data object that contains the results.\n     *  @type {Object}\n     *  @name Docma.TemplateDoctor#diagnostics\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 145,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6929,12 +6929,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the package.json contents of the Docma template anayzed.\r\n     *  @type {Object}\r\n     *  @name Docma.TemplateDoctor#pkg\r\n     */",
+                                    "/**\n     *  Gets the package.json contents of the Docma template anayzed.\n     *  @type {Object}\n     *  @name Docma.TemplateDoctor#pkg\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 117,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6951,16 +6951,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Resets the state of the TemplateDoctor instance, cleaning up\r\n     *  previous diagnosis information and data. (Note that settings are not\r\n     *  reset.)\r\n     *  @name Docma.TemplateDoctor#reset\r\n     *  @method\r\n     */",
+                                    "/**\n     *  Resets the state of the TemplateDoctor instance, cleaning up\n     *  previous diagnosis information and data. (Note that settings are not\n     *  reset.)\n     *  @name Docma.TemplateDoctor#reset\n     *  @method\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 382,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Resets the state of the TemplateDoctor instance, cleaning up\r previous diagnosis information and data. (Note that settings are not\r reset.)",
+                                    "Resets the state of the TemplateDoctor instance, cleaning up\n previous diagnosis information and data. (Note that settings are not\n reset.)",
                                 name: "reset",
                                 kind: "function",
                                 memberof: "Docma.TemplateDoctor",
@@ -6972,12 +6972,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets or sets the diagnostics settings.\r\n     *  @type {Object}\r\n     *  @name Docma.TemplateDoctor#settings\r\n     */",
+                                    "/**\n     *  Gets or sets the diagnostics settings.\n     *  @type {Object}\n     *  @name Docma.TemplateDoctor#settings\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 154,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -6995,16 +6995,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the template instance created while diagnosing. In other words,\r\n     *  template instance is only available after `.diagnose()` is called.\r\n     *  @type {Docma.Template}\r\n     *  @name Docma.TemplateDoctor#template\r\n     */",
+                                    "/**\n     *  Gets the template instance created while diagnosing. In other words,\n     *  template instance is only available after `.diagnose()` is called.\n     *  @type {Docma.Template}\n     *  @name Docma.TemplateDoctor#template\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 135,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
-                                    "Gets the template instance created while diagnosing. In other words,\r template instance is only available after `.diagnose()` is called.",
+                                    "Gets the template instance created while diagnosing. In other words,\n template instance is only available after `.diagnose()` is called.",
                                 type: { names: ["Docma.Template"] },
                                 name: "template",
                                 memberof: "Docma.TemplateDoctor",
@@ -7018,12 +7018,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Gets the name of the Docma template.\r\n     *  @type {String}\r\n     *  @name Docma.TemplateDoctor#templateName\r\n     */",
+                                    "/**\n     *  Gets the name of the Docma template.\n     *  @type {String}\n     *  @name Docma.TemplateDoctor#templateName\n     */",
                                 meta: {
                                     filename: "TemplateDoctor.js",
                                     lineno: 126,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib",
+                                    path: "/Users/JPI/projects/prozi/docma/lib",
                                     code: {},
                                 },
                                 description:
@@ -7042,13 +7042,13 @@ var docma = Object.freeze(
                         ],
                         $constructor: {
                             comment:
-                                "/**\r\n     *  Initializes a new instance of `Docma.TemplateDoctor`.\r\n     *  @constructs Docma.TemplateDoctor\r\n     *\r\n     *  @param {String} templatePath - Path of the template to be diagnosed.\r\n     *  @param {Object} [settings={}] - Diagnose settings.\r\n     *      @param {Boolean} [settings.quiet=true] - Whether not to log\r\n     *      diagnostics information to console.\r\n     *      @param {Boolean} [settings.stopOnFirstFailure=false] - Whether\r\n     *      to stop on first failure.\r\n     */",
+                                "/**\n     *  Initializes a new instance of `Docma.TemplateDoctor`.\n     *  @constructs Docma.TemplateDoctor\n     *\n     *  @param {String} templatePath - Path of the template to be diagnosed.\n     *  @param {Object} [settings={}] - Diagnose settings.\n     *      @param {Boolean} [settings.quiet=true] - Whether not to log\n     *      diagnostics information to console.\n     *      @param {Boolean} [settings.stopOnFirstFailure=false] - Whether\n     *      to stop on first failure.\n     */",
                             meta: {
-                                range: [2849, 3505],
+                                range: [2756, 3391],
                                 filename: "TemplateDoctor.js",
                                 lineno: 94,
                                 columnno: 4,
-                                path: "C:\\projects\\docma\\lib",
+                                path: "/Users/JPI/projects/prozi/docma/lib",
                                 code: {
                                     id: "astnode100004298",
                                     name: "TemplateDoctor",
@@ -7080,7 +7080,7 @@ var docma = Object.freeze(
                                     optional: true,
                                     defaultvalue: true,
                                     description:
-                                        "Whether not to log\r     diagnostics information to console.",
+                                        "Whether not to log\n     diagnostics information to console.",
                                     name: "settings.quiet",
                                 },
                                 {
@@ -7088,7 +7088,7 @@ var docma = Object.freeze(
                                     optional: true,
                                     defaultvalue: false,
                                     description:
-                                        "Whether\r     to stop on first failure.",
+                                        "Whether\n     to stop on first failure.",
                                     name: "settings.stopOnFirstFailure",
                                 },
                             ],
@@ -7103,13 +7103,13 @@ var docma = Object.freeze(
                     },
                     {
                         comment:
-                            "/**\r\n     *  Initializes a new instance of `Docma.Template`.\r\n     *  @hideconstructor\r\n     *\r\n     *  @param {Object} params - Template parameters.\r\n     *      @param {Object} params.modulePath - Resolved path of the template\r\n     *      module.\r\n     *      @param {Object} params.buildConfig - Docma build configuration (that\r\n     *      also includes template configuration).\r\n     *      @param {String} params.docmaVersion - Current Docma version.\r\n     *      @param {Function} params.fnLog - Log function to be used within the\r\n     *      template module.\r\n     */",
+                            "/**\n     *  Initializes a new instance of `Docma.Template`.\n     *  @hideconstructor\n     *\n     *  @param {Object} params - Template parameters.\n     *      @param {Object} params.modulePath - Resolved path of the template\n     *      module.\n     *      @param {Object} params.buildConfig - Docma build configuration (that\n     *      also includes template configuration).\n     *      @param {String} params.docmaVersion - Current Docma version.\n     *      @param {Function} params.fnLog - Log function to be used within the\n     *      template module.\n     */",
                         meta: {
-                            range: [2692, 4099],
+                            range: [2614, 3982],
                             filename: "Template.js",
                             lineno: 79,
                             columnno: 4,
-                            path: "C:\\projects\\docma\\lib",
+                            path: "/Users/JPI/projects/prozi/docma/lib",
                             code: {
                                 id: "astnode100003503",
                                 name: "Template",
@@ -7130,13 +7130,13 @@ var docma = Object.freeze(
                             {
                                 type: { names: ["Object"] },
                                 description:
-                                    "Resolved path of the template\r     module.",
+                                    "Resolved path of the template\n     module.",
                                 name: "params.modulePath",
                             },
                             {
                                 type: { names: ["Object"] },
                                 description:
-                                    "Docma build configuration (that\r     also includes template configuration).",
+                                    "Docma build configuration (that\n     also includes template configuration).",
                                 name: "params.buildConfig",
                             },
                             {
@@ -7147,7 +7147,7 @@ var docma = Object.freeze(
                             {
                                 type: { names: ["function"] },
                                 description:
-                                    "Log function to be used within the\r     template module.",
+                                    "Log function to be used within the\n     template module.",
                                 name: "params.fnLog",
                             },
                         ],
@@ -7208,16 +7208,16 @@ var docma = Object.freeze(
                 documentation: [
                     {
                         comment:
-                            "/**\r\n *  Docma (web) core.\r\n *\r\n *  When you build the documentation with a template, `docma-web.js` will be\r\n *  generated (and linked in the main HTML); which is the core engine for the\r\n *  documentation web app. This will include everything the app needs such as\r\n *  the documentation data, compiled partials, dustjs engine, etc...\r\n *\r\n *  <blockquote>An instance of this object is globally accessible within the generated SPA\r\n *  as <code>docma</code>. Note that the size of the `docma-web.js` script depends primarily\r\n *  on the generated documentation data.</blockquote>\r\n *\r\n *  @class\r\n *  @name DocmaWeb\r\n *  @hideconstructor\r\n *  @emits DocmaWeb~event:ready\r\n *  @emits DocmaWeb~event:render\r\n *  @emits DocmaWeb~event:route\r\n *  @emits DocmaWeb~event:navigate\r\n */",
+                            "/**\n *  Docma (web) core.\n *\n *  When you build the documentation with a template, `docma-web.js` will be\n *  generated (and linked in the main HTML); which is the core engine for the\n *  documentation web app. This will include everything the app needs such as\n *  the documentation data, compiled partials, dustjs engine, etc...\n *\n *  <blockquote>An instance of this object is globally accessible within the generated SPA\n *  as <code>docma</code>. Note that the size of the `docma-web.js` script depends primarily\n *  on the generated documentation data.</blockquote>\n *\n *  @class\n *  @name DocmaWeb\n *  @hideconstructor\n *  @emits DocmaWeb~event:ready\n *  @emits DocmaWeb~event:render\n *  @emits DocmaWeb~event:route\n *  @emits DocmaWeb~event:navigate\n */",
                         meta: {
                             filename: "DocmaWeb.js",
                             lineno: 17,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib\\web",
+                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                             code: {},
                         },
                         description:
-                            "Docma (web) core.\r\r When you build the documentation with a template, `docma-web.js` will be\r generated (and linked in the main HTML); which is the core engine for the\r documentation web app. This will include everything the app needs such as\r the documentation data, compiled partials, dustjs engine, etc...\r\r <blockquote>An instance of this object is globally accessible within the generated SPA\r as <code>docma</code>. Note that the size of the `docma-web.js` script depends primarily\r on the generated documentation data.</blockquote>",
+                            "Docma (web) core.\n\n When you build the documentation with a template, `docma-web.js` will be\n generated (and linked in the main HTML); which is the core engine for the\n documentation web app. This will include everything the app needs such as\n the documentation data, compiled partials, dustjs engine, etc...\n\n <blockquote>An instance of this object is globally accessible within the generated SPA\n as <code>docma</code>. Note that the size of the `docma-web.js` script depends primarily\n on the generated documentation data.</blockquote>",
                         kind: "class",
                         name: "DocmaWeb",
                         hideconstructor: true,
@@ -7235,13 +7235,13 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n *  Adds a new Dust filter.\r\n *  @chainable\r\n *  @see {@link templates/filters/|Existing Docma (Dust) filters}\r\n *  @see {@link https://www.dustjs.com/docs/filter-api|Dust Filter API}\r\n *\r\n *  @param {String} name - Name of the filter to be added.\r\n *  @param {Function} fn - Filter function.\r\n *\r\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\r\n *  @throws {Error} - If a filter with the given name already exists.\r\n */",
+                                    "/**\n *  Adds a new Dust filter.\n *  @chainable\n *  @see {@link templates/filters/|Existing Docma (Dust) filters}\n *  @see {@link https://www.dustjs.com/docs/filter-api|Dust Filter API}\n *\n *  @param {String} name - Name of the filter to be added.\n *  @param {Function} fn - Filter function.\n *\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\n *  @throws {Error} - If a filter with the given name already exists.\n */",
                                 meta: {
-                                    range: [24473, 24686],
+                                    range: [23763, 23970],
                                     filename: "DocmaWeb.js",
                                     lineno: 711,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000990",
                                         name: "DocmaWeb.prototype.addFilter",
@@ -7303,21 +7303,21 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *\tHash-map of JSDoc documentation outputs.\r\n     *\tEach key is the name of an API (formed by grouped Javascript files).\r\n     *\te.g. `docma.apis[\"some-api\"]`\r\n     *\r\n     *  Unnamed documentation data (consisting of ungrouped Javascript files) can be\r\n     *  accessed via `docma.apis._def_`.\r\n     *\r\n     *\tEach value is an `Object` with the following signature:\r\n     *\t`{ documentation:Array, symbols:Array }`. `documentation` is the actual\r\n     *\tJSDoc data, and `symbols` is a flat array of symbol names.\r\n     *\r\n     *  <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\r\n     *  details on how Javascript files can be grouped (and named) to form separate\r\n     *  API documentations and SPA routes.</blockquote>\r\n     *\r\n     *  @name DocmaWeb#apis\r\n     *  @type {Object}\r\n     *\r\n     *  @example <caption>Programmatic access to documentation data</caption>\r\n     *  // output ungrouped (unnamed) API documentation data\r\n     *  console.log(docma.apis._def_.documentation);\r\n     *  console.log(docma.apis._def_.symbols); // flat list of symbol names\r\n     *  // output one of the grouped (named) API documentation data\r\n     *  console.log(docma.apis['my-scondary-api'].documentation);\r\n     *\r\n     *  @example <caption>Usage in a Dust partial</caption>\r\n     *  <!--\r\n     *  \tEach API data is passed to the partial, according to the route.\r\n     *  \tSo you'll always use `documentation` within the partials.\r\n     *  -->\r\n     *  {#documentation}\r\n     *      <h4>{longname}</h4>\r\n     *      <p>{description}</p>\r\n     *      <hr />\r\n     *  {/documentation}\r\n     */",
+                                    "/**\n     *\tHash-map of JSDoc documentation outputs.\n     *\tEach key is the name of an API (formed by grouped Javascript files).\n     *\te.g. `docma.apis[\"some-api\"]`\n     *\n     *  Unnamed documentation data (consisting of ungrouped Javascript files) can be\n     *  accessed via `docma.apis._def_`.\n     *\n     *\tEach value is an `Object` with the following signature:\n     *\t`{ documentation:Array, symbols:Array }`. `documentation` is the actual\n     *\tJSDoc data, and `symbols` is a flat array of symbol names.\n     *\n     *  <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\n     *  details on how Javascript files can be grouped (and named) to form separate\n     *  API documentations and SPA routes.</blockquote>\n     *\n     *  @name DocmaWeb#apis\n     *  @type {Object}\n     *\n     *  @example <caption>Programmatic access to documentation data</caption>\n     *  // output ungrouped (unnamed) API documentation data\n     *  console.log(docma.apis._def_.documentation);\n     *  console.log(docma.apis._def_.symbols); // flat list of symbol names\n     *  // output one of the grouped (named) API documentation data\n     *  console.log(docma.apis['my-scondary-api'].documentation);\n     *\n     *  @example <caption>Usage in a Dust partial</caption>\n     *  <!--\n     *  \tEach API data is passed to the partial, according to the route.\n     *  \tSo you'll always use `documentation` within the partials.\n     *  -->\n     *  {#documentation}\n     *      <h4>{longname}</h4>\n     *      <p>{description}</p>\n     *      <hr />\n     *  {/documentation}\n     */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 79,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    'Hash-map of JSDoc documentation outputs.\r\tEach key is the name of an API (formed by grouped Javascript files).\r\te.g. `docma.apis["some-api"]`\r\r Unnamed documentation data (consisting of ungrouped Javascript files) can be\r accessed via `docma.apis._def_`.\r\r\tEach value is an `Object` with the following signature:\r\t`{ documentation:Array, symbols:Array }`. `documentation` is the actual\r\tJSDoc data, and `symbols` is a flat array of symbol names.\r\r <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\r details on how Javascript files can be grouped (and named) to form separate\r API documentations and SPA routes.</blockquote>',
+                                    'Hash-map of JSDoc documentation outputs.\n\tEach key is the name of an API (formed by grouped Javascript files).\n\te.g. `docma.apis["some-api"]`\n\n Unnamed documentation data (consisting of ungrouped Javascript files) can be\n accessed via `docma.apis._def_`.\n\n\tEach value is an `Object` with the following signature:\n\t`{ documentation:Array, symbols:Array }`. `documentation` is the actual\n\tJSDoc data, and `symbols` is a flat array of symbol names.\n\n <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\n details on how Javascript files can be grouped (and named) to form separate\n API documentations and SPA routes.</blockquote>',
                                 name: "apis",
                                 type: { names: ["Object"] },
                                 examples: [
-                                    "<caption>Programmatic access to documentation data</caption>\r // output ungrouped (unnamed) API documentation data\r console.log(docma.apis._def_.documentation);\r console.log(docma.apis._def_.symbols); // flat list of symbol names\r // output one of the grouped (named) API documentation data\r console.log(docma.apis['my-scondary-api'].documentation);\r\r ",
-                                    "<caption>Usage in a Dust partial</caption>\r <!--\r \tEach API data is passed to the partial, according to the route.\r \tSo you'll always use `documentation` within the partials.\r -->\r {#documentation}\r     <h4>{longname}</h4>\r     <p>{description}</p>\r     <hr />\r {/documentation}",
+                                    "<caption>Programmatic access to documentation data</caption>\n // output ungrouped (unnamed) API documentation data\n console.log(docma.apis._def_.documentation);\n console.log(docma.apis._def_.symbols); // flat list of symbol names\n // output one of the grouped (named) API documentation data\n console.log(docma.apis['my-scondary-api'].documentation);\n\n ",
+                                    "<caption>Usage in a Dust partial</caption>\n <!--\n \tEach API data is passed to the partial, according to the route.\n \tSo you'll always use `documentation` within the partials.\n -->\n {#documentation}\n     <h4>{longname}</h4>\n     <p>{description}</p>\n     <hr />\n {/documentation}",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb#apis",
@@ -7329,16 +7329,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Provides configuration data of the generated SPA, which is originally set\r\n     *  at build-time, by the user.\r\n     *  See {@link api/#Docma~BuildConfiguration|build configuration} for more\r\n     *  details on how these settings take affect.\r\n     *  @name DocmaWeb#app\r\n     *  @type {Object}\r\n     *\r\n     *  @property {String} title\r\n     *            Document title for the main file of the generated app.\r\n     *            (Value of the `&lt;title/>` tag.)\r\n     *  @property {Array} meta\r\n     *            Array of arbitrary objects set for main document meta (tags).\r\n     *  @property {String} base\r\n     *            Base path of the generated web app.\r\n     *  @property {String} entrance\r\n     *            Name of the initial content displayed, when the web app is first\r\n     *            loaded.\r\n     *  @property {String|Object} routing\r\n     *            Routing settings for the generated SPA.\r\n     *  @property {String} server\r\n     *            Server/host type of the generated SPA.\r\n     */",
+                                    "/**\n     *  Provides configuration data of the generated SPA, which is originally set\n     *  at build-time, by the user.\n     *  See {@link api/#Docma~BuildConfiguration|build configuration} for more\n     *  details on how these settings take affect.\n     *  @name DocmaWeb#app\n     *  @type {Object}\n     *\n     *  @property {String} title\n     *            Document title for the main file of the generated app.\n     *            (Value of the `&lt;title/>` tag.)\n     *  @property {Array} meta\n     *            Array of arbitrary objects set for main document meta (tags).\n     *  @property {String} base\n     *            Base path of the generated web app.\n     *  @property {String} entrance\n     *            Name of the initial content displayed, when the web app is first\n     *            loaded.\n     *  @property {String|Object} routing\n     *            Routing settings for the generated SPA.\n     *  @property {String} server\n     *            Server/host type of the generated SPA.\n     */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 49,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Provides configuration data of the generated SPA, which is originally set\r at build-time, by the user.\r See {@link api/#Docma~BuildConfiguration|build configuration} for more\r details on how these settings take affect.",
+                                    "Provides configuration data of the generated SPA, which is originally set\n at build-time, by the user.\n See {@link api/#Docma~BuildConfiguration|build configuration} for more\n details on how these settings take affect.",
                                 name: "app",
                                 type: { names: ["Object"] },
                                 properties: [
@@ -7351,7 +7351,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Name of the initial content displayed, when the web app is first\r           loaded.",
+                                            "Name of the initial content displayed, when the web app is first\n           loaded.",
                                         name: "entrance",
                                     },
                                     {
@@ -7375,7 +7375,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Document title for the main file of the generated app.\r           (Value of the `&lt;title/>` tag.)",
+                                            "Document title for the main file of the generated app.\n           (Value of the `&lt;title/>` tag.)",
                                         name: "title",
                                     },
                                 ],
@@ -7389,13 +7389,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Creates a SPA route information object for the given route name and type.\r\n *\r\n *  @param {String} name\r\n *         Name of the route.\r\n *  @param {String} type\r\n *         Type of the SPA route. See {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`}\r\n *         enumeration for possible values.\r\n *\r\n *  @returns {DocmaWeb.Route} - Route instance.\r\n */",
+                                    "/**\n *  Creates a SPA route information object for the given route name and type.\n *\n *  @param {String} name\n *         Name of the route.\n *  @param {String} type\n *         Type of the SPA route. See {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`}\n *         enumeration for possible values.\n *\n *  @returns {DocmaWeb.Route} - Route instance.\n */",
                                 meta: {
-                                    range: [25719, 25828],
+                                    range: [24966, 25073],
                                     filename: "DocmaWeb.js",
                                     lineno: 754,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001064",
                                         name: "DocmaWeb.prototype.createRoute",
@@ -7414,7 +7414,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Type of the SPA route. See {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`}\r        enumeration for possible values.",
+                                            "Type of the SPA route. See {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`}\n        enumeration for possible values.",
                                         name: "type",
                                     },
                                 ],
@@ -7435,16 +7435,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Gets the route information for the current rendered content being\r\n     *  displayed.\r\n     *\r\n     *  @name DocmaWeb#currentRoute\r\n     *  @type {DocmaWeb.Route}\r\n     *  @readonly\r\n     *\r\n     *  @property {String} type\r\n     *            Type of the current route. If a generated JSDoc API\r\n     *            documentation is being displayed, this is set to `"api"`.\r\n     *            If any other HTML content (such as a converted markdown) is\r\n     *            being displayed; this is set to `"content"`.\r\n     *  @property {String} name\r\n     *            Name of the current route. For `api` routes, this is the name\r\n     *            of the grouped JS files parsed. If no name is given, this is\r\n     *            set to `"_def_"` by default. For `content` routes, this is\r\n     *            either the custom name given at build-time or, by default; the\r\n     *            name of the generated HTML file; lower-cased, without the\r\n     *            extension. e.g. `"README.md"` will have the route name\r\n     *            `"readme"` after the build.\r\n     *  @property {String} path\r\n     *            Path of the current route.\r\n     */',
+                                    '/**\n     *  Gets the route information for the current rendered content being\n     *  displayed.\n     *\n     *  @name DocmaWeb#currentRoute\n     *  @type {DocmaWeb.Route}\n     *  @readonly\n     *\n     *  @property {String} type\n     *            Type of the current route. If a generated JSDoc API\n     *            documentation is being displayed, this is set to `"api"`.\n     *            If any other HTML content (such as a converted markdown) is\n     *            being displayed; this is set to `"content"`.\n     *  @property {String} name\n     *            Name of the current route. For `api` routes, this is the name\n     *            of the grouped JS files parsed. If no name is given, this is\n     *            set to `"_def_"` by default. For `content` routes, this is\n     *            either the custom name given at build-time or, by default; the\n     *            name of the generated HTML file; lower-cased, without the\n     *            extension. e.g. `"README.md"` will have the route name\n     *            `"readme"` after the build.\n     *  @property {String} path\n     *            Path of the current route.\n     */',
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 257,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Gets the route information for the current rendered content being\r displayed.",
+                                    "Gets the route information for the current rendered content being\n displayed.",
                                 name: "currentRoute",
                                 type: { names: ["DocmaWeb.Route"] },
                                 readonly: true,
@@ -7452,7 +7452,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            'Name of the current route. For `api` routes, this is the name\r           of the grouped JS files parsed. If no name is given, this is\r           set to `"_def_"` by default. For `content` routes, this is\r           either the custom name given at build-time or, by default; the\r           name of the generated HTML file; lower-cased, without the\r           extension. e.g. `"README.md"` will have the route name\r           `"readme"` after the build.',
+                                            'Name of the current route. For `api` routes, this is the name\n           of the grouped JS files parsed. If no name is given, this is\n           set to `"_def_"` by default. For `content` routes, this is\n           either the custom name given at build-time or, by default; the\n           name of the generated HTML file; lower-cased, without the\n           extension. e.g. `"README.md"` will have the route name\n           `"readme"` after the build.',
                                         name: "name",
                                     },
                                     {
@@ -7464,7 +7464,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            'Type of the current route. If a generated JSDoc API\r           documentation is being displayed, this is set to `"api"`.\r           If any other HTML content (such as a converted markdown) is\r           being displayed; this is set to `"content"`.',
+                                            'Type of the current route. If a generated JSDoc API\n           documentation is being displayed, this is set to `"api"`.\n           If any other HTML content (such as a converted markdown) is\n           being displayed; this is set to `"content"`.',
                                         name: "type",
                                     },
                                 ],
@@ -7478,21 +7478,21 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *\tJSDoc documentation data for the current API route.\r\n     *\tIf current route is not an API route, this will be `null`.\r\n     *\r\n     *  <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\r\n     *  details on how Javascript files can be grouped (and named) to form\r\n     *  separate API documentations and SPA routes.</blockquote>\r\n     *\r\n     *  @name DocmaWeb#documentation\r\n     *  @type {Array}\r\n     *\r\n     *  @example <caption>Output current API documentation data</caption>\r\n     *  if (docma.currentRoute.type === 'api') {\r\n     *  \tconsole.log(docma.documentation);\r\n     *  }\r\n     *\r\n     *  @example <caption>Usage in (Dust) partial</caption>\r\n     *  {#documentation}\r\n     *      <h4>{longname}</h4>\r\n     *      <p>{description}</p>\r\n     *      <hr />\r\n     *  {/documentation}\r\n     */",
+                                    "/**\n     *\tJSDoc documentation data for the current API route.\n     *\tIf current route is not an API route, this will be `null`.\n     *\n     *  <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\n     *  details on how Javascript files can be grouped (and named) to form\n     *  separate API documentations and SPA routes.</blockquote>\n     *\n     *  @name DocmaWeb#documentation\n     *  @type {Array}\n     *\n     *  @example <caption>Output current API documentation data</caption>\n     *  if (docma.currentRoute.type === 'api') {\n     *  \tconsole.log(docma.documentation);\n     *  }\n     *\n     *  @example <caption>Usage in (Dust) partial</caption>\n     *  {#documentation}\n     *      <h4>{longname}</h4>\n     *      <p>{description}</p>\n     *      <hr />\n     *  {/documentation}\n     */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 288,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "JSDoc documentation data for the current API route.\r\tIf current route is not an API route, this will be `null`.\r\r <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\r details on how Javascript files can be grouped (and named) to form\r separate API documentations and SPA routes.</blockquote>",
+                                    "JSDoc documentation data for the current API route.\n\tIf current route is not an API route, this will be `null`.\n\n <blockquote>See {@link api/#Docma~BuildConfiguration|build configuration} for more\n details on how Javascript files can be grouped (and named) to form\n separate API documentations and SPA routes.</blockquote>",
                                 name: "documentation",
                                 type: { names: ["Array"] },
                                 examples: [
-                                    "<caption>Output current API documentation data</caption>\r if (docma.currentRoute.type === 'api') {\r \tconsole.log(docma.documentation);\r }\r\r ",
-                                    "<caption>Usage in (Dust) partial</caption>\r {#documentation}\r     <h4>{longname}</h4>\r     <p>{description}</p>\r     <hr />\r {/documentation}",
+                                    "<caption>Output current API documentation data</caption>\n if (docma.currentRoute.type === 'api') {\n \tconsole.log(docma.documentation);\n }\n\n ",
+                                    "<caption>Usage in (Dust) partial</caption>\n {#documentation}\n     <h4>{longname}</h4>\n     <p>{description}</p>\n     <hr />\n {/documentation}",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb#documentation",
@@ -7504,13 +7504,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n *  Outputs an error log to the browser console. (Unlike `console.error()`) this\r\n *  method respects `debug` option of Docma build configuration.\r\n *  @param {...*} [args=""] - Arguments to be logged.\r\n */',
+                                    '/**\n *  Outputs an error log to the browser console. (Unlike `console.error()`) this\n *  method respects `debug` option of Docma build configuration.\n *  @param {...*} [args=""] - Arguments to be logged.\n */',
                                 meta: {
-                                    range: [20213, 20341],
+                                    range: [19634, 19759],
                                     filename: "DocmaWeb.js",
                                     lineno: 580,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000691",
                                         name: "DocmaWeb.prototype.error",
@@ -7519,7 +7519,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Outputs an error log to the browser console. (Unlike `console.error()`) this\r method respects `debug` option of Docma build configuration.",
+                                    "Outputs an error log to the browser console. (Unlike `console.error()`) this\n method respects `debug` option of Docma build configuration.",
                                 params: [
                                     {
                                         type: { names: ["*"] },
@@ -7541,13 +7541,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Docma SPA events enumeration.\r\n *  @enum {String}\r\n */",
+                                    "/**\n *  Docma SPA events enumeration.\n *  @enum {String}\n */",
                                 meta: {
-                                    range: [15481, 16050],
+                                    range: [15063, 15610],
                                     filename: "DocmaWeb.js",
                                     lineno: 419,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000477",
                                         name: "DocmaWeb.Event",
@@ -7567,13 +7567,13 @@ var docma = Object.freeze(
                                 properties: [
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted either when the route is changed or navigated to a\r\n     *  bookmark (i.e. hashchange).\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted either when the route is changed or navigated to a\n     *  bookmark (i.e. hashchange).\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [16026, 16046],
+                                            range: [15587, 15607],
                                             filename: "DocmaWeb.js",
                                             lineno: 440,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000488",
                                                 name: "Navigate",
@@ -7582,7 +7582,7 @@ var docma = Object.freeze(
                                             },
                                         },
                                         description:
-                                            "Emitted either when the route is changed or navigated to a\r bookmark (i.e. hashchange).",
+                                            "Emitted either when the route is changed or navigated to a\n bookmark (i.e. hashchange).",
                                         type: { names: ["String"] },
                                         name: "Navigate",
                                         longname: "DocmaWeb.Event.Navigate",
@@ -7593,13 +7593,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted when Docma is ready and the initial content is rendered.\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted when Docma is ready and the initial content is rendered.\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [15621, 15635],
+                                            range: [15198, 15212],
                                             filename: "DocmaWeb.js",
                                             lineno: 424,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000482",
                                                 name: "Ready",
@@ -7619,13 +7619,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted when page content (a Dust partial) is rendered.\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted when page content (a Dust partial) is rendered.\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [15749, 15765],
+                                            range: [15321, 15337],
                                             filename: "DocmaWeb.js",
                                             lineno: 429,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000484",
                                                 name: "Render",
@@ -7645,13 +7645,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted when SPA route is changed.\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted when SPA route is changed.\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [15858, 15872],
+                                            range: [15425, 15439],
                                             filename: "DocmaWeb.js",
                                             lineno: 434,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000486",
                                                 name: "Route",
@@ -7676,13 +7676,13 @@ var docma = Object.freeze(
                                 $members: [
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted either when the route is changed or navigated to a\r\n     *  bookmark (i.e. hashchange).\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted either when the route is changed or navigated to a\n     *  bookmark (i.e. hashchange).\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [16026, 16046],
+                                            range: [15587, 15607],
                                             filename: "DocmaWeb.js",
                                             lineno: 440,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000488",
                                                 name: "Navigate",
@@ -7691,7 +7691,7 @@ var docma = Object.freeze(
                                             },
                                         },
                                         description:
-                                            "Emitted either when the route is changed or navigated to a\r bookmark (i.e. hashchange).",
+                                            "Emitted either when the route is changed or navigated to a\n bookmark (i.e. hashchange).",
                                         type: { names: ["String"] },
                                         name: "Navigate",
                                         longname: "DocmaWeb.Event.Navigate",
@@ -7706,13 +7706,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted when Docma is ready and the initial content is rendered.\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted when Docma is ready and the initial content is rendered.\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [15621, 15635],
+                                            range: [15198, 15212],
                                             filename: "DocmaWeb.js",
                                             lineno: 424,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000482",
                                                 name: "Ready",
@@ -7736,13 +7736,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted when page content (a Dust partial) is rendered.\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted when page content (a Dust partial) is rendered.\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [15749, 15765],
+                                            range: [15321, 15337],
                                             filename: "DocmaWeb.js",
                                             lineno: 429,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000484",
                                                 name: "Render",
@@ -7766,13 +7766,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n     *  Emitted when SPA route is changed.\r\n     *  @type {String}\r\n     */",
+                                            "/**\n     *  Emitted when SPA route is changed.\n     *  @type {String}\n     */",
                                         meta: {
-                                            range: [15858, 15872],
+                                            range: [15425, 15439],
                                             filename: "DocmaWeb.js",
                                             lineno: 434,
                                             columnno: 4,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100000486",
                                                 name: "Route",
@@ -7798,21 +7798,21 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Fired either when the route is changed or navigated to a bookmark\r\n *  (i.e. on hash-change). If the route does not exist (404), `currentRoute`\r\n *  will be `null`.\r\n *\r\n *  @event DocmaWeb~event:navigate\r\n *  @type {DocmaWeb.Route}\r\n *\r\n *  @example\r\n *  docma.on('navigate', function (currentRoute) {\r\n *      if (currentRoute) {\r\n *          // do stuff...\r\n *      }\r\n *  });\r\n */",
+                                    "/**\n *  Fired either when the route is changed or navigated to a bookmark\n *  (i.e. on hash-change). If the route does not exist (404), `currentRoute`\n *  will be `null`.\n *\n *  @event DocmaWeb~event:navigate\n *  @type {DocmaWeb.Route}\n *\n *  @example\n *  docma.on('navigate', function (currentRoute) {\n *      if (currentRoute) {\n *          // do stuff...\n *      }\n *  });\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 399,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Fired either when the route is changed or navigated to a bookmark\r (i.e. on hash-change). If the route does not exist (404), `currentRoute`\r will be `null`.",
+                                    "Fired either when the route is changed or navigated to a bookmark\n (i.e. on hash-change). If the route does not exist (404), `currentRoute`\n will be `null`.",
                                 kind: "event",
                                 name: "event:navigate",
                                 type: { names: ["DocmaWeb.Route"] },
                                 examples: [
-                                    "docma.on('navigate', function (currentRoute) {\r     if (currentRoute) {\r         // do stuff...\r     }\r });",
+                                    "docma.on('navigate', function (currentRoute) {\n     if (currentRoute) {\n         // do stuff...\n     }\n });",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb~event:navigate",
@@ -7823,20 +7823,20 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Fired when Docma is ready and the initial content is rendered.\r\n *  This is only fired once.\r\n *\r\n *  @event DocmaWeb~event:ready\r\n *\r\n *  @example\r\n *  docma.once('ready', function () {\r\n *      // do stuff...\r\n *  });\r\n */",
+                                    "/**\n *  Fired when Docma is ready and the initial content is rendered.\n *  This is only fired once.\n *\n *  @event DocmaWeb~event:ready\n *\n *  @example\n *  docma.once('ready', function () {\n *      // do stuff...\n *  });\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 355,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Fired when Docma is ready and the initial content is rendered.\r This is only fired once.",
+                                    "Fired when Docma is ready and the initial content is rendered.\n This is only fired once.",
                                 kind: "event",
                                 name: "event:ready",
                                 examples: [
-                                    "docma.once('ready', function () {\r     // do stuff...\r });",
+                                    "docma.once('ready', function () {\n     // do stuff...\n });",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb~event:ready",
@@ -7847,21 +7847,21 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Fired when page content (a Dust partial) is rendered. The emitted obeject is\r\n *  `currentRoute`. If the route does not exist (404), `currentRoute` will be\r\n *  `null`. This is fired after the `route` event.\r\n *\r\n *  @event DocmaWeb~event:render\r\n *  @type {DocmaWeb.Route}\r\n *\r\n *  @example\r\n *  docma.on('render', function (currentRoute) {\r\n *      if (currentRoute && currentRoute.type === docma.Route.Type.API) {\r\n *          // do stuff...\r\n *      }\r\n *  });\r\n */",
+                                    "/**\n *  Fired when page content (a Dust partial) is rendered. The emitted obeject is\n *  `currentRoute`. If the route does not exist (404), `currentRoute` will be\n *  `null`. This is fired after the `route` event.\n *\n *  @event DocmaWeb~event:render\n *  @type {DocmaWeb.Route}\n *\n *  @example\n *  docma.on('render', function (currentRoute) {\n *      if (currentRoute && currentRoute.type === docma.Route.Type.API) {\n *          // do stuff...\n *      }\n *  });\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 367,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Fired when page content (a Dust partial) is rendered. The emitted obeject is\r `currentRoute`. If the route does not exist (404), `currentRoute` will be\r `null`. This is fired after the `route` event.",
+                                    "Fired when page content (a Dust partial) is rendered. The emitted obeject is\n `currentRoute`. If the route does not exist (404), `currentRoute` will be\n `null`. This is fired after the `route` event.",
                                 kind: "event",
                                 name: "event:render",
                                 type: { names: ["DocmaWeb.Route"] },
                                 examples: [
-                                    "docma.on('render', function (currentRoute) {\r     if (currentRoute && currentRoute.type === docma.Route.Type.API) {\r         // do stuff...\r     }\r });",
+                                    "docma.on('render', function (currentRoute) {\n     if (currentRoute && currentRoute.type === docma.Route.Type.API) {\n         // do stuff...\n     }\n });",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb~event:render",
@@ -7872,21 +7872,21 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Fired when SPA route is changed. The emitted obeject is `currentRoute`. If\r\n *  the route does not exist (404), `currentRoute` will be `null`. This is fired\r\n *  before the `render` event.\r\n *\r\n *  @event DocmaWeb~event:route\r\n *  @type {DocmaWeb.Route}\r\n *\r\n *  @example\r\n *  docma.on('route', function (currentRoute) {\r\n *      if (currentRoute && currentRoute.type === docma.Route.Type.API) {\r\n *          // do stuff...\r\n *      }\r\n *  });\r\n */",
+                                    "/**\n *  Fired when SPA route is changed. The emitted obeject is `currentRoute`. If\n *  the route does not exist (404), `currentRoute` will be `null`. This is fired\n *  before the `render` event.\n *\n *  @event DocmaWeb~event:route\n *  @type {DocmaWeb.Route}\n *\n *  @example\n *  docma.on('route', function (currentRoute) {\n *      if (currentRoute && currentRoute.type === docma.Route.Type.API) {\n *          // do stuff...\n *      }\n *  });\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 383,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Fired when SPA route is changed. The emitted obeject is `currentRoute`. If\r the route does not exist (404), `currentRoute` will be `null`. This is fired\r before the `render` event.",
+                                    "Fired when SPA route is changed. The emitted obeject is `currentRoute`. If\n the route does not exist (404), `currentRoute` will be `null`. This is fired\n before the `render` event.",
                                 kind: "event",
                                 name: "event:route",
                                 type: { names: ["DocmaWeb.Route"] },
                                 examples: [
-                                    "docma.on('route', function (currentRoute) {\r     if (currentRoute && currentRoute.type === docma.Route.Type.API) {\r         // do stuff...\r     }\r });",
+                                    "docma.on('route', function (currentRoute) {\n     if (currentRoute && currentRoute.type === docma.Route.Type.API) {\n         // do stuff...\n     }\n });",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb~event:route",
@@ -7897,13 +7897,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Asynchronously fetches (text) content from the given URL via an\r\n *  `XmlHttpRequest`. Note that the URL has to be in the same-origin, for\r\n *  this to work.\r\n *\r\n *  @param {String} url\r\n *         URL to be fetched.\r\n *  @param {Function} callback\r\n *         Function to be executed when the content is fetched; with the\r\n *         following signature: `function (status, responseText) { .. }`\r\n */",
+                                    "/**\n *  Asynchronously fetches (text) content from the given URL via an\n *  `XmlHttpRequest`. Note that the URL has to be in the same-origin, for\n *  this to work.\n *\n *  @param {String} url\n *         URL to be fetched.\n *  @param {Function} callback\n *         Function to be executed when the content is fetched; with the\n *         following signature: `function (status, responseText) { .. }`\n */",
                                 meta: {
-                                    range: [29284, 29726],
+                                    range: [28420, 28850],
                                     filename: "DocmaWeb.js",
                                     lineno: 865,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001374",
                                         name: "DocmaWeb.prototype.fetch",
@@ -7919,7 +7919,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Asynchronously fetches (text) content from the given URL via an\r `XmlHttpRequest`. Note that the URL has to be in the same-origin, for\r this to work.",
+                                    "Asynchronously fetches (text) content from the given URL via an\n `XmlHttpRequest`. Note that the URL has to be in the same-origin, for\n this to work.",
                                 params: [
                                     {
                                         type: { names: ["String"] },
@@ -7929,7 +7929,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["function"] },
                                         description:
-                                            "Function to be executed when the content is fetched; with the\r        following signature: `function (status, responseText) { .. }`",
+                                            "Function to be executed when the content is fetched; with the\n        following signature: `function (status, responseText) { .. }`",
                                         name: "callback",
                                     },
                                 ],
@@ -7944,13 +7944,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Checks whether a Dust filter with the given name already exists.\r\n *  @param {String} name - Name of the filter to be checked.\r\n *  @returns {Boolean} -\r\n */",
+                                    "/**\n *  Checks whether a Dust filter with the given name already exists.\n *  @param {String} name - Name of the filter to be checked.\n *  @returns {Boolean} -\n */",
                                 meta: {
-                                    range: [25155, 25263],
+                                    range: [24421, 24527],
                                     filename: "DocmaWeb.js",
                                     lineno: 735,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001045",
                                         name: "DocmaWeb.prototype.filterExists",
@@ -7985,13 +7985,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Gets Docma content DOM element that the HTML content will be loaded\r\n *  into. This should be called for `docma-content` partial.\r\n *\r\n *  @returns {HTMLElement} - Docma content DOM element.\r\n */",
+                                    "/**\n *  Gets Docma content DOM element that the HTML content will be loaded\n *  into. This should be called for `docma-content` partial.\n *\n *  @returns {HTMLElement} - Docma content DOM element.\n */",
                                 meta: {
-                                    range: [21077, 21716],
+                                    range: [20467, 21090],
                                     filename: "DocmaWeb.js",
                                     lineno: 611,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000764",
                                         name: "DocmaWeb.prototype.getContentElem",
@@ -8004,7 +8004,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Gets Docma content DOM element that the HTML content will be loaded\r into. This should be called for `docma-content` partial.",
+                                    "Gets Docma content DOM element that the HTML content will be loaded\n into. This should be called for `docma-content` partial.",
                                 returns: [
                                     {
                                         type: { names: ["HTMLElement"] },
@@ -8023,13 +8023,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Gets Docma main DOM element which the Dust templates will be rendered\r\n *  into.\r\n *\r\n *  @returns {HTMLElement} - Docma main DOM element.\r\n */",
+                                    "/**\n *  Gets Docma main DOM element which the Dust templates will be rendered\n *  into.\n *\n *  @returns {HTMLElement} - Docma main DOM element.\n */",
                                 meta: {
-                                    range: [20584, 20866],
+                                    range: [19990, 20264],
                                     filename: "DocmaWeb.js",
                                     lineno: 595,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000717",
                                         name: "DocmaWeb.prototype.getDocmaElem",
@@ -8042,7 +8042,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Gets Docma main DOM element which the Dust templates will be rendered\r into.",
+                                    "Gets Docma main DOM element which the Dust templates will be rendered\n into.",
                                 returns: [
                                     {
                                         type: { names: ["HTMLElement"] },
@@ -8061,13 +8061,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n *  Outputs an informational log to the browser console. (Unlike\r\n *  `console.info()`) this method respects `debug` option of Docma build\r\n *  configuration.\r\n *  @param {...*} [args=""] - Arguments to be logged.\r\n */',
+                                    '/**\n *  Outputs an informational log to the browser console. (Unlike\n *  `console.info()`) this method respects `debug` option of Docma build\n *  configuration.\n *  @param {...*} [args=""] - Arguments to be logged.\n */',
                                 meta: {
-                                    range: [19525, 19651],
+                                    range: [18966, 19089],
                                     filename: "DocmaWeb.js",
                                     lineno: 560,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000639",
                                         name: "DocmaWeb.prototype.info",
@@ -8076,7 +8076,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Outputs an informational log to the browser console. (Unlike\r `console.info()`) this method respects `debug` option of Docma build\r configuration.",
+                                    "Outputs an informational log to the browser console. (Unlike\n `console.info()`) this method respects `debug` option of Docma build\n configuration.",
                                 params: [
                                     {
                                         type: { names: ["*"] },
@@ -8098,13 +8098,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Loads the given HTML content into `docma-content` element. This is a\r\n *  low-level method. Typically you would not need to use this.\r\n *\r\n *  @param {String} html - Content to be loaded.\r\n */",
+                                    "/**\n *  Loads the given HTML content into `docma-content` element. This is a\n *  low-level method. Typically you would not need to use this.\n *\n *  @param {String} html - Content to be loaded.\n */",
                                 meta: {
-                                    range: [21924, 22484],
+                                    range: [21290, 21837],
                                     filename: "DocmaWeb.js",
                                     lineno: 635,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000813",
                                         name: "DocmaWeb.prototype.loadContent",
@@ -8119,7 +8119,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Loads the given HTML content into `docma-content` element. This is a\r low-level method. Typically you would not need to use this.",
+                                    "Loads the given HTML content into `docma-content` element. This is a\n low-level method. Typically you would not need to use this.",
                                 params: [
                                     {
                                         type: { names: ["String"] },
@@ -8138,16 +8138,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Similar to `window.location` but with differences and additional\r\n     *  information.\r\n     *\r\n     *  @name DocmaWeb#location\r\n     *  @type {Object}\r\n     *  @readonly\r\n     *\r\n     *  @property {String} origin\r\n     *            Gets the protocol, hostname and port number of the current URL.\r\n     *  @property {String} host\r\n     *            Gets the hostname and port number of the current URL.\r\n     *  @property {String} hostname\r\n     *            Gets the domain name of the web host.\r\n     *  @property {String} protocol\r\n     *            Gets the web protocol used, without `:` suffix.\r\n     *  @property {String} href\r\n     *            Gets the href (URL) of the current location.\r\n     *  @property {String} entrance\r\n     *            Gets the application entrance route, which is set at Docma build-time.\r\n     *  @property {String} base\r\n     *            Gets the base path of the application URL, which is set at Docma build-time.\r\n     *  @property {String} fullpath\r\n     *            Gets the path and filename of the current URL.\r\n     *  @property {String} pathname\r\n     *            Gets the path and filename of the current URL, without the base.\r\n     *  @property {String} path\r\n     *            Gets the path, filename and query-string of the current URL, without the base.\r\n     *  @property {String} hash\r\n     *            Gets the anchor `#` of the current URL, without `#` prefix.\r\n     *  @property {String} query\r\n     *            Gets the querystring part of the current URL, without `?` prefix.\r\n     *  @property {Function} getQuery()\r\n     *            Gets the value of the given querystring parameter.\r\n     */",
+                                    "/**\n     *  Similar to `window.location` but with differences and additional\n     *  information.\n     *\n     *  @name DocmaWeb#location\n     *  @type {Object}\n     *  @readonly\n     *\n     *  @property {String} origin\n     *            Gets the protocol, hostname and port number of the current URL.\n     *  @property {String} host\n     *            Gets the hostname and port number of the current URL.\n     *  @property {String} hostname\n     *            Gets the domain name of the web host.\n     *  @property {String} protocol\n     *            Gets the web protocol used, without `:` suffix.\n     *  @property {String} href\n     *            Gets the href (URL) of the current location.\n     *  @property {String} entrance\n     *            Gets the application entrance route, which is set at Docma build-time.\n     *  @property {String} base\n     *            Gets the base path of the application URL, which is set at Docma build-time.\n     *  @property {String} fullpath\n     *            Gets the path and filename of the current URL.\n     *  @property {String} pathname\n     *            Gets the path and filename of the current URL, without the base.\n     *  @property {String} path\n     *            Gets the path, filename and query-string of the current URL, without the base.\n     *  @property {String} hash\n     *            Gets the anchor `#` of the current URL, without `#` prefix.\n     *  @property {String} query\n     *            Gets the querystring part of the current URL, without `?` prefix.\n     *  @property {Function} getQuery()\n     *            Gets the value of the given querystring parameter.\n     */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 178,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Similar to `window.location` but with differences and additional\r information.",
+                                    "Similar to `window.location` but with differences and additional\n information.",
                                 name: "location",
                                 type: { names: ["Object"] },
                                 readonly: true,
@@ -8241,13 +8241,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n *  Outputs a general log to the browser console. (Unlike `console.log()`) this\r\n *  method respects `debug` option of Docma build configuration.\r\n *  @param {...*} [args=""] - Arguments to be logged.\r\n */',
+                                    '/**\n *  Outputs a general log to the browser console. (Unlike `console.log()`) this\n *  method respects `debug` option of Docma build configuration.\n *  @param {...*} [args=""] - Arguments to be logged.\n */',
                                 meta: {
-                                    range: [19171, 19295],
+                                    range: [18623, 18744],
                                     filename: "DocmaWeb.js",
                                     lineno: 549,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000613",
                                         name: "DocmaWeb.prototype.log",
@@ -8256,7 +8256,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Outputs a general log to the browser console. (Unlike `console.log()`) this\r method respects `debug` option of Docma build configuration.",
+                                    "Outputs a general log to the browser console. (Unlike `console.log()`) this\n method respects `debug` option of Docma build configuration.",
                                 params: [
                                     {
                                         type: { names: ["*"] },
@@ -8278,12 +8278,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Removes the given listener from the specified event.\r\n *  @name DocmaWeb#off\r\n *  @function\r\n *  @alias DocmaWeb#removeListener\r\n *  @chainable\r\n *\r\n *  @param {String} eventName\r\n *         Name of the event to remove the listener from.\r\n *         See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.\r\n *  @param {Function} listener\r\n *         Function to be removed from the event.\r\n *\r\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\r\n */",
+                                    "/**\n *  Removes the given listener from the specified event.\n *  @name DocmaWeb#off\n *  @function\n *  @alias DocmaWeb#removeListener\n *  @chainable\n *\n *  @param {String} eventName\n *         Name of the event to remove the listener from.\n *         See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.\n *  @param {Function} listener\n *         Function to be removed from the event.\n *\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 504,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -8302,7 +8302,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Name of the event to remove the listener from.\r        See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.",
+                                            "Name of the event to remove the listener from.\n        See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.",
                                         name: "eventName",
                                     },
                                     {
@@ -8328,16 +8328,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Adds a listener function to the specified event.\r\n *  Note that the listener will not be added if it is a duplicate.\r\n *  If the listener returns true then it will be removed after it is called.\r\n *  @name DocmaWeb#on\r\n *  @function\r\n *  @alias DocmaWeb#addListener\r\n *  @chainable\r\n *\r\n *  @param {String} eventName\r\n *         Name of the event to attach the listener to.\r\n *         See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.\r\n *  @param {Function} listener\r\n *         Function to be called when the event is emitted. If the function\r\n *         returns true then it will be removed after calling.\r\n *\r\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\r\n *\r\n *  @example\r\n *  docma.on('render', function (currentRoute) {\r\n *  \tif (!currentRoute) {\r\n *  \t\tconsole.log('Not found!');\r\n *  \t\treturn;\r\n *  \t}\r\n *  \tif (currentRoute.type === docma.Route.Type.API) {\r\n *  \t\tconsole.log('This is an API route.')\r\n *  \t}\r\n *  });\r\n */",
+                                    "/**\n *  Adds a listener function to the specified event.\n *  Note that the listener will not be added if it is a duplicate.\n *  If the listener returns true then it will be removed after it is called.\n *  @name DocmaWeb#on\n *  @function\n *  @alias DocmaWeb#addListener\n *  @chainable\n *\n *  @param {String} eventName\n *         Name of the event to attach the listener to.\n *         See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.\n *  @param {Function} listener\n *         Function to be called when the event is emitted. If the function\n *         returns true then it will be removed after calling.\n *\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\n *\n *  @example\n *  docma.on('render', function (currentRoute) {\n *  \tif (!currentRoute) {\n *  \t\tconsole.log('Not found!');\n *  \t\treturn;\n *  \t}\n *  \tif (currentRoute.type === docma.Route.Type.API) {\n *  \t\tconsole.log('This is an API route.')\n *  \t}\n *  });\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 443,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Adds a listener function to the specified event.\r Note that the listener will not be added if it is a duplicate.\r If the listener returns true then it will be removed after it is called.",
+                                    "Adds a listener function to the specified event.\n Note that the listener will not be added if it is a duplicate.\n If the listener returns true then it will be removed after it is called.",
                                 name: "on",
                                 kind: "function",
                                 alias: "DocmaWeb#addListener",
@@ -8352,13 +8352,13 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Name of the event to attach the listener to.\r        See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.",
+                                            "Name of the event to attach the listener to.\n        See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.",
                                         name: "eventName",
                                     },
                                     {
                                         type: { names: ["function"] },
                                         description:
-                                            "Function to be called when the event is emitted. If the function\r        returns true then it will be removed after calling.",
+                                            "Function to be called when the event is emitted. If the function\n        returns true then it will be removed after calling.",
                                         name: "listener",
                                     },
                                 ],
@@ -8370,7 +8370,7 @@ var docma = Object.freeze(
                                     },
                                 ],
                                 examples: [
-                                    "docma.on('render', function (currentRoute) {\r \tif (!currentRoute) {\r \t\tconsole.log('Not found!');\r \t\treturn;\r \t}\r \tif (currentRoute.type === docma.Route.Type.API) {\r \t\tconsole.log('This is an API route.')\r \t}\r });",
+                                    "docma.on('render', function (currentRoute) {\n \tif (!currentRoute) {\n \t\tconsole.log('Not found!');\n \t\treturn;\n \t}\n \tif (currentRoute.type === docma.Route.Type.API) {\n \t\tconsole.log('This is an API route.')\n \t}\n });",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb#on",
@@ -8381,16 +8381,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Adds a listener that will be automatically removed after its first\r\n *  execution.\r\n *  @name DocmaWeb#once\r\n *  @function\r\n *  @alias DocmaWeb#addOnceListener\r\n *  @chainable\r\n *\r\n *  @param {String} eventName\r\n *         Name of the event to attach the listener to.\r\n *         See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.\r\n *  @param {Function} listener\r\n *         Function to be called when the event is emitted.\r\n *\r\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\r\n *\r\n *  @example\r\n *  docma.once('ready', function () {\r\n *  \tconsole.log('Docma is ready!');\r\n *  });\r\n */",
+                                    "/**\n *  Adds a listener that will be automatically removed after its first\n *  execution.\n *  @name DocmaWeb#once\n *  @function\n *  @alias DocmaWeb#addOnceListener\n *  @chainable\n *\n *  @param {String} eventName\n *         Name of the event to attach the listener to.\n *         See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.\n *  @param {Function} listener\n *         Function to be called when the event is emitted.\n *\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\n *\n *  @example\n *  docma.once('ready', function () {\n *  \tconsole.log('Docma is ready!');\n *  });\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 478,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Adds a listener that will be automatically removed after its first\r execution.",
+                                    "Adds a listener that will be automatically removed after its first\n execution.",
                                 name: "once",
                                 kind: "function",
                                 alias: "DocmaWeb#addOnceListener",
@@ -8405,7 +8405,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Name of the event to attach the listener to.\r        See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.",
+                                            "Name of the event to attach the listener to.\n        See {@link #DocmaWeb.Event|`DocmaWeb.Event`} enumeration.",
                                         name: "eventName",
                                     },
                                     {
@@ -8423,7 +8423,7 @@ var docma = Object.freeze(
                                     },
                                 ],
                                 examples: [
-                                    "docma.once('ready', function () {\r \tconsole.log('Docma is ready!');\r });",
+                                    "docma.once('ready', function () {\n \tconsole.log('Docma is ready!');\n });",
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb#once",
@@ -8434,13 +8434,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Removes an existing Dust filter.\r\n *  @chainable\r\n *  @param {String} name - Name of the filter to be removed.\r\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\r\n */",
+                                    "/**\n *  Removes an existing Dust filter.\n *  @chainable\n *  @param {String} name - Name of the filter to be removed.\n *  @returns {DocmaWeb} - `DocmaWeb` instance for chaining.\n */",
                                 meta: {
-                                    range: [24878, 24982],
+                                    range: [24154, 24255],
                                     filename: "DocmaWeb.js",
                                     lineno: 725,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001026",
                                         name: "DocmaWeb.prototype.removeFilter",
@@ -8482,13 +8482,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n *  Renders content into docma-main element, by the given route information.\r\n *\r\n *  If the content is empty or `"api"`, we\'ll render the `docma-api` Dust\r\n *  template. Otherwise, (e.g. `"readme"`) we\'ll render `docma-content` Dust\r\n *  template, then  fetch `content/readme.html` and load it in the `docma-main`\r\n *  element.\r\n *\r\n *  <blockquote>Note that rendering and the callback will be cancelled if the given\r\n *  content is the latest content rendered.</blockquote>\r\n *\r\n *  @param {DocmaWeb.Route} routeInfo - Route information of the page to be\r\n *  rendered.\r\n *  @param {Function} [callback] - Function to be executed when the rendering is\r\n *  complete. `function (httpStatus:Number) { .. }`\r\n *  @returns {void}\r\n *  @emits DocmaWeb~event:render\r\n */',
+                                    '/**\n *  Renders content into docma-main element, by the given route information.\n *\n *  If the content is empty or `"api"`, we\'ll render the `docma-api` Dust\n *  template. Otherwise, (e.g. `"readme"`) we\'ll render `docma-content` Dust\n *  template, then  fetch `content/readme.html` and load it in the `docma-main`\n *  element.\n *\n *  <blockquote>Note that rendering and the callback will be cancelled if the given\n *  content is the latest content rendered.</blockquote>\n *\n *  @param {DocmaWeb.Route} routeInfo - Route information of the page to be\n *  rendered.\n *  @param {Function} [callback] - Function to be executed when the rendering is\n *  complete. `function (httpStatus:Number) { .. }`\n *  @returns {void}\n *  @emits DocmaWeb~event:render\n */',
                                 meta: {
-                                    range: [30504, 31880],
+                                    range: [29608, 30949],
                                     filename: "DocmaWeb.js",
                                     lineno: 897,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001451",
                                         name: "DocmaWeb.prototype.render",
@@ -8504,19 +8504,19 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    'Renders content into docma-main element, by the given route information.\r\r If the content is empty or `"api"`, we\'ll render the `docma-api` Dust\r template. Otherwise, (e.g. `"readme"`) we\'ll render `docma-content` Dust\r template, then  fetch `content/readme.html` and load it in the `docma-main`\r element.\r\r <blockquote>Note that rendering and the callback will be cancelled if the given\r content is the latest content rendered.</blockquote>',
+                                    'Renders content into docma-main element, by the given route information.\n\n If the content is empty or `"api"`, we\'ll render the `docma-api` Dust\n template. Otherwise, (e.g. `"readme"`) we\'ll render `docma-content` Dust\n template, then  fetch `content/readme.html` and load it in the `docma-main`\n element.\n\n <blockquote>Note that rendering and the callback will be cancelled if the given\n content is the latest content rendered.</blockquote>',
                                 params: [
                                     {
                                         type: { names: ["DocmaWeb.Route"] },
                                         description:
-                                            "Route information of the page to be\r rendered.",
+                                            "Route information of the page to be\n rendered.",
                                         name: "routeInfo",
                                     },
                                     {
                                         type: { names: ["function"] },
                                         optional: true,
                                         description:
-                                            "Function to be executed when the rendering is\r complete. `function (httpStatus:Number) { .. }`",
+                                            "Function to be executed when the rendering is\n complete. `function (httpStatus:Number) { .. }`",
                                         name: "callback",
                                     },
                                 ],
@@ -8533,13 +8533,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  @classdesc Creates SPA route information object for the given route name\r\n *  and type. You cannot directly construct an instance of this class via\r\n *  `new` operator. Use {@link #DocmaWeb#createRoute|`DocmaWeb#createRoute`}\r\n *  method instead.\r\n *  @class\r\n *  @hideconstructor\r\n *\r\n *  @param {DocmaWeb} docma `DocmaWeb` instance.\r\n *  @param {String} name Name of the route.\r\n *  @param {String} type Type of the SPA route. See\r\n *         {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\r\n *         for possible values.\r\n */",
+                                    "/**\n *  @classdesc Creates SPA route information object for the given route name\n *  and type. You cannot directly construct an instance of this class via\n *  `new` operator. Use {@link #DocmaWeb#createRoute|`DocmaWeb#createRoute`}\n *  method instead.\n *  @class\n *  @hideconstructor\n *\n *  @param {DocmaWeb} docma `DocmaWeb` instance.\n *  @param {String} name Name of the route.\n *  @param {String} type Type of the SPA route. See\n *         {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\n *         for possible values.\n */",
                                 meta: {
-                                    range: [984, 1812],
+                                    range: [957, 1763],
                                     filename: "DocmaWeb.Route.js",
                                     lineno: 28,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001638",
                                         name: "DocmaWeb.Route",
@@ -8553,7 +8553,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 classdesc:
-                                    "Creates SPA route information object for the given route name\r and type. You cannot directly construct an instance of this class via\r `new` operator. Use {@link #DocmaWeb#createRoute|`DocmaWeb#createRoute`}\r method instead.",
+                                    "Creates SPA route information object for the given route name\n and type. You cannot directly construct an instance of this class via\n `new` operator. Use {@link #DocmaWeb#createRoute|`DocmaWeb#createRoute`}\n method instead.",
                                 kind: "class",
                                 hideconstructor: true,
                                 params: [
@@ -8570,7 +8570,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["String"] },
                                         description:
-                                            "Type of the SPA route. See\r        {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\r        for possible values.",
+                                            "Type of the SPA route. See\n        {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\n        for possible values.",
                                         name: "type",
                                     },
                                 ],
@@ -8584,13 +8584,13 @@ var docma = Object.freeze(
                                 $members: [
                                     {
                                         comment:
-                                            "/**\r\n *  Applies the route to the application.\r\n *  @emits DocmaWeb~event:route\r\n *  @param {Function} [cb] - Callback function to be executed after route is\r\n *  rendered.\r\n *  @returns {DocmaWeb.Route} - The route instance for chaining.\r\n */",
+                                            "/**\n *  Applies the route to the application.\n *  @emits DocmaWeb~event:route\n *  @param {Function} [cb] - Callback function to be executed after route is\n *  rendered.\n *  @returns {DocmaWeb.Route} - The route instance for chaining.\n */",
                                         meta: {
-                                            range: [6192, 6813],
+                                            range: [5988, 6596],
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 205,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100001843",
                                                 name: "DocmaWeb.Route.prototype.apply",
@@ -8612,7 +8612,7 @@ var docma = Object.freeze(
                                                 type: { names: ["function"] },
                                                 optional: true,
                                                 description:
-                                                    "Callback function to be executed after route is\r rendered.",
+                                                    "Callback function to be executed after route is\n rendered.",
                                                 name: "cb",
                                             },
                                         ],
@@ -8637,16 +8637,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the path of the generated content (HTML) file.\r\n *  If this is an API route, `contentPath` is `null`.\r\n *  @name DocmaWeb.Route#contentPath\r\n *  @type {String}\r\n *  @instance\r\n */",
+                                            "/**\n *  Gets the path of the generated content (HTML) file.\n *  If this is an API route, `contentPath` is `null`.\n *  @name DocmaWeb.Route#contentPath\n *  @type {String}\n *  @instance\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 128,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the path of the generated content (HTML) file.\r If this is an API route, `contentPath` is `null`.",
+                                            "Gets the path of the generated content (HTML) file.\n If this is an API route, `contentPath` is `null`.",
                                         name: "contentPath",
                                         type: { names: ["String"] },
                                         scope: "instance",
@@ -8660,13 +8660,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the route actually exists.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the route actually exists.\n *  @returns {Boolean} -\n */",
                                         meta: {
-                                            range: [5244, 5324],
+                                            range: [5070, 5148],
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 175,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100001768",
                                                 name: "DocmaWeb.Route.prototype.exists",
@@ -8694,16 +8694,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the ID of the route. A route ID consists of the route type and the\r\n *  name; delimited via a colon. e.g. `api:web`.\r\n *  @name DocmaWeb.Route#id\r\n *  @type {String}\r\n *  @instance\r\n */",
+                                            "/**\n *  Gets the ID of the route. A route ID consists of the route type and the\n *  name; delimited via a colon. e.g. `api:web`.\n *  @name DocmaWeb.Route#id\n *  @type {String}\n *  @instance\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 120,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the ID of the route. A route ID consists of the route type and the\r name; delimited via a colon. e.g. `api:web`.",
+                                            "Gets the ID of the route. A route ID consists of the route type and the\n name; delimited via a colon. e.g. `api:web`.",
                                         name: "id",
                                         type: { names: ["String"] },
                                         scope: "instance",
@@ -8717,13 +8717,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the route is currently being viewed.\r\n *  @param {DocmaWeb.Route} routeInfo - Object to be checked.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the route is currently being viewed.\n *  @param {DocmaWeb.Route} routeInfo - Object to be checked.\n *  @returns {Boolean} -\n */",
                                         meta: {
-                                            range: [5835, 5942],
+                                            range: [5642, 5747],
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 194,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100001822",
                                                 name: "DocmaWeb.Route.prototype.isCurrent",
@@ -8761,13 +8761,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the route is equal to the given route.\r\n *  @param {DocmaWeb.Route} routeInfo - Route to be checked against.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the route is equal to the given route.\n *  @param {DocmaWeb.Route} routeInfo - Route to be checked against.\n *  @returns {Boolean} -\n */",
                                         meta: {
-                                            range: [5494, 5674],
+                                            range: [5311, 5488],
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 184,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100001785",
                                                 name: "DocmaWeb.Route.prototype.isEqualTo",
@@ -8805,16 +8805,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the name of the SPA route, which is either set by the user when\r\n *  building the documentation; or auto-generated from the source file name.\r\n *  @name DocmaWeb.Route#name\r\n *  @type {String}\r\n *  @instance\r\n */",
+                                            "/**\n *  Gets the name of the SPA route, which is either set by the user when\n *  building the documentation; or auto-generated from the source file name.\n *  @name DocmaWeb.Route#name\n *  @type {String}\n *  @instance\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 163,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the name of the SPA route, which is either set by the user when\r building the documentation; or auto-generated from the source file name.",
+                                            "Gets the name of the SPA route, which is either set by the user when\n building the documentation; or auto-generated from the source file name.",
                                         name: "name",
                                         type: { names: ["String"] },
                                         scope: "instance",
@@ -8828,16 +8828,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the URL path of the SPA route. For example, if SPA route method is\r\n *  `query`, the URL path for a route named `guide` will be `?content=guide`.\r\n *  If routing method is `path` it will be `guide/`.\r\n *  @name DocmaWeb.Route#path\r\n *  @type {String}\r\n *  @instance\r\n */",
+                                            "/**\n *  Gets the URL path of the SPA route. For example, if SPA route method is\n *  `query`, the URL path for a route named `guide` will be `?content=guide`.\n *  If routing method is `path` it will be `guide/`.\n *  @name DocmaWeb.Route#path\n *  @type {String}\n *  @instance\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 136,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the URL path of the SPA route. For example, if SPA route method is\r `query`, the URL path for a route named `guide` will be `?content=guide`.\r If routing method is `path` it will be `guide/`.",
+                                            "Gets the URL path of the SPA route. For example, if SPA route method is\n `query`, the URL path for a route named `guide` will be `?content=guide`.\n If routing method is `path` it will be `guide/`.",
                                         name: "path",
                                         type: { names: ["String"] },
                                         scope: "instance",
@@ -8851,16 +8851,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the type of the source which this route is generated from. See\r\n *  {@link #DocmaWeb.Route.SourceType|`DocmaWeb.Route.SourceType`} enumeration\r\n *  for possible values.\r\n *  @name DocmaWeb.Route#sourceType\r\n *  @type {String}\r\n *  @instance\r\n */",
+                                            "/**\n *  Gets the type of the source which this route is generated from. See\n *  {@link #DocmaWeb.Route.SourceType|`DocmaWeb.Route.SourceType`} enumeration\n *  for possible values.\n *  @name DocmaWeb.Route#sourceType\n *  @type {String}\n *  @instance\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 154,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the type of the source which this route is generated from. See\r {@link #DocmaWeb.Route.SourceType|`DocmaWeb.Route.SourceType`} enumeration\r for possible values.",
+                                            "Gets the type of the source which this route is generated from. See\n {@link #DocmaWeb.Route.SourceType|`DocmaWeb.Route.SourceType`} enumeration\n for possible values.",
                                         name: "sourceType",
                                         type: { names: ["String"] },
                                         scope: "instance",
@@ -8874,12 +8874,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Enumerates the source types that a SPA route is generated from.\r\n *  @name DocmaWeb.Route.SourceType\r\n *  @enum {String}\r\n *  @static\r\n *  @readonly\r\n */",
+                                            "/**\n *  Enumerates the source types that a SPA route is generated from.\n *  @name DocmaWeb.Route.SourceType\n *  @enum {String}\n *  @static\n *  @readonly\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 92,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -8899,14 +8899,14 @@ var docma = Object.freeze(
                                         $members: [
                                             {
                                                 comment:
-                                                    "/**\r\n     *  Indicates that the documentation route is generated from HTML\r\n     *  source.\r\n     *  @type {String}\r\n     */",
+                                                    "/**\n     *  Indicates that the documentation route is generated from HTML\n     *  source.\n     *  @type {String}\n     */",
                                                 meta: {
-                                                    range: [3736, 3748],
+                                                    range: [3620, 3632],
                                                     filename:
                                                         "DocmaWeb.Route.js",
                                                     lineno: 117,
                                                     columnno: 4,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001765",
                                                         name: "HTML",
@@ -8915,7 +8915,7 @@ var docma = Object.freeze(
                                                     },
                                                 },
                                                 description:
-                                                    "Indicates that the documentation route is generated from HTML\r source.",
+                                                    "Indicates that the documentation route is generated from HTML\n source.",
                                                 type: { names: ["String"] },
                                                 name: "HTML",
                                                 longname:
@@ -8932,14 +8932,14 @@ var docma = Object.freeze(
                                             },
                                             {
                                                 comment:
-                                                    "/**\r\n     *  Indicates that the documentation route is generated from Javascript\r\n     *  source.\r\n     *  @type {String}\r\n     */",
+                                                    "/**\n     *  Indicates that the documentation route is generated from Javascript\n     *  source.\n     *  @type {String}\n     */",
                                                 meta: {
-                                                    range: [3442, 3450],
+                                                    range: [3338, 3346],
                                                     filename:
                                                         "DocmaWeb.Route.js",
                                                     lineno: 105,
                                                     columnno: 4,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001761",
                                                         name: "JS",
@@ -8948,7 +8948,7 @@ var docma = Object.freeze(
                                                     },
                                                 },
                                                 description:
-                                                    "Indicates that the documentation route is generated from Javascript\r source.",
+                                                    "Indicates that the documentation route is generated from Javascript\n source.",
                                                 type: { names: ["String"] },
                                                 name: "JS",
                                                 longname:
@@ -8965,14 +8965,14 @@ var docma = Object.freeze(
                                             },
                                             {
                                                 comment:
-                                                    "/**\r\n     *  Indicates that the documentation route is generated from markdown\r\n     *  source.\r\n     *  @type {String}\r\n     */",
+                                                    "/**\n     *  Indicates that the documentation route is generated from markdown\n     *  source.\n     *  @type {String}\n     */",
                                                 meta: {
-                                                    range: [3591, 3599],
+                                                    range: [3481, 3489],
                                                     filename:
                                                         "DocmaWeb.Route.js",
                                                     lineno: 111,
                                                     columnno: 4,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001763",
                                                         name: "MD",
@@ -8981,7 +8981,7 @@ var docma = Object.freeze(
                                                     },
                                                 },
                                                 description:
-                                                    "Indicates that the documentation route is generated from markdown\r source.",
+                                                    "Indicates that the documentation route is generated from markdown\n source.",
                                                 type: { names: ["String"] },
                                                 name: "MD",
                                                 longname:
@@ -9000,13 +9000,13 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the string representation of the route.\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Gets the string representation of the route.\n *  @returns {String} -\n */",
                                         meta: {
-                                            range: [6903, 7116],
+                                            range: [6680, 6886],
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 224,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {
                                                 id: "astnode100001960",
                                                 name: "DocmaWeb.Route.prototype.toString",
@@ -9038,16 +9038,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the type of the generated SPA route. See\r\n *  {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\r\n *  for possible values.\r\n *  @name DocmaWeb.Route#type\r\n *  @type {String}\r\n *  @instance\r\n */",
+                                            "/**\n *  Gets the type of the generated SPA route. See\n *  {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\n *  for possible values.\n *  @name DocmaWeb.Route#type\n *  @type {String}\n *  @instance\n */",
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 145,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the type of the generated SPA route. See\r {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\r for possible values.",
+                                            "Gets the type of the generated SPA route. See\n {@link #DocmaWeb.Route.Type|`DocmaWeb.Route.Type`} enumeration\n for possible values.",
                                         name: "type",
                                         type: { names: ["String"] },
                                         scope: "instance",
@@ -9061,12 +9061,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Enumerates the Docma SPA route types.\r\n *  @name DocmaWeb.Route.Type\r\n *  @enum {String}\r\n *  @static\r\n *  @readonly\r\n *\r\n *  @example <caption>When `docma.app.routing.method` is `"query"`</caption>\r\n *  type     name              path\r\n *  -------  ----------------  --------------------------\r\n *  api      _def_             ?api\r\n *  api      web               ?api=web\r\n *  content  templates         ?content=templates\r\n *  content  guide             ?content=guide\r\n *\r\n *  @example <caption>When `docma.app.routing.method` is `"path"`</caption>\r\n *  type     name              path\r\n *  -------  ----------------  --------------------------\r\n *  api      _def_             api/\r\n *  api      web               api/web/\r\n *  content  templates         templates/\r\n *  content  guide             guide/\r\n *\r\n */',
+                                            '/**\n *  Enumerates the Docma SPA route types.\n *  @name DocmaWeb.Route.Type\n *  @enum {String}\n *  @static\n *  @readonly\n *\n *  @example <caption>When `docma.app.routing.method` is `"query"`</caption>\n *  type     name              path\n *  -------  ----------------  --------------------------\n *  api      _def_             ?api\n *  api      web               ?api=web\n *  content  templates         ?content=templates\n *  content  guide             ?content=guide\n *\n *  @example <caption>When `docma.app.routing.method` is `"path"`</caption>\n *  type     name              path\n *  -------  ----------------  --------------------------\n *  api      _def_             api/\n *  api      web               api/web/\n *  content  templates         templates/\n *  content  guide             guide/\n *\n */',
                                         meta: {
                                             filename: "DocmaWeb.Route.js",
                                             lineno: 52,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -9078,8 +9078,8 @@ var docma = Object.freeze(
                                         scope: "static",
                                         readonly: true,
                                         examples: [
-                                            '<caption>When `docma.app.routing.method` is `"query"`</caption>\r type     name              path\r -------  ----------------  --------------------------\r api      _def_             ?api\r api      web               ?api=web\r content  templates         ?content=templates\r content  guide             ?content=guide\r\r ',
-                                            '<caption>When `docma.app.routing.method` is `"path"`</caption>\r type     name              path\r -------  ----------------  --------------------------\r api      _def_             api/\r api      web               api/web/\r content  templates         templates/\r content  guide             guide/',
+                                            '<caption>When `docma.app.routing.method` is `"query"`</caption>\n type     name              path\n -------  ----------------  --------------------------\n api      _def_             ?api\n api      web               ?api=web\n content  templates         ?content=templates\n content  guide             ?content=guide\n\n ',
+                                            '<caption>When `docma.app.routing.method` is `"path"`</caption>\n type     name              path\n -------  ----------------  --------------------------\n api      _def_             api/\n api      web               api/web/\n content  templates         templates/\n content  guide             guide/',
                                         ],
                                         memberof: "DocmaWeb.Route",
                                         longname: "DocmaWeb.Route.Type",
@@ -9090,14 +9090,14 @@ var docma = Object.freeze(
                                         $members: [
                                             {
                                                 comment:
-                                                    "/**\r\n     *  Indicates that the route is for API documentation content, generated\r\n     *  from one or more Javascript files.\r\n     *  @type {String}\r\n     */",
+                                                    "/**\n     *  Indicates that the route is for API documentation content, generated\n     *  from one or more Javascript files.\n     *  @type {String}\n     */",
                                                 meta: {
-                                                    range: [2837, 2847],
+                                                    range: [2756, 2766],
                                                     filename:
                                                         "DocmaWeb.Route.js",
                                                     lineno: 82,
                                                     columnno: 4,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001737",
                                                         name: "API",
@@ -9106,7 +9106,7 @@ var docma = Object.freeze(
                                                     },
                                                 },
                                                 description:
-                                                    "Indicates that the route is for API documentation content, generated\r from one or more Javascript files.",
+                                                    "Indicates that the route is for API documentation content, generated\n from one or more Javascript files.",
                                                 type: { names: ["String"] },
                                                 name: "API",
                                                 longname:
@@ -9122,14 +9122,14 @@ var docma = Object.freeze(
                                             },
                                             {
                                                 comment:
-                                                    "/**\r\n     *  Indicates that the route is for other content, such as parsed HTML\r\n     *  files or HTML files generated from markdown.\r\n     *  @type {String}\r\n     */",
+                                                    "/**\n     *  Indicates that the route is for other content, such as parsed HTML\n     *  files or HTML files generated from markdown.\n     *  @type {String}\n     */",
                                                 meta: {
-                                                    range: [3026, 3044],
+                                                    range: [2939, 2957],
                                                     filename:
                                                         "DocmaWeb.Route.js",
                                                     lineno: 88,
                                                     columnno: 4,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {
                                                         id: "astnode100001739",
                                                         name: "CONTENT",
@@ -9138,7 +9138,7 @@ var docma = Object.freeze(
                                                     },
                                                 },
                                                 description:
-                                                    "Indicates that the route is for other content, such as parsed HTML\r files or HTML files generated from markdown.",
+                                                    "Indicates that the route is for other content, such as parsed HTML\n files or HTML files generated from markdown.",
                                                 type: { names: ["String"] },
                                                 name: "CONTENT",
                                                 longname:
@@ -9158,16 +9158,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n     *  Array of available SPA routes of the documentation.\r\n     *  This is created at build-time and defined via the `src` param of the\r\n     *  {@link api/#Docma~BuildConfiguration|build configuration}.\r\n     *\r\n     *  @name DocmaWeb#routes\r\n     *  @type {Array}\r\n     *\r\n     *  @see {@link #DocmaWeb.Route|`DocmaWeb.Route`}\r\n     */",
+                                    "/**\n     *  Array of available SPA routes of the documentation.\n     *  This is created at build-time and defined via the `src` param of the\n     *  {@link api/#Docma~BuildConfiguration|build configuration}.\n     *\n     *  @name DocmaWeb#routes\n     *  @type {Array}\n     *\n     *  @see {@link #DocmaWeb.Route|`DocmaWeb.Route`}\n     */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 123,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Array of available SPA routes of the documentation.\r This is created at build-time and defined via the `src` param of the\r {@link api/#Docma~BuildConfiguration|build configuration}.",
+                                    "Array of available SPA routes of the documentation.\n This is created at build-time and defined via the `src` param of the\n {@link api/#Docma~BuildConfiguration|build configuration}.",
                                 name: "routes",
                                 type: { names: ["Array"] },
                                 see: [
@@ -9183,20 +9183,20 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *\tA flat array of JSDoc documentation symbol names. This is useful for\r\n     *\tbuilding menus, etc... If current route is not an API route, this will\r\n     *\tbe `null`.\r\n     *\r\n     *  <blockquote>See {@link api/docma#Docma~BuildConfiguration|build configuration} for more\r\n     *  details on how Javascript files can be grouped (and named) to form\r\n     *  separate API documentations and SPA routes.</blockquote>\r\n     *\r\n     *  @name DocmaWeb#symbols\r\n     *  @type {Array}\r\n     *\r\n     *  @example <caption>Usage in (Dust) partial</caption>\r\n     *  <ul class="menu">\r\n     *      {#symbols}\r\n     *          <li><a href="#{.}">{.}</a></li>\r\n     *      {/symbols}\r\n     *  </ul>\r\n     */',
+                                    '/**\n     *\tA flat array of JSDoc documentation symbol names. This is useful for\n     *\tbuilding menus, etc... If current route is not an API route, this will\n     *\tbe `null`.\n     *\n     *  <blockquote>See {@link api/docma#Docma~BuildConfiguration|build configuration} for more\n     *  details on how Javascript files can be grouped (and named) to form\n     *  separate API documentations and SPA routes.</blockquote>\n     *\n     *  @name DocmaWeb#symbols\n     *  @type {Array}\n     *\n     *  @example <caption>Usage in (Dust) partial</caption>\n     *  <ul class="menu">\n     *      {#symbols}\n     *          <li><a href="#{.}">{.}</a></li>\n     *      {/symbols}\n     *  </ul>\n     */',
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 318,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "A flat array of JSDoc documentation symbol names. This is useful for\r\tbuilding menus, etc... If current route is not an API route, this will\r\tbe `null`.\r\r <blockquote>See {@link api/docma#Docma~BuildConfiguration|build configuration} for more\r details on how Javascript files can be grouped (and named) to form\r separate API documentations and SPA routes.</blockquote>",
+                                    "A flat array of JSDoc documentation symbol names. This is useful for\n\tbuilding menus, etc... If current route is not an API route, this will\n\tbe `null`.\n\n <blockquote>See {@link api/docma#Docma~BuildConfiguration|build configuration} for more\n details on how Javascript files can be grouped (and named) to form\n separate API documentations and SPA routes.</blockquote>",
                                 name: "symbols",
                                 type: { names: ["Array"] },
                                 examples: [
-                                    '<caption>Usage in (Dust) partial</caption>\r <ul class="menu">\r     {#symbols}\r         <li><a href="#{.}">{.}</a></li>\r     {/symbols}\r </ul>',
+                                    '<caption>Usage in (Dust) partial</caption>\n <ul class="menu">\n     {#symbols}\n         <li><a href="#{.}">{.}</a></li>\n     {/symbols}\n </ul>',
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb#symbols",
@@ -9208,16 +9208,16 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n     *  Provides template specific configuration data.\r\n     *  This is also useful within the Dust partials of the Docma template.\r\n     *  @name DocmaWeb#template\r\n     *  @type {Object}\r\n     *\r\n     *  @property {Object} options - Docma template options. Defined at build-time,\r\n     *  by the user.\r\n     *  @property {String} name\r\n     *            Name of the Docma template.\r\n     *  @property {String} version\r\n     *            Version of the Docma template.\r\n     *  @property {String} author\r\n     *            Author information for the Docma template.\r\n     *  @property {String} license\r\n     *            License information for the Docma template.\r\n     *  @property {String} mainHTML\r\n     *            Name of the main file of the template. i.e. `index.html`\r\n     *\r\n     *  @example <caption>Usage in a Dust partial</caption>\r\n     *  <div>\r\n     *      {?template.options.someOption}\r\n     *      <span>Displayed if someOption is true.</span>\r\n     *      {/template.options.someOption}\r\n     *  </div>\r\n     *  <div class="footer">{template.name} by {template.author}</div>\r\n     */',
+                                    '/**\n     *  Provides template specific configuration data.\n     *  This is also useful within the Dust partials of the Docma template.\n     *  @name DocmaWeb#template\n     *  @type {Object}\n     *\n     *  @property {Object} options - Docma template options. Defined at build-time,\n     *  by the user.\n     *  @property {String} name\n     *            Name of the Docma template.\n     *  @property {String} version\n     *            Version of the Docma template.\n     *  @property {String} author\n     *            Author information for the Docma template.\n     *  @property {String} license\n     *            License information for the Docma template.\n     *  @property {String} mainHTML\n     *            Name of the main file of the template. i.e. `index.html`\n     *\n     *  @example <caption>Usage in a Dust partial</caption>\n     *  <div>\n     *      {?template.options.someOption}\n     *      <span>Displayed if someOption is true.</span>\n     *      {/template.options.someOption}\n     *  </div>\n     *  <div class="footer">{template.name} by {template.author}</div>\n     */',
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 140,
                                     columnno: 4,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Provides template specific configuration data.\r This is also useful within the Dust partials of the Docma template.",
+                                    "Provides template specific configuration data.\n This is also useful within the Dust partials of the Docma template.",
                                 name: "template",
                                 type: { names: ["Object"] },
                                 properties: [
@@ -9248,7 +9248,7 @@ var docma = Object.freeze(
                                     {
                                         type: { names: ["Object"] },
                                         description:
-                                            "Docma template options. Defined at build-time,\r by the user.",
+                                            "Docma template options. Defined at build-time,\n by the user.",
                                         name: "options",
                                     },
                                     {
@@ -9259,7 +9259,7 @@ var docma = Object.freeze(
                                     },
                                 ],
                                 examples: [
-                                    '<caption>Usage in a Dust partial</caption>\r <div>\r     {?template.options.someOption}\r     <span>Displayed if someOption is true.</span>\r     {/template.options.someOption}\r </div>\r <div class="footer">{template.name} by {template.author}</div>',
+                                    '<caption>Usage in a Dust partial</caption>\n <div>\n     {?template.options.someOption}\n     <span>Displayed if someOption is true.</span>\n     {/template.options.someOption}\n </div>\n <div class="footer">{template.name} by {template.author}</div>',
                                 ],
                                 memberof: "DocmaWeb",
                                 longname: "DocmaWeb#template",
@@ -9271,13 +9271,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Utilities for inspecting JSDoc documentation and symbols; and parsing\r\n *  documentation data into proper HTML.\r\n *  See {@link api/web/utils|`DocmaWeb.Utils` documentation}.\r\n *  @type {Object}\r\n *  @namespace\r\n */",
+                                    "/**\n *  Utilities for inspecting JSDoc documentation and symbols; and parsing\n *  documentation data into proper HTML.\n *  See {@link api/web/utils|`DocmaWeb.Utils` documentation}.\n *  @type {Object}\n *  @namespace\n */",
                                 meta: {
-                                    range: [32197, 32219],
+                                    range: [31253, 31275],
                                     filename: "DocmaWeb.js",
                                     lineno: 945,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100001627",
                                         name: "DocmaWeb.Utils",
@@ -9287,7 +9287,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Utilities for inspecting JSDoc documentation and symbols; and parsing\r documentation data into proper HTML.\r See {@link api/web/utils|`DocmaWeb.Utils` documentation}.",
+                                    "Utilities for inspecting JSDoc documentation and symbols; and parsing\n documentation data into proper HTML.\n See {@link api/web/utils|`DocmaWeb.Utils` documentation}.",
                                 type: { names: ["Object"] },
                                 kind: "namespace",
                                 name: "Utils",
@@ -9300,12 +9300,12 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    "/**\r\n *  Gets Docma version which the documentation is built with.\r\n *  @name DocmaWeb#version\r\n *  @type {String}\r\n */",
+                                    "/**\n *  Gets Docma version which the documentation is built with.\n *  @name DocmaWeb#version\n *  @type {String}\n */",
                                 meta: {
                                     filename: "DocmaWeb.js",
                                     lineno: 11,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
@@ -9322,13 +9322,13 @@ var docma = Object.freeze(
                             },
                             {
                                 comment:
-                                    '/**\r\n *  Outputs a warning log to the browser console. (Unlike `console.warn()`) this\r\n *  method respects `debug` option of Docma build configuration.\r\n *  @param {...*} [args=""] - Arguments to be logged.\r\n */',
+                                    '/**\n *  Outputs a warning log to the browser console. (Unlike `console.warn()`) this\n *  method respects `debug` option of Docma build configuration.\n *  @param {...*} [args=""] - Arguments to be logged.\n */',
                                 meta: {
-                                    range: [19869, 19995],
+                                    range: [19300, 19423],
                                     filename: "DocmaWeb.js",
                                     lineno: 570,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {
                                         id: "astnode100000665",
                                         name: "DocmaWeb.prototype.warn",
@@ -9337,7 +9337,7 @@ var docma = Object.freeze(
                                     },
                                 },
                                 description:
-                                    "Outputs a warning log to the browser console. (Unlike `console.warn()`) this\r method respects `debug` option of Docma build configuration.",
+                                    "Outputs a warning log to the browser console. (Unlike `console.warn()`) this\n method respects `debug` option of Docma build configuration.",
                                 params: [
                                     {
                                         type: { names: ["*"] },
@@ -9413,16 +9413,16 @@ var docma = Object.freeze(
                 documentation: [
                     {
                         comment:
-                            "/**\r\n *  Docma (web) core class.\r\n *  See {@link api/web|documentation}.\r\n *  @name DocmaWeb\r\n *  @class\r\n */",
+                            "/**\n *  Docma (web) core class.\n *  See {@link api/web|documentation}.\n *  @name DocmaWeb\n *  @class\n */",
                         meta: {
                             filename: "DocmaWeb.Utils.js",
                             lineno: 6,
                             columnno: 0,
-                            path: "C:\\projects\\docma\\lib\\web",
+                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                             code: {},
                         },
                         description:
-                            "Docma (web) core class.\r See {@link api/web|documentation}.",
+                            "Docma (web) core class.\n See {@link api/web|documentation}.",
                         name: "DocmaWeb",
                         kind: "class",
                         longname: "DocmaWeb",
@@ -9433,16 +9433,16 @@ var docma = Object.freeze(
                         $members: [
                             {
                                 comment:
-                                    "/**\r\n *  Utilities for inspecting JSDoc documentation and symbols; and parsing\r\n *  documentation data into proper HTML.\r\n *  @name DocmaWeb.Utils\r\n *  @type {Object}\r\n *  @namespace\r\n */",
+                                    "/**\n *  Utilities for inspecting JSDoc documentation and symbols; and parsing\n *  documentation data into proper HTML.\n *  @name DocmaWeb.Utils\n *  @type {Object}\n *  @namespace\n */",
                                 meta: {
                                     filename: "DocmaWeb.Utils.js",
                                     lineno: 18,
                                     columnno: 0,
-                                    path: "C:\\projects\\docma\\lib\\web",
+                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                     code: {},
                                 },
                                 description:
-                                    "Utilities for inspecting JSDoc documentation and symbols; and parsing\r documentation data into proper HTML.",
+                                    "Utilities for inspecting JSDoc documentation and symbols; and parsing\n documentation data into proper HTML.",
                                 name: "Utils",
                                 type: { names: ["Object"] },
                                 kind: "namespace",
@@ -9455,12 +9455,12 @@ var docma = Object.freeze(
                                 $members: [
                                     {
                                         comment:
-                                            "/**\r\n *  DOM utilities.\r\n *  @name DocmaWeb.Utils.DOM\r\n *  @namespace\r\n *  @type {Object}\r\n */",
+                                            "/**\n *  DOM utilities.\n *  @name DocmaWeb.Utils.DOM\n *  @namespace\n *  @type {Object}\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1563,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description: "DOM utilities.",
@@ -9477,17 +9477,17 @@ var docma = Object.freeze(
                                         $members: [
                                             {
                                                 comment:
-                                                    "/**\r\n *  Gets the offset coordinates of the given element, relative to document\r\n *  body.\r\n *  @name DocmaWeb.Utils.DOM.getOffset\r\n *  @function\r\n *  @static\r\n *\r\n *  @param {HTMLElement} e - Target element.\r\n *  @returns {Object|null} -\r\n */",
+                                                    "/**\n *  Gets the offset coordinates of the given element, relative to document\n *  body.\n *  @name DocmaWeb.Utils.DOM.getOffset\n *  @function\n *  @static\n *\n *  @param {HTMLElement} e - Target element.\n *  @returns {Object|null} -\n */",
                                                 meta: {
                                                     filename:
                                                         "DocmaWeb.Utils.js",
                                                     lineno: 1575,
                                                     columnno: 0,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {},
                                                 },
                                                 description:
-                                                    "Gets the offset coordinates of the given element, relative to document\r body.",
+                                                    "Gets the offset coordinates of the given element, relative to document\n body.",
                                                 name: "getOffset",
                                                 kind: "function",
                                                 scope: "static",
@@ -9525,13 +9525,13 @@ var docma = Object.freeze(
                                             },
                                             {
                                                 comment:
-                                                    "/**\r\n *  Scrolls the document to the given hash target.\r\n *  @name DocmaWeb.Utils.DOM.scrollTo\r\n *  @function\r\n *  @static\r\n *\r\n *  @param {String} [hash] - Bookmark target. If omitted, document is\r\n *  scrolled to the top.\r\n */",
+                                                    "/**\n *  Scrolls the document to the given hash target.\n *  @name DocmaWeb.Utils.DOM.scrollTo\n *  @function\n *  @static\n *\n *  @param {String} [hash] - Bookmark target. If omitted, document is\n *  scrolled to the top.\n */",
                                                 meta: {
                                                     filename:
                                                         "DocmaWeb.Utils.js",
                                                     lineno: 1599,
                                                     columnno: 0,
-                                                    path: "C:\\projects\\docma\\lib\\web",
+                                                    path: "/Users/JPI/projects/prozi/docma/lib/web",
                                                     code: {},
                                                 },
                                                 description:
@@ -9546,7 +9546,7 @@ var docma = Object.freeze(
                                                         },
                                                         optional: true,
                                                         description:
-                                                            "Bookmark target. If omitted, document is\r scrolled to the top.",
+                                                            "Bookmark target. If omitted, document is\n scrolled to the top.",
                                                         name: "hash",
                                                     },
                                                 ],
@@ -9563,12 +9563,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets code file information from the given symbol.\r\n *  @name DocmaWeb.Utils.getCodeFileInfo\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Target documentation symbol.\r\n *  @returns {Object} -\r\n */",
+                                            "/**\n *  Gets code file information from the given symbol.\n *  @name DocmaWeb.Utils.getCodeFileInfo\n *  @function\n *\n *  @param {Object} symbol - Target documentation symbol.\n *  @returns {Object} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 946,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -9601,12 +9601,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the code name of the given symbol.\r\n *  @name DocmaWeb.Utils.getCodeName\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {String} - If no code name, falls back to long name.\r\n */",
+                                            "/**\n *  Gets the code name of the given symbol.\n *  @name DocmaWeb.Utils.getCodeName\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {String} - If no code name, falls back to long name.\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 176,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -9638,12 +9638,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets HTML formatted, delimeted code tags.\r\n *  @name DocmaWeb.Utils.getCodeTags\r\n *  @function\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Array} list - String list of values to be placed within code\r\n *  tags.\r\n *  @param {Object} [options] - Options.\r\n *      @param {String} [options.delimeter=","] - String delimeter.\r\n *      @param {Boolean|String} [options.links=false] - Whether to add\r\n *      HTML anchor links to output. Set to `"internal"` to link\r\n *      internally (to Docma route with symbol hash, if found) or\r\n *      `"external"` to link externally (to MDN URL if this is a\r\n *      JS/Web-API built-in type/object) or `true` to try linking either\r\n *      to an internal or external target, which ever is found.\r\n *\r\n *  @returns {String} -\r\n */',
+                                            '/**\n *  Gets HTML formatted, delimeted code tags.\n *  @name DocmaWeb.Utils.getCodeTags\n *  @function\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Array} list - String list of values to be placed within code\n *  tags.\n *  @param {Object} [options] - Options.\n *      @param {String} [options.delimeter=","] - String delimeter.\n *      @param {Boolean|String} [options.links=false] - Whether to add\n *      HTML anchor links to output. Set to `"internal"` to link\n *      internally (to Docma route with symbol hash, if found) or\n *      `"external"` to link externally (to MDN URL if this is a\n *      JS/Web-API built-in type/object) or `true` to try linking either\n *      to an internal or external target, which ever is found.\n *\n *  @returns {String} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1146,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -9656,13 +9656,13 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
                                                 type: { names: ["Array"] },
                                                 description:
-                                                    "String list of values to be placed within code\r tags.",
+                                                    "String list of values to be placed within code\n tags.",
                                                 name: "list",
                                             },
                                             {
@@ -9689,7 +9689,7 @@ var docma = Object.freeze(
                                                 optional: true,
                                                 defaultvalue: false,
                                                 description:
-                                                    'Whether to add\r     HTML anchor links to output. Set to `"internal"` to link\r     internally (to Docma route with symbol hash, if found) or\r     `"external"` to link externally (to MDN URL if this is a\r     JS/Web-API built-in type/object) or `true` to try linking either\r     to an internal or external target, which ever is found.',
+                                                    'Whether to add\n     HTML anchor links to output. Set to `"internal"` to link\n     internally (to Docma route with symbol hash, if found) or\n     `"external"` to link externally (to MDN URL if this is a\n     JS/Web-API built-in type/object) or `true` to try linking either\n     to an internal or external target, which ever is found.',
                                                 name: "options.links",
                                             },
                                         ],
@@ -9709,16 +9709,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets HTML formatted list of emitted events from the given list. Event\r\n *  names items are wrapped with code tags. If multiple, formatted as an\r\n *  HTML unordered list.\r\n *  @name DocmaWeb.Utils.getEmittedEvents\r\n *  @function\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Array} list - List of emitted (fired) events.\r\n *  @param {Object} [options] - Options.\r\n *  @param {String} [options.delimeter=", "] - Events delimeter.\r\n *  @param {Boolean|String} [options.links=false] - Whether to add\r\n *      HTML anchor links to output. Set to `"internal"` to link\r\n *      internally (to Docma route with symbol hash, if found) or\r\n *      `"external"` to link externally (to MDN URL if this is a\r\n *      JS/Web-API built-in type/object) or `true` to try linking either\r\n *      to an internal or external target, which ever is found.\r\n *\r\n *  @returns {String} -\r\n */',
+                                            '/**\n *  Gets HTML formatted list of emitted events from the given list. Event\n *  names items are wrapped with code tags. If multiple, formatted as an\n *  HTML unordered list.\n *  @name DocmaWeb.Utils.getEmittedEvents\n *  @function\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Array} list - List of emitted (fired) events.\n *  @param {Object} [options] - Options.\n *  @param {String} [options.delimeter=", "] - Events delimeter.\n *  @param {Boolean|String} [options.links=false] - Whether to add\n *      HTML anchor links to output. Set to `"internal"` to link\n *      internally (to Docma route with symbol hash, if found) or\n *      `"external"` to link externally (to MDN URL if this is a\n *      JS/Web-API built-in type/object) or `true` to try linking either\n *      to an internal or external target, which ever is found.\n *\n *  @returns {String} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1243,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets HTML formatted list of emitted events from the given list. Event\r names items are wrapped with code tags. If multiple, formatted as an\r HTML unordered list.",
+                                            "Gets HTML formatted list of emitted events from the given list. Event\n names items are wrapped with code tags. If multiple, formatted as an\n HTML unordered list.",
                                         name: "getEmittedEvents",
                                         kind: "function",
                                         params: [
@@ -9727,7 +9727,7 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
@@ -9760,7 +9760,7 @@ var docma = Object.freeze(
                                                 optional: true,
                                                 defaultvalue: false,
                                                 description:
-                                                    'Whether to add\r     HTML anchor links to output. Set to `"internal"` to link\r     internally (to Docma route with symbol hash, if found) or\r     `"external"` to link externally (to MDN URL if this is a\r     JS/Web-API built-in type/object) or `true` to try linking either\r     to an internal or external target, which ever is found.',
+                                                    'Whether to add\n     HTML anchor links to output. Set to `"internal"` to link\n     internally (to Docma route with symbol hash, if found) or\n     `"external"` to link externally (to MDN URL if this is a\n     JS/Web-API built-in type/object) or `true` to try linking either\n     to an internal or external target, which ever is found.',
                                                 name: "options.links",
                                             },
                                         ],
@@ -9782,16 +9782,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets HTML formatted list of types from the given symbols list. Type\r\n *  items are wrapped with code tags. If multiple, formatted as an HTML\r\n *  unordered list.\r\n *  @name DocmaWeb.Utils.getFormattedTypeList\r\n *  @function\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Array} list - List of symbols to be converted to formatted\r\n *  string.\r\n *  @param {Object} [options] - Format options.\r\n *      @param {String} [options.delimeter="|"] - Types delimeter.\r\n *      @param {Boolean|String} [options.links=false] - Whether to add\r\n *      HTML anchor links to output. Set to `"internal"` to link\r\n *      internally (to Docma route with symbol hash, if found) or\r\n *      `"external"` to link externally (to MDN URL if this is a\r\n *      JS/Web-API built-in type/object) or `true` to try linking either\r\n *      to an internal or external target, which ever is found.\r\n *      @param {Boolean} [options.descriptions=true] - Whether to include descriptions.\r\n *      @param {String} [options.descDelimeter="  —  "] - Description delimiter.\r\n *\r\n *  @returns {String} -\r\n */',
+                                            '/**\n *  Gets HTML formatted list of types from the given symbols list. Type\n *  items are wrapped with code tags. If multiple, formatted as an HTML\n *  unordered list.\n *  @name DocmaWeb.Utils.getFormattedTypeList\n *  @function\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Array} list - List of symbols to be converted to formatted\n *  string.\n *  @param {Object} [options] - Format options.\n *      @param {String} [options.delimeter="|"] - Types delimeter.\n *      @param {Boolean|String} [options.links=false] - Whether to add\n *      HTML anchor links to output. Set to `"internal"` to link\n *      internally (to Docma route with symbol hash, if found) or\n *      `"external"` to link externally (to MDN URL if this is a\n *      JS/Web-API built-in type/object) or `true` to try linking either\n *      to an internal or external target, which ever is found.\n *      @param {Boolean} [options.descriptions=true] - Whether to include descriptions.\n *      @param {String} [options.descDelimeter="  —  "] - Description delimiter.\n *\n *  @returns {String} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1181,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets HTML formatted list of types from the given symbols list. Type\r items are wrapped with code tags. If multiple, formatted as an HTML\r unordered list.",
+                                            "Gets HTML formatted list of types from the given symbols list. Type\n items are wrapped with code tags. If multiple, formatted as an HTML\n unordered list.",
                                         name: "getFormattedTypeList",
                                         kind: "function",
                                         params: [
@@ -9800,13 +9800,13 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
                                                 type: { names: ["Array"] },
                                                 description:
-                                                    "List of symbols to be converted to formatted\r string.",
+                                                    "List of symbols to be converted to formatted\n string.",
                                                 name: "list",
                                             },
                                             {
@@ -9832,7 +9832,7 @@ var docma = Object.freeze(
                                                 optional: true,
                                                 defaultvalue: false,
                                                 description:
-                                                    'Whether to add\r     HTML anchor links to output. Set to `"internal"` to link\r     internally (to Docma route with symbol hash, if found) or\r     `"external"` to link externally (to MDN URL if this is a\r     JS/Web-API built-in type/object) or `true` to try linking either\r     to an internal or external target, which ever is found.',
+                                                    'Whether to add\n     HTML anchor links to output. Set to `"internal"` to link\n     internally (to Docma route with symbol hash, if found) or\n     `"external"` to link externally (to MDN URL if this is a\n     JS/Web-API built-in type/object) or `true` to try linking either\n     to an internal or external target, which ever is found.',
                                                 name: "options.links",
                                             },
                                             {
@@ -9870,16 +9870,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Builds a string of keywords from the given symbol.\r\n *  This is useful for filter/search features of a template.\r\n *  @name DocmaWeb.Utils.getKeywords\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Target documentation symbol.\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Builds a string of keywords from the given symbol.\n *  This is useful for filter/search features of a template.\n *  @name DocmaWeb.Utils.getKeywords\n *  @function\n *\n *  @param {Object} symbol - Target documentation symbol.\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 906,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Builds a string of keywords from the given symbol.\r This is useful for filter/search features of a template.",
+                                            "Builds a string of keywords from the given symbol.\n This is useful for filter/search features of a template.",
                                         name: "getKeywords",
                                         kind: "function",
                                         params: [
@@ -9906,16 +9906,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the number of levels for the given symbol or name. e.g.\r\n *  `mylib.prop` has 2 levels.\r\n *  @name DocmaWeb.Utils.getLevels\r\n *  @function\r\n *\r\n *  @param {Object|String} symbol - Documented symbol object or long name.\r\n *  @returns {Number} -\r\n */",
+                                            "/**\n *  Gets the number of levels for the given symbol or name. e.g.\n *  `mylib.prop` has 2 levels.\n *  @name DocmaWeb.Utils.getLevels\n *  @function\n *\n *  @param {Object|String} symbol - Documented symbol object or long name.\n *  @returns {Number} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 232,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the number of levels for the given symbol or name. e.g.\r `mylib.prop` has 2 levels.",
+                                            "Gets the number of levels for the given symbol or name. e.g.\n `mylib.prop` has 2 levels.",
                                         name: "getLevels",
                                         kind: "function",
                                         params: [
@@ -9944,16 +9944,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the original long name of the given symbol.\r\n *  JSDoc overwrites the `longname` and `name` of the symbol, if it has an\r\n *  alias. This returns the correct long name.\r\n *  @name DocmaWeb.Utils.getLongName\r\n *  @function\r\n *  @alias getFullName\r\n *  @static\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Gets the original long name of the given symbol.\n *  JSDoc overwrites the `longname` and `name` of the symbol, if it has an\n *  alias. This returns the correct long name.\n *  @name DocmaWeb.Utils.getLongName\n *  @function\n *  @alias getFullName\n *  @static\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 138,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the original long name of the given symbol.\r JSDoc overwrites the `longname` and `name` of the symbol, if it has an\r alias. This returns the correct long name.",
+                                            "Gets the original long name of the given symbol.\n JSDoc overwrites the `longname` and `name` of the symbol, if it has an\n alias. This returns the correct long name.",
                                         name: "getLongName",
                                         kind: "function",
                                         alias: "getFullName",
@@ -9981,16 +9981,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the short name of the given symbol.\r\n *  JSDoc overwrites the `longname` and `name` of the symbol, if it has an\r\n *  alias. This returns the correct short name.\r\n *  @name DocmaWeb.Utils.getName\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Gets the short name of the given symbol.\n *  JSDoc overwrites the `longname` and `name` of the symbol, if it has an\n *  alias. This returns the correct short name.\n *  @name DocmaWeb.Utils.getName\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 119,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the short name of the given symbol.\r JSDoc overwrites the `longname` and `name` of the symbol, if it has an\r alias. This returns the correct short name.",
+                                            "Gets the short name of the given symbol.\n JSDoc overwrites the `longname` and `name` of the symbol, if it has an\n alias. This returns the correct short name.",
                                         name: "getName",
                                         kind: "function",
                                         params: [
@@ -10017,16 +10017,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the parent symbol object from the given symbol object or symbol's\r\n *  name.\r\n *  @name DocmaWeb.Utils.getParent\r\n *  @function\r\n *\r\n *  @param {Array|Object} docs - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Object|String} symbol - Documented symbol object or long name.\r\n *  @returns {String} - `null` if symbol has no parent.\r\n */",
+                                            "/**\n *  Gets the parent symbol object from the given symbol object or symbol's\n *  name.\n *  @name DocmaWeb.Utils.getParent\n *  @function\n *\n *  @param {Array|Object} docs - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Object|String} symbol - Documented symbol object or long name.\n *  @returns {String} - `null` if symbol has no parent.\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 281,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the parent symbol object from the given symbol object or symbol's\r name.",
+                                            "Gets the parent symbol object from the given symbol object or symbol's\n name.",
                                         name: "getParent",
                                         kind: "function",
                                         params: [
@@ -10035,7 +10035,7 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docs",
                                             },
                                             {
@@ -10064,16 +10064,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets the parent symbol name from the given symbol object or symbol\'s name\r\n *  (notation). Note that, this will return the parent name even if the parent\r\n *  symbol does not exist in the documentation. If there is no parent, returns\r\n *  `""` (empty string).\r\n *  @name DocmaWeb.Utils.getParentName\r\n *  @function\r\n *\r\n *  @param {Object|String} symbol - Documented symbol object or long name.\r\n *  @returns {Number} -\r\n */',
+                                            '/**\n *  Gets the parent symbol name from the given symbol object or symbol\'s name\n *  (notation). Note that, this will return the parent name even if the parent\n *  symbol does not exist in the documentation. If there is no parent, returns\n *  `""` (empty string).\n *  @name DocmaWeb.Utils.getParentName\n *  @function\n *\n *  @param {Object|String} symbol - Documented symbol object or long name.\n *  @returns {Number} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 250,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            'Gets the parent symbol name from the given symbol object or symbol\'s name\r (notation). Note that, this will return the parent name even if the parent\r symbol does not exist in the documentation. If there is no parent, returns\r `""` (empty string).',
+                                            'Gets the parent symbol name from the given symbol object or symbol\'s name\n (notation). Note that, this will return the parent name even if the parent\n symbol does not exist in the documentation. If there is no parent, returns\n `""` (empty string).',
                                         name: "getParentName",
                                         kind: "function",
                                         params: [
@@ -10104,12 +10104,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets the return types of the symbol as a string (joined with pipes `|`).\r\n *  @name DocmaWeb.Utils.getReturnTypes\r\n *  @function\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Object} symbol - Target documentation symbol.\r\n *  @param {Object} [options] - Options.\r\n *      @param {Boolean|String} [options.links=false] - Whether to add\r\n *      HTML anchor links to output. Set to `"internal"` to link\r\n *      internally (to Docma route with symbol hash, if found) or\r\n *      `"external"` to link externally (to MDN URL if this is a\r\n *      JS/Web-API built-in type/object) or `true` to try linking either\r\n *      to an internal or external target, which ever is found.\r\n *\r\n *  @returns {String} -\r\n */',
+                                            '/**\n *  Gets the return types of the symbol as a string (joined with pipes `|`).\n *  @name DocmaWeb.Utils.getReturnTypes\n *  @function\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Object} symbol - Target documentation symbol.\n *  @param {Object} [options] - Options.\n *      @param {Boolean|String} [options.links=false] - Whether to add\n *      HTML anchor links to output. Set to `"internal"` to link\n *      internally (to Docma route with symbol hash, if found) or\n *      `"external"` to link externally (to MDN URL if this is a\n *      JS/Web-API built-in type/object) or `true` to try linking either\n *      to an internal or external target, which ever is found.\n *\n *  @returns {String} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1107,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10122,7 +10122,7 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
@@ -10147,7 +10147,7 @@ var docma = Object.freeze(
                                                 optional: true,
                                                 defaultvalue: false,
                                                 description:
-                                                    'Whether to add\r     HTML anchor links to output. Set to `"internal"` to link\r     internally (to Docma route with symbol hash, if found) or\r     `"external"` to link externally (to MDN URL if this is a\r     JS/Web-API built-in type/object) or `true` to try linking either\r     to an internal or external target, which ever is found.',
+                                                    'Whether to add\n     HTML anchor links to output. Set to `"internal"` to link\n     internally (to Docma route with symbol hash, if found) or\n     `"external"` to link externally (to MDN URL if this is a\n     JS/Web-API built-in type/object) or `true` to try linking either\n     to an internal or external target, which ever is found.',
                                                 name: "options.links",
                                             },
                                         ],
@@ -10169,12 +10169,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the first matching symbol by the given name.\r\n *  @name DocmaWeb.Utils.getSymbolByName\r\n *  @function\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {String} name - Symbol name to be checked. Better, pass the\r\n *  `longname` (or `$longname`). It will still find a short name but it'll\r\n *  return the first occurence if there are multiple symbols with the same\r\n *  short name. e.g. `create` is ambiguous but `Docma.create` is unique.\r\n *\r\n *  @returns {Object} - Symbol object if found. Otherwise, returns `null`.\r\n */",
+                                            "/**\n *  Gets the first matching symbol by the given name.\n *  @name DocmaWeb.Utils.getSymbolByName\n *  @function\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {String} name - Symbol name to be checked. Better, pass the\n *  `longname` (or `$longname`). It will still find a short name but it'll\n *  return the first occurence if there are multiple symbols with the same\n *  short name. e.g. `create` is ambiguous but `Docma.create` is unique.\n *\n *  @returns {Object} - Symbol object if found. Otherwise, returns `null`.\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 188,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10187,13 +10187,13 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
                                                 type: { names: ["String"] },
                                                 description:
-                                                    "Symbol name to be checked. Better, pass the\r `longname` (or `$longname`). It will still find a short name but it'll\r return the first occurence if there are multiple symbols with the same\r short name. e.g. `create` is ambiguous but `Docma.create` is unique.",
+                                                    "Symbol name to be checked. Better, pass the\n `longname` (or `$longname`). It will still find a short name but it'll\n return the first occurence if there are multiple symbols with the same\n short name. e.g. `create` is ambiguous but `Docma.create` is unique.",
                                                 name: "name",
                                             },
                                         ],
@@ -10216,12 +10216,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets Docma route link for the given symbol or symbol name.\r\n *  @name DocmaWeb.Utils.getSymbolLink\r\n *  @function\r\n *  @static\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Object|String} symbolOrName - Either the symbol itself or the\r\n *  name of the symbol.\r\n *\r\n *  @returns {String} - Empty string if symbol is not found.\r\n */",
+                                            "/**\n *  Gets Docma route link for the given symbol or symbol name.\n *  @name DocmaWeb.Utils.getSymbolLink\n *  @function\n *  @static\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Object|String} symbolOrName - Either the symbol itself or the\n *  name of the symbol.\n *\n *  @returns {String} - Empty string if symbol is not found.\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 962,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10235,7 +10235,7 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
@@ -10243,7 +10243,7 @@ var docma = Object.freeze(
                                                     names: ["Object", "String"],
                                                 },
                                                 description:
-                                                    "Either the symbol itself or the\r name of the symbol.",
+                                                    "Either the symbol itself or the\n name of the symbol.",
                                                 name: "symbolOrName",
                                             },
                                         ],
@@ -10265,12 +10265,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets the types of the symbol as a string (joined with pipes `|`).\r\n *  @name DocmaWeb.Utils.getTypes\r\n *  @function\r\n *\r\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\r\n *  with signature `{ documentation:Array, symbols:Array }`.\r\n *  @param {Object} symbol - Target documentation symbol.\r\n *  @param {Object} [options] - Options.\r\n *      @param {Boolean|String} [options.links=false] - Whether to add\r\n *      HTML anchor links to output. Set to `"internal"` to link\r\n *      internally (to Docma route with symbol hash, if found) or\r\n *      `"external"` to link externally (to MDN URL if this is a\r\n *      JS/Web-API built-in type/object) or `true` to try linking either\r\n *      to an internal or external target, which ever is found.\r\n *\r\n *  @returns {String} -\r\n *\r\n *  @example\r\n *  var symbol = { "type": { "names": ["Number", "String"] } };\r\n *  DocmaWeb.Utils.getTypes(docs, symbol); // "Number|String"\r\n */',
+                                            '/**\n *  Gets the types of the symbol as a string (joined with pipes `|`).\n *  @name DocmaWeb.Utils.getTypes\n *  @function\n *\n *  @param {Array|Object} docsOrApis - Documentation array or APIs object\n *  with signature `{ documentation:Array, symbols:Array }`.\n *  @param {Object} symbol - Target documentation symbol.\n *  @param {Object} [options] - Options.\n *      @param {Boolean|String} [options.links=false] - Whether to add\n *      HTML anchor links to output. Set to `"internal"` to link\n *      internally (to Docma route with symbol hash, if found) or\n *      `"external"` to link externally (to MDN URL if this is a\n *      JS/Web-API built-in type/object) or `true` to try linking either\n *      to an internal or external target, which ever is found.\n *\n *  @returns {String} -\n *\n *  @example\n *  var symbol = { "type": { "names": ["Number", "String"] } };\n *  DocmaWeb.Utils.getTypes(docs, symbol); // "Number|String"\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 1059,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10283,7 +10283,7 @@ var docma = Object.freeze(
                                                     names: ["Array", "Object"],
                                                 },
                                                 description:
-                                                    "Documentation array or APIs object\r with signature `{ documentation:Array, symbols:Array }`.",
+                                                    "Documentation array or APIs object\n with signature `{ documentation:Array, symbols:Array }`.",
                                                 name: "docsOrApis",
                                             },
                                             {
@@ -10308,7 +10308,7 @@ var docma = Object.freeze(
                                                 optional: true,
                                                 defaultvalue: false,
                                                 description:
-                                                    'Whether to add\r     HTML anchor links to output. Set to `"internal"` to link\r     internally (to Docma route with symbol hash, if found) or\r     `"external"` to link externally (to MDN URL if this is a\r     JS/Web-API built-in type/object) or `true` to try linking either\r     to an internal or external target, which ever is found.',
+                                                    'Whether to add\n     HTML anchor links to output. Set to `"internal"` to link\n     internally (to Docma route with symbol hash, if found) or\n     `"external"` to link externally (to MDN URL if this is a\n     JS/Web-API built-in type/object) or `true` to try linking either\n     to an internal or external target, which ever is found.',
                                                 name: "options.links",
                                             },
                                         ],
@@ -10319,7 +10319,7 @@ var docma = Object.freeze(
                                             },
                                         ],
                                         examples: [
-                                            'var symbol = { "type": { "names": ["Number", "String"] } };\r DocmaWeb.Utils.getTypes(docs, symbol); // "Number|String"',
+                                            'var symbol = { "type": { "names": ["Number", "String"] } };\n DocmaWeb.Utils.getTypes(docs, symbol); // "Number|String"',
                                         ],
                                         memberof: "DocmaWeb.Utils",
                                         longname: "DocmaWeb.Utils.getTypes",
@@ -10331,12 +10331,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has description.\r\n *  @name DocmaWeb.Utils.hasDescription\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has description.\n *  @name DocmaWeb.Utils.hasDescription\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 711,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10369,12 +10369,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a callback definition.\r\n *  @name DocmaWeb.Utils.isCallback\r\n *  @function\r\n *  @static\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a callback definition.\n *  @name DocmaWeb.Utils.isCallback\n *  @function\n *  @static\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 565,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10405,12 +10405,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a class.\r\n *  @name DocmaWeb.Utils.isClass\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a class.\n *  @name DocmaWeb.Utils.isClass\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 365,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10441,12 +10441,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is marked as a constant.\r\n *  @name DocmaWeb.Utils.isConstant\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is marked as a constant.\n *  @name DocmaWeb.Utils.isConstant\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 382,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10477,12 +10477,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a constructor.\r\n *  @name DocmaWeb.Utils.isConstructor\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a constructor.\n *  @name DocmaWeb.Utils.isConstructor\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 394,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10515,12 +10515,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is deprecated.\r\n *  @name DocmaWeb.Utils.isDeprecated\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is deprecated.\n *  @name DocmaWeb.Utils.isDeprecated\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 304,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10552,12 +10552,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is an enumeration.\r\n *  @name DocmaWeb.Utils.isEnum\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is an enumeration.\n *  @name DocmaWeb.Utils.isEnum\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 584,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10588,12 +10588,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is an event.\r\n *  @name DocmaWeb.Utils.isEvent\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is an event.\n *  @name DocmaWeb.Utils.isEvent\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 596,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10624,12 +10624,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is defined outside of the current package.\r\n *  @name DocmaWeb.Utils.isExternal\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is defined outside of the current package.\n *  @name DocmaWeb.Utils.isExternal\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 608,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10660,12 +10660,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a generator function.\r\n *  @name DocmaWeb.Utils.isGenerator\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a generator function.\n *  @name DocmaWeb.Utils.isGenerator\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 620,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10696,12 +10696,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has global scope.\r\n *  @name DocmaWeb.Utils.isGlobal\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has global scope.\n *  @name DocmaWeb.Utils.isGlobal\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 316,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10732,12 +10732,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has an inner scope.\r\n *  @name DocmaWeb.Utils.isInner\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has an inner scope.\n *  @name DocmaWeb.Utils.isInner\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 429,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10768,12 +10768,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is an instance member.\r\n *  @name DocmaWeb.Utils.isInstanceMember\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is an instance member.\n *  @name DocmaWeb.Utils.isInstanceMember\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 441,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10806,12 +10806,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is an instance method.\r\n *  @name DocmaWeb.Utils.isInstanceMethod\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is an instance method.\n *  @name DocmaWeb.Utils.isInstanceMethod\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 486,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10844,12 +10844,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is an instance property.\r\n *  @name DocmaWeb.Utils.isInstanceProperty\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is an instance property.\n *  @name DocmaWeb.Utils.isInstanceProperty\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 522,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10882,16 +10882,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is marked as an interface that other symbols\r\n *  can implement.\r\n *  @name DocmaWeb.Utils.isInterface\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is marked as an interface that other symbols\n *  can implement.\n *  @name DocmaWeb.Utils.isInterface\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 453,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Checks whether the given symbol is marked as an interface that other symbols\r can implement.",
+                                            "Checks whether the given symbol is marked as an interface that other symbols\n can implement.",
                                         name: "isInterface",
                                         kind: "function",
                                         params: [
@@ -10918,12 +10918,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a method (function).\r\n *  @name DocmaWeb.Utils.isMethod\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a method (function).\n *  @name DocmaWeb.Utils.isMethod\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 466,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -10954,16 +10954,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is marked as a mixin (is intended to be\r\n *  added to other objects).\r\n *  @name DocmaWeb.Utils.isMixin\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is marked as a mixin (is intended to be\n *  added to other objects).\n *  @name DocmaWeb.Utils.isMixin\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 352,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Checks whether the given symbol is marked as a mixin (is intended to be\r added to other objects).",
+                                            "Checks whether the given symbol is marked as a mixin (is intended to be\n added to other objects).",
                                         name: "isMixin",
                                         kind: "function",
                                         params: [
@@ -10990,12 +10990,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a module.\r\n *  @name DocmaWeb.Utils.isModule\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a module.\n *  @name DocmaWeb.Utils.isModule\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 340,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11026,12 +11026,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a namespace.\r\n *  @name DocmaWeb.Utils.isNamespace\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a namespace.\n *  @name DocmaWeb.Utils.isNamespace\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 328,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11062,16 +11062,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has `package` private access; indicating\r\n *  that the symbol is available only to code in the same directory as the\r\n *  source file for this symbol.\r\n *  @name DocmaWeb.Utils.isPackagePrivate\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has `package` private access; indicating\n *  that the symbol is available only to code in the same directory as the\n *  source file for this symbol.\n *  @name DocmaWeb.Utils.isPackagePrivate\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 668,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Checks whether the given symbol has `package` private access; indicating\r that the symbol is available only to code in the same directory as the\r source file for this symbol.",
+                                            "Checks whether the given symbol has `package` private access; indicating\n that the symbol is available only to code in the same directory as the\n source file for this symbol.",
                                         name: "isPackagePrivate",
                                         kind: "function",
                                         params: [
@@ -11100,12 +11100,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has `private` access.\r\n *  @name DocmaWeb.Utils.isPrivate\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has `private` access.\n *  @name DocmaWeb.Utils.isPrivate\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 656,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11136,12 +11136,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a property (and not a method/function).\r\n *  @name DocmaWeb.Utils.isProperty\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a property (and not a method/function).\n *  @name DocmaWeb.Utils.isProperty\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 510,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11172,12 +11172,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has `protected` access.\r\n *  @name DocmaWeb.Utils.isProtected\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has `protected` access.\n *  @name DocmaWeb.Utils.isProtected\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 682,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11208,12 +11208,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol has `public` access.\r\n *  @name DocmaWeb.Utils.isPublic\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol has `public` access.\n *  @name DocmaWeb.Utils.isPublic\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 644,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11244,12 +11244,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is read-only.\r\n *  @name DocmaWeb.Utils.isReadOnly\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is read-only.\n *  @name DocmaWeb.Utils.isReadOnly\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 632,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11280,12 +11280,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a static member.\r\n *  @name DocmaWeb.Utils.isStaticMember\r\n *  @function\r\n *  @alias isStatic\r\n *  @static\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a static member.\n *  @name DocmaWeb.Utils.isStaticMember\n *  @function\n *  @alias isStatic\n *  @static\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 410,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11319,12 +11319,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a static method.\r\n *  @name DocmaWeb.Utils.isStaticMethod\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a static method.\n *  @name DocmaWeb.Utils.isStaticMethod\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 498,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11357,12 +11357,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a static property.\r\n *  @name DocmaWeb.Utils.isStaticProperty\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a static property.\n *  @name DocmaWeb.Utils.isStaticProperty\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 534,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11395,12 +11395,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is a custom type definition.\r\n *  @name DocmaWeb.Utils.isTypeDef\r\n *  @function\r\n *  @alias isCustomType\r\n *  @static\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is a custom type definition.\n *  @name DocmaWeb.Utils.isTypeDef\n *  @function\n *  @alias isCustomType\n *  @static\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 546,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11432,16 +11432,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Checks whether the given symbol is undocumented.\r\n *  This checks if the symbol has any comments.\r\n *  @name DocmaWeb.Utils.isUndocumented\r\n *  @function\r\n *\r\n *  @param {Object} symbol - Documented symbol object.\r\n *  @returns {Boolean} -\r\n */",
+                                            "/**\n *  Checks whether the given symbol is undocumented.\n *  This checks if the symbol has any comments.\n *  @name DocmaWeb.Utils.isUndocumented\n *  @function\n *\n *  @param {Object} symbol - Documented symbol object.\n *  @returns {Boolean} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 694,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Checks whether the given symbol is undocumented.\r This checks if the symbol has any comments.",
+                                            "Checks whether the given symbol is undocumented.\n This checks if the symbol has any comments.",
                                         name: "isUndocumented",
                                         kind: "function",
                                         params: [
@@ -11470,16 +11470,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Normalizes the number of spaces/tabs to multiples of 2 spaces, in the\r\n *  beginning of each line. Useful for fixing mixed indets of a description\r\n *  or example.\r\n *  @name DocmaWeb.Utils.normalizeTabs\r\n *  @function\r\n *\r\n *  @param {String} string - String to process.\r\n *\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Normalizes the number of spaces/tabs to multiples of 2 spaces, in the\n *  beginning of each line. Useful for fixing mixed indets of a description\n *  or example.\n *  @name DocmaWeb.Utils.normalizeTabs\n *  @function\n *\n *  @param {String} string - String to process.\n *\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 864,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Normalizes the number of spaces/tabs to multiples of 2 spaces, in the\r beginning of each line. Useful for fixing mixed indets of a description\r or example.",
+                                            "Normalizes the number of spaces/tabs to multiples of 2 spaces, in the\n beginning of each line. Useful for fixing mixed indets of a description\n or example.",
                                         name: "normalizeTabs",
                                         kind: "function",
                                         params: [
@@ -11508,16 +11508,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Gets the value of the target property by the given dot\r\n *  {@link https://github.com/onury/notation|notation}.\r\n *  @name DocmaWeb.Utils.notate\r\n *  @function\r\n *  @static\r\n *\r\n *  @param {Object} obj - Source object.\r\n *  @param {String} notation - Path of the property in dot-notation.\r\n *\r\n *  @returns {*} - The value of the notation. If the given notation does\r\n *  not exist, safely returns `undefined`.\r\n *\r\n *  @example\r\n *  var symbol = { code: { meta: { type: "MethodDefinition" } } };\r\n *  DocmaWeb.Utils.notate(symbol, "code.meta.type"); // returns "MethodDefinition"\r\n */',
+                                            '/**\n *  Gets the value of the target property by the given dot\n *  {@link https://github.com/onury/notation|notation}.\n *  @name DocmaWeb.Utils.notate\n *  @function\n *  @static\n *\n *  @param {Object} obj - Source object.\n *  @param {String} notation - Path of the property in dot-notation.\n *\n *  @returns {*} - The value of the notation. If the given notation does\n *  not exist, safely returns `undefined`.\n *\n *  @example\n *  var symbol = { code: { meta: { type: "MethodDefinition" } } };\n *  DocmaWeb.Utils.notate(symbol, "code.meta.type"); // returns "MethodDefinition"\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 88,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Gets the value of the target property by the given dot\r {@link https://github.com/onury/notation|notation}.",
+                                            "Gets the value of the target property by the given dot\n {@link https://github.com/onury/notation|notation}.",
                                         name: "notate",
                                         kind: "function",
                                         scope: "static",
@@ -11538,11 +11538,11 @@ var docma = Object.freeze(
                                             {
                                                 type: { names: ["*"] },
                                                 description:
-                                                    "- The value of the notation. If the given notation does\r not exist, safely returns `undefined`.",
+                                                    "- The value of the notation. If the given notation does\n not exist, safely returns `undefined`.",
                                             },
                                         ],
                                         examples: [
-                                            'var symbol = { code: { meta: { type: "MethodDefinition" } } };\r DocmaWeb.Utils.notate(symbol, "code.meta.type"); // returns "MethodDefinition"',
+                                            'var symbol = { code: { meta: { type: "MethodDefinition" } } };\n DocmaWeb.Utils.notate(symbol, "code.meta.type"); // returns "MethodDefinition"',
                                         ],
                                         memberof: "DocmaWeb.Utils",
                                         longname: "DocmaWeb.Utils.notate",
@@ -11553,16 +11553,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Parses the given string into proper HTML. Removes leading whitespace,\r\n *  converts new lines to paragraphs, ticks to code tags and JSDoc links to\r\n *  anchors.\r\n *  @name DocmaWeb.Utils.parse\r\n *  @function\r\n *\r\n *  @param {String} string - String to be parsed.\r\n *  @param {Object} [options] - Parse options.\r\n *         @param {Object} [options.keepIfSingle=false]\r\n *         If enabled, single lines will not be converted to paragraphs.\r\n *         @param {String} [options.target]\r\n *         Href target for links. e.g. `"_blank"`\r\n *\r\n *  @returns {String} -\r\n */',
+                                            '/**\n *  Parses the given string into proper HTML. Removes leading whitespace,\n *  converts new lines to paragraphs, ticks to code tags and JSDoc links to\n *  anchors.\n *  @name DocmaWeb.Utils.parse\n *  @function\n *\n *  @param {String} string - String to be parsed.\n *  @param {Object} [options] - Parse options.\n *         @param {Object} [options.keepIfSingle=false]\n *         If enabled, single lines will not be converted to paragraphs.\n *         @param {String} [options.target]\n *         Href target for links. e.g. `"_blank"`\n *\n *  @returns {String} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 840,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Parses the given string into proper HTML. Removes leading whitespace,\r converts new lines to paragraphs, ticks to code tags and JSDoc links to\r anchors.",
+                                            "Parses the given string into proper HTML. Removes leading whitespace,\n converts new lines to paragraphs, ticks to code tags and JSDoc links to\n anchors.",
                                         name: "parse",
                                         kind: "function",
                                         params: [
@@ -11610,12 +11610,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            '/**\r\n *  Converts JSDoc `@link` directives to HTML anchor tags.\r\n *  @name DocmaWeb.Utils.parseLinks\r\n *  @function\r\n *\r\n *  @param {String} string - String to be parsed.\r\n *  @param {Object} [options] - Parse options.\r\n *  @param {String} [options.target] - Href target. e.g. `"_blank"`\r\n *\r\n *  @returns {String} -\r\n */',
+                                            '/**\n *  Converts JSDoc `@link` directives to HTML anchor tags.\n *  @name DocmaWeb.Utils.parseLinks\n *  @function\n *\n *  @param {String} string - String to be parsed.\n *  @param {Object} [options] - Parse options.\n *  @param {String} [options.target] - Href target. e.g. `"_blank"`\n *\n *  @returns {String} -\n */',
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 800,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11659,12 +11659,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Converts new lines to HTML paragraphs.\r\n *  @name DocmaWeb.Utils.parseNewLines\r\n *  @function\r\n *\r\n *  @param {String} string - String to be parsed.\r\n *  @param {Object} [options] - Parse options.\r\n *         @param {Boolean} [options.keepIfSingle=false]\r\n *         If `true`, lines will not be converted to paragraphs.\r\n *\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Converts new lines to HTML paragraphs.\n *  @name DocmaWeb.Utils.parseNewLines\n *  @function\n *\n *  @param {String} string - String to be parsed.\n *  @param {Object} [options] - Parse options.\n *         @param {Boolean} [options.keepIfSingle=false]\n *         If `true`, lines will not be converted to paragraphs.\n *\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 774,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11711,12 +11711,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Converts back-ticks to HTML code tags.\r\n *  @name DocmaWeb.Utils.parseTicks\r\n *  @function\r\n *\r\n *  @param {String} string\r\n *         String to be parsed.\r\n *\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Converts back-ticks to HTML code tags.\n *  @name DocmaWeb.Utils.parseTicks\n *  @function\n *\n *  @param {String} string\n *         String to be parsed.\n *\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 749,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11747,16 +11747,16 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Removes leading spaces and dashes. Useful when displaying symbol\r\n *  descriptions.\r\n *  @name DocmaWeb.Utils.trimLeft\r\n *  @function\r\n *\r\n *  @param {String} string - String to be trimmed.\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Removes leading spaces and dashes. Useful when displaying symbol\n *  descriptions.\n *  @name DocmaWeb.Utils.trimLeft\n *  @function\n *\n *  @param {String} string - String to be trimmed.\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 723,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
-                                            "Removes leading spaces and dashes. Useful when displaying symbol\r descriptions.",
+                                            "Removes leading spaces and dashes. Useful when displaying symbol\n descriptions.",
                                         name: "trimLeft",
                                         kind: "function",
                                         params: [
@@ -11783,12 +11783,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Removes leading and trailing new lines.\r\n *  @name DocmaWeb.Utils.trimNewLines\r\n *  @function\r\n *\r\n *  @param {String} string - String to be trimmed.\r\n *  @returns {String} -\r\n */",
+                                            "/**\n *  Removes leading and trailing new lines.\n *  @name DocmaWeb.Utils.trimNewLines\n *  @function\n *\n *  @param {String} string - String to be trimmed.\n *  @returns {String} -\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 737,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
@@ -11820,12 +11820,12 @@ var docma = Object.freeze(
                                     },
                                     {
                                         comment:
-                                            "/**\r\n *  Gets the type of the given object.\r\n *  @name DocmaWeb.Utils.type\r\n *  @function\r\n *  @static\r\n *\r\n *  @param {*} obj - Object to be inspected.\r\n *  @returns {String} - Lower-case name of the type.\r\n */",
+                                            "/**\n *  Gets the type of the given object.\n *  @name DocmaWeb.Utils.type\n *  @function\n *  @static\n *\n *  @param {*} obj - Object to be inspected.\n *  @returns {String} - Lower-case name of the type.\n */",
                                         meta: {
                                             filename: "DocmaWeb.Utils.js",
                                             lineno: 72,
                                             columnno: 0,
-                                            path: "C:\\projects\\docma\\lib\\web",
+                                            path: "/Users/JPI/projects/prozi/docma/lib/web",
                                             code: {},
                                         },
                                         description:
