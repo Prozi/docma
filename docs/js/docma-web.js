@@ -1136,29 +1136,29 @@
 })(this, function () {
     "use strict";
     function t(t) {
-        return a(r(t));
+        return r(m(t));
     }
-    var p =
+    var g =
             Array.isArray ||
             function (t) {
                 return "[object Array]" == Object.prototype.toString.call(t);
             },
-        i = c,
-        e = r,
-        n = a,
-        o = h,
-        u = new RegExp(
+        i = _,
+        e = m,
+        n = r,
+        o = y,
+        d = new RegExp(
             [
                 "(\\\\.)",
                 "([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^()])+)\\))?|\\(((?:\\\\.|[^()])+)\\))([+*?])?|(\\*))",
             ].join("|"),
             "g",
         );
-    function r(t) {
-        for (var e = [], n = 0, i = 0, o = ""; null != (a = u.exec(t)); ) {
+    function m(t) {
+        for (var e = [], n = 0, i = 0, o = ""; null != (a = d.exec(t)); ) {
             var r,
-                a,
                 s,
+                a,
                 h = a[0],
                 c = a[1],
                 p = a.index;
@@ -1167,60 +1167,61 @@
                 c
                     ? (o += c[1])
                     : (o && (e.push(o), (o = "")),
-                      (s = a[2]),
-                      (r = a[3]),
-                      (p = a[4]),
-                      (h = a[5]),
-                      (c = a[6]),
+                      (p = a[2]),
+                      (h = a[3]),
+                      (c = a[4]),
+                      (r = a[5]),
+                      (s = a[6]),
                       (a = a[7]),
                       e.push({
-                          name: r || n++,
-                          prefix: s || "",
-                          delimiter: (s = s || "/"),
-                          optional: "?" === c || "*" === c,
-                          repeat: "+" === c || "*" === c,
+                          name: h || n++,
+                          prefix: p || "",
+                          delimiter: (h = p || "/"),
+                          optional: "?" === s || "*" === s,
+                          repeat: "+" === s || "*" === s,
                           pattern: (
-                              p ||
-                              h ||
-                              (a ? ".*" : "[^" + s + "]+?")
+                              c ||
+                              r ||
+                              (a ? ".*" : "[^" + h + "]+?")
                           ).replace(/([=!:$\/()])/g, "\\$1"),
                       }));
         }
         return i < t.length && (o += t.substr(i)), o && e.push(o), e;
     }
-    function a(h) {
+    function r(h) {
         for (var c = new Array(h.length), t = 0; t < h.length; t++)
             "object" == typeof h[t] &&
                 (c[t] = new RegExp("^" + h[t].pattern + "$"));
         return function (t) {
             for (var e = "", n = t || {}, i = 0; i < h.length; i++) {
                 var o = h[i];
-                if ("string" != typeof o) {
+                if ("string" == typeof o) e += o;
+                else {
                     var r,
-                        a = n[o.name];
-                    if (null == a) {
+                        s = n[o.name];
+                    if (null == s) {
                         if (o.optional) continue;
                         throw new TypeError(
                             'Expected "' + o.name + '" to be defined',
                         );
                     }
-                    if (p(a)) {
+                    if (g(s)) {
                         if (!o.repeat)
                             throw new TypeError(
                                 'Expected "' +
                                     o.name +
                                     '" to not repeat, but received "' +
-                                    a +
+                                    s +
                                     '"',
                             );
-                        if (0 === a.length) {
+                        if (0 === s.length) {
                             if (o.optional) continue;
                             throw new TypeError(
                                 'Expected "' + o.name + '" to not be empty',
                             );
                         }
-                        for (var s = 0; s < a.length; s++) {
-                            if (((r = encodeURIComponent(a[s])), !c[i].test(r)))
+                        for (var a = 0; a < s.length; a++) {
+                            if (((r = encodeURIComponent(s[a])), !c[i].test(r)))
                                 throw new TypeError(
                                     'Expected all "' +
                                         o.name +
@@ -1230,10 +1231,10 @@
                                         r +
                                         '"',
                                 );
-                            e += (0 === s ? o.prefix : o.delimiter) + r;
+                            e += (0 === a ? o.prefix : o.delimiter) + r;
                         }
                     } else {
-                        if (((r = encodeURIComponent(a)), !c[i].test(r)))
+                        if (((r = encodeURIComponent(s)), !c[i].test(r)))
                             throw new TypeError(
                                 'Expected "' +
                                     o.name +
@@ -1245,101 +1246,96 @@
                             );
                         e += o.prefix + r;
                     }
-                } else e += o;
+                }
             }
             return e;
         };
     }
-    function d(t) {
+    function p(t) {
         return t.replace(/([.+*?=^!:${}()[\]|\/])/g, "\\$1");
     }
-    function s(t, e) {
+    function w(t, e) {
         return (t.keys = e), t;
     }
-    function l(t) {
+    function v(t) {
         return t.sensitive ? "" : "i";
     }
-    function h(t, e) {
+    function y(t, e) {
         for (
             var n = (e = e || {}).strict,
                 i = !1 !== e.end,
                 o = "",
                 r = t[t.length - 1],
                 r = "string" == typeof r && /\/$/.test(r),
-                a = 0;
-            a < t.length;
-            a++
+                s = 0;
+            s < t.length;
+            s++
         ) {
-            var s,
+            var a,
                 h,
-                c = t[a];
+                c = t[s];
             "string" == typeof c
-                ? (o += d(c))
-                : ((s = d(c.prefix)),
+                ? (o += p(c))
+                : ((a = p(c.prefix)),
                   (h = c.pattern),
-                  c.repeat && (h += "(?:" + s + h + ")*"),
+                  c.repeat && (h += "(?:" + a + h + ")*"),
                   (o += h =
                       c.optional
-                          ? s
-                              ? "(?:" + s + "(" + h + "))?"
+                          ? a
+                              ? "(?:" + a + "(" + h + "))?"
                               : "(" + h + ")?"
-                          : s + "(" + h + ")"));
+                          : a + "(" + h + ")"));
         }
         return (
             n || (o = (r ? o.slice(0, -2) : o) + "(?:\\/(?=$))?"),
             (o += i ? "$" : n && r ? "" : "(?=\\/|$)"),
-            new RegExp("^" + o, l(e))
+            new RegExp("^" + o, v(e))
         );
     }
-    function c(t, e, n) {
-        return (
-            p((e = e || [])) ? (n = n || {}) : ((n = e), (e = [])),
-            t instanceof RegExp
-                ? (function (t, e) {
-                      var n = t.source.match(/\((?!\?)/g);
-                      if (n)
-                          for (var i = 0; i < n.length; i++)
-                              e.push({
-                                  name: i,
-                                  prefix: null,
-                                  delimiter: null,
-                                  optional: !1,
-                                  repeat: !1,
-                                  pattern: null,
-                              });
-                      return s(t, e);
-                  })(t, e)
-                : (p(t)
-                      ? function (t, e, n) {
-                            for (var i = [], o = 0; o < t.length; o++)
-                                i.push(c(t[o], e, n).source);
-                            return s(
-                                new RegExp("(?:" + i.join("|") + ")", l(n)),
-                                e,
-                            );
-                        }
-                      : function (t, e, n) {
-                            for (
-                                var i = r(t), n = h(i, n), o = 0;
-                                o < i.length;
-                                o++
-                            )
-                                "string" != typeof i[o] && e.push(i[o]);
-                            return s(n, e);
-                        })(t, e, n)
-        );
+    function _(t, e, n) {
+        if (
+            (g((e = e || [])) ? (n = n || {}) : ((n = e), (e = [])),
+            t instanceof RegExp)
+        ) {
+            var i = t,
+                o = e,
+                r = i.source.match(/\((?!\?)/g);
+            if (r)
+                for (var s = 0; s < r.length; s++)
+                    o.push({
+                        name: s,
+                        prefix: null,
+                        delimiter: null,
+                        optional: !1,
+                        repeat: !1,
+                        pattern: null,
+                    });
+            return w(i, o);
+        }
+        if (g(t)) {
+            for (var a = t, h = e, c = n, p = [], d = 0; d < a.length; d++)
+                p.push(_(a[d], h, c).source);
+            return w(new RegExp("(?:" + p.join("|") + ")", v(c)), h);
+        }
+        for (
+            var l = e, i = n, u = m((e = t)), e = y(u, i), f = 0;
+            f < u.length;
+            f++
+        )
+            "string" != typeof u[f] && l.push(u[f]);
+        return w(e, l);
     }
     (i.parse = e),
         (i.compile = t),
         (i.tokensToFunction = n),
         (i.tokensToRegExp = o);
-    var f,
-        g = "undefined" != typeof document,
-        m = "undefined" != typeof window,
-        w = "undefined" != typeof history,
-        v = "undefined" != typeof process,
-        y = g && document.ontouchstart ? "touchstart" : "click",
-        _ = m && !(!window.history.location && !window.location);
+    var s,
+        h = "undefined" != typeof document,
+        a = "undefined" != typeof window,
+        c = "undefined" != typeof history,
+        l = "undefined" != typeof process,
+        u = h && document.ontouchstart ? "touchstart" : "click",
+        f = a && !(!window.history.location && !window.location);
     function b() {
         (this.callbacks = []),
             (this.exits = []),
@@ -1364,41 +1360,44 @@
                 : this.start(t);
     }
     function E(t, e, n) {
-        var i = (this.page = n || x),
-            o = i._window,
-            r = i._hashbang,
-            a = t.replace(
+        var n = (this.page = n || x),
+            i = n._window,
+            o = n._hashbang,
+            r = t.replace(
                 document.baseURI
                     .split("/")
                     .filter((t) => t.length)
                     .pop() + "/",
                 "",
             ),
-            s = i._getBase(),
-            n = (a =
-                "/" === a[0] && 0 !== a.indexOf(s)
-                    ? s + (r ? "#!" : "") + a
-                    : a).indexOf("?");
-        this.canonicalPath = t;
-        s = new RegExp("^" + s.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1"));
-        (this.path = a.replace(s, "") || "/"),
-            r && (this.path = this.path.replace("#!", "") || "/"),
-            (this.title = g && o.document.title),
+            s = n._getBase(),
+            a = (r =
+                "/" === r[0] && 0 !== r.indexOf(s)
+                    ? s + (o ? "#!" : "") + r
+                    : r).indexOf("?"),
+            t =
+                ((this.canonicalPath = t),
+                new RegExp(
+                    "^" + s.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1"),
+                ));
+        (this.path = r.replace(t, "") || "/"),
+            o && (this.path = this.path.replace("#!", "") || "/"),
+            (this.title = h && i.document.title),
             (this.state = e || {}),
-            (this.state.path = a),
-            (this.querystring = ~n
-                ? i._decodeURLEncodedURIComponent(a.slice(n + 1))
+            (this.state.path = r),
+            (this.querystring = ~a
+                ? n._decodeURLEncodedURIComponent(r.slice(a + 1))
                 : ""),
-            (this.pathname = i._decodeURLEncodedURIComponent(
-                ~n ? a.slice(0, n) : a,
+            (this.pathname = n._decodeURLEncodedURIComponent(
+                ~a ? r.slice(0, a) : r,
             )),
             (this.params = {}),
             (this.hash = ""),
-            r ||
+            o ||
                 (~this.path.indexOf("#") &&
-                    ((r = this.path.split("#")),
-                    (this.path = this.pathname = r[0]),
-                    (this.hash = i._decodeURLEncodedURIComponent(r[1]) || ""),
+                    ((s = this.path.split("#")),
+                    (this.path = this.pathname = s[0]),
+                    (this.hash = n._decodeURLEncodedURIComponent(s[1]) || ""),
                     (this.querystring = this.querystring.split("#")[0])));
     }
     function R(t, e, n) {
@@ -1410,22 +1409,22 @@
             (this.regexp = i(this.path, (this.keys = []), e));
     }
     (b.prototype.configure = function (t) {
-        t = t || {};
-        (this._window = t.window || (m && window)),
+        (t = t || {}),
+            (this._window = t.window || (a && window)),
             (this._decodeURLComponents = !1 !== t.decodeURLComponents),
-            (this._popstate = !1 !== t.popstate && m),
-            (this._click = !1 !== t.click && g),
-            (this._hashbang = !!t.hashbang);
-        t = this._window;
+            (this._popstate = !1 !== t.popstate && a),
+            (this._click = !1 !== t.click && h),
+            (this._hashbang = !!t.hashbang),
+            (t = this._window);
         this._popstate
             ? t.addEventListener("popstate", this._onpopstate, !1)
-            : m && t.removeEventListener("popstate", this._onpopstate, !1),
+            : a && t.removeEventListener("popstate", this._onpopstate, !1),
             this._click
-                ? t.document.addEventListener(y, this.clickHandler, !1)
-                : g && t.document.removeEventListener(y, this.clickHandler, !1),
-            this._hashbang && m && !w
+                ? t.document.addEventListener(u, this.clickHandler, !1)
+                : h && t.document.removeEventListener(u, this.clickHandler, !1),
+            this._hashbang && a && !c
                 ? t.addEventListener("hashchange", this._onpopstate, !1)
-                : m &&
+                : a &&
                   t.removeEventListener("hashchange", this._onpopstate, !1);
     }),
         (b.prototype.base = function (t) {
@@ -1433,13 +1432,18 @@
             this._base = t;
         }),
         (b.prototype._getBase = function () {
-            var t = this._base;
-            if (t) return t;
-            var e = m && this._window && this._window.location;
-            return (t =
-                m && this._hashbang && e && "file:" === e.protocol
-                    ? e.pathname
-                    : t);
+            var t,
+                e = this._base;
+            return (
+                e ||
+                    ((t = a && this._window && this._window.location),
+                    a &&
+                        this._hashbang &&
+                        t &&
+                        "file:" === t.protocol &&
+                        (e = t.pathname)),
+                e
+            );
         }),
         (b.prototype.strict = function (t) {
             if (0 === arguments.length) return this._strict;
@@ -1451,7 +1455,7 @@
             this.configure(t),
                 !1 !== t.dispatch &&
                     ((this._running = !0),
-                    _ &&
+                    f &&
                         ((e = this._window.location),
                         (e =
                             this._hashbang && ~e.hash.indexOf("#!")
@@ -1469,9 +1473,10 @@
                 (this._running = !1),
                 (t = this._window),
                 this._click &&
-                    t.document.removeEventListener(y, this.clickHandler, !1),
-                m && t.removeEventListener("popstate", this._onpopstate, !1),
-                m && t.removeEventListener("hashchange", this._onpopstate, !1));
+                    t.document.removeEventListener(u, this.clickHandler, !1),
+                a && t.removeEventListener("popstate", this._onpopstate, !1),
+                a) &&
+                t.removeEventListener("hashchange", this._onpopstate, !1);
         }),
         (b.prototype.show = function (t, e, n, i) {
             (t = new E(t, e, this)), (e = this.prevContext);
@@ -1487,7 +1492,7 @@
             var n,
                 i = this;
             0 < this.len
-                ? ((n = this._window), w && n.history.back(), this.len--)
+                ? ((n = this._window), c && n.history.back(), this.len--)
                 : t
                 ? setTimeout(function () {
                       i.show(t, e);
@@ -1526,37 +1531,35 @@
             var i = 0,
                 o = 0,
                 r = this;
-            function a() {
+            function s() {
                 var t = r.callbacks[i++];
                 if (e.path === r.current)
                     return t
-                        ? void t(e, a)
+                        ? void t(e, s)
                         : function (t) {
                               var e;
                               t.handled ||
                                   ((e = this._window),
                                   (this._hashbang
-                                      ? _ &&
+                                      ? f &&
                                         this._getBase() +
                                             e.location.hash.replace("#!", "")
-                                      : _ &&
+                                      : f &&
                                         e.location.pathname +
                                             e.location.search) !==
                                       t.canonicalPath &&
-                                      (this.stop(),
-                                      (t.handled = !1),
-                                      _ &&
-                                          (e.location.href = t.canonicalPath)));
+                                      (this.stop(), (t.handled = !1), f) &&
+                                      (e.location.href = t.canonicalPath));
                           }.call(r, e);
                 e.handled = !1;
             }
             (n
                 ? function t() {
                       var e = r.exits[o++];
-                      if (!e) return a();
+                      if (!e) return s();
                       e(n, t);
                   }
-                : a)();
+                : s)();
         }),
         (b.prototype.exit = function (t, e) {
             if ("function" == typeof t) return this.exit("*", t);
@@ -1574,74 +1577,72 @@
                     o = t.target,
                     r = t.path || (t.composedPath ? t.composedPath() : null);
                 if (r)
-                    for (var a = 0; a < r.length; a++)
+                    for (var s = 0; s < r.length; s++)
                         if (
-                            r[a].nodeName &&
-                            "A" === r[a].nodeName.toUpperCase() &&
-                            r[a].href
+                            r[s].nodeName &&
+                            "A" === r[s].nodeName.toUpperCase() &&
+                            r[s].href
                         ) {
-                            o = r[a];
+                            o = r[s];
                             break;
                         }
                 for (; o && "A" !== o.nodeName.toUpperCase(); )
                     o = o.parentNode;
                 o &&
                     "A" === o.nodeName.toUpperCase() &&
-                    ((i =
+                    ((n =
                         "object" == typeof o.href &&
                         "SVGAnimatedString" === o.href.constructor.name),
                     o.hasAttribute("download") ||
                         "external" === o.getAttribute("rel") ||
-                        ((n = o.getAttribute("href")),
-                        (!this._hashbang &&
+                        ((e = o.getAttribute("href")),
+                        !this._hashbang &&
                             this._samePath(o) &&
-                            (o.hash || "#" === n)) ||
-                            (n && -1 < n.indexOf("mailto:")) ||
-                            (i ? o.target.baseVal : o.target) ||
-                            ((i || this.sameOrigin(o.href)) &&
-                                ((e =
-                                    "/" !==
-                                    (e = i
-                                        ? o.href.baseVal
-                                        : o.pathname +
-                                          o.search +
-                                          (o.hash || ""))[0]
-                                        ? "/" + e
-                                        : e),
-                                (n = e =
-                                    v && e.match(/^\/[a-zA-Z]:\//)
-                                        ? e.replace(/^\/[a-zA-Z]:\//, "/")
-                                        : e),
-                                (i = this._getBase()),
-                                0 === e.indexOf(i) && (e = e.substr(i.length)),
-                                this._hashbang && (e = e.replace("#!", "")),
-                                (!i ||
-                                    n !== e ||
-                                    (_ &&
-                                        "file:" ===
-                                            this._window.location.protocol)) &&
-                                    (t.preventDefault(), this.show(n))))));
+                            (o.hash || "#" === e)) ||
+                        (e && -1 < e.indexOf("mailto:")) ||
+                        (n ? o.target.baseVal : o.target) ||
+                        ((n || this.sameOrigin(o.href)) &&
+                            ((e =
+                                "/" !==
+                                (e = n
+                                    ? o.href.baseVal
+                                    : o.pathname + o.search + (o.hash || ""))[0]
+                                    ? "/" + e
+                                    : e),
+                            (n = e =
+                                l && e.match(/^\/[a-zA-Z]:\//)
+                                    ? e.replace(/^\/[a-zA-Z]:\//, "/")
+                                    : e),
+                            (i = this._getBase()),
+                            0 === e.indexOf(i) && (e = e.substr(i.length)),
+                            this._hashbang && (e = e.replace("#!", "")),
+                            !i ||
+                                n !== e ||
+                                (f &&
+                                    "file:" ===
+                                        this._window.location.protocol)) &&
+                            (t.preventDefault(), this.show(n))));
             }
         }),
         (b.prototype._onpopstate =
-            ((f = !1),
-            m
-                ? (g && "complete" === document.readyState
-                      ? (f = !0)
+            ((s = !1),
+            a
+                ? (h && "complete" === document.readyState
+                      ? (s = !0)
                       : window.addEventListener("load", function () {
                             setTimeout(function () {
-                                f = !0;
+                                s = !0;
                             }, 0);
                         }),
                   function (t) {
                       var e;
-                      f &&
+                      s &&
                           (t.state
                               ? ((e = t.state.path), this.replace(e, t.state))
-                              : _ &&
-                                ((t = this._window.location),
+                              : f &&
+                                ((e = this._window.location),
                                 this.show(
-                                    t.pathname + t.search + t.hash,
+                                    e.pathname + e.search + e.hash,
                                     void 0,
                                     void 0,
                                     !1,
@@ -1649,33 +1650,35 @@
                   })
                 : function () {})),
         (b.prototype._which = function (t) {
-            return null == (t = t || (m && this._window.event)).which
+            return null == (t = t || (a && this._window.event)).which
                 ? t.button
                 : t.which;
         }),
         (b.prototype._toURL = function (t) {
             var e = this._window;
-            if ("function" == typeof URL && _)
-                return new URL(t, e.location.toString());
-            if (g) {
-                e = e.document.createElement("a");
-                return (e.href = t), e;
-            }
+            return "function" == typeof URL && f
+                ? new URL(t, e.location.toString())
+                : h
+                ? (((e = e.document.createElement("a")).href = t), e)
+                : void 0;
         }),
         (b.prototype.sameOrigin = function (t) {
-            if (!t || !_) return !1;
-            var e = this._toURL(t),
-                t = this._window.location;
+            var e;
             return (
-                t.protocol === e.protocol &&
-                t.hostname === e.hostname &&
-                t.port === e.port
+                !(!t || !f) &&
+                ((t = this._toURL(t)),
+                (e = this._window.location).protocol === t.protocol) &&
+                e.hostname === t.hostname &&
+                e.port === t.port
             );
         }),
         (b.prototype._samePath = function (t) {
-            if (!_) return !1;
-            var e = this._window.location;
-            return t.pathname === e.pathname && t.search === e.search;
+            var e;
+            return (
+                !!f &&
+                ((e = this._window.location), t.pathname === e.pathname) &&
+                t.search === e.search
+            );
         }),
         (b.prototype._decodeURLEncodedURIComponent = function (t) {
             return "string" == typeof t && this._decodeURLComponents
@@ -1687,7 +1690,7 @@
                 e = t._window,
                 n = t._hashbang;
             t.len++,
-                w &&
+                c &&
                     e.history.pushState(
                         this.state,
                         this.title,
@@ -1698,7 +1701,7 @@
         }),
         (E.prototype.save = function () {
             var t = this.page;
-            w &&
+            c &&
                 "file:" !== t._window.location.protocol &&
                 t._window.history.replaceState(
                     this.state,
@@ -1718,14 +1721,14 @@
         (R.prototype.match = function (t, e) {
             var n = this.keys,
                 i = t.indexOf("?"),
-                t = ~i ? t.slice(0, i) : t,
-                o = this.regexp.exec(decodeURIComponent(t));
+                i = ~i ? t.slice(0, i) : t,
+                o = this.regexp.exec(decodeURIComponent(i));
             if (!o) return !1;
-            for (var r = 1, a = o.length; r < a; ++r) {
-                var s = n[r - 1],
+            for (var r = 1, s = o.length; r < s; ++r) {
+                var a = n[r - 1],
                     h = this.page._decodeURLEncodedURIComponent(o[r]);
-                (void 0 === h && hasOwnProperty.call(e, s.name)) ||
-                    (e[s.name] = h);
+                (void 0 === h && hasOwnProperty.call(e, a.name)) ||
+                    (e[a.name] = h);
             }
             return !0;
         });
@@ -1772,8 +1775,8 @@
                 n
             );
         })(),
-        o = k;
-    return (o.default = k), o;
+        e = k;
+    return (e.default = k), e;
 });
 /*!
  * EventEmitter v5.2.4 - git.io/ee
@@ -3273,12 +3276,12 @@ var DocmaWeb = (function () {
     }),
         (Utils.notate = function (e, t) {
             if ("object" == typeof e) {
-                var n = Array.isArray(t) ? t : t.split("."),
-                    t = n[0];
-                if (t)
+                var t = Array.isArray(t) ? t : t.split("."),
+                    n = t[0];
+                if (n)
                     return (
-                        (t = e[t]),
-                        1 < n.length ? (n.shift(), Utils.notate(t, n)) : t
+                        (e = e[n]),
+                        1 < t.length ? (t.shift(), Utils.notate(e, t)) : e
                     );
             }
         }),
@@ -3294,12 +3297,13 @@ var DocmaWeb = (function () {
                 n = getMetaCodeName(e) || t,
                 r = e.memberof || "",
                 r = /^".*"$/.test(r) ? "" : cleanName(r);
-            if (e.name === r && Utils.isConstructor(e)) return n;
-            n = e.alias ? n : t;
-            if (!r) return n;
-            (t = new RegExp("^" + r + "[#.~:]")),
-                (e = "instance" === e.scope ? "#" : ".");
-            return t.test(n) ? n : r + e + n;
+            return (e.name === r && Utils.isConstructor(e)) ||
+                ((n = e.alias ? n : t), !r) ||
+                ((t = new RegExp("^" + r + "[#.~:]")),
+                (e = "instance" === e.scope ? "#" : "."),
+                t.test(n))
+                ? n
+                : r + e + n;
         }),
         (Utils.getFullName = Utils.getLongName),
         (Utils.getCodeName = function (e) {
@@ -3314,18 +3318,20 @@ var DocmaWeb = (function () {
                         (i = Utils.getSymbolByName(r, t)))
                     )
                         return i;
-                return null;
-            }
-            for (r = e, o = 0; o < r.length; o++) {
-                if (
-                    (n = r[o]).name === t ||
-                    n.longname === t ||
-                    Utils.getFullName(n) === t
-                )
-                    return n;
-                if (n.$members && (i = Utils.getSymbolByName(n.$members, t)))
-                    return i;
-            }
+            } else
+                for (r = e, o = 0; o < r.length; o++) {
+                    if (
+                        (n = r[o]).name === t ||
+                        n.longname === t ||
+                        Utils.getFullName(n) === t
+                    )
+                        return n;
+                    if (
+                        n.$members &&
+                        (i = Utils.getSymbolByName(n.$members, t))
+                    )
+                        return i;
+                }
             return null;
         }),
         (Utils.getLevels = function (e) {
@@ -3344,10 +3350,10 @@ var DocmaWeb = (function () {
             return t && /[.#~]/g.test(t) ? t.replace(/[.#~][^.#~]*$/, "") : "";
         }),
         (Utils.getParent = function (e, t) {
-            t = "string" == typeof t ? Utils.getSymbolByName(e, t) : t;
-            if (!t) return null;
-            t = Utils.getParentName(t);
-            return t ? Utils.getSymbolByName(e, t) : null;
+            var t = "string" == typeof t ? Utils.getSymbolByName(e, t) : t;
+            return (t = t && Utils.getParentName(t))
+                ? Utils.getSymbolByName(e, t)
+                : null;
         }),
         (Utils.isDeprecated = function (e) {
             return e.deprecated;
@@ -3493,9 +3499,9 @@ var DocmaWeb = (function () {
             return (
                 (n = n || {}),
                 Utils._tokenize(e, function (e, t) {
-                    if (t) return e;
-                    t = e.split(/[\r\n]{2,}/);
-                    return t.length <= 1 && n.keepIfSingle
+                    return t ||
+                        ((t = e.split(/[\r\n]{2,}/)).length <= 1 &&
+                            n.keepIfSingle)
                         ? e
                         : t
                               .map(function (e) {
@@ -3511,26 +3517,20 @@ var DocmaWeb = (function () {
             e = e.replace(/\{@link +([^}]*?)\}/g, function (e, t) {
                 var n,
                     r,
-                    t = t.split("|");
-                return (
-                    1 === t.length
-                        ? (n = r = t[0].trim())
-                        : ((n = t[0].trim()), (r = t[1].trim())),
-                    '<a href="' +
-                        (n =
-                            !1 === /[/?&=]/.test(n) && "#" !== n[0]
-                                ? "#" + n
-                                : n) +
-                        '"' +
-                        (i.target
+                    t = t.split("|"),
+                    t =
+                        (1 === t.length
+                            ? (n = r = t[0].trim())
+                            : ((n = t[0].trim()), (r = t[1].trim())),
+                        !1 === /[/?&=]/.test(n) &&
+                            "#" !== n[0] &&
+                            (n = "#" + n),
+                        i.target
                             ? ' target="' +
                               i.target +
                               '" rel="noopener noreferrer"'
-                            : "") +
-                        ">" +
-                        r +
-                        "</a>"
-                );
+                            : "");
+                return '<a href="' + n + '"' + t + ">" + r + "</a>";
             });
             return Utils.parseTicks(e);
         }),
@@ -3544,63 +3544,64 @@ var DocmaWeb = (function () {
             );
         }),
         (Utils.normalizeTabs = function (e) {
-            if ("string" != typeof e) return "";
-            var r,
-                t = e.match(/^\s*/gm),
-                n = 1 / 0;
-            return (
-                t.forEach(function (e, t) {
-                    (e = e.replace(/\t/g, "  ")),
-                        0 < t && (n = Math.min(e.length, n));
-                }),
-                n !== 1 / 0 &&
-                    ((t = new RegExp("^\\s{" + n + "}", "g")),
-                    (e = e.replace(t, ""))),
-                (e = e.replace(/^\s*/, "")).replace(
-                    /([\r\n]+)(\s+)/gm,
-                    function (e, t, n) {
-                        return (
-                            (r = n.replace(/\t/g, "  ")),
-                            t +
-                                new Array(r.length - (r.length % 2) + 1).join(
-                                    " ",
-                                )
-                        );
-                    },
-                )
-            );
+            var n, t, r;
+            return "string" != typeof e
+                ? ""
+                : ((t = e.match(/^\s*/gm)),
+                  (n = 1 / 0),
+                  t.forEach(function (e, t) {
+                      (e = e.replace(/\t/g, "  ")),
+                          0 < t && (n = Math.min(e.length, n));
+                  }),
+                  n !== 1 / 0 &&
+                      ((t = new RegExp("^\\s{" + n + "}", "g")),
+                      (e = e.replace(t, ""))),
+                  (e = e.replace(/^\s*/, "")).replace(
+                      /([\r\n]+)(\s+)/gm,
+                      function (e, t, n) {
+                          return (
+                              (r = n.replace(/\t/g, "  ")),
+                              t +
+                                  new Array(r.length - (r.length % 2) + 1).join(
+                                      " ",
+                                  )
+                          );
+                      },
+                  ));
         }),
         (Utils.getKeywords = function (e) {
-            if ("string" == typeof e) return e.toLowerCase();
-            var t =
-                Utils.getFullName(e) +
-                " " +
-                e.longname +
-                " " +
-                e.name +
-                " " +
-                (e.alias || "") +
-                " " +
-                (e.memberOf || "") +
-                " " +
-                (e.$kind || "") +
-                " " +
-                (e.scope || "") +
-                " " +
-                (e.classdesc || "") +
-                " " +
-                (e.description || "") +
-                " " +
-                (e.filename || "") +
-                " " +
-                (e.readonly ? "readonly" : "") +
-                (e.isEnum ? "enum" : "");
+            var t;
             return (
-                Utils.isConstructor(e) && (t += " constructor"),
-                Utils.isMethod(e) && (t += " method"),
-                Utils.isProperty(e) && (t += " property"),
-                t.replace(/[><"'`\n\r]/g, "").toLowerCase()
-            );
+                "string" == typeof e
+                    ? e
+                    : ((t =
+                          Utils.getFullName(e) +
+                          " " +
+                          e.longname +
+                          " " +
+                          e.name +
+                          " " +
+                          (e.alias || "") +
+                          " " +
+                          (e.memberOf || "") +
+                          " " +
+                          (e.$kind || "") +
+                          " " +
+                          (e.scope || "") +
+                          " " +
+                          (e.classdesc || "") +
+                          " " +
+                          (e.description || "") +
+                          " " +
+                          (e.filename || "") +
+                          " " +
+                          (e.readonly ? "readonly" : "") +
+                          (e.isEnum ? "enum" : "")),
+                      Utils.isConstructor(e) && (t += " constructor"),
+                      Utils.isMethod(e) && (t += " method"),
+                      Utils.isProperty(e) && (t += " property"),
+                      t.replace(/[><"'`\n\r]/g, ""))
+            ).toLowerCase();
         }),
         (Utils.getCodeFileInfo = function (e) {
             return {
@@ -3610,9 +3611,11 @@ var DocmaWeb = (function () {
             };
         }),
         (Utils.getSymbolLink = function (e, t) {
-            if ("string" != typeof t) return t.$docmaLink;
-            t = Utils.getSymbolByName(e, t);
-            return t ? t.$docmaLink : "";
+            return "string" != typeof t
+                ? t.$docmaLink
+                : (e = Utils.getSymbolByName(e, t))
+                ? e.$docmaLink
+                : "";
         });
     var reEndBrackets = /\[\]$/,
         reTypeParts =
@@ -3621,20 +3624,20 @@ var DocmaWeb = (function () {
         var r,
             i = reEndBrackets.test(t) ? "[]" : "",
             l = (t || "").replace(reEndBrackets, ""),
-            o = n || {},
-            n = "";
+            n = n || {},
+            o = "";
         return (
-            "internal" !== o.linkType &&
+            "internal" !== n.linkType &&
                 (r = Utils._getTypeExternalLink(l)) &&
-                (n = ' target="_blank" rel="noopener noreferrer"'),
+                (o = ' target="_blank" rel="noopener noreferrer"'),
             (t = (r =
-                !r && "external" !== o.linkType ? Utils.getSymbolLink(e, l) : r)
+                r || "external" === n.linkType ? r : Utils.getSymbolLink(e, l))
                 ? '<a href="' +
                   r +
                   '"' +
-                  n +
+                  o +
                   ">" +
-                  (o.displayText || l) +
+                  (n.displayText || l) +
                   i +
                   "</a>"
                 : t)
@@ -3644,6 +3647,7 @@ var DocmaWeb = (function () {
         var i = [],
             l = [];
         return function (e, t) {
+            var n;
             return 2e3 < i.length
                 ? "[Too Big Object]"
                 : (0 < i.length
@@ -3659,36 +3663,35 @@ var DocmaWeb = (function () {
                                       "]"))
                       : i.push(t),
                   r ? r.call(this, e, t) : t);
-            var n;
         };
     }
     function decodeHash(e) {
         return decodeURIComponent(e).replace(/^#/, "");
     }
     (Utils._parseAnchorLinks = function (t, e, n) {
-        var r = e.match(reTypeParts);
-        if (!r || !r[1]) return "";
-        var i = r[4] || "",
-            e = r[2] || r[3] || "";
-        return (
-            (e =
-                (e =
-                    e &&
-                    e
-                        .split(",")
-                        .map(function (e) {
-                            return e
-                                .trim()
-                                .split("|")
-                                .map(function (e) {
-                                    return _link(t, e, n);
-                                })
-                                .join('<span class="code-delim">|</span>');
-                        })
-                        .join('<span class="code-delim">, </span>')) &&
-                "&lt;" + e + "&gt;"),
-            _link(t, r[1], n) + e + i
-        );
+        var r,
+            i,
+            e = e.match(reTypeParts);
+        return e && e[1]
+            ? ((r = e[4] || ""),
+              (i =
+                  (i =
+                      (i = e[2] || e[3] || "") &&
+                      i
+                          .split(",")
+                          .map(function (e) {
+                              return e
+                                  .trim()
+                                  .split("|")
+                                  .map(function (e) {
+                                      return _link(t, e, n);
+                                  })
+                                  .join('<span class="code-delim">|</span>');
+                          })
+                          .join('<span class="code-delim">, </span>')) &&
+                  "&lt;" + i + "&gt;"),
+              _link(t, e[1], n) + i + r)
+            : "";
     }),
         (Utils.getTypes = function (t, e, n) {
             var r = n || {},
@@ -3707,99 +3710,100 @@ var DocmaWeb = (function () {
             return e.isEnum ? "enum&lt;" + n + "&gt;" : n;
         }),
         (Utils.getReturnTypes = function (n, e, t) {
-            e = e.returns;
-            if (!Array.isArray(e)) return "void";
-            var r = t || {},
-                e = e.reduce(function (e, t) {
-                    t = Utils.notate(t, "type.names") || [];
-                    return (
-                        r.links &&
-                            (t = t.map(function (e) {
-                                return Utils._parseAnchorLinks(n, e, {
-                                    linkType: r.links,
-                                });
-                            })),
-                        e.concat(t)
-                    );
-                }, []);
-            return 0 < e.length
-                ? e.join('<span class="code-delim">|</span>')
+            var r,
+                e = e.returns;
+            return Array.isArray(e) &&
+                ((r = t || {}),
+                0 <
+                    (t = e.reduce(function (e, t) {
+                        t = Utils.notate(t, "type.names") || [];
+                        return (
+                            r.links &&
+                                (t = t.map(function (e) {
+                                    return Utils._parseAnchorLinks(n, e, {
+                                        linkType: r.links,
+                                    });
+                                })),
+                            e.concat(t)
+                        );
+                    }, [])).length)
+                ? t.join('<span class="code-delim">|</span>')
                 : "void";
         }),
         (Utils.getCodeTags = function (n, e, t) {
             var r = t || {};
             return e
                 .map(function (e) {
-                    if (r.links) {
-                        var t = Utils._parseAnchorLinks(n, e, {
-                            linkType: r.links,
-                        });
-                        return Utils._wrapCode(t, !1);
-                    }
-                    return Utils._wrapCode(e, !0);
+                    var t;
+                    return r.links
+                        ? ((t = Utils._parseAnchorLinks(n, e, {
+                              linkType: r.links,
+                          })),
+                          Utils._wrapCode(t, !1))
+                        : Utils._wrapCode(e, !0);
                 })
                 .join(r.demileter || ",");
         }),
         (Utils.getFormattedTypeList = function (n, e, t) {
-            if (!Array.isArray(e) || 0 === e.length) return "";
-            var r = t || {},
-                i =
-                    '<span class="code-delim">' +
-                    (r.delimeter || "|") +
-                    "</span>",
-                l = "boolean" != typeof r.descriptions || r.descriptions,
-                o = r.descDelimeter || "&nbsp;&nbsp;—&nbsp;&nbsp;",
-                a = "",
-                e = e.map(function (e) {
-                    return (
-                        l &&
-                            (a =
-                                (a = Utils.parse(e.description || "", {
-                                    keepIfSingle: !0,
-                                })) && o + a),
-                        e.type
-                            ? (e.type.names || [])
-                                  .map(function (e) {
-                                      if (r.links) {
-                                          var t = Utils._parseAnchorLinks(
-                                              n,
-                                              e,
-                                              { linkType: r.links },
-                                          );
-                                          return Utils._wrapCode(t, !1);
-                                      }
-                                      return Utils._wrapCode(e, !0);
-                                  })
-                                  .join(i) + a
-                            : a
-                            ? "— " + a
-                            : ""
-                    );
-                });
-            return 1 < e.length
-                ? "<ul><li>" + e.join("</li><li>") + "</li></ul>"
-                : e;
+            var r, i, l, o, a;
+            return Array.isArray(e) && 0 !== e.length
+                ? ((i =
+                      '<span class="code-delim">' +
+                      ((r = t || {}).delimeter || "|") +
+                      "</span>"),
+                  (l = "boolean" != typeof r.descriptions || r.descriptions),
+                  (o = r.descDelimeter || "&nbsp;&nbsp;—&nbsp;&nbsp;"),
+                  (a = ""),
+                  1 <
+                  (t = e.map(function (e) {
+                      return (
+                          l &&
+                              (a =
+                                  (a = Utils.parse(e.description || "", {
+                                      keepIfSingle: !0,
+                                  })) && o + a),
+                          e.type
+                              ? (e.type.names || [])
+                                    .map(function (e) {
+                                        var t;
+                                        return r.links
+                                            ? ((t = Utils._parseAnchorLinks(
+                                                  n,
+                                                  e,
+                                                  { linkType: r.links },
+                                              )),
+                                              Utils._wrapCode(t, !1))
+                                            : Utils._wrapCode(e, !0);
+                                    })
+                                    .join(i) + a
+                              : a
+                              ? "— " + a
+                              : ""
+                      );
+                  })).length
+                      ? "<ul><li>" + t.join("</li><li>") + "</li></ul>"
+                      : t)
+                : "";
         }),
         (Utils.getEmittedEvents = function (t, e, n) {
-            if (!e || 0 === e.length) return "";
-            var r,
-                i = n || {},
-                n = i.delimeter || ", ";
-            return (e || [])
-                .map(function (e) {
-                    if (
-                        ((r = e.split(/\s*[\s-—]\s*/g)),
-                        (r = (r[0] || "").trim()),
-                        i.links)
-                    ) {
-                        e = Utils._parseAnchorLinks(t, r, {
-                            linkType: i.links,
-                        });
-                        return Utils._wrapCode(e, !1);
-                    }
-                    return Utils._wrapCode(r, !0);
-                })
-                .join(n);
+            var r, i;
+            return e && 0 !== e.length
+                ? ((n = (r = n || {}).delimeter || ", "),
+                  (e || [])
+                      .map(function (e) {
+                          return (
+                              (i = e.split(/\s*[\s-—]\s*/g)),
+                              (i = (i[0] || "").trim()),
+                              r.links
+                                  ? ((e = Utils._parseAnchorLinks(t, i, {
+                                        linkType: r.links,
+                                    })),
+                                    Utils._wrapCode(e, !1))
+                                  : Utils._wrapCode(i, !0)
+                          );
+                      })
+                      .join(n))
+                : "";
         }),
         (Utils._find = function (e, t) {
             if (!e || !t) return null;
@@ -3841,9 +3845,9 @@ var DocmaWeb = (function () {
                 : ((e =
                       "<code>" +
                       (e =
-                          void 0 === t || !0 === t
-                              ? e.replace(/</g, "&lt;").replace(/>/g, "&gt;")
-                              : e) +
+                          void 0 !== t && !0 !== t
+                              ? e
+                              : e.replace(/</g, "&lt;").replace(/>/g, "&gt;")) +
                       "</code>"),
                   n ? "<pre>" + e + "</pre>" : e);
         }),
@@ -3880,72 +3884,75 @@ var DocmaWeb = (function () {
             }
         }),
         (Utils.DOM = {});
-    var ATTR_BODY_STYLE = "data-body-style";
-    (Utils.DOM.getOffset = function (e) {
-        var t = "object" == typeof e ? e : document.getElementById(e);
-        if (t) {
-            e = t.getBoundingClientRect();
-            if (e.width || e.height || t.getClientRects().length) {
-                t = document.documentElement;
-                return {
-                    top: e.top + window.pageYOffset - t.clientTop,
-                    left: e.left + window.pageXOffset - t.clientLeft,
-                };
-            }
-        }
-    }),
-        (Utils.DOM.scrollTo = function (e) {
-            var t = document.documentElement || document.body;
-            (e = decodeHash(e || window.location.hash || ""))
-                ? !(e = document.getElementById(e)) ||
-                  ((e = Utils.DOM.getOffset(e)) && (t.scrollTop = e.top))
-                : (t.scrollTop = 0);
-        }),
-        (Utils.DOM._createChild = function (e, t, n) {
-            n = n || {};
-            var r = document.createElement(t || "div");
-            return (
-                Object.keys(n).forEach(function (e) {
-                    r[e] = n[e];
-                }),
-                e.appendChild(r),
-                r
-            );
-        }),
-        (Utils.DOM._removePrevBodyStyles = function () {
-            for (
-                var e = document
-                    .getElementsByTagName("head")[0]
-                    .querySelectorAll("[" + ATTR_BODY_STYLE + "]");
-                0 < e.length;
+    var ATTR_BODY_STYLE = "data-body-style",
+        _builtinURLs =
+            ((Utils.DOM.getOffset = function (e) {
+                var t,
+                    e = "object" == typeof e ? e : document.getElementById(e);
+                return e &&
+                    ((t = e.getBoundingClientRect()).width ||
+                        t.height ||
+                        e.getClientRects().length)
+                    ? ((e = document.documentElement),
+                      {
+                          top: t.top + window.pageYOffset - e.clientTop,
+                          left: t.left + window.pageXOffset - e.clientLeft,
+                      })
+                    : void 0;
+            }),
+            (Utils.DOM.scrollTo = function (e) {
+                var t = document.documentElement || document.body;
+                (e = decodeHash(e || window.location.hash || ""))
+                    ? (e = document.getElementById(e)) &&
+                      (e = Utils.DOM.getOffset(e)) &&
+                      (t.scrollTop = e.top)
+                    : (t.scrollTop = 0);
+            }),
+            (Utils.DOM._createChild = function (e, t, n) {
+                n = n || {};
+                var r = document.createElement(t || "div");
+                return (
+                    Object.keys(n).forEach(function (e) {
+                        r[e] = n[e];
+                    }),
+                    e.appendChild(r),
+                    r
+                );
+            }),
+            (Utils.DOM._removePrevBodyStyles = function () {
+                for (
+                    var e = document
+                        .getElementsByTagName("head")[0]
+                        .querySelectorAll("[" + ATTR_BODY_STYLE + "]");
+                    0 < e.length;
 
-            )
-                e[0].parentNode.removeChild(e[0]);
-        }),
-        (Utils.DOM._moveBodyStylesToHead = function () {
-            for (
-                var e,
-                    t = document.getElementsByTagName("head")[0],
-                    n = document.body.getElementsByTagName("style"),
-                    r = 0;
-                r < n.length;
-                r++
-            )
-                (e = n[r]).parentNode.removeChild(e),
-                    e.setAttribute(ATTR_BODY_STYLE, ""),
-                    t.appendChild(e);
-        });
-    var _builtinURLs = {
-            globals:
-                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/",
-            statements:
-                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/",
-            operators:
-                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/",
-            functions:
-                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/",
-            web: "https://developer.mozilla.org/en-US/docs/Web/API/",
-        },
+                )
+                    e[0].parentNode.removeChild(e[0]);
+            }),
+            (Utils.DOM._moveBodyStylesToHead = function () {
+                for (
+                    var e,
+                        t = document.getElementsByTagName("head")[0],
+                        n = document.body.getElementsByTagName("style"),
+                        r = 0;
+                    r < n.length;
+                    r++
+                )
+                    (e = n[r]).parentNode.removeChild(e),
+                        e.setAttribute(ATTR_BODY_STYLE, ""),
+                        t.appendChild(e);
+            }),
+            {
+                globals:
+                    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/",
+                statements:
+                    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/",
+                operators:
+                    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/",
+                functions:
+                    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/",
+                web: "https://developer.mozilla.org/en-US/docs/Web/API/",
+            }),
         _builtins = {
             globals: [
                 "Infinity",
@@ -4366,12 +4373,12 @@ var DocmaWeb = (function () {
                                             : e).slice(0, 1) &&
                                     (e = e.slice(1)),
                                     (t = (t || "").replace(/[[\]]/g, "\\$&"));
-                                e = new RegExp(
+                                t = new RegExp(
                                     "&?" + t + "(=([^&#]*)|&|#|$)",
                                 ).exec(e);
-                                return e && e[2]
+                                return t && t[2]
                                     ? decodeURIComponent(
-                                          e[2].replace(/\+/g, " "),
+                                          t[2].replace(/\+/g, " "),
                                       )
                                     : "";
                             },
@@ -4441,15 +4448,14 @@ var DocmaWeb = (function () {
         }),
         (DocmaWeb.prototype.getContentElem = function () {
             var t = document.getElementById(this._.contentElementID);
-            if (!t)
-                throw new Error(
-                    "Partial " +
-                        this._.partials.content +
-                        ' should have an element with id="' +
-                        this._.contentElementID +
-                        '".',
-                );
-            return t;
+            if (t) return t;
+            throw new Error(
+                "Partial " +
+                    this._.partials.content +
+                    ' should have an element with id="' +
+                    this._.contentElementID +
+                    '".',
+            );
         }),
         (DocmaWeb.prototype.loadContent = function (t) {
             (this.getContentElem().innerHTML = t),
@@ -4497,20 +4503,18 @@ var DocmaWeb = (function () {
             return new DocmaWeb.Route(this, t, e);
         }),
         (DocmaWeb.prototype.createRouteFromID = function (t) {
-            if ("string" != typeof t)
-                return (
-                    this.warn("Route ID is not a string: " + t),
-                    new DocmaWeb.Route(this, null)
-                );
-            t = t.split(":");
-            return new DocmaWeb.Route(this, t[1], t[0]);
+            return "string" != typeof t
+                ? (this.warn("Route ID is not a string: " + t),
+                  new DocmaWeb.Route(this, null))
+                : ((t = t.split(":")), new DocmaWeb.Route(this, t[1], t[0]));
         }),
         (DocmaWeb.prototype.createRouteFromQuery = function (t) {
-            if (!t) return new DocmaWeb.Route(null);
-            var e = t.split("&")[0].split("="),
-                t = e[0].toLowerCase(),
-                e = e[1];
-            return new DocmaWeb.Route(this, e, t);
+            var e;
+            return t
+                ? ((e = (t = t.split("&")[0].split("="))[0].toLowerCase()),
+                  (t = t[1]),
+                  new DocmaWeb.Route(this, t, e))
+                : new DocmaWeb.Route(null);
         }),
         (DocmaWeb.prototype._render = function (o, n) {
             var r = this;
@@ -4550,10 +4554,13 @@ var DocmaWeb = (function () {
             var n = new XMLHttpRequest(),
                 r = this;
             (n.onreadystatechange = function () {
-                if (4 === n.readyState) {
-                    var t = 200 === n.status ? n.responseText : "";
-                    return r.log("XHR GET:", n.status, e), o(n.status, t);
-                }
+                var t;
+                if (4 === n.readyState)
+                    return (
+                        (t = 200 === n.status ? n.responseText : ""),
+                        r.log("XHR GET:", n.status, e),
+                        o(n.status, t)
+                    );
             }),
                 n.open("GET", e, !0),
                 n.send();
@@ -4574,19 +4581,15 @@ var DocmaWeb = (function () {
                               });
                       })
                     : docma.fetch(o.contentPath, function (t, e) {
-                          return 404 === t
-                              ? i._render404(o, n)
-                              : void i._render(
-                                    i._.partials.content,
-                                    function () {
-                                        i.loadContent(e),
-                                            i._triggerAfterRender(),
-                                            r && n(t),
-                                            i._fixAnchors(function () {
-                                                Utils.DOM.scrollTo();
-                                            });
-                                    },
-                                );
+                          if (404 === t) return i._render404(o, n);
+                          i._render(i._.partials.content, function () {
+                              i.loadContent(e),
+                                  i._triggerAfterRender(),
+                                  r && n(t),
+                                  i._fixAnchors(function () {
+                                      Utils.DOM.scrollTo();
+                                  });
+                          });
                       }));
         }),
         (DocmaWeb.Utils = Utils);
@@ -4599,8 +4602,8 @@ var DocmaWeb = (function () {
                 if (o !== DocmaWeb.Route.Type.API) return;
                 e = t._.defaultApiName;
             }
-            e = Utils._find(t.routes, { type: o, name: e });
-            e && Utils._assign(this, e);
+            t = Utils._find(t.routes, { type: o, name: e });
+            t && Utils._assign(this, t);
         }
     }),
         (DocmaWeb.Route.Type = { API: "api", CONTENT: "content" }),
@@ -4678,17 +4681,15 @@ var DocmaWeb = (function () {
     var reJSValues =
         /true|false|null|undefined|Infinity|NaN|\d+|Number\.\w+|Math\.(PI|E|LN(2|10)|LOG(2|10)E|SQRT(1_)?2)|\[.*?]|\{.*?}|new [a-zA-Z]+.*|\/.+\/[gmiu]*|Date\.(now\(\)|UTC\(.*)|window|document/;
     function getFormatValue(e, t) {
-        if (
-            "string" !=
+        var n;
+        return "string" ==
             typeof (t =
                 arguments.length < 2
                     ? DocmaWeb.Utils.notate(e, "meta.code.value") ||
                       e.defaultvalue
-                    : t)
-        )
-            return String(t);
-        var n = DocmaWeb.Utils.notate(e, "type.names") || [];
-        return !/['"`]/.test(t.slice(0, 1)) &&
+                    : t) &&
+            ((n = DocmaWeb.Utils.notate(e, "type.names") || []),
+            !/['"`]/.test(t.slice(0, 1))) &&
             0 <= n.indexOf("String") &&
             (1 === n.length || -1 === reJSValues.indexOf(t))
             ? '"' + t + '"'
@@ -12086,12 +12087,9 @@ var docma = Object.freeze(
                 }
             })() &&
                 setTimeout(function () {
+                    e = (e = t.querystring) || window.location.search;
                     var a,
-                        e,
-                        e =
-                            ((e =
-                                (e = t.querystring) || window.location.search),
-                            (e = /^[?&]/.test(e) ? e.slice(1) : e) || null);
+                        e = (e = /^[?&]/.test(e) ? e.slice(1) : e) || null;
                     if (c) {
                         if (e) return n();
                         a = docma._.appEntranceRI;
