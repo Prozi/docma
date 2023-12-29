@@ -106,7 +106,7 @@
     "inquirer": "^8.1.2",
     "jsdoc-x": "^4.1.0",
     "jsdom": "^16.7.0",
-    "less": "^4.1.1",
+    "less": "^4.2.0",
     "less-plugin-clean-css": "^1.5.1",
     "lodash": "^4.17.21",
     "marked": "^3",
