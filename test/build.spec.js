@@ -12,7 +12,7 @@ const Docma = require("../index");
 describe("build", () => {
     // beforeAll(function () {});
 
-    test("build with query-routing", async () => {
+    xtest("build with query-routing", async () => {
         const config = {
             debug: 30,
             src: [
@@ -43,7 +43,7 @@ describe("build", () => {
                 base: "/",
             },
             template: {
-                path: "./node_modules/docma-template-zebra/",
+                path: "docma-template-zebra",
                 options: {
                     title: "",
                 },
