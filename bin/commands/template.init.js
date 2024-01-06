@@ -12,7 +12,6 @@ const _ = require("lodash");
 const fs = require("fs-extra");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
-const checkNpmName = require("npm-name");
 // own modules
 const TemplateDoctor = require("../../lib/TemplateDoctor");
 const utils = require("../../lib/utils");
@@ -173,16 +172,17 @@ module.exports = (rootDirPath) => {
                 const name = TemplateDoctor.removePrefix(input)
                     .trim()
                     .toLowerCase();
-                return Promise.resolve().then(() => {
+                return Promise.resolve().then(async () => {
                     const ins = TemplateDoctor.inspectName(name);
                     if (!ins.valid) return ins.message;
                     const pkgName = TemplateDoctor.TEMPLATE_PREFIX + name;
-                    return checkNpmName(pkgName).then((available) => {
-                        if (!available) {
-                            return `Package name "${pkgName}" is already taken.`;
-                        }
-                        return true;
-                    });
+                    const { default: checkNpmName } = await import("npm-name");
+
+                    const available = await checkNpmName(pkgName);
+                    if (!available) {
+                        return `Package name "${pkgName}" is already taken.`;
+                    }
+                    return true;
                 });
             },
         },
