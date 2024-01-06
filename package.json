@@ -1,11 +1,11 @@
 {
   "name": "@jacekpietal/docma",
-  "version": "3.3.5",
+  "version": "3.3.6",
   "description": "A powerful dev-tool to easily generate beautiful HTML documentation from Javascript (JSDoc), Markdown and HTML files.",
   "repository": "Prozi/docma",
   "license": "MIT",
   "author": {
-    "name": "Onur Yıldırım",
+    "name": "Onur Y??ld??r??m",
     "email": "onur@cutepilot.com"
   },
   "maintainers": [
