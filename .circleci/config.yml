@@ -1,10 +1,9 @@
 jobs:
-  build:
-    docker:
-      - image: cimg/node:lts
-    steps:
-      - checkout
-      - run: yarn
-      - run: yarn docs
-      - run: yarn test
- 
+    build:
+        docker:
+            - image: cimg/node:lts
+        steps:
+            - checkout
+            - run: yarn
+            - run: yarn docs
+            - run: yarn test
