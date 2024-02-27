@@ -111,7 +111,7 @@
     "lodash": "^4.17.21",
     "marked": "^4.0.10",
     "npm-name": "^7.0.0",
-    "semver": "^7.5.4",
+    "semver": "^7.6.0",
     "static-serve": "^0.0.1",
     "strip-json-comments": "^3.1.1",
     "uglify-js": "^3.14.3",
