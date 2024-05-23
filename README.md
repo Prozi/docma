@@ -7,11 +7,11 @@
     <a href="https://github.com/Prozi/docma"><img src="https://img.shields.io/github/release/Prozi/docma.svg?style=flat-square" alt="release" /></a>
     <a href="https://github.com/Prozi/docma/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@pietal.dev/docma.svg?style=flat-square" alt="license" /></a>
     <a href="https://www.npmjs.com/package/@pietal.dev/docma"><img src="https://img.shields.io/npm/dt/@pietal.dev/docma.svg?style=flat-square" alt="downloads" /></a>
-    <a href="https://libraries.io/npm/@jacekpietal%2Fdocma"><img src="https://img.shields.io/librariesio/github/Prozi/docma?style=flat-square" alt="dependencies" /></a>
+    <a href="https://libraries.io/npm/@pietal.dev%2Fdocma"><img src="https://img.shields.io/librariesio/github/Prozi/docma?style=flat-square" alt="dependencies" /></a>
     <a href="https://github.com/Prozi/docma/graphs/commit-activity"><img src="https://img.shields.io/maintenance/yes/2024?style=flat-square" alt="maintained" /></a>
     <a href="https://prozi.github.io/docma"><img src="https://img.shields.io/badge/docs%20by-docma-c27cf4.svg?docs%20by=docma&style=flat-square" alt="documentation" /></a>
     <br />
-    <sub>© 2019, Onur Yıldırım (<b><a href="https://github.com/onury">@onury</a></b>).</sub>
+    <sub>&copy; 2019-2024, Onur Yildirim (<b><a href="https://github.com/onury">@onury</a></b>).</sub>
 </p>
 
 A powerful tool to easily generate beautiful HTML documentation from Javascript ([JSDoc][jsdoc]), [Markdown][markdown] and HTML files.
@@ -130,9 +130,9 @@ Emoji shortcuts used in source markdown files are parsed into [twemoji][twemoji]
 
 ## Related Modules
 
--   [jsdoc-x][jsdoc-x] — Parser for outputting a Javascript object from documented code via JSDoc's explain (-X) command.
--   [marked][marked] — A full-featured markdown parser and compiler, written in JavaScript. Built for speed.
--   [dustjs][dustjs-github] — Asynchronous Javascript templating for the browser and server.
+-   [jsdoc-x][jsdoc-x] - Parser for outputting a Javascript object from documented code via JSDoc's explain (-X) command.
+-   [marked][marked] - A full-featured markdown parser and compiler, written in JavaScript. Built for speed.
+-   [dustjs][dustjs-github] - Asynchronous Javascript templating for the browser and server.
 
 [license]: https://github.com/Prozi/docma/blob/master/LICENSE
 [changelog]: https://github.com/Prozi/docma/blob/master/CHANGELOG.md

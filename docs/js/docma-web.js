@@ -4869,12 +4869,12 @@ var DocmaWeb = (function () {
             ).replace(/ /g, "-");
         });
 
-    DocmaWeb.version = "3.3.11";
+    DocmaWeb.version = "3.3.12";
     return DocmaWeb;
 })();
 var docma = Object.freeze(
     new DocmaWeb({
-        version: "3.3.11",
+        version: "3.3.12",
         routes: [
             {
                 id: "api:",
