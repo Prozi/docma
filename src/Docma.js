@@ -682,141 +682,154 @@ class Docma {
      *  @returns {Promise} -
      */
     _parseMD(mdFiles) {
-        if (!mdFiles) return Promise.resolve();
-        const oFiles = this._getFilesHashMap(mdFiles);
-        if (!oFiles) {
-            return Promise.reject(
-                new Error("Invalid markdown file(s) passed."),
-            );
-        }
+        try {
+            if (!mdFiles) return Promise.resolve();
+            const oFiles = this._getFilesHashMap(mdFiles);
+            if (!oFiles) {
+                return Promise.reject(
+                    new Error("Invalid markdown file(s) passed."),
+                );
+            }
 
-        const markedOpts = _.extend({}, this.config.markdown, {
-            renderer: new marked.Renderer(),
-        });
-        // marked.setOptions(markedOpts);
+            const markedOpts = _.extend({}, this.config.markdown, {
+                renderer: new marked.Renderer(),
+            });
+            // marked.setOptions(markedOpts);
 
-        const fileNames = _.keys(oFiles);
+            const fileNames = _.keys(oFiles);
 
-        this.$debug.info(`Parsing ${fileNames.length} Markdown file(s)...`);
+            this.$debug.info(`Parsing ${fileNames.length} Markdown file(s)...`);
 
-        return Promise.each(fileNames, (name) => {
-            const file = oFiles[name];
-            this.$debug.data(`Parsing (${name}):`, file);
+            return Promise.each(fileNames, (name) => {
+                const file = oFiles[name];
+                this.$debug.data(`Parsing (${name}):`, file);
 
-            return fs
-                .readFile(file, "utf8")
-                .then((mdString) => utils.md.parse(mdString, markedOpts))
-                .then((html) => {
-                    // some extra markdown flavor by Docma
-                    const parser = HtmlParser.create(html);
-                    const mdTasks = this.config.markdown.tasks;
-                    if (mdTasks) parser.parseMarkdownTasks("docma task-item");
+                return fs
+                    .readFile(file, "utf8")
+                    .then((mdString) => utils.md.parse(mdString, markedOpts))
+                    .then((html) => {
+                        // some extra markdown flavor by Docma
+                        const parser = HtmlParser.create(html);
+                        const mdTasks = this.config.markdown.tasks;
+                        if (mdTasks)
+                            parser.parseMarkdownTasks("docma task-item");
 
-                    return parser
-                        .edit((window, $) => {
-                            if (mdTasks) {
-                                $(".docma.task-item")
-                                    .parents("ul")
-                                    .addClass("docma task-list");
-                            }
-
-                            $(".docma-hide, .docma-ignore").hide();
-                            $(".docma-remove").remove();
-
-                            // wrap and add class for collapsable details element's
-                            // content right after the summary tag.
-                            $("details > summary").each(function () {
-                                $(this)
-                                    .nextAll()
-                                    .wrapAll('<div class="details-content" />');
-                            });
-
-                            // limit image width to 100% while keeping
-                            // aspect ratio
-                            $("img").css("max-width", "100%");
-
-                            // marked already sets the id for headings (h1,h2..) but
-                            // it doesn't ignore/remove other HTML tags (i.e.
-                            // <a></a>) from the generated id.
-                            $(":header").each(function () {
-                                // no arrow func here
-                                const bmHeading = $(this);
-                                const bmId = bmHeading.attr("id");
-                                if (bmId) {
-                                    // re-set the heading id
-                                    bmHeading.attr(
-                                        "id",
-                                        utils.idify(bmHeading.text()),
-                                    );
+                        return parser
+                            .edit((window, $) => {
+                                if (mdTasks) {
+                                    $(".docma.task-item")
+                                        .parents("ul")
+                                        .addClass("docma task-list");
                                 }
-                            });
-                        })
-                        .then((parser) => parser.content);
-                })
-                .then((html) => {
-                    html = html || "";
-                    // additional GFM: add horiziontal line right after each
-                    // <h1/> and <h2/>, just like GitHub.
-                    if (this.config.markdown.gfm) {
-                        html = html.replace(/(<\/h[12]>)/g, "$1\n<hr />");
-                    }
-                    // if emoji enabled, find and replace :emoji_code: with <img src=svg />
-                    if (this.config.markdown.emoji) {
-                        const re = /:([^:\s]+):/g;
-                        return utils.json
-                            .read(Paths.EMOJI_JSON)
-                            .then((emojiMap) => {
-                                return html.replace(re, (match, p1) => {
-                                    // , offset, string
-                                    const code = emojiMap[p1];
-                                    return code
-                                        ? `<img class="docma emoji" src="${
-                                              TWEMOJI_BASE_URL + code
-                                          }.svg" />`
-                                        : match;
+
+                                $(".docma-hide, .docma-ignore").hide();
+                                $(".docma-remove").remove();
+
+                                // wrap and add class for collapsable details element's
+                                // content right after the summary tag.
+                                $("details > summary").each(function () {
+                                    $(this)
+                                        .nextAll()
+                                        .wrapAll(
+                                            '<div class="details-content" />',
+                                        );
                                 });
-                            });
-                    }
-                })
-                .then((html) => {
+
+                                // limit image width to 100% while keeping
+                                // aspect ratio
+                                $("img").css("max-width", "100%");
+
+                                // marked already sets the id for headings (h1,h2..) but
+                                // it doesn't ignore/remove other HTML tags (i.e.
+                                // <a></a>) from the generated id.
+                                $(":header").each(function () {
+                                    // no arrow func here
+                                    const bmHeading = $(this);
+                                    const bmId = bmHeading.attr("id");
+                                    if (bmId) {
+                                        // re-set the heading id
+                                        bmHeading.attr(
+                                            "id",
+                                            utils.idify(bmHeading.text()),
+                                        );
+                                    }
+                                });
+                            })
+                            .then((parser) => parser.content);
+                    })
+                    .then((html) => {
+                        html = html || "";
+                        // additional GFM: add horiziontal line right after each
+                        // <h1/> and <h2/>, just like GitHub.
+                        if (this.config.markdown.gfm) {
+                            html = html.replace(/(<\/h[12]>)/g, "$1\n<hr />");
+                        }
+                        // if emoji enabled, find and replace :emoji_code: with <img src=svg />
+                        if (this.config.markdown.emoji) {
+                            const re = /:([^:\s]+):/g;
+                            return utils.json
+                                .read(Paths.EMOJI_JSON)
+                                .then((emojiMap) => {
+                                    return html.replace(re, (match, p1) => {
+                                        // , offset, string
+                                        const code = emojiMap[p1];
+                                        return code
+                                            ? `<img class="docma emoji" src="${
+                                                  TWEMOJI_BASE_URL + code
+                                              }.svg" />`
+                                            : match;
+                                    });
+                                });
+                        }
+                    })
+                    .then((html) => {
+                        const outPath = path.join(
+                            this.config.dest,
+                            "content",
+                            `${name}.html`,
+                        );
+                        this._addRoute(name, "md");
+                        // creates parent directories if they don't exist
+                        return fs.outputFile(outPath, html, "utf8");
+                    });
+            });
+        } catch (err) {
+            console.warn(err);
+        }
+    }
+
+    _processHTML(htmlFiles) {
+        try {
+            if (!htmlFiles) return Promise.resolve();
+            const oFiles = this._getFilesHashMap(htmlFiles);
+            if (!oFiles) {
+                return Promise.reject(
+                    new Error("Invalid HTML file(s) passed."),
+                );
+            }
+
+            const fileNames = _.keys(oFiles);
+
+            this.$debug.info("Processing", fileNames.length, "HTML file(s)...");
+
+            return Promise.each(fileNames, (name) => {
+                const file = oFiles[name];
+                this.$debug.data(`Processing (${name}):`, file);
+
+                return fs.readFile(file, "utf8").then((html) => {
                     const outPath = path.join(
                         this.config.dest,
                         "content",
                         `${name}.html`,
                     );
-                    this._addRoute(name, "md");
+                    this._addRoute(name, "html");
                     // creates parent directories if they don't exist
                     return fs.outputFile(outPath, html, "utf8");
                 });
-        });
-    }
-
-    _processHTML(htmlFiles) {
-        if (!htmlFiles) return Promise.resolve();
-        const oFiles = this._getFilesHashMap(htmlFiles);
-        if (!oFiles) {
-            return Promise.reject(new Error("Invalid HTML file(s) passed."));
-        }
-
-        const fileNames = _.keys(oFiles);
-
-        this.$debug.info("Processing", fileNames.length, "HTML file(s)...");
-
-        return Promise.each(fileNames, (name) => {
-            const file = oFiles[name];
-            this.$debug.data(`Processing (${name}):`, file);
-
-            return fs.readFile(file, "utf8").then((html) => {
-                const outPath = path.join(
-                    this.config.dest,
-                    "content",
-                    `${name}.html`,
-                );
-                this._addRoute(name, "html");
-                // creates parent directories if they don't exist
-                return fs.outputFile(outPath, html, "utf8");
             });
-        });
+        } catch (err) {
+            console.warn(err);
+        }
     }
 
     /**

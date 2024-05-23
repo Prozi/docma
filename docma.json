@@ -39,7 +39,7 @@
         "favicon": "./favicon.ico" // local path of favicon to be copied
     },
     "template": {
-        "path": "./node_modules/docma-template-zebra", // set to "zebra" (this path is for this repo only)
+        "path": "./templates/zebra", // set to "zebra" (this path is for this repo only)
         "options": {
             "title": {
                 "label": "Docma",
@@ -177,7 +177,7 @@
             // renamed markdown (deep routes)
             // "templates/guide": "./templates/guide.md",
             // "templates/filters": "./templates/filters.md",
-            "templates/zebra": "./node_modules/docma-template-zebra/README.md"
+            "templates/zebra": "./templates/zebra/README.md"
             // renamed html file
         }
     ],

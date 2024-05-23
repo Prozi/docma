@@ -1,0 +1,333 @@
+<html>
+    <head></head>
+    <body>
+        <p align="center">
+            <a href="https://prozi.github.io/docma"
+                ><img
+                    width="200"
+                    height="200"
+                    src="https://raw.githubusercontent.com/Prozi/docma/master/img/docma-logo.png"
+                    alt="Docma"
+                    style="max-width: 100%"
+            /></a>
+        </p>
+
+        <p align="center">
+            <a href="https://www.npmjs.com/package/@pietal.dev/docma"
+                ><img
+                    src="https://img.shields.io/npm/v/@pietal.dev/docma.svg?style=flat-square"
+                    alt="npm"
+                    style="max-width: 100%"
+            /></a>
+            <a href="https://github.com/Prozi/docma"
+                ><img
+                    src="https://img.shields.io/github/release/Prozi/docma.svg?style=flat-square"
+                    alt="release"
+                    style="max-width: 100%"
+            /></a>
+            <a href="https://github.com/Prozi/docma/blob/master/LICENSE"
+                ><img
+                    src="https://img.shields.io/npm/l/@pietal.dev/docma.svg?style=flat-square"
+                    alt="license"
+                    style="max-width: 100%"
+            /></a>
+            <a href="https://www.npmjs.com/package/@pietal.dev/docma"
+                ><img
+                    src="https://img.shields.io/npm/dt/@pietal.dev/docma.svg?style=flat-square"
+                    alt="downloads"
+                    style="max-width: 100%"
+            /></a>
+            <a href="https://libraries.io/npm/@jacekpietal%2Fdocma"
+                ><img
+                    src="https://img.shields.io/librariesio/github/Prozi/docma?style=flat-square"
+                    alt="dependencies"
+                    style="max-width: 100%"
+            /></a>
+            <a href="https://github.com/Prozi/docma/graphs/commit-activity"
+                ><img
+                    src="https://img.shields.io/maintenance/yes/2024?style=flat-square"
+                    alt="maintained"
+                    style="max-width: 100%"
+            /></a>
+            <a href="https://prozi.github.io/docma"
+                ><img
+                    src="https://img.shields.io/badge/docs%20by-docma-c27cf4.svg?docs%20by=docma&amp;style=flat-square"
+                    alt="documentation"
+                    style="max-width: 100%"
+            /></a>
+            <br />
+            <sub
+                >© 2019, Onur Yıldırım (<b
+                    ><a href="https://github.com/onury">@onury</a></b
+                >).</sub
+            >
+        </p>
+
+        <p>
+            A powerful tool to easily generate beautiful HTML documentation from
+            Javascript (<a href="http://usejsdoc.org">JSDoc</a>),
+            <a href="https://daringfireball.net/projects/markdown">Markdown</a>
+            and HTML files.
+        </p>
+        <h2 id="features">Features</h2>
+        <hr />
+        <ul>
+            <li>
+                Parse <strong>JSDoc</strong> documentation,
+                <strong>Markdown</strong> and <strong>HTML</strong> files.
+            </li>
+            <li>
+                Build a cool <strong>SPA</strong> (Single Page Application) from
+                parsed files.
+            </li>
+            <li>
+                Generate multiple/separate API documentations by
+                <strong>grouping</strong> JS files.
+            </li>
+            <li>Path or Query-string based app routing.</li>
+            <li>
+                Non-opinionated engine, <strong>built-in</strong> template with
+                <a href="https://prozi.github.io/docma/templates/zebra"
+                    >cool opinions</a
+                >.
+                <img
+                    class="docma emoji"
+                    src="https://twemoji.maxcdn.com/svg/1f60e.svg"
+                />
+            </li>
+            <li>
+                Supports custom templates, comes with template authoring tools.
+            </li>
+            <li>
+                Works great with <strong>GitHub Pages</strong>, Amazon
+                <strong>S3</strong>, Nginx, Apache, etc...
+            </li>
+            <li>
+                Build via
+                <a href="https://prozi.github.io/docma/api"
+                    ><strong>API</strong></a
+                >
+                or
+                <a href="https://prozi.github.io/docma/cli"
+                    ><strong>CLI</strong></a
+                >.
+            </li>
+            <li>Extremely configurable and debuggable.</li>
+            <li>
+                Well documented.
+                <img
+                    class="docma emoji"
+                    src="https://twemoji.maxcdn.com/svg/261d.svg"
+                />
+            </li>
+        </ul>
+        <p>...like this:</p>
+        <p align="center">
+            <a href="https://prozi.github.io/docma/"
+                ><img
+                    width="650"
+                    height="385"
+                    src="https://raw.githubusercontent.com/Prozi/docma/master/img/docma-screen.gif"
+                    alt="Docma screen"
+                    style="max-width: 100%"
+            /></a>
+            <br />
+            <br />
+            <sub>This is generated with the built-in template, Zebra.</sub
+            ><br />
+            <a href="https://prozi.github.io/docma/">click to view live</a>
+        </p>
+
+        <h2 id="installation">Installation</h2>
+        <hr />
+        <pre><code class="console">npm i @pietal.dev/docma -D
+</code></pre>
+        <h2 id="building-documentation-with-cli">
+            Building Documentation with CLI
+        </h2>
+        <hr />
+        <p>
+            You can use Docma CLI to build documentations directly from your
+            console. Once you create the configuration file
+            <code>docma.json</code> in your project root, it's quite simple.
+        </p>
+        <pre><code class="console">docma
+</code></pre>
+        <p>You can even serve the docs locally and test.</p>
+        <pre><code class="console">docma serve
+</code></pre>
+        <p>See</p>
+        <ul>
+            <li>
+                <a href="https://prozi.github.io/docma/cli"
+                    >Docma CLI Reference</a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://prozi.github.io/docma/api/#Docma~BuildConfiguration"
+                    >Build Configuration</a
+                >
+            </li>
+            <li>[F.A.Q.][docma-faq]</li>
+        </ul>
+        <h2 id="building-documentation-programmatically">
+            Building Documentation Programmatically
+        </h2>
+        <hr />
+        <p>
+            If you need to build documentation from within your code, use the
+            API.
+        </p>
+        <pre><code class="js">const Docma = require("@pietal.dev/docma");
+</code></pre>
+        <p>
+            Either by passing a
+            <a
+                href="https://prozi.github.io/docma/api/#Docma~BuildConfiguration"
+                >configuration</a
+            >
+            object.
+        </p>
+        <pre><code class="js">const config = {
+    src: ["./code/**/*.js", "./README.md"],
+    dest: "./output/doc",
+};
+Docma.create()
+    .build(config)
+    .then((success) =&gt; console.log("Documentation is built successfully."))
+    .catch((error) =&gt; console.log(error));
+</code></pre>
+        <p>
+            Or by reading
+            <a
+                href="https://prozi.github.io/docma/api/#Docma~BuildConfiguration"
+                >configuration</a
+            >
+            from a JSON file.
+        </p>
+        <pre><code class="js">Docma.create()
+    .build("./path/to/docma.json")
+    .catch((error) =&gt; console.log(error));
+</code></pre>
+        <p>
+            See
+            <a href="https://prozi.github.io/docma/api">Docma API Reference</a>.
+        </p>
+        <h2 id="parsed-output">Parsed Output</h2>
+        <hr />
+        <p>
+            Sometimes, the issue is with invalid JSDoc comments.
+            <a
+                href="https://github.com/Prozi/docma/issues/55#issuecomment-437599192"
+                >See this</a
+            >
+            for linting/validating your JSDoc while you type and within a build
+            process.
+        </p>
+        <p>
+            To investigate the parsed JSDoc output, enable the
+            <code>debug</code> option that will create a JSON output(s) within
+            the root of the destination directory. If you have a problem with
+            the parsed documentation data, open an issue @
+            <a href="https://github.com/Prozi/jsdoc-x">jsdoc-x</a>.
+            <em>(I'm the author.)</em>
+        </p>
+        <p>
+            For markdown output issues (that are not related with style), you
+            can open an issue @
+            <a href="https://github.com/chjj/marked">marked</a>.
+        </p>
+        <h2 id="changelog">Changelog</h2>
+        <hr />
+        <p>
+            See
+            <a href="https://github.com/Prozi/docma/blob/master/CHANGELOG.md"
+                ><strong>CHANGELOG</strong></a
+            >.
+        </p>
+        <h4 id="compatibility-table">Compatibility Table</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Docma version</th>
+                    <th>Node version</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a
+                            href="https://github.com/Prozi/docma/blob/master/CHANGELOG.md#300-2018-11-18"
+                            >v3.0.0</a
+                        >
+                    </td>
+                    <td><strong>v8+</strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://github.com/Prozi/docma/blob/master/CHANGELOG.md#200-2018-04-12"
+                            >v2.0.0</a
+                        >
+                    </td>
+                    <td><strong>v6+</strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://github.com/Prozi/docma/blob/master/CHANGELOG.md#100-2016-06-11"
+                            >v1.0.0</a
+                        >
+                    </td>
+                    <td><strong>v4+</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="documentation">Documentation</h2>
+        <hr />
+        <p>
+            Read
+            <a href="https://prozi.github.io/docma"
+                ><strong>Docma documentation</strong></a
+            >, built with Docma, for a Docma demo...
+            <img
+                class="docma emoji"
+                src="https://twemoji.maxcdn.com/svg/1f440.svg"
+            /><br />Also see the [<strong>F.A.Q.</strong>][docma-faq] section.
+        </p>
+        <h2 id="license">License</h2>
+        <hr />
+        <p>
+            <a href="https://github.com/Prozi/docma/blob/master/LICENSE"
+                ><strong>MIT</strong></a
+            >. You don't have to include any copyright notice in your
+            documentation output or templates but I'd appreciate if you let
+            people know about this tool so we can read better documentations.
+        </p>
+        <p>
+            Emoji shortcuts used in source markdown files are parsed into
+            <a href="https://github.com/twitter/twemoji">twemoji</a>. Graphics
+            and icons licensed under
+            <a href="https://creativecommons.org/licenses/by/4.0">CC-BY 4.0</a>.
+        </p>
+        <h2 id="related-modules">Related Modules</h2>
+        <hr />
+        <ul>
+            <li>
+                <a href="https://github.com/Prozi/jsdoc-x">jsdoc-x</a> — Parser
+                for outputting a Javascript object from documented code via
+                JSDoc's explain (-X) command.
+            </li>
+            <li>
+                <a href="https://github.com/chjj/marked">marked</a> — A
+                full-featured markdown parser and compiler, written in
+                JavaScript. Built for speed.
+            </li>
+            <li>
+                <a href="https://github.com/linkedin/dustjs">dustjs</a> —
+                Asynchronous Javascript templating for the browser and server.
+            </li>
+        </ul>
+    </body>
+</html>

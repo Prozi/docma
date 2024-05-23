@@ -282,10 +282,17 @@ class TemplateBuilder {
                     );
                     return HtmlParser.fromFile(filePath).then((parser) => {
                         const templateContent = parser.removeComments().content;
-                        return dust.compile(
-                            templateContent,
-                            utils.path.basename(filePath),
-                        );
+                        try {
+                            dust.config.whitespace = true;
+
+                            return dust.compile(
+                                templateContent,
+                                utils.path.basename(filePath),
+                            );
+                        } catch (err) {
+                            console.warn(err, templateContent);
+                            return templateContent;
+                        }
                     });
                 });
             })

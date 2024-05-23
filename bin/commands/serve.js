@@ -12,7 +12,7 @@ module.exports = function serve(dirname, config) {
         console.log(`Runs at port ${config.port}`);
     }
 
-    let server = "node_modules/static-serve/index.js";
+    let server = "node_modules/chef-express/index.js";
     let args =
         process.argv.slice(3, process.argv.length).join(" ") ||
         `docs --port ${config.port}`;
