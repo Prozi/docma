@@ -1,11 +1,11 @@
 {
   "name": "@jacekpietal/docma",
-  "version": "3.3.6",
+  "version": "3.3.7",
   "description": "A powerful dev-tool to easily generate beautiful HTML documentation from Javascript (JSDoc), Markdown and HTML files.",
   "repository": "Prozi/docma",
   "license": "MIT",
   "author": {
-    "name": "Onur Y??ld??r??m",
+    "name": "Onur Yildirim",
     "email": "onur@cutepilot.com"
   },
   "maintainers": [
@@ -45,7 +45,7 @@
     "docs:query": "yarn docs -c ./test/docma.query.json",
     "docs:debug": "yarn docs --debug",
     "prettify": "prettier . --write",
-    "serve": "static-serve docs --port 9000",
+    "serve": "chef-express docs --port 9000",
     "start": "npm run docs && npm run serve",
     "start:query": "npm run docs:query && npm run serve",
     "start:debug": "npm run docs:debug && npm run serve",
@@ -95,37 +95,41 @@
   ],
   "dependencies": {
     "bluebird": "^3.7.2",
-    "chalk": "^4.1.2",
+    "chalk": "^5.3.0",
     "cross-spawn": "^7.0.3",
     "docma-template-zebra": "^2.3.1",
     "dustjs-linkedin": "^3.0.1",
     "easy-table": "^1.2.0",
-    "fs-extra": "^10.1.0",
-    "glob": "^9.0.0",
-    "gzip-size": "^6.0.0",
-    "inquirer": "^8.2.6",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.16",
+    "gzip-size": "^7.0.0",
+    "inquirer": "^9.2.22",
     "jsdoc-x": "^4.1.0",
-    "jsdom": "^16.7.0",
+    "jsdom": "^24.0.0",
     "less": "^4.2.0",
     "less-plugin-clean-css": "^1.5.1",
     "lodash": "^4.17.21",
-    "marked": "^4.0.10",
-    "npm-name": "^7.0.0",
-    "semver": "^7.5.4",
-    "static-serve": "^0.0.1",
-    "strip-json-comments": "^3.1.1",
-    "uglify-js": "^3.14.3",
+    "marked": "^12.0.2",
+    "npm-name": "^8.0.0",
+    "semver": "^7.6.2",
+    "strip-json-comments": "^5.0.1",
+    "uglify-js": "^3.17.4",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "jest-cli": "^27.0.6",
-    "prettier": "^2.3.2"
+    "chef-express": "^2.1.3",
+    "eslint": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "jest-cli": "^29.7.0",
+    "prettier": "^3.2.5"
   },
   "resolutions": {
-    "clean-css": "^4.1.11",
-    "braces": "^2.3.1"
+    "ansi-regex": ">=5.0.1",
+    "clean-css": ">=4.1.11",
+    "jsdoc": ">=4.0.3",
+    "minimatch": ">=3.0.5",
+    "minimist": ">=1.2.6",
+    "semver": ">=6.3.1"
   }
 }
