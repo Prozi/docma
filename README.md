@@ -99,7 +99,7 @@ See [Docma API Reference][docma-api].
 
 ## Parsed Output
 
-Sometimes, the issue is with invalid JSDoc comments. [See this](https://github.com/Prozi/docma/issues/55#issuecomment-437599192) for linting/validating your JSDoc while you type and within a build process.
+Sometimes, the issue is with invalid JSDoc comments. [See this](https://github.com/onury/docma/issues/55#issuecomment-437599192) for linting/validating your JSDoc while you type and within a build process.
 
 To investigate the parsed JSDoc output, enable the `debug` option that will create a JSON output(s) within the root of the destination directory. If you have a problem with the parsed documentation data, open an issue @ [jsdoc-x][jsdoc-x]. _(I'm the author.)_
 
@@ -144,7 +144,7 @@ Emoji shortcuts used in source markdown files are parsed into [twemoji][twemoji]
 [docma-config]: https://prozi.github.io/docma/api/#Docma~BuildConfiguration
 [zebra]: https://prozi.github.io/docma/templates/zebra
 [jsdoc]: http://usejsdoc.org
-[jsdoc-x]: https://github.com/Prozi/jsdoc-x
+[jsdoc-x]: https://github.com/onury/jsdoc-x
 [marked]: https://github.com/chjj/marked
 [markdown]: https://daringfireball.net/projects/markdown
 [dustjs]: http://www.dustjs.com

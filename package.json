@@ -1,6 +1,6 @@
 {
   "name": "@pietal.dev/docma",
-  "version": "3.3.10",
+  "version": "3.3.11",
   "description": "A powerful dev-tool to easily generate beautiful HTML documentation from Javascript (JSDoc), Markdown and HTML files.",
   "repository": "Prozi/docma",
   "license": "MIT",
@@ -103,7 +103,7 @@
     "glob": "^9",
     "gzip-size": "^6",
     "inquirer": "^8",
-    "jquery": "^1",
+    "jquery": "^3",
     "jsdoc-x": "^4",
     "jsdom": "^24",
     "less": "^4",
