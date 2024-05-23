@@ -677,13 +677,13 @@
                     return high !== high || escapedWhitespace
                         ? escaped
                         : high < 0
-                        ? // BMP codepoint
-                          String.fromCharCode(high + 0x10000)
-                        : // Supplemental Plane codepoint (surrogate pair)
-                          String.fromCharCode(
-                              (high >> 10) | 0xd800,
-                              (high & 0x3ff) | 0xdc00,
-                          );
+                          ? // BMP codepoint
+                            String.fromCharCode(high + 0x10000)
+                          : // Supplemental Plane codepoint (surrogate pair)
+                            String.fromCharCode(
+                                (high >> 10) | 0xd800,
+                                (high & 0x3ff) | 0xdc00,
+                            );
                 },
                 // CSS string/identifier serialization
                 // https://drafts.csswg.org/cssom/#common-serializing-idioms
@@ -1594,15 +1594,15 @@
                               return a === document
                                   ? -1
                                   : b === document
-                                  ? 1
-                                  : aup
-                                  ? -1
-                                  : bup
-                                  ? 1
-                                  : sortInput
-                                  ? indexOf(sortInput, a) -
-                                    indexOf(sortInput, b)
-                                  : 0;
+                                    ? 1
+                                    : aup
+                                      ? -1
+                                      : bup
+                                        ? 1
+                                        : sortInput
+                                          ? indexOf(sortInput, a) -
+                                            indexOf(sortInput, b)
+                                          : 0;
 
                               // If the nodes are siblings, we can do a quick check
                           } else if (aup === bup) {
@@ -1628,11 +1628,11 @@
                               ? // Do a sibling check if the nodes have a common ancestor
                                 siblingCheck(ap[i], bp[i])
                               : // Otherwise nodes in our document sort first
-                              ap[i] === preferredDoc
-                              ? -1
-                              : bp[i] === preferredDoc
-                              ? 1
-                              : 0;
+                                ap[i] === preferredDoc
+                                ? -1
+                                : bp[i] === preferredDoc
+                                  ? 1
+                                  : 0;
                       };
 
                 return document;
@@ -1701,10 +1701,10 @@
                 return val !== undefined
                     ? val
                     : support.attributes || !documentIsHTML
-                    ? elem.getAttribute(name)
-                    : (val = elem.getAttributeNode(name)) && val.specified
-                    ? val.value
-                    : null;
+                      ? elem.getAttribute(name)
+                      : (val = elem.getAttributeNode(name)) && val.specified
+                        ? val.value
+                        : null;
             };
 
             Sizzle.escape = function (sel) {
@@ -1963,24 +1963,31 @@
                             return operator === "="
                                 ? result === check
                                 : operator === "!="
-                                ? result !== check
-                                : operator === "^="
-                                ? check && result.indexOf(check) === 0
-                                : operator === "*="
-                                ? check && result.indexOf(check) > -1
-                                : operator === "$="
-                                ? check && result.slice(-check.length) === check
-                                : operator === "~="
-                                ? (
-                                      " " +
-                                      result.replace(rwhitespace, " ") +
-                                      " "
-                                  ).indexOf(check) > -1
-                                : operator === "|="
-                                ? result === check ||
-                                  result.slice(0, check.length + 1) ===
-                                      check + "-"
-                                : false;
+                                  ? result !== check
+                                  : operator === "^="
+                                    ? check && result.indexOf(check) === 0
+                                    : operator === "*="
+                                      ? check && result.indexOf(check) > -1
+                                      : operator === "$="
+                                        ? check &&
+                                          result.slice(-check.length) === check
+                                        : operator === "~="
+                                          ? (
+                                                " " +
+                                                result.replace(
+                                                    rwhitespace,
+                                                    " ",
+                                                ) +
+                                                " "
+                                            ).indexOf(check) > -1
+                                          : operator === "|="
+                                            ? result === check ||
+                                              result.slice(
+                                                  0,
+                                                  check.length + 1,
+                                              ) ===
+                                                  check + "-"
+                                            : false;
                         };
                     },
 
@@ -2227,23 +2234,25 @@
                             matcher = compile(selector.replace(rtrim, "$1"));
 
                         return matcher[expando]
-                            ? markFunction(function (
-                                  seed,
-                                  matches,
-                                  context,
-                                  xml,
-                              ) {
-                                  var elem,
-                                      unmatched = matcher(seed, null, xml, []),
-                                      i = seed.length;
+                            ? markFunction(
+                                  function (seed, matches, context, xml) {
+                                      var elem,
+                                          unmatched = matcher(
+                                              seed,
+                                              null,
+                                              xml,
+                                              [],
+                                          ),
+                                          i = seed.length;
 
-                                  // Match elements unmatched by `matcher`
-                                  while (i--) {
-                                      if ((elem = unmatched[i])) {
-                                          seed[i] = !(matches[i] = elem);
+                                      // Match elements unmatched by `matcher`
+                                      while (i--) {
+                                          if ((elem = unmatched[i])) {
+                                              seed[i] = !(matches[i] = elem);
+                                          }
                                       }
-                                  }
-                              })
+                                  },
+                              )
                             : function (elem, context, xml) {
                                   input[0] = elem;
                                   matcher(input, null, xml, results);
@@ -2300,7 +2309,10 @@
                                         elemLang.indexOf(lang + "-") === 0
                                     );
                                 }
-                            } while ((elem = elem.parentNode) && elem.nodeType === 1);
+                            } while (
+                                (elem = elem.parentNode) &&
+                                elem.nodeType === 1
+                            );
                             return false;
                         };
                     }),
@@ -2403,66 +2415,59 @@
                         return [0];
                     }),
 
-                    last: createPositionalPseudo(function (
-                        matchIndexes,
-                        length,
-                    ) {
-                        return [length - 1];
-                    }),
+                    last: createPositionalPseudo(
+                        function (matchIndexes, length) {
+                            return [length - 1];
+                        },
+                    ),
 
-                    eq: createPositionalPseudo(function (
-                        matchIndexes,
-                        length,
-                        argument,
-                    ) {
-                        return [argument < 0 ? argument + length : argument];
-                    }),
+                    eq: createPositionalPseudo(
+                        function (matchIndexes, length, argument) {
+                            return [
+                                argument < 0 ? argument + length : argument,
+                            ];
+                        },
+                    ),
 
-                    even: createPositionalPseudo(function (
-                        matchIndexes,
-                        length,
-                    ) {
-                        var i = 0;
-                        for (; i < length; i += 2) {
-                            matchIndexes.push(i);
-                        }
-                        return matchIndexes;
-                    }),
+                    even: createPositionalPseudo(
+                        function (matchIndexes, length) {
+                            var i = 0;
+                            for (; i < length; i += 2) {
+                                matchIndexes.push(i);
+                            }
+                            return matchIndexes;
+                        },
+                    ),
 
-                    odd: createPositionalPseudo(function (
-                        matchIndexes,
-                        length,
-                    ) {
-                        var i = 1;
-                        for (; i < length; i += 2) {
-                            matchIndexes.push(i);
-                        }
-                        return matchIndexes;
-                    }),
+                    odd: createPositionalPseudo(
+                        function (matchIndexes, length) {
+                            var i = 1;
+                            for (; i < length; i += 2) {
+                                matchIndexes.push(i);
+                            }
+                            return matchIndexes;
+                        },
+                    ),
 
-                    lt: createPositionalPseudo(function (
-                        matchIndexes,
-                        length,
-                        argument,
-                    ) {
-                        var i = argument < 0 ? argument + length : argument;
-                        for (; --i >= 0; ) {
-                            matchIndexes.push(i);
-                        }
-                        return matchIndexes;
-                    }),
+                    lt: createPositionalPseudo(
+                        function (matchIndexes, length, argument) {
+                            var i = argument < 0 ? argument + length : argument;
+                            for (; --i >= 0; ) {
+                                matchIndexes.push(i);
+                            }
+                            return matchIndexes;
+                        },
+                    ),
 
-                    gt: createPositionalPseudo(function (
-                        matchIndexes,
-                        length,
-                        argument,
-                    ) {
-                        var i = argument < 0 ? argument + length : argument;
-                        for (; ++i < length; ) {
-                            matchIndexes.push(i);
-                        }
-                        return matchIndexes;
-                    }),
+                    gt: createPositionalPseudo(
+                        function (matchIndexes, length, argument) {
+                            var i = argument < 0 ? argument + length : argument;
+                            for (; ++i < length; ) {
+                                matchIndexes.push(i);
+                            }
+                            return matchIndexes;
+                        },
+                    ),
                 },
             };
 
@@ -2556,9 +2561,9 @@
                 return parseOnly
                     ? soFar.length
                     : soFar
-                    ? Sizzle.error(selector)
-                    : // Cache the tokens
-                      tokenCache(selector, groups).slice(0);
+                      ? Sizzle.error(selector)
+                      : // Cache the tokens
+                        tokenCache(selector, groups).slice(0);
             };
 
             function toSelector(tokens) {
@@ -3248,9 +3253,9 @@
                         return elem[name] === true
                             ? name.toLowerCase()
                             : (val = elem.getAttributeNode(name)) &&
-                              val.specified
-                            ? val.value
-                            : null;
+                                val.specified
+                              ? val.value
+                              : null;
                     }
                 });
             }

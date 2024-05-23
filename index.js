@@ -1,1 +1,1 @@
-module.exports = require("./lib/Docma");
+module.exports = require("./src/Docma");

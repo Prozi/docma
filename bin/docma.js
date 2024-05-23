@@ -18,12 +18,12 @@ const fs = require("fs-extra");
 const chalk = require("chalk");
 
 // own modules
-const Docma = require("../lib/Docma");
+const Docma = require("../src/Docma");
 const serve = require("./commands/serve");
 const doctor = require("./commands/template.doctor");
 const init = require("./commands/template.init");
 const pkg = require("../package.json");
-const utils = require("../lib/utils");
+const utils = require("../src/utils");
 
 // --------------------------
 // CLI SETUP
@@ -287,8 +287,8 @@ function updateConfig(config) {
                     ? 31
                     : 1
                 : typeof config.debug === "number"
-                ? config.debug
-                : 1;
+                  ? config.debug
+                  : 1;
     }
 
     if (argv.quiet) {

@@ -403,10 +403,10 @@ class Docma {
         return /^\.?(javascript|jsdoc|jsx?)$/i.test(str)
             ? "JSDoc"
             : /^\.?(md|markdown)?$/i.test(str)
-            ? "Markdown"
-            : /^\.?html?$/i.test(str)
-            ? "HTML"
-            : null;
+              ? "Markdown"
+              : /^\.?html?$/i.test(str)
+                ? "HTML"
+                : null;
     }
 
     /**
@@ -1428,8 +1428,8 @@ module.exports = Docma;
  *              // This name also defines the api route name: e.g. ?api=my-lib or api/my-lib/
  *              'my-lib': [
  *                  './src/** /*.js',           // recurse all JS files under /src
- *                  './lib/some-other.js',
- *                  '!./lib/ignored.js'         // notice the bang! prefix to exclude this file
+ *                  './src/some-other.js',
+ *                  '!./src/ignored.js'         // notice the bang! prefix to exclude this file
  *              ],
  *              // naming another api route
  *              'other-lib': './other/*.js',    // ?api=other-lib

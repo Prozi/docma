@@ -9,8 +9,8 @@ const path = require("path");
 // dep modules
 const chalk = require("chalk");
 // own modules
-const TemplateDoctor = require("../../lib/TemplateDoctor");
-// const utils = require('../../lib/utils');
+const TemplateDoctor = require("../../src/TemplateDoctor");
+// const utils = require('../../src/utils');
 
 module.exports = (templatePath, options) => {
     if (!templatePath) {

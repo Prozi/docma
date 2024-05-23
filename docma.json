@@ -157,15 +157,15 @@
         // API sources
         // default group (docma)
         // route @ api/
-        "./lib/Docma.js",
-        "./lib/Template.js",
-        "./lib/TemplateDoctor.js",
+        "./src/Docma.js",
+        "./src/Template.js",
+        "./src/TemplateDoctor.js",
         // grouped JS API documentation
         {
             // route @ api/web/
-            "web": ["./lib/web/DocmaWeb.js", "./lib/web/DocmaWeb.Route.js"],
+            "web": ["./src/web/DocmaWeb.js", "./src/web/DocmaWeb.Route.js"],
             // route @ api/web/utils/
-            "web/utils": "./lib/web/DocmaWeb.Utils.js"
+            "web/utils": "./src/web/DocmaWeb.Utils.js"
         },
         // Content sources
         // markdown

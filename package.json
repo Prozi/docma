@@ -1,5 +1,5 @@
 {
-  "name": "@jacekpietal/docma",
+  "name": "@pietal.dev/docma",
   "version": "3.3.7",
   "description": "A powerful dev-tool to easily generate beautiful HTML documentation from Javascript (JSDoc), Markdown and HTML files.",
   "repository": "Prozi/docma",
@@ -32,7 +32,7 @@
     "docma.json",
     "docma-web.js",
     "index.js",
-    "lib",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
@@ -40,9 +40,9 @@
     "yarn.lock"
   ],
   "scripts": {
-    "lint": "yarn eslint ./lib ./test --fix",
+    "lint": "yarn eslint src test --fix",
     "docs": "node bin/docma",
-    "docs:query": "yarn docs -c ./test/docma.query.json",
+    "docs:query": "yarn docs -c test/docma.query.json",
     "docs:debug": "yarn docs --debug",
     "prettify": "prettier . --write",
     "serve": "chef-express docs --port 9000",
@@ -50,7 +50,8 @@
     "start:query": "npm run docs:query && npm run serve",
     "start:debug": "npm run docs:debug && npm run serve",
     "test": "jest --verbose --no-cache",
-    "precommit": "yarn docs && yarn lint && yarn prettify"
+    "precommit": "yarn docs && yarn lint && yarn prettify",
+    "postinstall": "[ \"$DOWNGRADE_CHALK\" != 'true' ] && DOWNGRADE_CHALK=true yarn add chalk@^4 strip-json-comments@^3 gzip-size@^6 inquirer@^8 eslint@^8 -D || echo downgraded few packages"
   },
   "jest": {
     "testEnvironment": "node",
@@ -95,15 +96,15 @@
   ],
   "dependencies": {
     "bluebird": "^3.7.2",
-    "chalk": "^5.3.0",
+    "chalk": "^4",
     "cross-spawn": "^7.0.3",
     "docma-template-zebra": "^2.3.1",
     "dustjs-linkedin": "^3.0.1",
     "easy-table": "^1.2.0",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.16",
-    "gzip-size": "^7.0.0",
-    "inquirer": "^9.2.22",
+    "gzip-size": "^6",
+    "inquirer": "^8",
     "jsdoc-x": "^4.1.0",
     "jsdom": "^24.0.0",
     "less": "^4.2.0",
@@ -112,20 +113,19 @@
     "marked": "^12.0.2",
     "npm-name": "^8.0.0",
     "semver": "^7.6.2",
-    "strip-json-comments": "^5.0.1",
+    "strip-json-comments": "^3",
     "uglify-js": "^3.17.4",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "chef-express": "^2.1.3",
-    "eslint": "^9.3.0",
+    "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "jest-cli": "^29.7.0",
     "prettier": "^3.2.5"
   },
   "resolutions": {
-    "ansi-regex": ">=5.0.1",
     "clean-css": ">=4.1.11",
     "jsdoc": ">=4.0.3",
     "minimatch": ">=3.0.5",

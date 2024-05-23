@@ -13,8 +13,8 @@ const fs = require("fs-extra");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 // own modules
-const TemplateDoctor = require("../../lib/TemplateDoctor");
-const utils = require("../../lib/utils");
+const TemplateDoctor = require("../../src/TemplateDoctor");
+const utils = require("../../src/utils");
 
 // constants
 const RE_EMAIL =

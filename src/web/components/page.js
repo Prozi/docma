@@ -2,8 +2,8 @@
     typeof exports === "object" && typeof module !== "undefined"
         ? (module.exports = factory())
         : typeof define === "function" && define.amd
-        ? define(factory)
-        : (global.page = factory());
+          ? define(factory)
+          : (global.page = factory());
 })(this, function () {
     "use strict";
 

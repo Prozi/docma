@@ -23,8 +23,8 @@ class Debug {
                     ? Debug.ALL
                     : Debug.DISABLED
                 : typeof level === "number"
-                ? level
-                : Debug.DISABLED;
+                  ? level
+                  : Debug.DISABLED;
 
         this.colors = Boolean(options.colors);
 
