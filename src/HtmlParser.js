@@ -8,7 +8,14 @@ const path = require("path");
 const Promise = require("bluebird");
 const JSDOM = require("jsdom").JSDOM;
 
-const JQUERY_PATH = path.join(__dirname, "web", "components", "jquery.min.js");
+const JQUERY_PATH = path.resolve(
+    __dirname,
+    "..",
+    "node_modules",
+    "jquery",
+    "dist",
+    "jquery.min.js",
+);
 let JQUERY_SCRIPT;
 
 // https://stackoverflow.com/a/5654032/112731

@@ -1459,7 +1459,12 @@ duplexer@^0.1.2:
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.2.tgz#3abe43aef3835f8ae077d136ddce0f276b0400e6"
   integrity sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==
 
-dustjs-linkedin@^3:
+dustjs-helpers@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/dustjs-helpers/-/dustjs-helpers-1.7.4.tgz#2e462b80e317262ad6c1c5a3c0fee0e82a826219"
+  integrity sha512-0GYXmMU1p2899EefdJozzwxk8dUb4HyicudsdZ3smr3C1xgT61xxg19r5BMJbaOMNwTNU+4RmqRcJA/EYAzYzw==
+
+dustjs-linkedin@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/dustjs-linkedin/-/dustjs-linkedin-3.0.1.tgz#7b63e65a73ee8424b191de0f4a8a9c8b69a723d5"
   integrity sha512-WVQe5OisJQwiLsTS4Yt+K6XwChFKYwx1+BKtMrW5O+5NauoiFA2oZs7wfO2rzlt1x0QTr4yQAr7zgyECkvegmw==
@@ -2709,6 +2714,11 @@ jest-worker@^29.7.0:
     jest-util "^29.7.0"
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
+
+jquery@^1:
+  version "1.12.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-1.12.4.tgz#01e1dfba290fe73deba77ceeacb0f9ba2fec9e0c"
+  integrity sha512-UEVp7PPK9xXYSk8xqXCJrkXnKZtlgWkd2GsAQbMRFK6S/ePU2JN5G2Zum8hIVjzR3CpdfSqdqAzId/xd4TJHeg==
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -4150,6 +4160,10 @@ which@^2.0.1:
   integrity sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   dependencies:
     isexe "^2.0.0"
+
+"wolfy87-eventemitter@https://github.com/Olical/EventEmitter.git":
+  version "5.2.9"
+  resolved "https://github.com/Olical/EventEmitter.git#15b02d4872c1a7e055b66344a252df4c7987086f"
 
 word-wrap@^1.2.5:
   version "1.2.5"
