@@ -1,6 +1,6 @@
 {
   "name": "@pietal.dev/docma",
-  "version": "3.3.8",
+  "version": "3.3.9",
   "description": "A powerful dev-tool to easily generate beautiful HTML documentation from Javascript (JSDoc), Markdown and HTML files.",
   "repository": "Prozi/docma",
   "license": "MIT",
@@ -49,7 +49,7 @@
     "start": "npm run docs && npm run serve",
     "start:query": "npm run docs:query && npm run serve",
     "start:debug": "npm run docs:debug && npm run serve",
-    "test": "jest --verbose --no-cache",
+    "test": "jest --roots . --verbose --no-cache",
     "precommit": "yarn docs && yarn lint && yarn prettify",
     "postinstall": "[ \"$DOWNGRADE_CHALK\" != 'true' ] && DOWNGRADE_CHALK=true yarn add chalk@^4 strip-json-comments@^3 gzip-size@^6 inquirer@^8 eslint@^8 -D || echo downgraded few packages"
   },
