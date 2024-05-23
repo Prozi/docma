@@ -2688,7 +2688,7 @@
     function body_0(chk, ctx) {
         return chk
             .w(
-                '<div class="sidebar-header">\n    <div id="sidebar-toggle">\n        <i class="fas fa-lg fa-bars trans-all-ease"></i>\n    </div>\n    <div class="sidebar-brand">\n        ',
+                '<div class="sidebar-header">\n    \n            <i class="fas fa-lg fa-bars trans-all-ease"></i>\n        </div>\n    -->\n    <div class="sidebar-brand">\n        ',
             )
             .x(
                 ctx.getPath(false, ["template", "options", "logo", "light"]),
@@ -4869,12 +4869,12 @@ var DocmaWeb = (function () {
             ).replace(/ /g, "-");
         });
 
-    DocmaWeb.version = "3.3.12";
+    DocmaWeb.version = "3.3.13";
     return DocmaWeb;
 })();
 var docma = Object.freeze(
     new DocmaWeb({
-        version: "3.3.12",
+        version: "3.3.13",
         routes: [
             {
                 id: "api:",

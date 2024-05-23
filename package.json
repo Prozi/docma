@@ -1,6 +1,6 @@
 {
   "name": "@pietal.dev/docma",
-  "version": "3.3.12",
+  "version": "3.3.13",
   "description": "A powerful dev-tool to easily generate beautiful HTML documentation from Javascript (JSDoc), Markdown and HTML files.",
   "repository": "Prozi/docma",
   "license": "MIT",
@@ -26,16 +26,7 @@
     "bin",
     "src",
     "templates",
-    "img",
-    ".prettierrc",
-    ".eslintrc.js",
-    "favicon.ico",
-    "docma.json",
     "index.js",
-    "LICENSE",
-    "README.md",
-    "CHANGELOG.md",
-    "package.json",
     "yarn.lock"
   ],
   "scripts": {
@@ -50,7 +41,7 @@
     "start:debug": "npm run docs:debug && npm run serve",
     "test": "jest --roots . --verbose --no-cache",
     "precommit": "yarn build && yarn lint && yarn prettify",
-    "postinstall": "[ \"$DOWNGRADE\" != 'true' ] && DOWNGRADE=true yarn add chalk@^4 strip-json-comments@^3 gzip-size@^6 inquirer@^8 eslint@^8 glob@^9 marked@^4 -D || echo downgraded few packages"
+    "postinstall": "[ \"$DOWNGRADE\" != 'true' ] && DOWNGRADE=true yarn add chalk@^4 strip-json-comments@^3 gzip-size@^6 inquirer@^8 eslint@^8 marked@^7 glob@^9 -D || echo downgraded few packages"
   },
   "jest": {
     "testEnvironment": "node",
@@ -109,13 +100,13 @@
     "less": "^4",
     "less-plugin-clean-css": "^1",
     "lodash": "^4",
-    "marked": "^4",
+    "marked": "^7",
     "npm-name": "^8",
     "semver": "^7",
     "strip-json-comments": "^3",
     "uglify-js": "^3",
     "wolfy87-eventemitter": "^5.2.9",
-    "yargs": "^17"
+    "yargs": "^14"
   },
   "devDependencies": {
     "chef-express": "^2.1.4",
