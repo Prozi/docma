@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@jacekpietal/docma"><img src="https://img.shields.io/npm/v/@jacekpietal/docma.svg?style=flat-square" alt="npm" /></a>
+    <a href="https://www.npmjs.com/package/@pietal.dev/docma"><img src="https://img.shields.io/npm/v/@pietal.dev/docma.svg?style=flat-square" alt="npm" /></a>
     <a href="https://github.com/Prozi/docma"><img src="https://img.shields.io/github/release/Prozi/docma.svg?style=flat-square" alt="release" /></a>
-    <a href="https://github.com/Prozi/docma/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@jacekpietal/docma.svg?style=flat-square" alt="license" /></a>
-    <a href="https://www.npmjs.com/package/@jacekpietal/docma"><img src="https://img.shields.io/npm/dt/@jacekpietal/docma.svg?style=flat-square" alt="downloads" /></a>
+    <a href="https://github.com/Prozi/docma/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@pietal.dev/docma.svg?style=flat-square" alt="license" /></a>
+    <a href="https://www.npmjs.com/package/@pietal.dev/docma"><img src="https://img.shields.io/npm/dt/@pietal.dev/docma.svg?style=flat-square" alt="downloads" /></a>
     <a href="https://libraries.io/npm/@jacekpietal%2Fdocma"><img src="https://img.shields.io/librariesio/github/Prozi/docma?style=flat-square" alt="dependencies" /></a>
     <a href="https://github.com/Prozi/docma/graphs/commit-activity"><img src="https://img.shields.io/maintenance/yes/2024?style=flat-square" alt="maintained" /></a>
     <a href="https://prozi.github.io/docma"><img src="https://img.shields.io/badge/docs%20by-docma-c27cf4.svg?docs%20by=docma&style=flat-square" alt="documentation" /></a>
@@ -42,7 +42,7 @@ A powerful tool to easily generate beautiful HTML documentation from Javascript 
 ## Installation
 
 ```console
-npm i @jacekpietal/docma -D
+npm i @pietal.dev/docma -D
 ```
 
 ## Building Documentation with CLI
@@ -71,7 +71,7 @@ See
 If you need to build documentation from within your code, use the API.
 
 ```js
-const Docma = require("@jacekpietal/docma");
+const Docma = require("@pietal.dev/docma");
 ```
 
 Either by passing a [configuration][docma-config] object.

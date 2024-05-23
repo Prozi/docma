@@ -125,8 +125,8 @@
                         "label": "Download",
                         "items": [
                             {
-                                "label": "<code>npm i @jacekpietal/docma -D</code>",
-                                "href": "https://www.npmjs.com/package/@jacekpietal/docma",
+                                "label": "<code>npm i @pietal.dev/docma -D</code>",
+                                "href": "https://www.npmjs.com/package/@pietal.dev/docma",
                                 "target": "_blank"
                             },
                             {
