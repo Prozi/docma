@@ -104,7 +104,7 @@
     "npm-name": "^8",
     "semver": "^7",
     "strip-json-comments": "^3",
-    "uglify-js": "^3",
+    "uglify-js": "^3.18.0",
     "wolfy87-eventemitter": "^5.2.9",
     "yargs": "^17"
   },
