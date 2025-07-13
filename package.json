@@ -91,7 +91,7 @@
     "dustjs-linkedin": "^3.0.1",
     "easy-table": "^1",
     "fs-extra": "^11",
-    "glob": "^9",
+    "glob": "^10.0.0",
     "gzip-size": "^6",
     "inquirer": "^8",
     "jquery": "^3",
