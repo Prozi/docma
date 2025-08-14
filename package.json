@@ -93,7 +93,7 @@
     "fs-extra": "^11",
     "glob": "^9",
     "gzip-size": "^6",
-    "inquirer": "^8",
+    "inquirer": "^8.2.7",
     "jquery": "^3",
     "jsdoc-x": "^4",
     "jsdom": "^24",
