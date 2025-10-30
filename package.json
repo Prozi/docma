@@ -102,7 +102,7 @@
     "lodash": "^4",
     "marked": "^7",
     "npm-name": "^8",
-    "semver": "^7",
+    "semver": "^7.7.3",
     "strip-json-comments": "^3",
     "uglify-js": "^3",
     "wolfy87-eventemitter": "^5.2.9",
