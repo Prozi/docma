@@ -97,7 +97,7 @@
     "jquery": "^3",
     "jsdoc-x": "^4",
     "jsdom": "^24",
-    "less": "^4",
+    "less": "^4.4.2",
     "less-plugin-clean-css": "^1",
     "lodash": "^4",
     "marked": "^7",
